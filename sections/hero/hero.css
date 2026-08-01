@@ -1,0 +1,657 @@
+/* Homepage -------------------------------------------------- */
+
+#homepage {
+  opacity: 0;
+
+  transition: opacity 1s ease;
+}
+
+#homepage.show {
+  opacity: 1;
+}
+
+/* Sequence Animation --------------------------------------- */
+
+.sequence-section {
+  position: relative;
+
+  height: 160svh;
+
+  background: var(--bg);
+}
+
+.sequence-sticky {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: var(--bg);
+}
+
+#sequenceImage {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hero Identity -------------------------------------------- */
+
+.hero-text {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  z-index: 10;
+
+  width: min(92vw, 54rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.hero-text.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, calc(-50% - 1rem));
+}
+
+/* Signature Logo ------------------------------------------- */
+
+.hero-signature {
+  display: block;
+
+  width: clamp(10rem, 25vw, 30rem);
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0.25rem 0.2rem rgb(0 0 0 / 5%));
+}
+
+/* Main Role ------------------------------------------------ */
+
+.hero-role {
+  margin:
+    -1rem 0 0;
+  font-family: var(--font-elegant);
+  font-size: clamp(1rem, 1.65vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.2;
+
+  letter-spacing: clamp(0.06em, 0.25vw, 0.13em);
+
+  color: var(--text);
+}
+
+/* Disciplines ---------------------------------------------- */
+
+.hero-disciplines {
+  margin:
+    clamp(0.45rem, 1vh, 0.8rem) 0 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(0.8rem, 1.05vw, 1rem);
+  font-weight: 500;
+  line-height: 1.1;
+
+  letter-spacing: clamp(0.08em, 0.3vw, 0.18em);
+
+  color: var(--text-soft);
+}
+
+.hero-disciplines span {
+  display: inline-block;
+
+  margin-inline: clamp(0.2rem, 0.55vw, 0.55rem);
+}
+
+/* Corner Illustrations ------------------------------------- */
+
+.hero-corner {
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+
+  display: block;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.hero-corner-left {
+  left: -6rem;
+
+  transform-origin: bottom left;
+  width: clamp(20rem, 40vw, 45rem);
+  height: 50rem;
+}
+
+.hero-corner-right {
+  right: 0;
+
+  transform-origin: bottom right;
+
+  width: clamp(12rem, 25vw, 27rem);
+  max-height: 72svh;
+}
+
+.hero-corner.hide {
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(1rem);
+}
+
+/* Hero Scroll Actions -------------------------------------- */
+
+.hero-scroll-actions {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(0.8rem, 3vh, 2.2rem);
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.25rem, 0.8vh, 0.55rem);
+
+  transform: translateX(-50%);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.hero-scroll-actions.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, 1rem);
+}
+
+/* Scroll Button -------------------------------------------- */
+
+.scroll-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: clamp(0.78rem, 0.95vw, 1rem);
+  font-weight: 600;
+  line-height: 1;
+
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  animation: scrollFloat 1.8s ease-in-out infinite;
+
+  transition:
+    opacity 0.25s ease,
+    letter-spacing 0.25s ease;
+}
+
+.scroll-button:hover,
+.scroll-button:focus-visible {
+  opacity: 0.55;
+  letter-spacing: 0.09em;
+}
+
+.scroll-button:focus-visible {
+  outline: 0.1rem solid currentColor;
+  outline-offset: 0.35rem;
+}
+
+.scroll-arrow {
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  line-height: 1;
+}
+
+/* Bio Paint Swatch ----------------------------------------- */
+
+.bio-swatch-btn {
+  position: relative;
+
+  display: inline-block;
+
+  width: clamp(7.5rem, 9vw, 9.5rem);
+  aspect-ratio: 3 / 1;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.bio-swatch {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: opacity 0.3s ease;
+}
+
+.bio-swatch-purple {
+  opacity: 1;
+}
+
+.bio-swatch-yellow {
+  opacity: 0;
+}
+
+.bio-swatch-btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+
+  width: 60%;
+
+  transform: translate(-50%, -50%);
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: clamp(0.82rem, 0.95vw, 1rem);
+  font-weight: 600;
+  line-height: 1;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.bio-swatch-btn:hover,
+.bio-swatch-btn:focus-visible {
+  transform: scale(1.06);
+
+  filter:
+    drop-shadow(0 0.45rem 0.4rem rgb(0 0 0 / 18%));
+}
+
+.bio-swatch-btn:focus-visible {
+  outline: 0.1rem solid var(--text);
+  outline-offset: 0.25rem;
+}
+
+.bio-swatch-btn:hover .bio-swatch-purple,
+.bio-swatch-btn:focus-visible .bio-swatch-purple {
+  opacity: 0;
+}
+
+.bio-swatch-btn:hover .bio-swatch-yellow,
+.bio-swatch-btn:focus-visible .bio-swatch-yellow {
+  opacity: 1;
+}
+
+/* Artist Plaque -------------------------------------------- */
+
+.hero-plaque {
+  position: absolute;
+  left: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1rem, 3vh, 2rem);
+  z-index: 20;
+
+  width: min(25rem, calc(100vw - 2rem));
+  padding:
+    clamp(1rem, 2vw, 1.4rem) clamp(1.15rem, 2.5vw, 1.8rem);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+
+  background: var(--surface);
+  backdrop-filter: blur(1rem);
+
+  border: 0.06rem solid var(--border-light);
+  box-shadow: var(--shadow-frame);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(1.5rem);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.hero-plaque.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.hero-plaque h2 {
+  margin: 0 0 0.35rem;
+
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 800;
+}
+
+.hero-plaque p {
+  max-width: 42rem;
+
+  margin: 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.25;
+
+  color: var(--text-soft);
+}
+
+/* About Paint Swatch --------------------------------------- */
+
+.paint-about-btn {
+  position: relative;
+
+  display: inline-block;
+  flex: 0 0 auto;
+
+  width: clamp(8rem, 13vw, 12rem);
+  aspect-ratio: 1 / 1;
+
+  text-decoration: none;
+
+  animation: aboutFloat 2.8s ease-in-out infinite;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.about-swatch {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: opacity 0.3s ease;
+}
+
+.about-basic {
+  opacity: 1;
+}
+
+.about-colour {
+  opacity: 0;
+}
+
+.paint-about-btn span {
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  z-index: 5;
+
+  width: 58%;
+
+  transform: translate(-50%, -50%);
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: clamp(0.82rem, 1vw, 1rem);
+  font-weight: 600;
+  line-height: 0.95;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.paint-about-btn:hover,
+.paint-about-btn:focus-visible {
+  animation-play-state: paused;
+
+  transform: translateY(-0.25rem) scale(1.08);
+
+  filter:
+    drop-shadow(0 0.45rem 0.35rem rgb(0 0 0 / 18%));
+}
+
+.paint-about-btn:hover .about-basic,
+.paint-about-btn:focus-visible .about-basic {
+  opacity: 0;
+}
+
+.paint-about-btn:hover .about-colour,
+.paint-about-btn:focus-visible .about-colour {
+  opacity: 1;
+}
+
+/* Medium Screens ------------------------------------------- */
+
+@media (max-width: 64rem) {
+  .hero-text {
+    top: 43%;
+  }
+
+  .hero-corner {
+    width: clamp(11rem, 27vw, 21rem);
+    opacity: 0.88;
+  }
+
+  .hero-plaque {
+    width: min(23rem, calc(100vw - 2rem));
+  }
+
+  .paint-about-btn {
+    width: clamp(7.5rem, 14vw, 10rem);
+  }
+}
+
+/* Mobile --------------------------------------------------- */
+
+@media (max-width: 45rem) {
+  .sequence-section {
+    height: 155svh;
+  }
+
+  .hero-text {
+    top: 39%;
+
+    width: calc(100vw - 1.5rem);
+  }
+
+  .hero-signature {
+    width: min(94vw, 31rem);
+  }
+
+  .hero-role {
+    max-width: 92%;
+
+    font-size: clamp(0.85rem, 3.7vw, 1.05rem);
+    letter-spacing: 0.06em;
+  }
+
+  .hero-disciplines {
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    letter-spacing: 0.09em;
+  }
+
+  .hero-disciplines span {
+    margin-inline: clamp(0.1rem, 1vw, 0.3rem);
+  }
+
+  .hero-corner {
+    width: clamp(8.5rem, 38vw, 14rem);
+    max-height: 42svh;
+
+    opacity: 0.75;
+  }
+
+  .hero-scroll-actions {
+    bottom: clamp(0.65rem, 2vh, 1rem);
+  }
+
+  .bio-swatch-btn {
+    width: clamp(6.25rem, 24vw, 7.5rem);
+  }
+
+  .hero-plaque {
+    left: 1rem;
+    bottom: 1rem;
+
+    width: calc(100vw - 2rem);
+    padding: 1rem 1.15rem;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .paint-about-btn {
+    width: clamp(7rem, 26vw, 8.5rem);
+  }
+}
+
+/* Very Small Screens --------------------------------------- */
+
+@media (max-width: 30rem) {
+  .hero-text {
+    top: 37%;
+  }
+
+  .hero-corner {
+    width: clamp(7rem, 35vw, 10rem);
+  }
+
+  .hero-role {
+    max-width: 88%;
+  }
+}
+
+/* Short Screens -------------------------------------------- */
+
+@media (max-height: 42rem) and (min-width: 45.01rem) {
+  .hero-text {
+    top: 42%;
+  }
+
+  .hero-signature {
+    width: clamp(18rem, 39vw, 34rem);
+  }
+
+  .hero-role {
+    margin-top: 0.15rem;
+  }
+
+  .hero-disciplines {
+    margin-top: 0.35rem;
+  }
+
+  .hero-scroll-actions {
+    bottom: 0.5rem;
+  }
+
+  .hero-corner {
+    max-height: 58svh;
+  }
+}
+
+/* Reduced Motion ------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #homepage,
+  .hero-text,
+  .hero-scroll-actions,
+  .hero-plaque,
+  .bio-swatch-btn,
+  .bio-swatch,
+  .paint-about-btn,
+  .about-swatch {
+    transition-duration: 0.01ms;
+  }
+
+  .scroll-button,
+  .paint-about-btn {
+    animation: none;
+  }
+}
+
+/* Animations ----------------------------------------------- */
+
+@keyframes scrollFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.35rem);
+  }
+}
+
+@keyframes aboutFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.3rem);
+  }
+}

@@ -1,0 +1,722 @@
+/* ==========================================================
+   SKYCONNECT — CURATED DESIGNER WORKSPACE
+   Project-specific layout only
+========================================================== */
+
+
+/* Main Board ---------------------------------------------- */
+
+.skyconnect-board {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2.2vw, 2rem);
+  row-gap: clamp(3.5rem, 7vw, 6rem);
+
+  width: min(100%, 76rem);
+  min-height: auto;
+
+  margin-inline: auto;
+
+  padding:
+    clamp(2rem, 5vw, 5rem)
+    clamp(1rem, 3vw, 3rem)
+    clamp(6rem, 10vw, 10rem);
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  overflow: visible;
+}
+
+
+/* Reset Old Absolute Layout ------------------------------- */
+
+.skyconnect-board > * {
+  position: relative;
+  inset: auto;
+
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.skyconnect-board .board-paper,
+.skyconnect-board .board-sticky,
+.skyconnect-board .board-media,
+.skyconnect-board .board-polaroid {
+  position: relative;
+  inset: auto;
+}
+
+
+/* Typography ---------------------------------------------- */
+
+.skyconnect-board h2,
+.skyconnect-board h3,
+.skyconnect-board p,
+.skyconnect-board ul,
+.skyconnect-board figure {
+  margin-top: 0;
+}
+
+.skyconnect-board h3 {
+  margin-bottom: clamp(.7rem, 1.5vw, 1rem);
+
+  font-family: var(--font-elegant);
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--text);
+}
+
+.skyconnect-board p,
+.skyconnect-board li,
+.skyconnect-board figcaption {
+  font-family: var(--font-main);
+  font-size: clamp(.78rem, 1vw, .92rem);
+  line-height: 1.7;
+
+  color: rgba(36, 36, 36, .76);
+}
+
+
+/* Header -------------------------------------------------- */
+
+.skyconnect-heading {
+  grid-column: 1 / 10;
+
+  width: min(100%, 48rem);
+  margin: 0;
+  padding-top: clamp(1rem, 3vw, 2.5rem);
+
+  z-index: 5;
+}
+
+.skyconnect-heading .board-eyebrow {
+  margin: 0 0 .8rem;
+
+  font-family: var(--font-main);
+  font-size: clamp(.62rem, .8vw, .72rem);
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  color: var(--text);
+}
+
+.skyconnect-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(3.8rem, 8vw, 7.5rem);
+  font-weight: 500;
+  line-height: .82;
+
+  color: var(--text);
+}
+
+.skyconnect-heading .board-subtitle {
+  width: min(100%, 37rem);
+
+  margin: clamp(1.2rem, 2vw, 1.7rem) 0 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  line-height: 1.45;
+
+  color: rgba(36, 36, 36, .72);
+}
+
+
+/* Award --------------------------------------------------- */
+
+.skyconnect-award {
+  grid-column: 10 / 13;
+  grid-row: 1;
+
+  justify-self: end;
+  align-self: start;
+
+  display: block;
+
+  width: clamp(6rem, 10vw, 9rem);
+  max-width: 100%;
+
+  margin:
+    clamp(1rem, 3vw, 2.5rem)
+    clamp(.5rem, 2vw, 1.5rem)
+    0
+    0;
+
+  transform: rotate(2deg);
+
+  filter:
+    drop-shadow(0 .8rem 1rem rgba(0, 0, 0, .13));
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.skyconnect-award:hover {
+  transform:
+    rotate(0)
+    translateY(-.2rem)
+    scale(1.025);
+}
+
+
+/* Shared SkyConnect Surfaces ------------------------------ */
+
+.skyconnect-board .board-paper {
+  padding: clamp(1.4rem, 2.2vw, 2rem);
+
+  background: rgba(255, 255, 255, .96);
+  border: .06rem solid var(--border-light);
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .055);
+
+  transform: none;
+}
+
+.skyconnect-board .board-media {
+  margin: 0;
+  padding: clamp(.65rem, 1vw, .9rem);
+
+  background: var(--white);
+  border: .06rem solid var(--border-light);
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .06);
+
+  transform: none;
+}
+
+.skyconnect-board .board-polaroid {
+  margin: 0;
+
+  background: transparent;
+
+  transform: none;
+}
+
+.skyconnect-board .board-media img,
+.skyconnect-board .board-media video {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.skyconnect-board .board-media video {
+  background: var(--text);
+}
+
+.skyconnect-board .board-media figcaption {
+  max-width: 60ch;
+
+  margin:
+    clamp(.75rem, 1.3vw, 1rem)
+    auto
+    .15rem;
+
+  padding-inline: clamp(.2rem, 1vw, .7rem);
+}
+
+
+/* Remove Excessive Hover Movement ------------------------- */
+
+.skyconnect-board .board-paper:hover,
+.skyconnect-board .board-media:hover,
+.skyconnect-board .board-polaroid:hover,
+.skyconnect-board .board-sticky:hover {
+  z-index: 10;
+
+  transform: translateY(-.2rem);
+}
+
+
+/* Overview + Presentation --------------------------------- */
+
+.board-overview-note {
+  grid-column: 1 / 6;
+  grid-row: 2;
+
+  align-self: start;
+
+  width: 100%;
+
+  transform: none;
+}
+
+.board-presentation {
+  grid-column: 6 / 13;
+  grid-row: 2;
+
+  align-self: start;
+
+  width: 100%;
+
+  transform: none;
+}
+
+
+/* Photo Story --------------------------------------------- */
+
+.board-presenting,
+.board-winning,
+.board-networking {
+  grid-row: 3;
+
+  width: 100%;
+  align-self: start;
+}
+
+.board-presenting {
+  grid-column: 1 / 5;
+
+  transform: rotate(-1.5deg);
+}
+
+.board-winning {
+  grid-column: 5 / 9;
+
+  margin-top: clamp(1rem, 3vw, 2.25rem);
+
+  transform: rotate(.8deg);
+}
+
+.board-networking {
+  grid-column: 9 / 13;
+
+  transform: rotate(1.3deg);
+}
+
+.skyconnect-board .board-polaroid img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  filter:
+    drop-shadow(0 .9rem 1.15rem rgba(0, 0, 0, .12));
+}
+
+
+/* Role + Prototype ---------------------------------------- */
+
+.board-role-note {
+  grid-column: 1 / 6;
+  grid-row: 4;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.board-role-note ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.board-prototype {
+  grid-column: 6 / 13;
+  grid-row: 4;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Process + Challenge ------------------------------------- */
+
+.board-process-note {
+  grid-column: 1 / 9;
+  grid-row: 5;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.board-challenges-note {
+  grid-column: 9 / 13;
+  grid-row: 5;
+
+  position: relative;
+
+  width: 100%;
+  align-self: start;
+
+  padding: clamp(1.3rem, 2vw, 1.8rem);
+
+  background: #fff0a8;
+
+  box-shadow:
+    0 .1rem .2rem rgba(36, 36, 36, .05),
+    0 1rem 2rem rgba(0, 0, 0, .075);
+
+  transform: rotate(1.3deg);
+}
+
+
+/* Reflection + Tools -------------------------------------- */
+
+.board-reflection-note {
+  grid-column: 1 / 8;
+  grid-row: 6;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.board-tools-note {
+  grid-column: 8 / 13;
+  grid-row: 6;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Tools --------------------------------------------------- */
+
+.skyconnect-board .board-tool-list {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: clamp(.6rem, 1.3vw, 1rem);
+
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.skyconnect-board .board-tool-list figure {
+  min-width: 0;
+  margin: 0;
+
+  text-align: center;
+}
+
+.skyconnect-board .board-tool-list img {
+  display: block;
+
+  width: 100%;
+  max-width: 5rem;
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  object-fit: contain;
+}
+
+.skyconnect-board .board-tool-list figcaption {
+  margin-top: .4rem;
+  margin-bottom: 0;
+
+  font-size: clamp(.6rem, .8vw, .7rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* Credits ------------------------------------------------- */
+
+.board-credits-note {
+  grid-column: 3 / 11;
+  grid-row: 7;
+
+  width: 100%;
+  align-self: start;
+
+  padding-block: clamp(1.3rem, 2vw, 1.8rem);
+
+  text-align: center;
+
+  transform: none;
+}
+
+
+/* Restrained Decorations ---------------------------------- */
+
+/*
+Only the overview keeps tape.
+The role keeps a paperclip.
+The challenge remains a sticky note.
+The reflection keeps one pin.
+Everything else stays clean.
+*/
+
+.skyconnect-board .board-presentation .board-pin,
+.skyconnect-board .board-prototype .board-tape,
+.skyconnect-board .board-reflection-note .board-pin {
+  display: none;
+}
+
+.skyconnect-board .board-overview-note .board-tape {
+  display: block;
+
+  width: clamp(4rem, 7vw, 5.5rem);
+  height: 1.5rem;
+
+  opacity: .72;
+
+  transform:
+    translateX(-50%)
+    rotate(-1deg);
+}
+
+.skyconnect-board .board-role-note .board-paperclip {
+  display: block;
+
+  opacity: .65;
+
+  transform: rotate(4deg);
+}
+
+
+/* Slight Connection Between Photos ------------------------ */
+
+.board-presenting::after,
+.board-winning::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: clamp(-1.3rem, -1.7vw, -.7rem);
+  z-index: -1;
+
+  width: clamp(1.4rem, 2.3vw, 2.4rem);
+  height: .06rem;
+
+  background: rgba(36, 36, 36, .15);
+}
+
+
+/* Left Preview Artwork ------------------------------------ */
+.design-board-preview-art .skyconnect-exhibit {
+    width: min(100%, 20rem);
+    height: clamp(17rem, 46vh, 28rem);
+
+    margin-inline: auto;
+
+    transform: none;
+}
+.design-board-preview-art .skyconnect-artwork {
+  top: 1%;
+  right: 10%;
+  bottom: 10%;
+}
+
+
+
+/* Medium Screens ------------------------------------------ */
+
+@media (max-width: 72rem) {
+
+  .skyconnect-board {
+    row-gap: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .board-overview-note {
+    grid-column: 1 / 7;
+  }
+
+  .board-presentation {
+    grid-column: 7 / 13;
+  }
+
+  .board-role-note {
+    grid-column: 1 / 7;
+  }
+
+  .board-prototype {
+    grid-column: 7 / 13;
+  }
+
+  .board-process-note {
+    grid-column: 1 / 9;
+  }
+
+  .board-challenges-note {
+    grid-column: 9 / 13;
+  }
+}
+
+
+/* Tablet -------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+  .skyconnect-board {
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(2rem, 6vw, 3.5rem);
+
+    width: 100%;
+
+    padding:
+      5rem
+      0
+      4rem;
+  }
+
+  .skyconnect-board > *,
+  .skyconnect-board .board-paper,
+  .skyconnect-board .board-sticky,
+  .skyconnect-board .board-media,
+  .skyconnect-board .board-polaroid {
+    position: relative;
+    inset: auto;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    transform: none;
+  }
+
+  .skyconnect-heading {
+    order: 1;
+    padding-top: 0;
+  }
+
+  .skyconnect-award {
+    order: 2;
+
+    align-self: flex-end;
+
+    width: clamp(6rem, 18vw, 8rem);
+    margin:
+      -2.5rem
+      1rem
+      0
+      0;
+
+    transform: rotate(2deg);
+  }
+
+  .board-overview-note {
+    order: 3;
+  }
+
+  .board-presentation {
+    order: 4;
+  }
+
+  .board-presenting {
+    order: 5;
+
+    transform: rotate(-1deg);
+  }
+
+  .board-winning {
+    order: 6;
+
+    transform: rotate(.8deg);
+  }
+
+  .board-networking {
+    order: 7;
+
+    transform: rotate(-.6deg);
+  }
+
+  .board-role-note {
+    order: 8;
+  }
+
+  .board-prototype {
+    order: 9;
+  }
+
+  .board-process-note {
+    order: 10;
+  }
+
+  .board-challenges-note {
+    order: 11;
+
+    width: min(92%, 32rem);
+    align-self: center;
+
+    transform: rotate(1deg);
+  }
+
+  .board-reflection-note {
+    order: 12;
+  }
+
+  .board-tools-note {
+    order: 13;
+  }
+
+  .board-credits-note {
+    order: 14;
+  }
+
+  .board-presenting::after,
+  .board-winning::after {
+    display: none;
+  }
+
+  .skyconnect-board .board-paper:hover,
+  .skyconnect-board .board-media:hover,
+  .skyconnect-board .board-polaroid:hover,
+  .skyconnect-board .board-sticky:hover {
+    transform: translateY(-.15rem);
+  }
+}
+
+
+/* Small Mobile -------------------------------------------- */
+
+@media (max-width: 34rem) {
+
+  .skyconnect-board {
+    gap: 1.75rem;
+
+    padding-top: 4.5rem;
+  }
+
+  .skyconnect-heading h2 {
+    font-size: clamp(3.2rem, 18vw, 4.5rem);
+  }
+
+  .skyconnect-heading .board-subtitle {
+    font-size: 1rem;
+  }
+
+  .skyconnect-board .board-paper,
+  .skyconnect-board .board-sticky {
+    padding: 1.2rem;
+  }
+
+  .skyconnect-board .board-tool-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+  }
+
+  .skyconnect-award {
+    margin-top: -1.5rem;
+  }
+}

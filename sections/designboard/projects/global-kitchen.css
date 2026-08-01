@@ -1,0 +1,849 @@
+/* ==========================================================
+   GLOBAL KITCHEN RUSH — CURATED DESIGNER WORKSPACE
+   Project-specific layout only
+========================================================== */
+
+
+/* Main Board ---------------------------------------------- */
+
+.global-kitchen-board {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2.2vw, 2rem);
+  row-gap: clamp(3.5rem, 7vw, 6rem);
+
+  width: min(100%, 76rem);
+  min-height: auto;
+
+  margin-inline: auto;
+
+  padding:
+    clamp(2rem, 5vw, 5rem)
+    clamp(1rem, 3vw, 3rem)
+    clamp(6rem, 10vw, 10rem);
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  overflow: visible;
+}
+
+
+/* Reset Old Absolute Layout ------------------------------- */
+
+.global-kitchen-board > * {
+  position: relative;
+  inset: auto;
+
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.global-kitchen-board .board-paper,
+.global-kitchen-board .board-sticky,
+.global-kitchen-board .board-media,
+.global-kitchen-board .board-polaroid {
+  position: relative;
+  inset: auto;
+}
+
+
+/* Typography ---------------------------------------------- */
+
+.global-kitchen-board h2,
+.global-kitchen-board h3,
+.global-kitchen-board p,
+.global-kitchen-board ul,
+.global-kitchen-board figure {
+  margin-top: 0;
+}
+
+.global-kitchen-board h3 {
+  margin-bottom: clamp(.7rem, 1.5vw, 1rem);
+
+  font-family: var(--font-elegant);
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--text);
+}
+
+.global-kitchen-board p,
+.global-kitchen-board li,
+.global-kitchen-board figcaption {
+  font-family: var(--font-main);
+  font-size: clamp(.78rem, 1vw, .92rem);
+  line-height: 1.7;
+
+  color: rgba(36, 36, 36, .76);
+}
+
+
+/* Header -------------------------------------------------- */
+
+.global-kitchen-heading {
+  grid-column: 1 / 10;
+
+  width: min(100%, 50rem);
+  margin: 0;
+  padding-top: clamp(1rem, 3vw, 2.5rem);
+
+  z-index: 5;
+}
+
+.global-kitchen-heading .board-eyebrow {
+  margin: 0 0 .8rem;
+
+  font-family: var(--font-main);
+  font-size: clamp(.62rem, .8vw, .72rem);
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  color: var(--text);
+}
+
+.global-kitchen-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(3.4rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: .86;
+
+  color: var(--text);
+}
+
+.global-kitchen-heading .board-subtitle {
+  width: min(100%, 38rem);
+
+  margin: clamp(1.2rem, 2vw, 1.7rem) 0 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  line-height: 1.45;
+
+  color: rgba(36, 36, 36, .72);
+}
+
+
+/* Flags --------------------------------------------------- */
+
+.kitchen-flag {
+  position: absolute;
+  z-index: 8;
+
+  display: block;
+
+  width: clamp(3.5rem, 6vw, 5.5rem);
+  height: auto;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(0 .6rem .7rem rgba(0, 0, 0, .1));
+}
+
+.kitchen-flag--qatar {
+  top: clamp(4.5rem, 8vw, 7rem);
+  right: clamp(10rem, 18vw, 15rem);
+
+  transform: rotate(-2deg);
+}
+
+.kitchen-flag--uae {
+  top: clamp(5rem, 9vw, 8rem);
+  right: clamp(3rem, 7vw, 6rem);
+
+  transform: rotate(2deg);
+}
+
+.kitchen-flag--tunisia {
+  top: clamp(9rem, 14vw, 12rem);
+  right: clamp(6rem, 11vw, 9rem);
+
+  transform: rotate(-1deg);
+}
+
+
+/* Shared Global Kitchen Surfaces -------------------------- */
+
+.global-kitchen-board .board-paper {
+  padding: clamp(1.4rem, 2.2vw, 2rem);
+
+  background: rgba(255, 255, 255, .96);
+  border: .06rem solid var(--border-light);
+
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .055);
+
+  transform: none;
+}
+
+.global-kitchen-board .board-media {
+  margin: 0;
+  padding: clamp(.65rem, 1vw, .9rem);
+
+  background: var(--white);
+  border: .06rem solid var(--border-light);
+
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .06);
+
+  transform: none;
+}
+
+.global-kitchen-board .board-polaroid {
+  margin: 0;
+
+  background: transparent;
+
+  transform: none;
+}
+
+.global-kitchen-board .board-media img,
+.global-kitchen-board .board-media video {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.global-kitchen-board .board-media video {
+  background: var(--text);
+}
+
+.global-kitchen-board .board-media figcaption {
+  max-width: 60ch;
+
+  margin:
+    clamp(.75rem, 1.3vw, 1rem)
+    auto
+    .15rem;
+
+  padding-inline: clamp(.2rem, 1vw, .7rem);
+}
+
+
+/* Restrained Hover Movement ------------------------------- */
+
+.global-kitchen-board .board-paper:hover,
+.global-kitchen-board .board-media:hover,
+.global-kitchen-board .board-polaroid:hover,
+.global-kitchen-board .board-sticky:hover {
+  z-index: 10;
+
+  transform: translateY(-.2rem);
+}
+
+
+/* Overview + Gameplay ------------------------------------- */
+
+.kitchen-overview-note {
+  grid-column: 1 / 6;
+  grid-row: 2;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.kitchen-gameplay-gif {
+  grid-column: 6 / 13;
+  grid-row: 2;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Game Photo + Role --------------------------------------- */
+
+.kitchen-game-polaroid {
+  grid-column: 1 / 6;
+  grid-row: 3;
+
+  width: 100%;
+  align-self: start;
+
+  transform: rotate(-1.2deg);
+}
+
+.kitchen-role-note {
+  grid-column: 6 / 13;
+  grid-row: 3;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.kitchen-role-note ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+
+/* Recipe System + Game Scene ------------------------------ */
+
+.kitchen-recipe-system {
+  grid-column: 1 / 9;
+  grid-row: 4;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.kitchen-game-scene {
+  grid-column: 9 / 13;
+  grid-row: 4;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Meals + Process ----------------------------------------- */
+
+.kitchen-meals-note {
+  grid-column: 1 / 5;
+  grid-row: 5;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+.kitchen-process-note {
+  grid-column: 5 / 13;
+  grid-row: 5;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Brochure + Explanation Video ---------------------------- */
+
+.kitchen-recipe-brochure {
+  grid-column: 1 / 5;
+  grid-row: 6;
+
+  width: 100%;
+  align-self: start;
+
+  transform: rotate(-1deg);
+}
+
+.kitchen-explanation-video {
+  grid-column: 5 / 13;
+  grid-row: 6;
+
+  width: 100%;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Challenge + Reflection + Tools -------------------------- */
+
+.kitchen-challenges-note {
+  grid-column: 1 / 5;
+  grid-row: 7;
+
+  position: relative;
+
+  width: 100%;
+  height: fit-content;
+  align-self: start;
+
+  padding: clamp(1.3rem, 2vw, 1.8rem);
+
+  background: #fff0a8;
+
+  box-shadow:
+    0 .1rem .2rem rgba(36, 36, 36, .05),
+    0 1rem 2rem rgba(0, 0, 0, .075);
+
+  transform: rotate(1deg);
+}
+
+.kitchen-reflection-note {
+  grid-column: 5 / 9;
+  grid-row: 7;
+
+  width: 100%;
+  height: fit-content;
+  align-self: start;
+
+  transform: none;
+}
+
+.kitchen-tools-note {
+  grid-column: 9 / 13;
+  grid-row: 7;
+
+  width: 100%;
+  height: fit-content;
+  align-self: start;
+
+  transform: none;
+}
+
+
+/* Credits ------------------------------------------------- */
+
+.kitchen-credits-note {
+  grid-column: 3 / 11;
+  grid-row: 8;
+
+  width: 100%;
+  align-self: start;
+
+  padding-block: clamp(1.3rem, 2vw, 1.8rem);
+
+  text-align: center;
+
+  transform: none;
+}
+
+
+/* Recipe Equation ----------------------------------------- */
+
+.kitchen-recipe-equation {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1.2fr);
+
+  align-items: center;
+
+  gap: clamp(.3rem, 1vw, .8rem);
+
+  margin-top: 1.2rem;
+}
+
+.kitchen-recipe-equation figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.kitchen-recipe-equation img {
+  display: block;
+
+  width: 100%;
+  max-width: 7rem;
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  object-fit: contain;
+}
+
+.kitchen-recipe-equation > span {
+  font-family: var(--font-elegant);
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 600;
+}
+
+
+/* Meals --------------------------------------------------- */
+
+.kitchen-meal-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: .8rem;
+
+  margin-top: 1rem;
+}
+
+.kitchen-meal-list figure {
+  margin: 0;
+
+  text-align: center;
+}
+
+.kitchen-meal-list img {
+  display: block;
+
+  width: 100%;
+  max-width: 8rem;
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  object-fit: contain;
+}
+
+.kitchen-meal-list figcaption {
+  margin-top: .4rem;
+  margin-bottom: 0;
+
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* Tools --------------------------------------------------- */
+
+.global-kitchen-board .board-tool-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  align-items: start;
+
+  gap: clamp(.6rem, 1.3vw, 1rem);
+
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.global-kitchen-board .board-tool-list figure {
+  min-width: 0;
+  margin: 0;
+
+  text-align: center;
+}
+
+.global-kitchen-board .board-tool-list img {
+  display: block;
+
+  width: 100%;
+  max-width: 5rem;
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  object-fit: contain;
+}
+
+.global-kitchen-board .board-tool-list figcaption {
+  margin-top: .4rem;
+  margin-bottom: 0;
+
+  font-size: clamp(.6rem, .8vw, .7rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* Restrained Decorations ---------------------------------- */
+
+.global-kitchen-board .kitchen-gameplay-gif .board-pin,
+.global-kitchen-board .kitchen-game-scene .board-pin,
+.global-kitchen-board .kitchen-explanation-video .board-pin {
+  display: none;
+}
+
+.global-kitchen-board .kitchen-overview-note .board-tape {
+  display: block;
+
+  width: clamp(4rem, 7vw, 5.5rem);
+  height: 1.5rem;
+
+  opacity: .72;
+
+  transform:
+    translateX(-50%)
+    rotate(-1deg);
+}
+
+.global-kitchen-board .kitchen-role-note .board-paperclip {
+  display: block;
+
+  opacity: .65;
+
+  transform: rotate(4deg);
+}
+
+
+/* Polaroid Image ------------------------------------------ */
+
+.global-kitchen-board .board-polaroid img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  filter:
+    drop-shadow(0 .9rem 1.15rem rgba(0, 0, 0, .12));
+}
+
+
+/* Left Preview Artwork ------------------------------------ */
+
+.design-board-preview-art .global-kitchen-exhibit {
+  width: min(92%, 25rem);
+  height: auto;
+  aspect-ratio: 1.65 / 1;
+
+  margin-inline: auto;
+
+  transform: none !important;
+}
+
+.design-board-preview-art .global-kitchen-artwork {
+  position: absolute;
+
+  inset: 0;
+
+  width: 40rem;
+  height: 10rem;
+
+  top: 1rem;
+  left: -10rem;
+}
+
+.design-board-preview-art
+.global-kitchen-artwork
+.project-media,
+.design-board-preview-art
+.global-kitchen-exhibit
+.project-media {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.design-board-preview-art
+.global-kitchen-exhibit:hover
+.global-kitchen-artwork,
+.design-board-preview-art
+.global-kitchen-exhibit:focus-visible
+.global-kitchen-artwork {
+  transform: none !important;
+}
+
+
+/* Medium Screens ------------------------------------------ */
+
+@media (max-width: 72rem) {
+
+  .global-kitchen-board {
+    row-gap: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .kitchen-overview-note {
+    grid-column: 1 / 7;
+  }
+
+  .kitchen-gameplay-gif {
+    grid-column: 7 / 13;
+  }
+
+  .kitchen-game-polaroid {
+    grid-column: 1 / 6;
+  }
+
+  .kitchen-role-note {
+    grid-column: 6 / 13;
+  }
+
+  .kitchen-recipe-system {
+    grid-column: 1 / 8;
+  }
+
+  .kitchen-game-scene {
+    grid-column: 8 / 13;
+  }
+
+  .kitchen-challenges-note {
+    grid-column: 1 / 5;
+  }
+
+  .kitchen-reflection-note {
+    grid-column: 5 / 9;
+  }
+
+  .kitchen-tools-note {
+    grid-column: 9 / 13;
+  }
+}
+
+
+/* Tablet -------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+  .global-kitchen-board {
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(2rem, 6vw, 3.5rem);
+
+    width: 100%;
+
+    padding:
+      5rem
+      0
+      4rem;
+  }
+
+  .global-kitchen-board > *,
+  .global-kitchen-board .board-paper,
+  .global-kitchen-board .board-sticky,
+  .global-kitchen-board .board-media,
+  .global-kitchen-board .board-polaroid {
+    position: relative;
+    inset: auto;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    transform: none;
+  }
+
+  .global-kitchen-heading {
+    order: 1;
+
+    padding-top: 0;
+  }
+
+  .kitchen-overview-note {
+    order: 2;
+  }
+
+  .kitchen-gameplay-gif {
+    order: 3;
+  }
+
+  .kitchen-game-polaroid {
+    order: 4;
+
+    transform: rotate(-1deg);
+  }
+
+  .kitchen-role-note {
+    order: 5;
+  }
+
+  .kitchen-recipe-system {
+    order: 6;
+  }
+
+  .kitchen-game-scene {
+    order: 7;
+  }
+
+  .kitchen-meals-note {
+    order: 8;
+  }
+
+  .kitchen-process-note {
+    order: 9;
+  }
+
+  .kitchen-recipe-brochure {
+    order: 10;
+
+    transform: rotate(-.8deg);
+  }
+
+  .kitchen-explanation-video {
+    order: 11;
+  }
+
+  .kitchen-challenges-note {
+    order: 12;
+
+    width: min(92%, 32rem);
+    align-self: center;
+
+    transform: rotate(1deg);
+  }
+
+  .kitchen-reflection-note {
+    order: 13;
+  }
+
+  .kitchen-tools-note {
+    order: 14;
+  }
+
+  .kitchen-credits-note {
+    order: 15;
+  }
+
+  .kitchen-flag {
+    display: none;
+  }
+
+  .global-kitchen-board .board-paper:hover,
+  .global-kitchen-board .board-media:hover,
+  .global-kitchen-board .board-polaroid:hover,
+  .global-kitchen-board .board-sticky:hover {
+    transform: translateY(-.15rem);
+  }
+}
+
+
+/* Small Mobile -------------------------------------------- */
+
+@media (max-width: 34rem) {
+
+  .global-kitchen-board {
+    gap: 1.75rem;
+
+    padding-top: 4.5rem;
+  }
+
+  .global-kitchen-heading h2 {
+    font-size: clamp(3rem, 17vw, 4.4rem);
+  }
+
+  .global-kitchen-heading .board-subtitle {
+    font-size: 1rem;
+  }
+
+  .global-kitchen-board .board-paper,
+  .global-kitchen-board .board-sticky {
+    padding: 1.2rem;
+  }
+
+  .global-kitchen-board .board-tool-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+  }
+
+  .kitchen-recipe-equation {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,78 @@
+/* Loading Screen ------------------------------------------- */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 100svh;
+
+  background: white;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#loader-video {
+    display: block;
+
+    width: clamp(30rem, 50vw, 60rem);
+    max-width: calc(200vw - 4rem);
+
+    height: auto;
+
+    object-fit: cover;
+    object-position: center;
+    clip-path: inset(0 15% 0 15%);
+}
+
+#loader-img {
+  display: block;
+
+  width: clamp(19rem, 47vw, 47rem);
+  max-width: calc(100vw - 2rem);
+  height: auto;
+
+  object-fit: contain;
+}
+
+#loader-img {
+  display: none;
+}
+
+#loader-video.hide {
+  display: none;
+}
+
+#loader-img.show {
+  display: block;
+}
+
+/* Mobile --------------------------------------------------- */
+
+@media (max-width: 45rem) {
+  #loader-img {
+    width: min(94vw, 31rem);
+  }
+}
+
+/* Reduced Motion ------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  #loader {
+    transition-duration: 0.01ms;
+  }
+}

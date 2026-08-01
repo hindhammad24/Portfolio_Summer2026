@@ -1,0 +1,507 @@
+/* Studio -------------------------------------------------- */
+.studio-section {
+  min-height: 115vh;
+
+  background:
+    linear-gradient(to bottom,
+      #ffffff 0%,
+      #ffffff 60%,
+      #f7f7f7 75%,
+      #eeeeee 76%,
+      #ffffff 100%);
+}
+
+.studio-room {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.studio-intro {
+  position: absolute;
+  left: 4%;
+  top: 7%;
+  z-index: 5;
+
+  width: min(24rem, 28vw);
+  pointer-events: none;
+}
+
+.studio-intro p {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+.studio-intro h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: .88;
+  letter-spacing: -.08em;
+}
+
+.studio-intro span {
+  display: block;
+  margin-top: 1.2rem;
+  max-width: 18rem;
+
+  font-family: var(--font-elegant);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+
+/* Desk*/
+.desk-group {
+  position: absolute;
+  width: 35%;
+  left: 48%;
+  bottom: -5%;
+  transform:
+    translateX(-50%) translateX(var(--studio-desk-shift, 0vw));
+
+  transition: transform .08s linear;
+}
+
+.desk-image {
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+/* lamp*/
+.studio-lamp {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom: 48%;
+  z-index: 2;
+}
+
+/* Canvas*/
+.studio-canvas {
+  position: absolute;
+  width: 65%;
+  right: 75%;
+  bottom: 12%;
+  border: 0;
+  background: transparent;
+  z-index: 3;
+}
+
+.studio-canvas img {
+  width: 100%;
+  display: block;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.studio-canvas:hover img {
+  transform: scale(1.03);
+  filter: drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/* board*/
+.studio-board {
+  position: absolute;
+  width: 55%;
+  left: 32.5%;
+  top: -5%;
+  z-index: 10;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: none;
+  z-index: 3;
+}
+
+.studio-board img {
+  width: 100%;
+  display: block;
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.studio-board:hover img {
+  transform: scale(1.03);
+  filter:
+    drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/*laptop*/
+.studio-laptop {
+  position: absolute;
+  width: 20%;
+  left: 50%;
+  bottom: 55%;
+  z-index: 2;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: none;
+}
+
+.studio-laptop img {
+  width: 100%;
+  display: block;
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.studio-laptop:hover img {
+  transform: scale(1.03);
+  filter:
+    drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/*books*/
+.studio-education {
+  position: absolute;
+  width: 25%;
+  left: 95%;
+  bottom: 5%;
+  z-index: 4;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: none;
+}
+
+.studio-education img {
+  width: 100%;
+  display: block;
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.studio-education:hover img {
+  transform: scale(2.5);
+  filter:
+    drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/*chair*/
+.studio-chair {
+  position: absolute;
+  width: 30%;
+  right: 5%;
+  bottom: 15%;
+  z-index: 5;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: none;
+}
+
+.studio-chair img {
+  width: 100%;
+  display: block;
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.studio-chair:hover img {
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/* Art info card */
+.studio-info-card {
+  position: absolute;
+  width: min(22rem, 30vw);
+  right: 4%;
+  top: 12%;
+  padding: clamp(1rem, 1.6vw, 1.4rem);
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(1rem);
+  border: .06rem solid rgba(36, 36, 36, .08);
+  box-shadow: var(--shadow-frame);
+  opacity: 0;
+  transform: translateY(.7rem);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 20;
+}
+
+.studio-info-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.studio-info-card h2 {
+  margin: 0 0 .7rem;
+  font-size: 1.25rem;
+}
+
+.studio-info-card p {
+  margin: 0 0 .55rem;
+  font-family: var(--font-elegant);
+  font-size: clamp(.9rem, 1.1vw, 1.05rem);
+  line-height: 1.25;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.skill-tags span {
+  padding: .45rem .75rem;
+  background: rgba(36, 36, 36, .05);
+  font-family: var(--font-elegant);
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: 999rem;
+}
+
+@media (max-width: 75rem) {
+
+  .studio-section {
+    background:
+      linear-gradient(to bottom,
+        #ffffff 0%,
+        #ffffff 68%,
+        #f7f7f7 78%,
+        #eeeeee 79%,
+        #ffffff 100%);
+  }
+
+  .desk-group {
+    width: 40%;
+  }
+
+
+}
+
+@media (max-width: 48rem) {
+
+  .studio-section {
+    background:
+      linear-gradient(to bottom,
+        #ffffff 0%,
+        #ffffff 68%,
+        #f7f7f7 78%,
+        #eeeeee 79%,
+        #ffffff 100%);
+  }
+
+
+  .desk-group {
+    width: 60%;
+  }
+
+
+}
+
+
+/* Studio object labels ------------------------------------- */
+
+.studio-label {
+  position: absolute;
+  z-index: 15;
+
+  color: #242424;
+
+  font-size: clamp(.62rem, .75vw, .82rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+  pointer-events: none;
+
+  opacity: .7;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+
+/* Laptop label */
+
+.studio-label-laptop {
+  left: 60%;
+  bottom: 68%;
+
+  transform: translateX(-50%);
+}
+
+/* Canvas label */
+
+.studio-label-canvas {
+  right: 93%;
+  bottom: 72%;
+
+  transform: translateX(50%);
+}
+
+/* Board label */
+
+.studio-label-board {
+  left: 60%;
+  top: -7%;
+
+  transform: translateX(-50%);
+}
+
+/* Education label */
+
+.studio-label-education {
+  left: 109%;
+  bottom: 28%;
+
+  transform: translateX(-50%);
+}
+
+/* Chair label */
+
+.studio-label-chair {
+  right: 18%;
+  bottom: 11%;
+
+  transform: translateX(50%);
+}
+
+/* Label hover emphasis */
+
+.desk-group:has(.studio-lamp:hover) .studio-label-lamp,
+.desk-group:has(.studio-laptop:hover) .studio-label-laptop,
+.desk-group:has(.studio-canvas:hover) .studio-label-canvas,
+.desk-group:has(.studio-board:hover) .studio-label-board,
+.desk-group:has(.studio-education:hover) .studio-label-education,
+.desk-group:has(.studio-chair:hover) .studio-label-chair {
+  opacity: 1;
+}
+
+/* Mobile */
+
+@media (max-width: 48rem) {
+  .studio-label {
+    font-size: clamp(.52rem, 1.8vw, .65rem);
+  }
+}
+
+/* Studio direction stand ----------------------------------- */
+
+.studio-direction {
+  position: absolute;
+  right: clamp(4rem, 10vw, 10rem);
+  bottom: 1%;
+  z-index: 12;
+
+  width: clamp(10rem, 20vw, 12rem);
+  aspect-ratio: 1 / 2;
+
+  color: #242424;
+  text-decoration: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform:
+    translateX(var(--studio-sign-shift, 30vw))
+    scale(.96);
+
+  transition:
+    transform .08s linear,
+    opacity .2s ease,
+    visibility .2s ease,
+    filter .25s ease;
+}
+
+.studio-direction.show {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.direction-image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+.direction-normal {
+  opacity: 1;
+}
+
+.direction-hover {
+  opacity: 0;
+}
+
+.studio-direction:hover .direction-normal,
+.studio-direction:focus-visible .direction-normal {
+  opacity: 0;
+}
+
+.studio-direction:hover .direction-hover,
+.studio-direction:focus-visible .direction-hover {
+  opacity: 1;
+}
+
+.studio-direction:hover,
+.studio-direction:focus-visible {
+  filter: drop-shadow(0 .8rem .8rem rgba(0, 0, 0, .15));
+}
+
+.studio-direction:hover .direction-image,
+.studio-direction:focus-visible .direction-image {
+  transform: scale(1.04);
+}
+
+.studio-direction span {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  z-index: 3;
+
+  width: 50%;
+
+  transform: translateX(-50%);
+
+  color: #242424;
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+
+  pointer-events: none;
+}
+
+@media (max-width: 48rem) {
+  .studio-direction {
+    right: 1rem;
+    width: clamp(6rem, 22vw, 8rem);
+  }
+
+  .studio-direction span {
+    font-size: clamp(.6rem, 2.2vw, .8rem);
+  }
+}

@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="global/base.css">
+    <link rel="stylesheet" href="global/navbar.css">
+    <link rel="stylesheet" href="sections/projects/projects.css">
+    <link rel="stylesheet" href="sections/designboard/designboard.css">
+    <link rel="stylesheet" href="sections/designboard/projects/skyconnect.css">
+    <link rel="stylesheet" href="sections/designboard/projects/asa.css">
+    <link rel="stylesheet" href="sections/designboard/projects/automata.css">
+    <link rel="stylesheet" href="sections/designboard/projects/global-kitchen.css">
+    <link rel="stylesheet" href="sections/designboard/projects/tech4ease.css">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+</head>
+
+<body>
+    <!-- Paint Palette Navigation -------------------------------->
+    <nav class="paint-nav" aria-label="Main navigation">
+
+        <!-- Paint swatches -->
+        <div class="paint-nav-swatches" id="paintNavSwatches">
+
+            <a class="paint-swatch paint-swatch-1" href="index.html" aria-label="Home">
+
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt=""
+                    aria-hidden="true">
+
+                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt="" aria-hidden="true">
+
+                <span>Home</span>
+            </a>
+
+            <a class="paint-swatch paint-swatch-2" href="#studio" aria-label="About me">
+
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt=""
+                    aria-hidden="true">
+
+                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="" aria-hidden="true">
+
+                <span>About Me</span>
+            </a>
+
+            <a class="paint-swatch paint-swatch-3" href="projects.html" aria-label="Projects">
+
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt=""
+                    aria-hidden="true">
+
+                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="" aria-hidden="true">
+
+                <span>Projects</span>
+            </a>
+
+            <a class="paint-swatch paint-swatch-4" href="#contact" aria-label="Contact">
+
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt=""
+                    aria-hidden="true">
+
+                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="" aria-hidden="true">
+
+                <span>Contact</span>
+            </a>
+
+        </div>
+
+        <!-- Palette menu button -->
+        <button class="paint-palette-button" id="paintPaletteButton" type="button" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="paintNavSwatches">
+            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp" alt=""
+                aria-hidden="true">
+
+            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp" alt=""
+                aria-hidden="true">
+
+            <span class="visually-hidden">Menu</span>
+        </button>
+
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="project-room" id="projects">
+
+
+        <div class="room-sticky">
+            <h1 class="room-title">Projects</h1>
+            <div class="gallery-window">
+                <div class="gallery-wall-note" aria-hidden="true">
+
+                    <p>Scroll, swipe, or select a paint swatch to explore.</p>
+                </div>
+
+                <div class="gallery-track" id="galleryTrack">
+
+                    <!-- Project 1 ----------------------------------------->
+                    <article class="gallery-exhibit active" data-project="1" data-board="skyconnect"
+                        data-focus-type="gif" data-swatch="blue">
+                        <div class="exhibit-space">
+
+                            <div class="exhibit-visual exhibit-visual--frame skyconnect-exhibit">
+
+                                <div class="skyconnect-artwork">
+                                    <img class="project-media project-media--bw"
+                                        src="assets/projects/skyconnect/catalyst-bw.webp" alt="SkyConnect project">
+
+                                    <img class="project-media project-media--colour"
+                                        src="assets/projects/skyconnect/catalyst-color.webp" alt="" aria-hidden="true">
+
+                                    <img class="project-media project-media--gif"
+                                        src="assets/projects/skyconnect/catalyst-focus.gif" alt="" aria-hidden="true">
+                                </div>
+
+                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp" alt=""
+                                    aria-hidden="true">
+
+
+
+                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp" alt=""
+                                    aria-hidden="true">
+
+                            </div>
+
+                            <div class="plaque">
+                                <p class="project-category">Entrepreneurship · UX Design</p>
+                                <h2>SkyConnect</h2>
+                                <p class="project-description">
+                                    An award-winning SkyTrain concept brought to life through animation,
+                                    storytelling and 3D design.
+                                </p>
+                                <button class="view-project-btn" type="button">
+                                    View More
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Global Kitchen Rush -------------------------->
+                    <article class="gallery-exhibit" data-project="2" data-board="global-kitchen" data-focus-type="gif"
+                        data-swatch="green">
+
+                        <div class="exhibit-space">
+
+                            <div class="exhibit-visual exhibit-visual--frame global-kitchen-exhibit">
+
+                                <div class="global-kitchen-artwork">
+                                    <img class="project-media project-media--bw"
+                                        src="assets/projects/global-kitchen/global-kitchen-bw.webp"
+                                        alt="Global Kitchen Rush cooking game">
+
+                                    <img class="project-media project-media--gif"
+                                        src="assets/projects/global-kitchen/global-kitchen-focus.gif" alt=""
+                                        aria-hidden="true">
+                                </div>
+
+                                <img class="global-kitchen-frame" src="assets/projects/global-kitchen/frame.webp" alt=""
+                                    aria-hidden="true">
+
+                            </div>
+
+                            <div class="plaque">
+                                <p class="project-category">
+                                    Game Design · Java Programming
+                                </p>
+
+                                <h2>Global Kitchen Rush</h2>
+
+                                <p class="project-description">
+                                    A hand drawn cooking game I designed and programmed entirely from scratch.
+                                </p>
+                                <button class="view-project-btn" type="button">
+                                    View More
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Tech4Ease ----------------------------------->
+                    <article class="gallery-exhibit" data-project="3" data-board="tech4ease" data-focus-type="colour"
+                        data-swatch="yellow">
+
+                        <div class="exhibit-space">
+
+                            <div class="exhibit-visual exhibit-visual--sculpture tech4ease-exhibit">
+
+                                <img class="project-media project-media--bw"
+                                    src="assets/projects/tech4ease/tech4ease-bw.webp"
+                                    alt="Black and white Tech4Ease assistive bag prototype">
+
+                                <img class="project-media project-media--colour"
+                                    src="assets/projects/tech4ease/tech4ease-colour.webp"
+                                    alt="Colour Tech4Ease assistive bag prototype">
+
+                            </div>
+
+                            <div class="plaque">
+                                <p class="project-category">
+                                    Product Design · Assistive Technology
+                                </p>
+
+                                <h2>Tech4Ease</h2>
+
+                                <p class="project-description">
+                                    A wearable assistive bag I designed, sewed and refined through user testing.
+                                </p>
+                                <button class="view-project-btn" type="button">
+                                    View More
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                    </article>
+
+                    <!-- Project 4: ASA ------------------------------------------>
+                    <article class="gallery-exhibit" data-project="4" data-board="asa" data-focus-type="gif"
+                        data-swatch="purple">
+
+                        <div class="exhibit-space">
+
+                            <div class="exhibit-visual exhibit-visual--frame asa-exhibit">
+
+                                <div class="asa-artwork">
+
+                                    <img class="project-media project-media--gif"
+                                        src="assets/projects/asa/asa-sequence.gif"
+                                        alt="Hand-drawn ASA logo animation sequence">
+
+                                </div>
+
+                                <img class="asa-frame" src="assets/projects/asa/asa-frame.webp" alt=""
+                                    aria-hidden="true">
+
+                            </div>
+
+                            <div class="plaque">
+
+                                <p class="project-category">
+                                    Graphic Design · Social Media Branding
+                                </p>
+
+                                <h2>Arab Student Association</h2>
+
+                                <p class="project-description">
+                                    Building ASA's visual identity through event graphics,
+                                    illustration and social media design.
+                                </p>
+
+                                <button class="view-project-btn" type="button">
+                                    View More
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+                    <!-- Project 5: Automata Box Machine ------------------------>
+                    <article class="gallery-exhibit" data-project="5" data-board="automata" data-focus-type="gif"
+                        data-swatch="purple">
+
+                        <div class="exhibit-space">
+
+                            <div class="exhibit-visual exhibit-visual--frame automata-exhibit">
+
+                                <div class="automata-artwork">
+
+                                    <img class="project-media project-media--bw"
+                                        src="assets/projects/automata/automata-bw.webp"
+                                        alt="Black and white Automata Box Machine">
+
+                                    <img class="project-media project-media--gif"
+                                        src="assets/projects/automata/automata-focus.gif"
+                                        alt="Animated Automata Box Machine">
+
+                                </div>
+
+                                <img class="automata-frame" src="assets/projects/automata/frame.webp" alt=""
+                                    aria-hidden="true">
+
+                            </div>
+
+                            <div class="plaque">
+
+                                <p class="project-category">
+                                    Mechanical Design · CAD Modelling
+                                </p>
+
+                                <h2>
+                                    Automata Box Machine
+                                </h2>
+
+                                <p class="project-description">
+                                    Designing and modelling a mechanical scene where every movement
+                                    was driven by linkages and cams.
+                                </p>
+
+                                <button class="view-project-btn" type="button">
+                                    View More
+                                </button>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </article>
+
+                    <!-- Project 6 ----------------------------------------->
+                    <article class="gallery-exhibit" data-project="6" data-focus-type="colour" data-swatch="red">
+                        <div class="exhibit-space">
+                            <div class="exhibit-visual exhibit-visual--frame">
+                                <div class="exhibit-visual exhibit-visual--object">
+                                    <img class="project-media project-media--bw"
+                                        src="assets/projects/skyconnect/project1-bw.webp" alt="Project 6">
+
+                                    <img class="project-media project-media--colour"
+                                        src="assets/projects/skyconnect/project1-color.webp" alt="" aria-hidden="true">
+                                </div>
+
+                                <div class="plaque">
+                                    <p class="project-category">Project Category</p>
+                                    <h2>Project 6</h2>
+                                    <p class="project-description">
+                                        Short project description goes here.
+                                    </p>
+                                    <button class="view-project-btn" type="button">
+                                        View More
+                                    </button>
+                                </div>
+
+
+
+                            </div>
+                    </article>
+
+                </div>
+
+                <div class="gallery-direction" aria-hidden="true">
+                    <span>Continue Exploring</span>
+                    <span class="gallery-direction-arrow">→</span>
+                </div>
+
+            </div>
+
+
+            <!-- Project Paint Swatch Navigation ------------------------->
+            <div class="project-step-navigation" id="projectStepNavigation" aria-label="Project navigation">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Designer Board ----------------------------------------->
+
+    <section class="design-board-overlay" id="designBoard" aria-hidden="true">
+        <div class="design-board-backdrop"></div>
+
+        <div class="design-board-layout">
+
+            <!-- Selected project remains visible ---------------->
+            <aside class="design-board-preview" id="designBoardPreview" aria-label="Selected project">
+                <div class="design-board-preview-art" id="designBoardPreviewArt">
+                    <!-- JavaScript places the selected artwork here -->
+                </div>
+
+                <div class="design-board-preview-plaque" id="designBoardPreviewPlaque">
+                    <!-- JavaScript places the project plaque here -->
+                </div>
+            </aside>
+
+            <!-- Project board ----------------------------------->
+            <div class="design-board-panel">
+                <button class="design-board-close" id="closeDesignBoard" type="button"
+                    aria-label="Back to project gallery">
+                    <span aria-hidden="true">←</span>
+                    <span>Back to Gallery</span>
+                </button>
+
+                <div class="design-board-content">
+                    <div id="designBoardContainer">
+
+                        <!-- skyconnet Design Board ----------------------->
+                        <article class="skyconnect-board" data-project-board="skyconnect">
+
+                            <!-- Heading ----------------------------------------->
+                            <header class="skyconnect-heading">
+                                <p class="board-eyebrow">
+                                    Catalyst Entrepreneurship Challenge · Spring 2025
+                                </p>
+
+                                <h2>SkyConnect</h2>
+
+                                <p class="board-subtitle">
+                                    Turning transit research into a visual experience people could understand,
+                                    imagine and remember.
+                                </p>
+                            </header>
+
+                            <!-- First-place badge ------------------------------->
+                            <img class="skyconnect-award" src="assets/projects/skyconnect/first-place.webp"
+                                alt="First Place award">
+
+                            <!-- Overview note ----------------------------------->
+                            <section class="board-paper board-overview-note">
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3> Overview</h3>
+
+                                <p>
+                                    SkyConnect started with a simple question: how could SkyTrain feel safer
+                                    and more welcoming for families? As a team, we collaborated on UX research,
+                                    rider surveys and ideation to shape a practical family-friendly transit
+                                    zone. My focus was turning that research into something people could
+                                    immediately understand visually. I built the 3D model and designed our
+                                    entire animated pitch deck from scratch in PowerPoint. The project went
+                                    on to win first place.
+                                </p>
+                            </section>
+
+                            <!-- Animated presentation --------------------------->
+                            <figure class="board-media board-presentation">
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <video controls muted playsinline>
+                                    <source src="assets/projects/skyconnect/presentation-demo.mp4" type="video/mp4">
+                                </video>
+
+                                <figcaption>
+                                    I built the animated pitch deck from scratch in PowerPoint, creating every
+                                    train, window, door and movement piece by piece using simple shapes, layers
+                                    and transitions. The SkyTrain moved across the slides before opening to
+                                    reveal its front, side, exterior and interior. Hearing the judges react,
+                                    praise the animation and later ask how it was made showed me how strongly
+                                    visual storytelling can hold attention.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Presenting Polaroid ----------------------------->
+                            <figure class="board-polaroid board-presenting">
+                                <img src="assets/projects/skyconnect/presenting.webp"
+                                    alt="Presenting SkyConnect to the competition judges">
+                            </figure>
+
+                            <!-- Winning Polaroid ------------------------------->
+                            <figure class="board-polaroid board-winning">
+                                <img src="assets/projects/skyconnect/winning.webp"
+                                    alt="SkyConnect team receiving the first-place award">
+                            </figure>
+
+                            <!-- Networking Polaroid ---------------------------->
+                            <figure class="board-polaroid board-networking">
+                                <img src="assets/projects/skyconnect/networking.webp"
+                                    alt="Networking with mentors and industry professionals">
+                            </figure>
+
+                            <!-- My role ----------------------------------------->
+                            <section class="board-paper board-role-note">
+                                <span class="board-paperclip" aria-hidden="true"></span>
+
+                                <h3>My Role</h3>
+
+                                <p>
+                                    My role was to make our idea visible, believable and memorable. While
+                                    our team worked together on the research and concept, I focused on
+                                    bringing everything to life visually. I created the 3D SkyTrain model
+                                    in Onshape, designed custom assets such as the stroller areas, camera,
+                                    buckle, seating and safety features, and built the full animated
+                                    presentation from scratch. I moved between research, modelling,
+                                    animation and storytelling depending on what the project needed.
+                                </p>
+                            </section>
+
+                            <!-- Prototype video --------------------------------->
+                            <figure class="board-media board-prototype">
+                                <span class="board-tape board-tape--angled" aria-hidden="true"></span>
+
+                                <video controls muted loop playsinline>
+                                    <source src="assets/projects/skyconnect/skytrain-model.mp4" type="video/mp4">
+                                </video>
+
+                                <figcaption>
+                                    I built the 3D model in Onshape so our solution would not live only in
+                                    people's imagination. Instead of asking the judges to picture the concept,
+                                    they could clearly see the seating layout, stroller space, signage and
+                                    safety features inside a realistic SkyTrain car.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Process ----------------------------------------->
+                            <section class="board-paper board-process-note">
+                                <h3>Process</h3>
+
+                                <p>
+                                    Our research never stayed inside the classroom. We interviewed family,
+                                    friends and even stopped people on the SkyTrain and in public to hear
+                                    their experiences. Together, we went through transit-safety information
+                                    line by line, collected rider feedback, compared ideas and challenged
+                                    each other's assumptions. Once we agreed on the direction, I focused on
+                                    translating the research into the 3D model and animated presentation
+                                    while my teammates developed the other parts of the solution.
+                                </p>
+                            </section>
+
+                            <!-- Challenges -------------------------------------->
+                            <section class="board-sticky board-challenges-note">
+                                <h3>Challenges</h3>
+
+                                <p>
+                                    The hardest part was not finding ideas, it was deciding what not to
+                                    include. We had pages of research, survey responses, safety concerns
+                                    and operational details that sometimes confused even us. We wanted the
+                                    pitch to stay short without losing the full imagination behind the
+                                    concept, so I focused on combining minimal words with strong visuals.
+                                    I had to decide what to show, what to simplify and how animation and
+                                    the 3D model could guide attention.
+                                </p>
+                            </section>
+
+                            <!-- Reflection -------------------------------------->
+                            <section class="board-paper board-reflection-note">
+                                <span class="board-pin board-pin--side" aria-hidden="true"></span>
+
+                                <h3>Reflection</h3>
+
+                                <p>
+                                    SkyConnect changed the way I think about presenting ideas. A concept
+                                    cannot stay inside a mind map, you have to help people see and experience
+                                    it. Once our idea began moving through animation and became tangible
+                                    through the 3D model, the conversation completely changed. Judges,
+                                    students and other competitors started sketching suggestions on sticky
+                                    notes and adding them to our board as if the space already existed.
+                                    Winning first place was incredible, and sharing that win with my twin
+                                    brother, who was part of the team, made it even more special.
+                                </p>
+                            </section>
+
+                            <!-- Tools ------------------------------------------->
+                            <section class="board-paper board-tools-note">
+                                <h3>Tools + Skills</h3>
+
+                                <div class="board-tool-list">
+                                    <figure>
+                                        <img src="assets/projects/skyconnect/powerpoint.webp" alt="Microsoft PowerPoint">
+                                        <figcaption>PowerPoint</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/skyconnect/onshape.webp" alt="Onshape">
+                                        <figcaption>Onshape</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/skyconnect/figma.webp" alt="Figma">
+                                        <figcaption>Figma</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/skyconnect/canva.webp" alt="Canva">
+                                        <figcaption>Canva</figcaption>
+                                    </figure>
+                                </div>
+                            </section>
+
+                            <!-- Credits ----------------------------------------->
+                            <footer class="board-paper board-credits-note">
+                                <h3>Project Credits</h3>
+
+                                <p>
+                                    Team: Hind Hammad, Mohammad Hammad, Malk Hayder and Aliya Dif.
+                                </p>
+
+                                <p>
+                                    Competition photography courtesy of the Catalyst
+                                    Entrepreneurship Challenge and the Charles Chang Institute
+                                    for Entrepreneurship.
+                                </p>
+                            </footer>
+
+                        </article>
+
+                        <!-- Global Kitchen Rush Design Board ----------------------->
+                        <article class="global-kitchen-board" data-project-board="global-kitchen" hidden>
+
+                            <!-- Heading --------------------------------------------->
+                            <header class="global-kitchen-heading">
+                                <p class="board-eyebrow">
+                                    IAT 265 · Multimedia Programming for Art and Design
+                                </p>
+
+                                <h2>Global Kitchen Rush</h2>
+
+                                <p class="board-subtitle">
+                                    A cooking game where every ingredient, interaction and illustration
+                                    was created from scratch.
+                                </p>
+                            </header>
+
+                            <!-- Country flag decorations ---------------------------->
+                            <img class="kitchen-flag kitchen-flag--qatar"
+                                src="assets/projects/global-kitchen/qatar-flag.webp" alt="Hand-drawn Qatar flag">
+
+                            <img class="kitchen-flag kitchen-flag--uae"
+                                src="assets/projects/global-kitchen/uae-flag.webp"
+                                alt="Hand-drawn United Arab Emirates flag">
+
+                            <img class="kitchen-flag kitchen-flag--tunisia"
+                                src="assets/projects/global-kitchen/tunisia-flag.webp" alt="Hand-drawn Tunisia flag">
+
+                            <!-- Overview -------------------------------------------->
+                            <section class="board-paper kitchen-overview-note">
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>Overview</h3>
+
+                                <p>
+                                    Global Kitchen Rush began with my love of food, culture and playful
+                                    learning. I wanted players to discover international dishes by
+                                    experimenting instead of simply following instructions. They combine
+                                    ingredients, test recipes and unlock flags, facts and collectible
+                                    rewards when they find the right meal. What made my project different
+                                    was that I created the entire experience myself, from the game concept
+                                    and Java systems to every hand drawn ingredient, screen and character.
+                                </p>
+                            </section>
+
+                            <!-- Main gameplay GIF ----------------------------------->
+                            <figure class="board-media kitchen-gameplay-gif">
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <img src="assets/projects/global-kitchen/global-kitchen-focus.gif"
+                                    alt="Global Kitchen Rush gameplay animation">
+
+                                <figcaption>
+                                    Players drag ingredients into the kitchen and experiment with
+                                    combinations until they discover a real international dish. I
+                                    designed the interaction to feel simple and playful while the
+                                    programming quietly handles recipe matching, feedback and rewards
+                                    behind the scenes.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Game polaroid --------------------------------------->
+                            <figure class="board-polaroid kitchen-game-polaroid">
+                                <img src="assets/projects/global-kitchen/game-polariod.webp"
+                                    alt="Global Kitchen Rush game displayed on a computer">
+                            </figure>
+
+                            <!-- My part --------------------------------------------->
+                            <section class="board-paper kitchen-role-note">
+                                <span class="board-paperclip" aria-hidden="true"></span>
+
+                                <h3>My Part</h3>
+
+                                <p>
+                                    I did everything on this project. I developed the concept, planned
+                                    the gameplay, drew every visual asset by hand and programmed the
+                                    complete game in Java. I built the drag-and-drop interactions,
+                                    recipe-recognition system, country collection, buttons, audio and
+                                    feedback screens. I wanted the game to feel unmistakably mine, so
+                                    rather than using stock graphics, I drew the ingredients, meals,
+                                    flags, kitchen, interface and small details in the same playful
+                                    handmade style.
+                                </p>
+                            </section>
+
+                            <!-- Recipe recognition --------------------------------->
+                            <section class="board-paper kitchen-recipe-system">
+                                <span class="board-tape board-tape--angled" aria-hidden="true">
+                                </span>
+
+                                <h3>Game Logic</h3>
+
+                                <p>
+                                    The most important system was the recipe matcher. When players add
+                                    ingredients, the game compares their selection against stored recipe
+                                    combinations and decides whether they created a real dish. A correct
+                                    match unlocks the meal, its country and a cultural fact. A wrong
+                                    combination still gives playful feedback, so experimenting never
+                                    feels like a punishment.
+                                </p>
+
+                                <div class="kitchen-recipe-equation">
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/ingredient-1.webp"
+                                            alt="First recipe ingredient">
+                                    </figure>
+
+                                    <span aria-hidden="true">+</span>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/ingredient-2.webp"
+                                            alt="Second recipe ingredient">
+                                    </figure>
+
+                                    <span aria-hidden="true">+</span>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/ingredient-3.webp"
+                                            alt="Third recipe ingredient">
+                                    </figure>
+
+                                    <span aria-hidden="true">=</span>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/meal-1.webp"
+                                            alt="Completed international meal">
+                                    </figure>
+
+                                </div>
+                            </section>
+
+                            <!-- Framed game scene ----------------------------------->
+                            <figure class="board-media kitchen-game-scene">
+                                <span class="board-pin board-pin--side" aria-hidden="true">
+                                </span>
+
+                                <img src="assets/projects/global-kitchen/game-scene.webp"
+                                    alt="Hand-drawn Global Kitchen Rush kitchen interface">
+
+                                <figcaption>
+                                    I hand-drew the kitchen, ingredients, appliances, buttons and
+                                    interface elements before programming them into the game. Keeping
+                                    one consistent drawing style helped the project feel like a complete
+                                    world instead of a collection of unrelated assets.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Meals collection ------------------------------------>
+                            <section class="board-paper kitchen-meals-note">
+                                <h3>Discoveries</h3>
+
+                                <div class="kitchen-meal-list">
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/meal-1.webp"
+                                            alt="Hand-drawn couscous dish">
+
+                                        <figcaption>Couscous</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/meal-2.webp"
+                                            alt="Hand-drawn kebab dish">
+
+                                        <figcaption>Kebab</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/meal-3.webp"
+                                            alt="Hand-drawn kibbeh dish">
+
+                                        <figcaption>Kibbeh</figcaption>
+                                    </figure>
+
+                                </div>
+                            </section>
+
+                            <!-- Process --------------------------------------------->
+                            <section class="board-paper kitchen-process-note">
+                                <h3>Process</h3>
+
+                                <p>
+                                    I began with storyboards and rough interface sketches to understand
+                                    how a player would move through the kitchen. From there, I drew the
+                                    ingredients, meals and screens, then gradually turned each sketch
+                                    into an interactive Java component. I moved back and forth between
+                                    drawing, coding and testing constantly. When an interaction felt
+                                    confusing, I changed the interface; when an idea looked fun but was
+                                    difficult to use, I simplified the mechanic.
+                                </p>
+                            </section>
+
+                            <!-- Recipe brochure ------------------------------------->
+                            <figure class="board-media kitchen-recipe-brochure">
+                                <span class="board-tape board-tape--angled" aria-hidden="true">
+                                </span>
+
+                                <img src="assets/projects/global-kitchen/recipe-brochure.webp"
+                                    alt="Recipe and cultural information displayed after discovering a meal">
+
+                                <figcaption>
+                                    Discovering a dish gives the player more than a score. I designed
+                                    each result screen to introduce the meal, explain where it comes
+                                    from and add another country to the player's growing collection.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Video explanation ----------------------------------->
+                            <figure class="board-media kitchen-explanation-video">
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <video controls muted playsinline>
+                                    <source src="assets/projects/global-kitchen/game-explanation.mp4" type="video/mp4">
+
+                                    Your browser does not support the video element.
+                                </video>
+
+                                <figcaption>
+                                    A closer look at the gameplay, recipe-recognition system and
+                                    cultural reward features working together.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Challenge ------------------------------------------->
+                            <section class="board-sticky kitchen-challenges-note">
+                                <h3>Challenge</h3>
+
+                                <p>
+                                    The hardest part was making the recipe system flexible without
+                                    making the game unpredictable. Ingredients could be selected in
+                                    different orders, but the result still needed to match the correct
+                                    meal. At the same time, I was drawing every asset and trying to keep
+                                    the interface clear. It forced me to think like both a programmer
+                                    and a visual designer instead of treating the code and artwork as
+                                    separate parts.
+                                </p>
+                            </section>
+
+                            <!-- Reflection ------------------------------------------>
+                            <section class="board-paper kitchen-reflection-note">
+                                <span class="board-pin board-pin--side" aria-hidden="true">
+                                </span>
+
+                                <h3>Reflection</h3>
+
+                                <p>
+                                    This project proved to me that I do not have to choose between
+                                    designing and developing. I could sketch a strange little ingredient,
+                                    turn it into a working object and then build an entire interaction
+                                    around it. Creating everything myself was a huge amount of work, but
+                                    it also gave the game a personality that felt completely consistent.
+                                    That handmade approach is something I carried directly into the design
+                                    of this portfolio.
+                                </p>
+                            </section>
+
+                            <!-- Tools ----------------------------------------------->
+                            <section class="board-paper kitchen-tools-note">
+                                <h3>Tools</h3>
+
+                                <div class="board-tool-list">
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/java.webp" alt="Java">
+
+                                        <figcaption>Java</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/vscode.webp" alt="Visual Studio Code">
+
+                                        <figcaption>VS Code</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/github.webp" alt="GitHub">
+
+                                        <figcaption>GitHub</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/global-kitchen/adobe.webp"
+                                            alt="Adobe creative software">
+
+                                        <figcaption>Adobe</figcaption>
+                                    </figure>
+
+                                </div>
+                            </section>
+
+                            <!-- Credits --------------------------------------------->
+                            <footer class="board-paper kitchen-credits-note">
+                                <h3>Credits</h3>
+
+                                <p>
+                                    Created independently by Hind Hammad for IAT 265:
+                                    Multimedia Programming for Art and Design.
+                                </p>
+
+                                <p>
+                                    Instructor: Rafael Arias Gonzalez.
+                                </p>
+
+                                <p>
+                                    All game concepts, programming, illustrations, interface graphics
+                                    and visual assets were created specifically for this project.
+                                </p>
+                            </footer>
+
+                        </article>
+
+                        <!-- Tech4Ease Design Board --------------------------------->
+                        <article class="tech4ease-board" data-project-board="tech4ease" hidden>
+
+                            <!-- Heading --------------------------------------------->
+                            <header class="tech4ease-heading">
+                                <p class="board-eyebrow">
+                                    IAT 336 · Materials in Practice · Opportunity Fest 2025
+                                </p>
+
+                                <h2>Tech4Ease</h2>
+
+                                <p class="board-subtitle">
+                                    A wearable assistive bag shaped through accessibility research,
+                                    physical making and real user feedback.
+                                </p>
+                            </header>
+
+                            <!-- Certificate ----------------------------------------->
+                            <figure class="tech4ease-certificate">
+                                <img src="assets/projects/tech4ease/certificate.webp"
+                                    alt="Tech4Ease Opportunity Fest certificate of recognition">
+                            </figure>
+
+                            <!-- Overview -------------------------------------------->
+                            <section class="board-paper tech4ease-overview-note">
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>Overview</h3>
+
+                                <p>
+                                    Tech4Ease explored how wearable technology could support people who
+                                    are blind or visually impaired by detecting upper-body obstacles
+                                    beyond the reach of a traditional white cane. As a team, we developed
+                                    the concept and combined sensors, audio feedback and a wearable form.
+                                    My focus was the physical design itself: how the bag should look,
+                                    sit on the body, hold the electronics and still feel comfortable
+                                    enough to use in everyday life.
+                                </p>
+                            </section>
+
+                            <!-- Floating 3D model ----------------------------------->
+                            <figure class="tech4ease-3d-model">
+                                <img src="assets/projects/tech4ease/tech4ease-3d-model.webp"
+                                    alt="Transparent 3D model of the Tech4Ease device">
+
+                                <figcaption>
+                                    The model helped us plan how the sensors and electronic components
+                                    could fit inside the wearable form without making it feel bulky or
+                                    awkward.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Physical prototype polaroid ------------------------->
+                            <figure class="board-polaroid tech4ease-physical-polaroid">
+                                <img src="assets/projects/tech4ease/physical-model-polariod.webp"
+                                    alt="Polaroid of the physical Tech4Ease prototype">
+                            </figure>
+
+                            <!-- My part --------------------------------------------->
+                            <section class="board-paper tech4ease-role-note">
+                                <span class="board-paperclip" aria-hidden="true"></span>
+
+                                <h3>My Part</h3>
+
+                                <p>
+                                    I focused on transforming the idea into a real, wearable product.
+                                    I sketched the bag, explored its shape and material choices, planned
+                                    how the components would sit inside, and completed the sewing and
+                                    physical construction. I also helped test the prototype with users
+                                    and translated their feedback into design changes. My role sat
+                                    between product design and fabrication, making sure the technology
+                                    did not overpower the comfort, appearance or usability of the bag.
+                                </p>
+                            </section>
+
+                            <!-- Electrical components 1 ----------------------------->
+                            <figure class="board-media tech4ease-components-one">
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <img src="assets/projects/tech4ease/components-1.webp"
+                                    alt="Electrical components used inside the Tech4Ease prototype">
+
+                                <figcaption>
+                                    The ultrasonic sensors and electronics gave the device its function,
+                                    while the physical design had to protect them and keep them correctly
+                                    positioned on the body.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Electrical components 2 ----------------------------->
+                            <figure class="board-media tech4ease-components-two">
+                                <span class="board-tape board-tape--angled" aria-hidden="true">
+                                </span>
+
+                                <img src="assets/projects/tech4ease/components-2.webp"
+                                    alt="Tech4Ease wiring and electronic assembly">
+
+                                <figcaption>
+                                    The internal layout required careful planning so the wiring stayed
+                                    secure, accessible and hidden inside the final wearable prototype.
+                                </figcaption>
+                            </figure>
+
+                            <!-- Inside electronics polaroid ------------------------->
+                            <figure class="board-polaroid tech4ease-inside-polaroid">
+                                <img src="assets/projects/tech4ease/inside-polariod.webp"
+                                    alt="Polaroid showing the electronics inside the Tech4Ease bag">
+                            </figure>
+
+                            <!-- Process --------------------------------------------->
+                            <section class="board-paper tech4ease-process-note">
+                                <h3>Process</h3>
+
+                                <p>
+                                    We began by researching white-cane limitations, assistive devices and
+                                    wearable technologies. Early ideas placed technology directly on the
+                                    cane, but user feedback pushed us toward a hands-free crossbody bag.
+                                    From there, I developed sketches, explored different shapes and tested
+                                    how the bag sat on the body. I moved between sewing, fitting and user
+                                    testing, adjusting the structure whenever something felt too heavy,
+                                    awkward or difficult to access.
+                                </p>
+                            </section>
+
+                            <!-- Prototype worn on model ----------------------------->
+                            <figure class="board-polaroid tech4ease-worn-polaroid">
+                                <img src="assets/projects/tech4ease/model-wearing-polariod.webp"
+                                    alt="Polaroid showing the Tech4Ease prototype worn as a crossbody bag">
+                            </figure>
+
+                            <!-- Fabrication ----------------------------------------->
+                            <section class="board-paper tech4ease-fabrication-note">
+                                <span class="board-pin board-pin--side" aria-hidden="true">
+                                </span>
+
+                                <h3>Fabrication</h3>
+
+                                <p>
+                                    I constructed the final bag by hand, combining sewn fabric with the
+                                    3D-printed sensor housing and internal electronics. The challenge was
+                                    not simply attaching everything together; the bag still needed to
+                                    feel like a wearable object rather than a technology prototype.
+                                    Material choice, strap placement, weight and access to the components
+                                    all affected the final form.
+                                </p>
+                            </section>
+
+                            <!-- Challenge ------------------------------------------->
+                            <section class="board-sticky tech4ease-challenges-note">
+                                <h3>Challenge</h3>
+
+                                <p>
+                                    The hardest part was balancing function with wearability. The device
+                                    needed enough structure to protect the sensors and wiring, but too
+                                    much structure made it heavy and uncomfortable. User testing exposed
+                                    details that sketches could not, especially how the bag shifted,
+                                    where pressure formed and whether the controls were easy to reach.
+                                    I kept revising the construction until the technology felt integrated
+                                    instead of simply attached.
+                                </p>
+                            </section>
+
+                            <!-- Reflection ------------------------------------------>
+                            <section class="board-paper tech4ease-reflection-note">
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>Reflection</h3>
+
+                                <p>
+                                    Tech4Ease taught me that a product can look resolved on paper and
+                                    still fail once someone wears it. The most valuable design decisions
+                                    came from making, testing and then taking the prototype apart again.
+                                    Sewing the bag myself gave me complete control over its form, but it
+                                    also made every weak point very obvious. I left the project with a
+                                    much stronger understanding of how accessibility, comfort and
+                                    physical construction shape one another.
+                                </p>
+                            </section>
+
+                            <!-- Team polaroid --------------------------------------->
+                            <figure class="board-polaroid tech4ease-team-polaroid">
+                                <img src="assets/projects/tech4ease/team-polariod.webp"
+                                    alt="Tech4Ease team at Opportunity Fest 2025">
+                            </figure>
+
+                            <!-- Tools ----------------------------------------------->
+                            <section class="board-paper tech4ease-tools-note">
+
+                                <h3>Tools</h3>
+
+                                <div class="board-tool-list">
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/onshape.webp" alt="Onshape">
+
+                                        <figcaption>Onshape</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/vscode.webp" alt="Visual Studio Code">
+
+                                        <figcaption>VS Code</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/photoshop.webp" alt="Adobe Photoshop">
+
+                                        <figcaption>Photoshop</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/indesign.webp" alt="Adobe InDesign">
+
+                                        <figcaption>InDesign</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/canva.webp" alt="Canva">
+
+                                        <figcaption>Canva</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/arduino.webp" alt="Arduino">
+
+                                        <figcaption>Arduino</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/3d-printer.webp" alt="3D Printing">
+
+                                        <figcaption>3D Printing</figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img src="assets/projects/tech4ease/sewing.webp" alt="Sewing">
+
+                                        <figcaption>Sewing</figcaption>
+                                    </figure>
+
+                                </div>
+
+                            </section>
+
+                            <!-- Credits --------------------------------------------->
+                            <footer class="board-paper tech4ease-credits-note">
+                                <h3>Credits</h3>
+
+                                <p>
+                                    Team: Hind Hammad, Liudmila Kolominova and Jackie Li.
+                                </p>
+
+                                <p>
+                                    Created for IAT 336: Materials in Practice with instructor
+                                    Ken Zupan.
+                                </p>
+
+                                <p>
+                                    Selected as the School of Interactive Arts and Technology's
+                                    team for Opportunity Fest 2025.
+                                </p>
+                            </footer>
+
+                        </article>
+
+                        <!-- ASA Design Board --------------------------------------->
+                        <article class="asa-board" data-project-board="asa" hidden>
+
+
+                            <!-- Heading --------------------------------------------->
+                            <header class="asa-heading">
+
+                                <p class="board-eyebrow">
+                                    Arab Student Association · Simon Fraser University
+                                </p>
+
+                                <h2>
+                                    Arab Student Association
+                                </h2>
+
+                                <p class="board-subtitle">
+                                    Building a recognizable student brand one event at a time.
+                                </p>
+
+                            </header>
+
+
+                            <!-- Main Logo Animation --------------------------------->
+                            <figure class="board-media asa-logo-sequence">
+
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <img src="assets/projects/asa/asa-sequence.gif"
+                                    alt="Hand-drawn ASA logo drawing sequence">
+
+                                <figcaption>
+                                    I illustrated and animated the logo drawing sequence to give ASA's
+                                    online presence a more playful, handmade personality.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Overview -------------------------------------------->
+                            <section class="board-paper asa-overview">
+
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>
+                                    Overview
+                                </h3>
+
+                                <p>
+                                    Unlike most of my university projects, this one never really ends.
+                                    As Graphic Executive for SFU's Arab Student Association, every event
+                                    brings a different audience, mood and deadline. My role is not only
+                                    to make graphics look good, but to create visuals that quickly
+                                    communicate what an event feels like and make students interested
+                                    enough to attend.
+                                </p>
+
+                                <p>
+                                    I design posters, Instagram graphics, invitations, animated posts
+                                    and event-specific visual identities. I often begin with sketches
+                                    or hand-drawn elements, then develop the final design around the
+                                    personality of the event while keeping ASA recognizable across its
+                                    different campaigns.
+                                </p>
+
+                            </section>
+
+
+                            <!-- Board Game Poster ----------------------------------->
+                            <figure class="board-polaroid asa-boardgame">
+
+                                <img src="assets/projects/asa/board-game.webp" alt="Board Game Night promotional poster">
+
+                                <figcaption>
+                                    I designed this promotion to feel playful before students even read
+                                    the details, using the illustrations and layout to communicate the
+                                    casual atmosphere of the event.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Shawarma Posters ------------------------------------>
+                            <figure class="board-media asa-shawarma-one">
+
+                                <img src="assets/projects/asa/shawarma-1.webp"
+                                    alt="Shawarma by the Lake promotional poster">
+
+                                <figcaption>
+                                    I explored a warm and energetic visual direction that made the food,
+                                    outdoor setting and social atmosphere feel immediately inviting.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <figure class="board-media asa-shawarma-two">
+
+                                <img src="assets/projects/asa/shawarma-2.webp"
+                                    alt="Alternate Shawarma by the Lake promotional poster">
+
+                                <figcaption>
+                                    This second direction let me test a different composition and
+                                    hierarchy while keeping the same event recognizable.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Mixer GIF ------------------------------------------->
+                            <figure class="board-media asa-mixer">
+
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <img src="assets/projects/asa/club-mixer.gif" alt="Animated ASA club mixer promotion">
+
+                                <figcaption>
+                                    I used motion to help the promotion catch attention while students
+                                    were scrolling, without allowing the animation to overpower the
+                                    event information.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Ramadan --------------------------------------------->
+                            <figure class="board-media asa-ramadan">
+
+                                <img src="assets/projects/asa/ramadan.webp" alt="Ramadan Iftar invitation">
+
+                                <figcaption>
+                                    The Ramadan invitation required a calmer and more refined direction
+                                    while still feeling connected to ASA's wider visual identity.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Event Photos ---------------------------------------->
+                            <figure class="board-polaroid asa-event-photo">
+
+                                <img src="assets/projects/asa/event-photo.webp"
+                                    alt="Students attending an Arab Student Association event">
+
+                                <figcaption>
+                                    Seeing students attend the events makes the design feel real. The
+                                    final experience becomes a way to judge whether the promotion
+                                    communicated the right energy.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <figure class="board-polaroid asa-team-photo">
+
+                                <img src="assets/projects/asa/team-polariod.webp"
+                                    alt="Arab Student Association executive team">
+
+                                <figcaption>
+                                    Working with the executive team taught me how to translate different
+                                    ideas, requests and event goals into one clear visual direction.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <figure class="board-polaroid asa-bonfire">
+
+                                <img src="assets/projects/asa/bonfire-polariod.webp"
+                                    alt="Students attending an ASA bonfire event">
+
+                                <figcaption>
+                                    Each event showed me that graphic design does not end with the post.
+                                    It helps shape the expectations and atmosphere students bring with
+                                    them.
+                                </figcaption>
+
+                            </figure>
+
+
+                            <!-- Reflection ------------------------------------------>
+                            <section class="board-paper asa-reflection">
+
+                                <h3>
+                                    Reflection
+                                </h3>
+
+                                <p>
+                                    ASA taught me something university assignments rarely do: design
+                                    does not end when something looks good. If nobody notices the post,
+                                    understands the information or attends the event, then the design
+                                    has not done its job. Creating graphics for real events made me
+                                    faster, more adaptable and more confident making decisions under
+                                    tight deadlines.
+                                </p>
+
+                                <p>
+                                    It also taught me how to balance consistency with variety. ASA hosts
+                                    everything from board-game nights and mixers to Ramadan gatherings,
+                                    so every campaign needs its own personality without making the
+                                    organization feel like a collection of unrelated designs. Over time,
+                                    I learned that a recognizable identity is built through many small,
+                                    consistent choices rather than one perfect poster.
+                                </p>
+
+                            </section>
+
+
+                            <!-- Tools ----------------------------------------------->
+                            <section class="board-paper asa-tools">
+
+                                <h3>
+                                    Tools
+                                </h3>
+
+                                <div class="board-tool-list">
+
+                                    <figure>
+
+                                        <img src="assets/projects/asa/adobe.webp" alt="Adobe Creative Cloud">
+
+                                        <figcaption>
+                                            Adobe
+                                        </figcaption>
+
+                                    </figure>
+
+
+                                    <figure>
+
+                                        <img src="assets/projects/asa/photoshop.webp" alt="Adobe Photoshop">
+
+                                        <figcaption>
+                                            Photoshop
+                                        </figcaption>
+
+                                    </figure>
+
+
+                                    <figure>
+
+                                        <img src="assets/projects/asa/canva.webp" alt="Canva">
+
+                                        <figcaption>
+                                            Canva
+                                        </figcaption>
+
+                                    </figure>
+
+
+                                    <figure>
+
+                                        <img src="assets/projects/asa/figma.webp" alt="Figma">
+
+                                        <figcaption>
+                                            Figma
+                                        </figcaption>
+
+                                    </figure>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- Credits --------------------------------------------->
+                            <footer class="board-paper asa-credit">
+
+                                <h3>
+                                    Credits
+                                </h3>
+
+                                <p>
+                                    Created as Graphic Executive for the Arab Student Association at
+                                    Simon Fraser University.
+                                </p>
+
+                                <p>
+                                    All featured posters, illustrations, animations and promotional
+                                    graphics were designed for real ASA events and social media
+                                    campaigns.
+                                </p>
+
+                            </footer>
+
+                        </article>
+
+                        <!-- Automata Box Machine Design Board ---------------------->
+                        <article class="automata-board" data-project-board="automata" hidden>
+
+                            <!-- Heading --------------------------------------------->
+                            <header class="automata-heading">
+
+                                <p class="board-eyebrow">
+                                    IAT 106 · Spatial Thinking and Communicating
+                                </p>
+
+                                <h2>Automata Box Machine</h2>
+
+                                <p class="board-subtitle">
+                                    Bringing a mechanical story to life through CAD modelling,
+                                    sketching and moving mechanisms.
+                                </p>
+
+                            </header>
+
+                            <!-- Interactive 3D model -------------------------------->
+                            <section class="board-paper automata-model-note">
+
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>Interactive 3D Model</h3>
+
+                                <model-viewer class="automata-model-viewer"
+                                    src="assets/projects/automata/automata-model.glb"
+                                    alt="Interactive 3D model of the Automata Box Machine" camera-controls auto-rotate
+                                    shadow-intensity="1" exposure="1" environment-image="neutral"
+                                    interaction-prompt="auto">
+                                </model-viewer>
+
+                                <p>
+                                    Explore the completed automata from every angle and see how each
+                                    individual component comes together to create one continuous
+                                    animated scene.
+                                </p>
+
+                            </section>
+
+                            <!-- Overview -------------------------------------------->
+                            <section class="board-paper automata-overview-note">
+
+                                <span class="board-paperclip" aria-hidden="true"></span>
+
+                                <h3>Overview</h3>
+
+                                <p>
+                                    This project challenged us to transform simple mechanical
+                                    principles into a scene that felt alive. Together we designed an
+                                    automata featuring birds, fish, boats, waves and a rising sun, all
+                                    animated through four-bar linkages and cam mechanisms. While the
+                                    engineering made everything move, the visual design gave the machine
+                                    its personality and story.
+                                </p>
+
+                                <p>
+                                    Seeing individually modelled parts work together as one synchronized
+                                    mechanism taught me how design and engineering rely on one another
+                                    to create something engaging.
+                                </p>
+
+                            </section>
+
+                            <!-- Front view ------------------------------------------>
+                            <figure class="board-polaroid automata-front-polaroid">
+
+                                <img src="assets/projects/automata/front-polaroid.webp"
+                                    alt="Front view of the Automata Box Machine">
+
+                                <figcaption>
+                                    The completed scene combined multiple independently designed parts
+                                    into one mechanical animation.
+                                </figcaption>
+
+                            </figure>
+
+                            <!-- My role --------------------------------------------->
+                            <section class="board-paper automata-role-note">
+
+                                <span class="board-pin" aria-hidden="true"></span>
+
+                                <h3>My Role</h3>
+
+                                <p>
+                                    I focused on creating the visual world of the automata. I began by
+                                    sketching ideas for the composition before modelling the fish, boat,
+                                    waves and sun in CAD. My goal was to make each moving element feel
+                                    playful while remaining simple enough to work within the mechanical
+                                    system. My teammate developed the linkage mechanisms and completed
+                                    the final assembly, bringing all of our individual components
+                                    together into one functioning machine.
+                                </p>
+
+                            </section>
+
+                            <!-- Framed sketch 1 ------------------------------------->
+                            <figure class="automata-framed-sketch automata-sketch-one">
+
+                                <img src="assets/projects/automata/sketch-1.webp"
+                                    alt="Hand-drawn concept sketch for the automata scene">
+
+                            </figure>
+
+                            <!-- Framed sketch 2 ------------------------------------->
+                            <figure class="automata-framed-sketch automata-sketch-two">
+
+                                <img src="assets/projects/automata/sketch-2.webp" alt="Second hand-drawn concept sketch">
+
+                            </figure>
+
+                            <!-- Fish mechanism -------------------------------------->
+                            <figure class="board-polaroid automata-fish-polaroid">
+
+                                <img src="assets/projects/automata/fish-part-polaroid.webp"
+                                    alt="CAD model of the fish component">
+
+                                <figcaption>
+                                    I modelled the fish to create expressive movement while keeping the
+                                    geometry simple enough to work with the mechanism.
+                                </figcaption>
+
+                            </figure>
+
+                            <!-- Ship component -------------------------------------->
+                            <figure class="board-polaroid automata-ship-polaroid">
+
+                                <img src="assets/projects/automata/ship-polaroid.webp"
+                                    alt="CAD model of the boat component">
+
+                                <figcaption>
+                                    The boat became one of the main focal points of the scene and was
+                                    designed to balance visual simplicity with believable motion.
+                                </figcaption>
+
+                            </figure>
+
+                            <!-- Mechanisms ------------------------------------------>
+                            <section class="board-paper automata-mechanism-note">
+
+                                <span class="board-tape" aria-hidden="true"></span>
+
+                                <h3>Mechanical Systems</h3>
+
+                                <div class="board-process-flow">
+                                    <span>Crank</span>
+                                    <b>→</b>
+                                    <span>Four-Bar Linkage</span>
+                                    <b>→</b>
+                                    <span>Bird + Fish Motion</span>
+                                </div>
+
+                                <div class="board-process-flow">
+                                    <span>Rotating Shaft</span>
+                                    <b>→</b>
+                                    <span>Cam Mechanism</span>
+                                    <b>→</b>
+                                    <span>Wave Motion</span>
+                                </div>
+
+                                <p>
+                                    Although the movement was powered by four-bar linkages and cam
+                                    mechanisms, every moving object first needed to be carefully
+                                    designed so it could fit within the mechanical constraints while
+                                    still creating an engaging animated scene.
+                                </p>
+
+                            </section>
+                            <!-- Full model ------------------------------------------>
+                            <figure class="board-polaroid automata-full-polaroid">
+
+                                <img src="assets/projects/automata/full-model-polaroid.webp"
+                                    alt="Full assembled Automata Box Machine">
+
+                                <figcaption>
+                                    Every individually modelled component came together to create one
+                                    coordinated mechanical scene driven by a single motion.
+                                </figcaption>
+
+                            </figure>
+
+                            <!-- Side view ------------------------------------------->
+                            <figure class="board-polaroid automata-side-polaroid">
+
+                                <img src="assets/projects/automata/side-view-polaroid.webp"
+                                    alt="Side view of the complete Automata Box Machine">
+
+                                <figcaption>
+                                    Looking at the side reveals how the moving parts, shafts and
+                                    mechanisms work together behind the finished design.
+                                </figcaption>
+
+                            </figure>
+
+                            <!-- Process --------------------------------------------->
+                            <section class="board-paper automata-process-note">
+
+                                <h3>Process</h3>
+
+                                <p>
+                                    I started by sketching different ideas for the scene before moving
+                                    into CAD. Once the composition was finalized, I modelled the fish,
+                                    boat, waves and sun individually, refining each object until it was
+                                    both visually appealing and suitable for mechanical movement. After
+                                    the models were complete, they were integrated with the linkage
+                                    system and tested together as one animated assembly.
+                                </p>
+
+                            </section>
+
+                            <!-- Challenges ------------------------------------------>
+                            <section class="board-sticky automata-challenges-note">
+
+                                <h3>Challenge</h3>
+
+                                <p>
+                                    One of the biggest challenges was balancing creativity with
+                                    practicality. Every object had to look expressive while remaining
+                                    simple enough to move correctly once connected to the mechanism.
+                                    Even small changes to a model could affect spacing, movement or
+                                    neighbouring components, so every design decision required careful
+                                    iteration.
+                                </p>
+
+                                <p>
+                                    Working as a team also meant constantly coordinating the visual
+                                    models with the mechanical engineering so that both parts fit
+                                    together seamlessly.
+                                </p>
+
+                            </section>
+
+                            <!-- Reflection ------------------------------------------>
+                            <section class="board-paper automata-reflection-note">
+
+                                <span class="board-pin board-pin--side" aria-hidden="true"></span>
+
+                                <h3>Reflection</h3>
+
+                                <p>
+                                    Before this project I mostly viewed CAD as a way to build objects.
+                                    Automata showed me that CAD can also be used to tell stories through
+                                    movement. Starting with sketches helped me think creatively, while
+                                    modelling each object taught me how precision becomes essential once
+                                    something has to move instead of simply exist.
+                                </p>
+
+                                <p>
+                                    Collaborating on the project also reinforced the importance of
+                                    combining different strengths. My visual designs and CAD models,
+                                    together with my teammate's linkage system and assembly, produced a
+                                    final machine that neither of us could have created alone.
+                                </p>
+
+                            </section>
+
+                            <!-- Tools ----------------------------------------------->
+                            <section class="board-paper automata-tools-note">
+
+                                <h3>Tools</h3>
+
+                                <div class="board-tool-list">
+
+                                    <figure>
+
+                                        <img src="assets/projects/automata/onshape.webp" alt="Onshape">
+
+                                        <figcaption>
+                                            Onshape
+                                        </figcaption>
+
+                                    </figure>
+
+                                </div>
+
+                                <p>
+                                    CAD Modelling · Concept Sketching · Mechanical Design · Design
+                                    Iteration · Creative Problem Solving
+                                </p>
+
+                            </section>
+
+                            <!-- Credits --------------------------------------------->
+                            <footer class="board-paper automata-credits-note">
+
+                                <h3>Credits</h3>
+
+                                <p>
+                                    Team: Hind Hammad and Selena Paolucci.
+                                </p>
+
+                                <p>
+                                    I created the concept sketches and modelled the fish, boat, waves
+                                    and sun, while Selena developed the linkage mechanisms and completed
+                                    the final mechanical assembly.
+                                </p>
+
+                                <p>
+                                    Created for IAT 106: Spatial Thinking and Communicating with
+                                    instructor Halil Erhan.
+                                </p>
+
+                            </footer>
+
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="sections/designboard/designboard.js"></script>
+    <script src="sections/projects/projects.js"></script>
+    <script src="global/navbar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,844 @@
+/* Normal Cursor -------------------------------------------- */
+
+html,
+body {
+  cursor: default !important;
+}
+
+* {
+  cursor: inherit;
+}
+
+button,
+a,
+.view-project-btn {
+  cursor: pointer;
+}
+
+/* Project Main --------------------------------------------- */
+.project-room {
+  position: relative;
+
+  min-height: 100vh;
+  height: var(--project-room-height, 100vh);
+
+  background: var(--bg);
+}
+
+/* Projects title ------------------------------------------- */
+
+.room-title {
+  position: absolute;
+  top: clamp(2rem, 6vh, 4rem);
+  left: clamp(1.5rem, 4vw, 4rem);
+  z-index: 30;
+
+  margin: 0;
+
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: .88;
+  font-weight: 800;
+  letter-spacing: -.08em;
+
+  color: var(--text);
+
+  pointer-events: none;
+}
+
+/* Sticky gallery viewport ---------------------------------- */
+.room-sticky {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* Visible gallery window ----------------------------------- */
+
+.gallery-window {
+  position: relative;
+  cursor: grab;
+
+  width: 100%;
+  height: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  touch-action: pan-x;
+
+  background:
+    linear-gradient(to bottom,
+      #ffffff 0%,
+      #ffffff 60%,
+      #f7f7f7 75%,
+      #eeeeee 76%,
+      #ffffff 100%);
+}
+
+.gallery-window::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-window.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+/* Gallery wall note ---------------------------------------- */
+
+.gallery-wall-note {
+  position: fixed;
+  top: clamp(6.5rem, 15vh, 9rem);
+  left: clamp(1.5rem, 4vw, 4rem);
+  z-index: 20;
+
+  width: min(15rem, 34vw);
+
+  pointer-events: none;
+}
+
+.gallery-wall-note span {
+  display: block;
+
+  margin-bottom: .35rem;
+
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+
+  opacity: .5;
+}
+
+.gallery-wall-note p {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(.85rem, 1.3vw, 1rem);
+  line-height: 1.25;
+
+  opacity: .72;
+}
+
+
+/* Horizontal gallery track --------------------------------- */
+.gallery-track {
+  position: relative;
+
+  display: flex;
+  align-items: stretch;
+
+  width: max-content;
+  min-width: 100%;
+  height: 100%;
+  padding-inline: 0;
+
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+.gallery-track::before,
+.gallery-track::after {
+  content: "";
+  flex: 0 0 calc(50vw - min(17rem, 44vw));
+}
+
+/* Individual exhibit --------------------------------------- */
+.gallery-exhibit {
+  position: relative;
+
+  flex: 0 0 min(34rem, 88vw);
+
+  height: 100%;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+
+  opacity: .48;
+  transform: scale(.94);
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease;
+}
+
+
+.gallery-exhibit.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Exhibit area --------------------------------------------- */
+.exhibit-space {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding:
+    clamp(6rem, 10vh, 7.5rem) clamp(1rem, 4vw, 3rem) clamp(5rem, 8vh, 6rem);
+}
+
+/* Curated exhibit positioning ------------------------------ */
+
+.gallery-exhibit:nth-child(3n + 1) .exhibit-visual {
+  transform: translateY(-.6rem);
+}
+
+.gallery-exhibit:nth-child(3n + 2) .exhibit-visual {
+  transform: translateY(.8rem);
+}
+
+.gallery-exhibit:nth-child(3n) .exhibit-visual {
+  transform: translateY(-.1rem);
+}
+
+.gallery-exhibit:nth-child(3n + 1) .plaque {
+  margin-top: clamp(.8rem, 2vh, 1.4rem);
+}
+
+.gallery-exhibit:nth-child(3n + 2) .plaque {
+  margin-top: clamp(1.4rem, 3vh, 2rem);
+}
+
+/* Exhibit visual ------------------------------------------- */
+.exhibit-visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 42rem);
+  height: clamp(15rem, 45vh, 25rem);
+  flex-shrink: 0;
+
+  transition:
+    transform .4s ease,
+    filter .4s ease;
+}
+
+.gallery-exhibit.active:nth-child(3n + 1) .exhibit-visual {
+  transform:
+    translateY(-1rem) scale(1.015);
+}
+
+.gallery-exhibit.active:nth-child(3n + 2) .exhibit-visual {
+  transform:
+    translateY(.3rem) scale(1.015);
+}
+
+.gallery-exhibit.active:nth-child(3n) .exhibit-visual {
+  transform:
+    translateY(-.5rem) scale(1.015);
+}
+
+
+/* Temporary visual differences ----------------------------- */
+.exhibit-visual--frame {
+  width: min(100%, 20rem);
+}
+
+.exhibit-visual--sculpture {
+  width: min(100%, 25rem);
+}
+
+.exhibit-visual--screen {
+  width: min(100%, 39rem);
+}
+
+.exhibit-visual--installation {
+  width: min(100%, 42rem);
+}
+
+.exhibit-visual--object {
+  width: min(100%, 28rem);
+}
+
+/* SkyConnect framed artwork -------------------------------- */
+
+.skyconnect-exhibit {
+  aspect-ratio: 1.28 / 1;
+}
+
+.skyconnect-artwork {
+  position: absolute;
+
+  top: 9%;
+  right: 8%;
+  bottom: 10%;
+  left: 8%;
+
+  overflow: hidden;
+}
+
+.skyconnect-artwork .project-media {
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.skyconnect-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+/* Project media -------------------------------------------- */
+
+.project-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: contain;
+
+  pointer-events: none;
+
+  transition:
+    opacity .55s ease,
+    transform .55s ease;
+}
+
+.project-media--bw {
+  opacity: 1;
+}
+
+.project-media--colour,
+.project-media--gif {
+  opacity: 0;
+}
+
+/* Colour-focused projects */
+.gallery-exhibit.media-active[data-focus-type="colour"] .project-media--bw {
+  opacity: 0;
+}
+
+.gallery-exhibit.media-active[data-focus-type="colour"] .project-media--colour {
+  opacity: 1;
+}
+
+/* GIF-focused projects */
+.gallery-exhibit.media-active[data-focus-type="gif"] .project-media--bw {
+  opacity: 0;
+}
+
+.gallery-exhibit.media-active[data-focus-type="gif"] .project-media--gif {
+  opacity: 1;
+}
+
+/* Plaque ---------------------------------------------------- */
+
+.plaque {
+  position: relative;
+
+  width: min(16rem, 70%);
+  margin-top: clamp(.2rem, .8vh, .6rem);
+  padding: .7rem .9rem;
+
+  text-align: center;
+
+  background: var(--surface);
+  backdrop-filter: blur(1rem);
+
+  border: .06rem solid var(--border-light);
+  box-shadow: var(--shadow-frame);
+
+  opacity: .35;
+  transform: translateY(.75rem);
+
+  transition:
+    opacity .4s ease .12s,
+    transform .4s ease .12s;
+}
+
+.gallery-exhibit.active .plaque {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-category {
+  margin: 0 0 .45rem;
+
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  opacity: .6;
+}
+
+.plaque h2 {
+  margin: 0 0 .45rem;
+  font-size: clamp(.95rem, 1.4vw, 1.08rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.project-description {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+  font-size: clamp(.76rem, 1vw, .88rem);
+  line-height: 1.35;
+
+  color: var(--text-soft);
+}
+
+/* Project Main: View More Swatch Button -------------------- */
+
+.view-project-btn {
+  position: relative;
+  isolation: isolate;
+
+  display: grid;
+  place-items: center;
+
+  width: min(9rem, 80%);
+  min-height: 2.8rem;
+
+  margin: .8rem auto 0;
+  padding: .55rem 1.15rem;
+
+  border: 0;
+  background: transparent;
+
+  font-family: var(--font-main);
+  font-size: clamp(.7rem, 1vw, .78rem);
+  font-weight: 800;
+  letter-spacing: .04em;
+
+  color: var(--text);
+
+  opacity: 0;
+  transform: translateY(.4rem);
+
+  transition:
+    opacity .35s ease .2s,
+    transform .35s ease .2s,
+    letter-spacing .25s ease;
+}
+
+.view-project-btn::before,
+.view-project-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.view-project-btn::before {
+  background-image:
+    url("../../assets/projects/steps/basic.webp");
+
+  opacity: 1;
+}
+
+.view-project-btn::after {
+  background-image:
+    url("../../assets/projects/steps/yellow.webp");
+
+  opacity: 0;
+}
+
+.view-project-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-exhibit.active .view-project-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.view-project-btn:hover,
+.view-project-btn:focus-visible {
+  letter-spacing: .09em;
+}
+
+.view-project-btn:hover::before,
+.view-project-btn:focus-visible::before {
+  opacity: 0;
+}
+
+.view-project-btn:hover::after,
+.view-project-btn:focus-visible::after {
+  opacity: 1;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.view-project-btn:focus-visible {
+  outline: .12rem solid var(--text);
+  outline-offset: .18rem;
+}
+
+/* Continue exploring direction ----------------------------- */
+
+.gallery-direction {
+  position: fixed;
+  right: clamp(1.5rem, 4vw, 4rem);
+  bottom: clamp(4.8rem, 10vh, 6.5rem);
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  opacity: .55;
+
+  pointer-events: none;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.gallery-direction-arrow {
+  display: inline-block;
+
+  font-size: 1.15rem;
+
+  animation: galleryArrowMove 1.4s ease-in-out infinite;
+}
+
+@keyframes galleryArrowMove {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(.45rem);
+  }
+}
+
+/* Paint swatch navigation ---------------------------------- */
+
+.project-step-navigation {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(0.5rem, 1.5vh, 1rem);
+  z-index: 40;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(.3rem, 1vw, .8rem);
+
+  transform: translateX(-50%);
+}
+
+/* Individual project swatches ------------------------------ */
+
+.project-step {
+  position: relative;
+
+  width: clamp(1rem, 3vw, 2rem);
+  aspect-ratio: 1.5 / 1;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  opacity: .72;
+  transform: scale(.88);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+.project-step:hover,
+.project-step:focus-visible,
+.project-step.active {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.project-step-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+
+  pointer-events: none;
+}
+
+.project-step-basic {
+  opacity: 1;
+}
+
+.project-step-colour {
+  opacity: 0;
+}
+
+.project-step.active .project-step-basic {
+  opacity: 0;
+}
+
+.project-step.active .project-step-colour {
+  opacity: 1;
+}
+
+/* Responsive ----------------------------------------------- */
+
+@media (max-width: 48rem) {
+
+  .room-title {
+    top: 2rem;
+    left: 1.4rem;
+  }
+
+  .gallery-track {
+    gap: 1rem;
+  }
+
+  .gallery-exhibit {
+    flex-basis: calc(100vw - 2rem);
+  }
+
+  .gallery-track::before,
+  .gallery-track::after {
+    flex-basis: 1rem;
+  }
+
+  .exhibit-space {
+    padding:
+      6.5rem 1rem 6rem;
+  }
+
+  .exhibit-visual {
+    width: min(100%, 38rem);
+    height: clamp(18rem, 45vh, 27rem);
+  }
+
+  .plaque {
+    width: min(15rem, 78%);
+  }
+
+  .gallery-wall-note {
+    top: 5.5rem;
+    left: 1.4rem;
+
+    width: 12rem;
+  }
+
+  .gallery-direction {
+    right: 1.4rem;
+    bottom: 4.5rem;
+  }
+
+  .gallery-direction span:first-child {
+    display: none;
+  }
+}
+
+.gallery-exhibit[data-board] .exhibit-visual {
+  cursor: pointer;
+}
+
+/* Global Kitchen Rush Framed Artwork ----------------------- */
+
+.global-kitchen-exhibit {
+  width: min(100%, 22rem);
+  aspect-ratio: 1.28 / 1;
+}
+
+.global-kitchen-artwork {
+  position: absolute;
+
+  top: 9%;
+  right: 8%;
+  bottom: 10%;
+  left: 8%;
+
+  overflow: hidden;
+}
+
+.global-kitchen-artwork .project-media {
+  inset: 0;
+
+  width: 70%;
+  height: 70%;
+
+  top: 1.5rem;
+  left: 2.5rem;
+  object-fit: cover;
+}
+
+.global-kitchen-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: block;
+
+  width: 150%;
+  height: 150%;
+  top: -5rem;
+  left: -6rem;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+/* Tech4Ease Gallery Sculpture ------------------------------ */
+
+.tech4ease-exhibit {
+  width: min(100%, 25rem);
+  height: clamp(18rem, 48vh, 30rem);
+}
+
+.tech4ease-exhibit .project-media {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/* ASA Gallery Frame ---------------------------------------- */
+
+.asa-exhibit {
+
+  width: min(100%, 22rem);
+  aspect-ratio: 1 / 1;
+
+}
+
+
+.asa-artwork {
+
+  position: absolute;
+
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+
+  overflow: hidden;
+
+}
+
+
+.asa-artwork .project-media {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+}
+
+
+.asa-frame {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+}
+
+/* Automata Gallery Frame ----------------------------------- */
+
+.automata-exhibit {
+  width: min(100%, 23rem);
+  aspect-ratio: 1.28 / 1;
+}
+
+.automata-artwork {
+  position: absolute;
+
+  top: 3rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  left: 5.5rem;
+
+  overflow: hidden;
+}
+
+.automata-artwork .project-media {
+  inset: 0;
+
+  width: 80%;
+  height: 80%;
+
+  object-fit: cover;
+}
+
+.automata-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}

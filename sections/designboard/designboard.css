@@ -1,0 +1,435 @@
+/* ==========================================================
+   DESIGN BOARD — SHARED OVERLAY + COMPONENT SYSTEM
+   Project layouts belong in /projects/*.css
+========================================================== */
+
+
+.design-board-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.design-board-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Hide inactive project boards ----------------------------- */
+
+[data-project-board][hidden] {
+  display: none !important;
+}
+
+.design-board-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+
+.design-board-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(18rem, 29vw) minmax(0, 1fr);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.design-board-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding:
+    clamp(5rem, 9vh, 7rem)
+    clamp(1.25rem, 3vw, 3rem)
+    clamp(3rem, 7vh, 5rem);
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 60%,
+      #f7f7f7 75%,
+      #eeeeee 76%,
+      #ffffff 100%
+    );
+  border-right: .06rem solid var(--border-light);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  transform: translateX(-100%);
+  transition: transform .5s ease;
+}
+
+.design-board-preview::-webkit-scrollbar,
+.design-board-content::-webkit-scrollbar {
+  display: none;
+}
+
+.design-board-overlay.open .design-board-preview {
+  transform: translateX(0);
+}
+
+.design-board-preview-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 28rem);
+  min-height: clamp(19rem, 52vh, 34rem);
+  height: clamp(19rem, 52vh, 34rem);
+  flex-shrink: 0;
+}
+
+.design-board-preview-art .exhibit-visual {
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  transform: none !important;
+}
+
+.design-board-preview-art .project-media--bw,
+.design-board-preview-art .project-media--colour {
+  opacity: 0;
+}
+
+.design-board-preview-art .project-media--gif {
+  opacity: 1;
+}
+
+.design-board-preview-art
+.gallery-exhibit[data-focus-type="colour"]
+.project-media--colour {
+  opacity: 1;
+}
+
+.design-board-preview-art
+.gallery-exhibit[data-focus-type="colour"]
+.project-media--gif {
+  opacity: 0;
+}
+
+.design-board-preview-plaque {
+  width: min(16rem, 85%);
+  margin-top: clamp(.5rem, 1.5vh, 1rem);
+  flex-shrink: 0;
+}
+
+.design-board-preview-plaque .plaque {
+  width: 100%;
+  margin: 0;
+  opacity: 1;
+  transform: none;
+}
+
+.design-board-panel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform .5s ease;
+}
+
+.design-board-overlay.open .design-board-panel {
+  transform: translateX(0);
+}
+
+.design-board-content {
+  width: 100%;
+  height: 100%;
+  padding:
+    clamp(5rem, 9vh, 6.5rem)
+    clamp(1rem, 3vw, 3rem)
+    clamp(5rem, 8vh, 7rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.design-board-close {
+  position: absolute;
+  top: clamp(1rem, 2.5vh, 1.5rem);
+  left: clamp(1rem, 2vw, 1.75rem);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .65rem .9rem;
+  border: .06rem solid var(--border-light);
+  border-radius: 999rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-frame);
+  font-family: var(--font-main);
+  font-size: clamp(.68rem, 1vw, .78rem);
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.design-board-close span:first-child {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.design-board-close:hover,
+.design-board-close:focus-visible {
+  background: var(--white);
+  transform: translateX(-.2rem);
+}
+
+.design-board-close:focus-visible {
+  outline: .12rem solid var(--text);
+  outline-offset: .2rem;
+}
+
+/* Shared board typography --------------------------------- */
+
+[data-project-board] h2,
+[data-project-board] h3,
+[data-project-board] p,
+[data-project-board] ul,
+[data-project-board] figure {
+  margin-top: 0;
+}
+
+[data-project-board] h3 {
+  margin-bottom: clamp(.7rem, 1.5vw, 1rem);
+  font-family: var(--font-elegant);
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text);
+}
+
+[data-project-board] p,
+[data-project-board] li,
+[data-project-board] figcaption {
+  font-family: var(--font-main);
+  font-size: clamp(.78rem, 1vw, .92rem);
+  line-height: 1.7;
+  color: rgba(36, 36, 36, .76);
+}
+
+.board-eyebrow {
+  margin: 0 0 .8rem;
+  font-family: var(--font-main);
+  font-size: clamp(.62rem, .8vw, .72rem) !important;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.board-subtitle {
+  width: min(100%, 37rem);
+  margin: clamp(1.2rem, 2vw, 1.7rem) 0 0;
+  font-family: var(--font-elegant) !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem) !important;
+  line-height: 1.45 !important;
+  color: rgba(36, 36, 36, .72);
+}
+
+/* Shared board surfaces ----------------------------------- */
+
+.board-paper,
+.board-sticky,
+.board-media,
+.board-polaroid {
+  position: relative;
+  z-index: 4;
+  max-width: 100%;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.board-paper {
+  padding: clamp(1.4rem, 2.2vw, 2rem);
+  background: rgba(255, 255, 255, .96);
+  border: .06rem solid var(--border-light);
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .055);
+}
+
+.board-sticky {
+  padding: clamp(1.3rem, 2vw, 1.8rem);
+  background: #fff0a8;
+  box-shadow:
+    0 .1rem .2rem rgba(36, 36, 36, .05),
+    0 1rem 2rem rgba(0, 0, 0, .075);
+}
+
+.board-media {
+  margin: 0;
+  padding: clamp(.65rem, 1vw, .9rem);
+  background: var(--white);
+  border: .06rem solid var(--border-light);
+  box-shadow:
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .06);
+}
+
+.board-media img,
+.board-media video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.board-media video {
+  background: var(--text);
+}
+
+.board-media figcaption {
+  max-width: 60ch;
+  margin: clamp(.75rem, 1.3vw, 1rem) auto .15rem;
+  padding-inline: clamp(.2rem, 1vw, .7rem);
+}
+
+.board-polaroid {
+  margin: 0;
+  background: transparent;
+}
+
+.board-polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 .9rem 1.15rem rgba(0, 0, 0, .12));
+}
+
+.board-paper:hover,
+.board-sticky:hover,
+.board-media:hover,
+.board-polaroid:hover {
+  z-index: 15;
+  transform: translateY(-.2rem);
+}
+
+/* Attachments --------------------------------------------- */
+
+.board-tape {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  z-index: 3;
+  width: clamp(4rem, 7vw, 5.5rem);
+  height: 1.5rem;
+  background: rgba(226, 209, 173, .78);
+  transform: translateX(-50%) rotate(-1deg);
+}
+
+.board-tape--angled {
+  left: 72%;
+  transform: translateX(-50%) rotate(5deg);
+}
+
+.board-pin {
+  position: absolute;
+  top: -.45rem;
+  left: 50%;
+  z-index: 5;
+  width: .8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d94a4a;
+  box-shadow: 0 .18rem .25rem rgba(0, 0, 0, .25);
+  transform: translateX(-50%);
+}
+
+.board-pin--side {
+  left: 90%;
+}
+
+.board-paperclip {
+  position: absolute;
+  top: -1.3rem;
+  right: 1.5rem;
+  z-index: 5;
+  width: 1.2rem;
+  height: 3rem;
+  border: .15rem solid rgba(36, 36, 36, .5);
+  border-radius: 999rem;
+  transform: rotate(4deg);
+  opacity: .65;
+}
+
+/* Shared tool grid ---------------------------------------- */
+
+.board-tool-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.6rem, 1.3vw, 1rem);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.board-tool-list figure {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.board-tool-list img {
+  display: block;
+  width: 100%;
+  max-width: 5rem;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.board-tool-list figcaption {
+  margin-top: .4rem;
+  margin-bottom: 0;
+  font-size: clamp(.6rem, .8vw, .7rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@media (max-width: 60rem) {
+  .design-board-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .design-board-preview {
+    display: none;
+  }
+
+  .design-board-content {
+    padding:
+      clamp(4.5rem, 8vh, 6rem)
+      clamp(1rem, 4vw, 2rem)
+      4rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  .board-paper,
+  .board-sticky {
+    padding: 1.2rem;
+  }
+
+  .board-tool-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
