@@ -151,8 +151,8 @@
   left: -6rem;
 
   transform-origin: bottom left;
-  width: clamp(20rem, 40vw, 45rem);
-  height: 50rem;
+  width: clamp(18rem, 36vw, 42rem);
+  max-height: 85svh;
 }
 
 .hero-corner-right {
