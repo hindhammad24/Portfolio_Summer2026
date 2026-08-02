@@ -1,20 +1,6 @@
 
 /* studio section------------------------------------------*/
-const lamp = document.getElementById("studioLamp");
 
-function flickerLamp() {
-
-  lamp.src =
-    lamp.src.includes("lampoff.webp")
-      ? "assets/desk/lampon.webp"
-      : "assets/desk/lampoff.webp";
-
-  const nextDelay = 700 + Math.random() * 1200;
-
-  setTimeout(flickerLamp, nextDelay);
-}
-
-flickerLamp();
 
 
 /* Canvas Hover --------------------------------------------- */
@@ -186,7 +172,7 @@ const educationText = `
   </p>
 
   <div class="skill-tags">
-    <span>Expected Graduation: June 2026</span>
+    <span>Expected Graduation: June 2027</span>
     <span>GPA: 3.8</span>
   </div>
 
@@ -287,6 +273,7 @@ studioChair.addEventListener("mouseleave", () => {
 const studioSection = document.querySelector(".studio-section");
 const studioDesk = document.querySelector(".desk-group");
 const studioDirection = document.querySelector(".studio-direction");
+const studioFeatured = document.querySelector(".studio-featured");
 
 function updateStudioTransition() {
   if (!studioSection || !studioDesk || !studioDirection) return;
@@ -310,7 +297,7 @@ function updateStudioTransition() {
     Studio remains still during the first part so visitors
     can hover over the objects.
   */
-  const transitionStart = .38;
+  const transitionStart = .55;
 
   const movementProgress = Math.min(
     Math.max(
@@ -322,10 +309,10 @@ function updateStudioTransition() {
   );
 
   /* Move the entire desk scene toward the left */
-  const deskShift = movementProgress * -72;
+  const deskShift = movementProgress * -60;
 
   /* Bring the direction stand in from the right */
-  const signShift = (1 - movementProgress) * 30;
+  const signShift = (1 - movementProgress) * 20;
 
   studioDesk.style.setProperty(
     "--studio-desk-shift",
@@ -339,11 +326,19 @@ function updateStudioTransition() {
 
   studioDirection.style.opacity =
     Math.min(movementProgress * 1.6, 1);
+    studioDirection.classList.toggle(
+  "show",
+  movementProgress > .05
+);
 
-  studioDirection.classList.toggle(
+if (studioFeatured) {
+
+  studioFeatured.classList.toggle(
     "show",
-    movementProgress > .35
+    movementProgress > .45
   );
+
+}
 
   /*
     Hide any open information card once the horizontal

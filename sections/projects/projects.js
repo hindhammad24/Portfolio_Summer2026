@@ -411,3 +411,33 @@ window.addEventListener(
   "load",
   initialiseProjectGallery
 );
+
+const urlParams = new URLSearchParams(window.location.search);
+const selectedBoard = urlParams.get("board");
+
+if (selectedBoard) {
+
+    setTimeout(() => {
+
+        const project = document.querySelector(
+            `[data-board="${selectedBoard}"]`
+        );
+
+        if (project) {
+
+            const index = galleryExhibits.indexOf(project);
+
+            // first move gallery to correct card
+            scrollToProject(index);
+
+            // wait for movement, then open board
+            setTimeout(() => {
+
+                project.querySelector(".view-project-btn")?.click();
+
+            }, 700);
+        }
+
+    }, 500);
+
+}

@@ -22,22 +22,18 @@ let currentSequenceFrame = -1;
 let scrollTicking = false;
 
 /* Lazy load sequence frames -------------------------------- */
+const loadedFrames = [];
 
-const loadedFrames = {};
+function preloadSequenceFrames() {
+    for (let frame = 0; frame <= sequenceFrames; frame++) {
 
-function loadSequenceFrame(frame) {
+        const image = new Image();
 
-  if (!loadedFrames[frame]) {
+        image.src =
+          `${sequenceFolder}${frame}.${sequenceExtension}`;
 
-    const image = new Image();
-
-    image.src =
-      `${sequenceFolder}${frame}.${sequenceExtension}`;
-
-    loadedFrames[frame] = image;
-  }
-
-  return loadedFrames[frame];
+        loadedFrames[frame] = image;
+    }
 }
 
 /* Calculate sequence progress ------------------------------ */
@@ -85,11 +81,9 @@ function updateSequenceFrame(progress) {
   }
 
   currentSequenceFrame = frame;
-const image = loadSequenceFrame(frame);
 
-if (image.complete) {
-  sequenceImage.src = image.src;
-}
+sequenceImage.src = loadedFrames[frame].src;
+
 }
 
 /* Update hero visibility ----------------------------------- */
@@ -181,5 +175,5 @@ bioScrollButton?.addEventListener(
 );
 
 /* Start ---------------------------------------------------- */
-
+preloadSequenceFrames();
 updateHomepage();

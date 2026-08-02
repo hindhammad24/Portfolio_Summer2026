@@ -20,9 +20,7 @@
   margin-inline: auto;
 
   padding:
-    clamp(2rem, 5vw, 5rem)
-    clamp(1rem, 3vw, 3rem)
-    clamp(6rem, 10vw, 10rem);
+    clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem) clamp(6rem, 10vw, 10rem);
 
   background: transparent;
   border: 0;
@@ -34,7 +32,7 @@
 
 /* Reset Old Absolute Layout ------------------------------- */
 
-.skyconnect-board > * {
+.skyconnect-board>* {
   position: relative;
   inset: auto;
 
@@ -55,82 +53,86 @@
 
 .skyconnect-board h2,
 .skyconnect-board h3,
-.skyconnect-board p,
-.skyconnect-board ul,
-.skyconnect-board figure {
+.skyconnect-board h4 {
   margin-top: 0;
-}
 
-.skyconnect-board h3 {
-  margin-bottom: clamp(.7rem, 1.5vw, 1rem);
-
-  font-family: var(--font-elegant);
-  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  font-family: var(--font-main);
   font-weight: 500;
   line-height: 1;
 
   color: var(--text);
 }
 
+
+.skyconnect-board h3 {
+  margin-bottom: clamp(.7rem, 1.5vw, 1rem);
+
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+
+.skyconnect-board h4 {
+  margin-bottom: clamp(.8rem, 1.5vw, 1.2rem);
+
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+}
+
+
 .skyconnect-board p,
 .skyconnect-board li,
 .skyconnect-board figcaption {
-  font-family: var(--font-main);
-  font-size: clamp(.78rem, 1vw, .92rem);
-  line-height: 1.7;
 
-  color: rgba(36, 36, 36, .76);
+  font-family: var(--font-elegant);
+
+  font-size: clamp(.85rem, 1vw, 1rem);
+
+  line-height: 1.75;
+
+  color: rgba(36, 36, 36, .78);
 }
-
 
 /* Header -------------------------------------------------- */
 
 .skyconnect-heading {
+
   grid-column: 1 / 10;
 
   width: min(100%, 48rem);
+
   margin: 0;
+
   padding-top: clamp(1rem, 3vw, 2.5rem);
 
-  z-index: 5;
-}
-
-.skyconnect-heading .board-eyebrow {
-  margin: 0 0 .8rem;
-
-  font-family: var(--font-main);
-  font-size: clamp(.62rem, .8vw, .72rem);
-  font-weight: 800;
-  letter-spacing: .14em;
-  line-height: 1.5;
-  text-transform: uppercase;
-
-  color: var(--text);
 }
 
 .skyconnect-heading h2 {
+
   margin: 0;
 
-  font-family: var(--font-elegant);
-  font-size: clamp(3.8rem, 8vw, 7.5rem);
-  font-weight: 500;
-  line-height: .82;
+  font-family: var(--font-main);
 
-  color: var(--text);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+
+  font-weight: 500;
+
+  line-height: .85;
+
 }
+
 
 .skyconnect-heading .board-subtitle {
-  width: min(100%, 37rem);
 
-  margin: clamp(1.2rem, 2vw, 1.7rem) 0 0;
+  width: min(100%, 38rem);
+
+  margin-top: 1.5rem;
 
   font-family: var(--font-elegant);
-  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-  line-height: 1.45;
 
-  color: rgba(36, 36, 36, .72);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+
+  line-height: 1.5;
+
 }
-
 
 /* Award --------------------------------------------------- */
 
@@ -147,10 +149,7 @@
   max-width: 100%;
 
   margin:
-    clamp(1rem, 3vw, 2.5rem)
-    clamp(.5rem, 2vw, 1.5rem)
-    0
-    0;
+    clamp(1rem, 3vw, 2.5rem) clamp(.5rem, 2vw, 1.5rem) 0 0;
 
   transform: rotate(2deg);
 
@@ -164,9 +163,7 @@
 
 .skyconnect-award:hover {
   transform:
-    rotate(0)
-    translateY(-.2rem)
-    scale(1.025);
+    rotate(0) translateY(-.2rem) scale(1.025);
 }
 
 
@@ -174,7 +171,6 @@
 
 .skyconnect-board .board-paper {
   padding: clamp(1.4rem, 2.2vw, 2rem);
-
   background: rgba(255, 255, 255, .96);
   border: .06rem solid var(--border-light);
   box-shadow:
@@ -182,6 +178,12 @@
     0 1rem 2.5rem rgba(0, 0, 0, .055);
 
   transform: none;
+}
+
+.skyconnect-board .board-paper {
+
+  align-self: start;
+
 }
 
 .skyconnect-board .board-media {
@@ -222,9 +224,7 @@
   max-width: 60ch;
 
   margin:
-    clamp(.75rem, 1.3vw, 1rem)
-    auto
-    .15rem;
+    clamp(.75rem, 1.3vw, 1rem) auto .15rem;
 
   padding-inline: clamp(.2rem, 1vw, .7rem);
 }
@@ -269,33 +269,63 @@
 
 /* Photo Story --------------------------------------------- */
 
-.board-presenting,
-.board-winning,
-.board-networking {
-  grid-row: 3;
+/* ==========================================================
+   PROJECT MOMENTS
+========================================================== */
+
+
+.skyconnect-moments {
+
+  grid-column: 2 / 12;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: clamp(2rem, 4vw, 4rem);
 
   width: 100%;
-  align-self: start;
+
+  align-items: start;
+
 }
 
-.board-presenting {
-  grid-column: 1 / 5;
 
-  transform: rotate(-1.5deg);
+
+.board-moment {
+
+  grid-column: auto;
+
+  width: 100%;
+
+  margin: 0;
+
+  transform: none;
+
 }
 
-.board-winning {
-  grid-column: 5 / 9;
 
-  margin-top: clamp(1rem, 3vw, 2.25rem);
 
-  transform: rotate(.8deg);
+.board-moment img {
+
+  width: 100%;
+
+  max-height: 24rem;
+
+  object-fit: contain;
+
 }
 
-.board-networking {
-  grid-column: 9 / 13;
 
-  transform: rotate(1.3deg);
+
+.board-moment figcaption {
+
+  width: min(100%, 30ch);
+
+  margin: 1rem auto 0;
+
+  text-align: center;
+
 }
 
 .skyconnect-board .board-polaroid img {
@@ -312,11 +342,13 @@
 /* Role + Prototype ---------------------------------------- */
 
 .board-role-note {
-  grid-column: 1 / 6;
-  grid-row: 4;
+  grid-column: 2 / 12;
 
-  width: 100%;
-  align-self: start;
+  grid-row: auto;
+
+  width: min(100%, 55rem);
+
+  margin-inline: auto;
 
   transform: none;
 }
@@ -336,17 +368,23 @@
   transform: none;
 }
 
+.skyconnect-moments {
+
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+
+}
 
 /* Process + Challenge ------------------------------------- */
-
 .board-process-note {
-  grid-column: 1 / 9;
-  grid-row: 5;
 
-  width: 100%;
-  align-self: start;
+  grid-column: 1 / 13;
 
-  transform: none;
+  grid-row: 6;
+
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+
 }
 
 .board-challenges-note {
@@ -371,25 +409,30 @@
 
 
 /* Reflection + Tools -------------------------------------- */
-
 .board-reflection-note {
-  grid-column: 1 / 8;
-  grid-row: 6;
+
+  grid-column: 2 / 8;
+
+  grid-row: 9;
+
 
   width: 100%;
+
   align-self: start;
 
-  transform: none;
 }
 
+
 .board-tools-note {
-  grid-column: 8 / 13;
-  grid-row: 6;
+
+  grid-column: 8 / 12;
+
+  grid-row: 9;
 
   width: 100%;
+
   align-self: start;
 
-  transform: none;
 }
 
 
@@ -438,8 +481,10 @@
 /* Credits ------------------------------------------------- */
 
 .board-credits-note {
+
   grid-column: 3 / 11;
-  grid-row: 7;
+
+  grid-row: 10;
 
   width: 100%;
   align-self: start;
@@ -477,8 +522,7 @@ Everything else stays clean.
   opacity: .72;
 
   transform:
-    translateX(-50%)
-    rotate(-1deg);
+    translateX(-50%) rotate(-1deg);
 }
 
 .skyconnect-board .board-role-note .board-paperclip {
@@ -492,38 +536,115 @@ Everything else stays clean.
 
 /* Slight Connection Between Photos ------------------------ */
 
-.board-presenting::after,
-.board-winning::after {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  right: clamp(-1.3rem, -1.7vw, -.7rem);
-  z-index: -1;
-
-  width: clamp(1.4rem, 2.3vw, 2.4rem);
-  height: .06rem;
-
-  background: rgba(36, 36, 36, .15);
-}
 
 
 /* Left Preview Artwork ------------------------------------ */
 .design-board-preview-art .skyconnect-exhibit {
-    width: min(100%, 20rem);
-    height: clamp(17rem, 46vh, 28rem);
+  width: min(100%, 20rem);
+  height: clamp(17rem, 46vh, 28rem);
 
-    margin-inline: auto;
+  margin-inline: auto;
 
-    transform: none;
+  transform: none;
 }
+
 .design-board-preview-art .skyconnect-artwork {
   top: 1%;
   right: 10%;
   bottom: 10%;
 }
 
+.skyconnect-questions {
 
+  grid-column: 1 / 13;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(1.5rem, 3vw, 3rem);
+
+  width: 100%;
+
+}
+
+
+.skyconnect-questions .board-paper {
+
+  width: 100%;
+
+}
+
+
+.skyconnect-questions .board-media {
+
+  width: 100%;
+
+}
+
+
+.skyconnect-questions img {
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+}
+
+.board-question h3,
+.board-question h4 {
+
+  width: 100%;
+
+}
+
+
+.board-question .board-media {
+
+  width: min(100%, 45rem);
+
+  margin-inline: auto;
+
+}
+
+.board-question>*,
+.board-question .board-paper {
+
+  width: 100%;
+
+}
+
+
+.board-question .board-media {
+
+  width: 100%;
+
+}
+
+.board-question .board-media img {
+
+  max-height: 32rem;
+
+  object-fit: contain;
+
+}
+
+.skyconnect-board .board-paper {
+
+  height: auto;
+
+  min-height: 0;
+
+}
+
+
+.skyconnect-board .board-paper p:last-child {
+
+  margin-bottom: 0;
+
+}
 
 /* Medium Screens ------------------------------------------ */
 
@@ -572,12 +693,10 @@ Everything else stays clean.
     width: 100%;
 
     padding:
-      5rem
-      0
-      4rem;
+      5rem 0 4rem;
   }
 
-  .skyconnect-board > *,
+  .skyconnect-board>*,
   .skyconnect-board .board-paper,
   .skyconnect-board .board-sticky,
   .skyconnect-board .board-media,
@@ -605,10 +724,7 @@ Everything else stays clean.
 
     width: clamp(6rem, 18vw, 8rem);
     margin:
-      -2.5rem
-      1rem
-      0
-      0;
+      -2.5rem 1rem 0 0;
 
     transform: rotate(2deg);
   }
@@ -719,4 +835,24 @@ Everything else stays clean.
   .skyconnect-award {
     margin-top: -1.5rem;
   }
+}
+
+/* Design Thinking ----------------------------------------- */
+
+.board-design-thinking {
+
+  grid-column: 1 / 13;
+
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+
+  align-self: start;
+
+}
+
+.board-design-thinking p {
+
+  max-width: 65ch;
+
 }

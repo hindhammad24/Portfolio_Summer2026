@@ -1,0 +1,384 @@
+/* =====================================================
+   5 CORNERS DAYCARE — DESIGN BOARD
+   ===================================================== */
+
+
+.fivecorner-board {
+
+    display:grid;
+
+    grid-template-columns:repeat(12, minmax(0,1fr));
+
+    gap:clamp(2rem,4vw,4rem);
+
+    width:min(100%,76rem);
+
+    margin-inline:auto;
+
+    padding:
+    4rem 2rem
+    8rem;
+
+}
+
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+
+.fivecorner-heading {
+
+    grid-column:2 / 12;
+
+}
+
+
+.fivecorner-heading .board-eyebrow {
+
+    font-size:.9rem;
+
+    letter-spacing:.15em;
+
+}
+
+
+.fivecorner-heading h2 {
+
+    font-size:clamp(3.5rem,6vw,5.5rem);
+
+    line-height:.9;
+
+    margin:1rem 0;
+
+}
+
+
+
+.fivecorner-heading .board-subtitle {
+
+    max-width:38rem;
+
+    font-size:1.1rem;
+
+    line-height:1.5;
+
+}
+
+
+
+/* =====================================================
+   PAPER CARDS
+   ===================================================== */
+
+
+.fivecorner-board .board-paper {
+
+    background:white;
+
+    padding:
+    clamp(1.2rem,2vw,2rem);
+
+
+    box-shadow:
+    0 .8rem 2rem rgba(0,0,0,.05);
+
+}
+
+
+
+.board-paper h3 {
+
+    font-size:clamp(1.8rem,3vw,2.7rem);
+
+    line-height:1;
+
+    margin:0 0 1rem;
+
+}
+
+
+
+.board-paper p {
+
+    font-size:1rem;
+
+    line-height:1.65;
+
+    margin:0;
+
+}
+
+
+
+
+/* =====================================================
+   MEDIA
+   ===================================================== */
+
+
+.board-media {
+
+    margin:0;
+
+}
+
+
+
+.board-media img {
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+}
+
+
+
+.board-media figcaption {
+
+    margin-top:.7rem;
+
+    font-size:.8rem;
+
+    line-height:1.5;
+
+}
+
+
+
+
+/* =====================================================
+   OVERVIEW
+   ===================================================== */
+
+
+.board-overview-note {
+
+    grid-column:2 / 7;
+
+}
+
+
+
+/* website preview */
+
+.fivecorner-board > .board-media {
+
+    grid-column:7 / 12;
+
+}
+
+
+
+
+/* =====================================================
+   VISUAL IDENTITY
+   ===================================================== */
+
+
+.fivecorner-board > .board-paper:nth-of-type(2){
+
+    grid-column:2 / 12;
+
+}
+
+
+
+
+/* =====================================================
+   DESIGN PROCESS
+   ===================================================== */
+
+
+.fivecorner-board > .board-paper:nth-of-type(3){
+
+    grid-column:2 / 8;
+
+}
+
+
+
+.board-gallery {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.5rem;
+
+    margin-top:2rem;
+
+}
+
+
+
+
+/* =====================================================
+   ILLUSTRATIONS
+   ===================================================== */
+
+
+.fivecorner-board > .board-paper:nth-of-type(4){
+
+    grid-column:8 / 12;
+
+}
+
+
+
+/* remove card feeling for transparent drawings */
+
+.fivecorner-board > .board-paper:nth-of-type(4)
+.board-media {
+
+    box-shadow:none;
+
+    background:none;
+
+    padding:0;
+
+}
+
+
+
+.fivecorner-board > .board-paper:nth-of-type(4)
+.board-media img {
+
+    width:70%;
+
+    margin:auto;
+
+}
+
+
+
+
+
+/* =====================================================
+   DEVELOPMENT
+   ===================================================== */
+
+
+.fivecorner-board > .board-paper:nth-of-type(5){
+
+    grid-column:2 / 7;
+
+}
+
+
+
+
+
+/* =====================================================
+   USERS
+   ===================================================== */
+
+
+.fivecorner-board > .board-paper:nth-of-type(6){
+
+    grid-column:7 / 12;
+
+}
+
+
+
+
+/* =====================================================
+   REFLECTION
+   ===================================================== */
+
+
+.board-reflection-note {
+
+    grid-column:2 / 8;
+
+}
+
+
+
+
+/* =====================================================
+   TOOLS
+   ===================================================== */
+
+
+.board-tools-note {
+
+    grid-column:8 / 12;
+
+}
+
+
+
+.board-tool-list {
+
+    display:flex;
+
+    gap:1rem;
+
+}
+
+
+
+.board-tool-list figure {
+
+    margin:0;
+
+    text-align:center;
+
+}
+
+
+
+.board-tool-list img {
+
+    width:3rem;
+
+}
+
+
+
+
+/* =====================================================
+   CREDITS
+   ===================================================== */
+
+
+.board-credits-note {
+
+    grid-column:3 / 11;
+
+    text-align:center;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+
+@media(max-width:900px){
+
+
+    .fivecorner-board > * {
+
+        grid-column:1 / -1 !important;
+
+    }
+
+
+    .board-gallery {
+
+        grid-template-columns:1fr;
+
+    }
+
+}
