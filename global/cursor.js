@@ -1,4 +1,9 @@
-/* Paint Brush Cursor -------------------------------------- */
+if (window.innerWidth <= 48 * 16) {
+    document.getElementById("paint-canvas")?.remove();
+    document.querySelector(".paint-cursor")?.remove();
+} else {
+  
+  /* Paint Brush Cursor -------------------------------------- */
 const paintCanvas = document.getElementById("paint-canvas");
 const paintCtx = paintCanvas.getContext("2d");
 const paintCursor = document.querySelector(".paint-cursor");
@@ -97,3 +102,4 @@ function animatePaintCursor(time) {
 resizePaintCanvas();
 window.addEventListener("resize", resizePaintCanvas);
 requestAnimationFrame(animatePaintCursor);
+}

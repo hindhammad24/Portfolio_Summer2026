@@ -260,44 +260,6 @@
   border-radius: 999rem;
 }
 
-@media (max-width: 75rem) {
-
-  .studio-section {
-    background:
-      linear-gradient(to bottom,
-        #ffffff 0%,
-        #ffffff 68%,
-        #f7f7f7 78%,
-        #eeeeee 79%,
-        #ffffff 100%);
-  }
-
-  .desk-group {
-    width: 40%;
-  }
-
-
-}
-
-@media (max-width: 48rem) {
-
-  .studio-section {
-    background:
-      linear-gradient(to bottom,
-        #ffffff 0%,
-        #ffffff 68%,
-        #f7f7f7 78%,
-        #eeeeee 79%,
-        #ffffff 100%);
-  }
-
-
-  .desk-group {
-    width: 60%;
-  }
-
-
-}
 
 
 /* Studio object labels ------------------------------------- */
@@ -378,14 +340,6 @@
 .desk-group:has(.studio-education:hover) .studio-label-education,
 .desk-group:has(.studio-chair:hover) .studio-label-chair {
   opacity: 1;
-}
-
-/* Mobile */
-
-@media (max-width: 48rem) {
-  .studio-label {
-    font-size: clamp(.52rem, 1.8vw, .65rem);
-  }
 }
 
 /* Studio direction stand ----------------------------------- */
@@ -484,17 +438,6 @@
   text-align: center;
 
   pointer-events: none;
-}
-
-@media (max-width: 48rem) {
-  .studio-direction {
-    right: 1rem;
-    width: clamp(6rem, 22vw, 8rem);
-  }
-
-  .studio-direction span {
-    font-size: clamp(.6rem, 2.2vw, .8rem);
-  }
 }
 
 /* Featured Projects --------------------------------------- */
@@ -720,10 +663,89 @@
 
     right: 1rem;
 
-    bottom: 12%;
+bottom:35%;
 
     width: 70vw;
 
   }
 
+  .studio-section {
+    background:
+      linear-gradient(to bottom,
+        #ffffff 0%,
+        #ffffff 68%,
+        #f7f7f7 78%,
+        #eeeeee 79%,
+        #ffffff 100%);
+  }
+
+
+  .desk-group {
+    width: 60%;
+  }
+
+    .desk-group {
+        bottom: 3%;
+    }
+
+    .studio-label {
+    font-size: clamp(.52rem, 1.8vw, .65rem);
+  }
+
+  .studio-direction {
+    right: 1rem;
+    width: clamp(6rem, 22vw, 8rem);
+  }
+
+  .studio-direction span {
+    font-size: clamp(.6rem, 2.2vw, .8rem);
+  }
+
+
+.studio-info-card {
+
+    top: 10%;
+    left: 50%;
+    right: auto;
+
+    width: min(90vw, 22rem);
+
+    transform:
+    translate(-50%, .7rem);
+
 }
+
+
+.studio-info-card.show {
+
+    transform:
+    translate(-50%,0);
+
+}
+
+}
+
+@media (max-width: 75rem) {
+
+  .studio-section {
+    background:
+      linear-gradient(to bottom,
+        #ffffff 0%,
+        #ffffff 68%,
+        #f7f7f7 78%,
+        #eeeeee 79%,
+        #ffffff 100%);
+  }
+
+  .desk-group {
+    width: 50%;
+  }
+
+   .desk-group {
+        bottom: 0;
+    }
+
+
+
+}
+

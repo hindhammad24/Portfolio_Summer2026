@@ -1,6 +1,34 @@
 
 /* studio section------------------------------------------*/
+let activeStudioObject = null;
 
+
+function openStudioInfo(button,img,hover,normal,text){
+
+    if(activeStudioObject === button){
+
+        img.src = normal;
+        studioInfoCard.classList.remove("show");
+        activeStudioObject = null;
+
+        return;
+    }
+
+
+    if(activeStudioObject){
+
+        activeStudioObject.click();
+    }
+
+
+    img.src = hover;
+
+    studioInfoCard.innerHTML = text;
+
+    studioInfoCard.classList.add("show");
+
+    activeStudioObject = button;
+}
 
 
 /* Canvas Hover --------------------------------------------- */
@@ -134,8 +162,6 @@ studioLaptop.addEventListener("mouseenter", () => {
 
   studioInfoCard.innerHTML = laptopText;
 
-  studioInfoCard.style.right = "4%";
-  studioInfoCard.style.left = "auto";
 
   studioInfoCard.classList.add("show");
 
@@ -197,8 +223,6 @@ studioEducation.addEventListener("mouseenter", () => {
 
   studioInfoCard.innerHTML = educationText;
 
-  studioInfoCard.style.right = "4%";
-  studioInfoCard.style.left = "auto";
 
   studioInfoCard.classList.add("show");
 
@@ -252,8 +276,6 @@ studioChair.addEventListener("mouseenter", () => {
 
   studioInfoCard.innerHTML = careerText;
 
-  studioInfoCard.style.right = "4%";
-  studioInfoCard.style.left = "auto";
 
   studioInfoCard.classList.add("show");
 
@@ -264,6 +286,122 @@ studioChair.addEventListener("mouseleave", () => {
   chairImg.src = chairNormal;
 
   studioInfoCard.classList.remove("show");
+
+});
+
+/* Mobile Click Interaction ------------------------------- */
+
+const studioObjects = [
+    {
+        button: studioCanvas,
+        img: studioCanvasImg,
+        normal: canvasNormal,
+        hover: canvasHover,
+        text: artText
+    },
+
+    {
+        button: studioBoard,
+        img: boardImg,
+        normal: boardNormal,
+        hover: boardHover,
+        text: designText
+    },
+
+    {
+        button: studioLaptop,
+        img: laptopImg,
+        normal: laptopNormal,
+        hover: laptopHover,
+        text: laptopText
+    },
+
+    {
+        button: studioEducation,
+        img: educationImg,
+        normal: educationNormal,
+        hover: educationHover,
+        text: educationText
+    },
+
+    {
+        button: studioChair,
+        img: chairImg,
+        normal: chairNormal,
+        hover: chairHover,
+        text: careerText
+    }
+];
+
+
+let activeObject = null;
+
+
+studioObjects.forEach((object)=>{
+
+
+object.button.addEventListener("click",(event)=>{
+
+    event.stopPropagation();
+
+
+    if(activeObject === object){
+
+        object.img.src = object.normal;
+
+        studioInfoCard.classList.remove("show");
+
+        activeObject = null;
+
+        return;
+    }
+
+
+    if(activeObject){
+
+        activeObject.img.src =
+        activeObject.normal;
+    }
+
+
+    object.img.src = object.hover;
+
+    studioInfoCard.innerHTML =
+    object.text;
+
+
+    studioInfoCard.classList.add("show");
+
+
+    activeObject = object;
+
+});
+
+});
+
+
+
+document.addEventListener("click",(event)=>{
+
+
+if(
+!event.target.closest(".desk-group") &&
+!event.target.closest(".studio-info-card")
+){
+
+    if(activeObject){
+
+        activeObject.img.src =
+        activeObject.normal;
+
+    }
+
+
+    studioInfoCard.classList.remove("show");
+
+    activeObject = null;
+
+}
 
 });
 

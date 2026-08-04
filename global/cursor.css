@@ -35,9 +35,16 @@ body {
   }
 }
 
-@media (max-width: 48rem) {
-   .paint-cursor {
-    width: 3rem;
-    height: 3rem;
-  }
+@media (max-width:48rem){
+
+    html,
+    body {
+        cursor: auto;
+    }
+
+    #paint-canvas,
+    .paint-cursor {
+        display:none;
+    }
+
 }

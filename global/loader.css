@@ -29,14 +29,16 @@
 #loader-video {
     display: block;
 
-    width: clamp(30rem, 50vw, 60rem);
-    max-width: calc(200vw - 4rem);
+    width: clamp(25rem, 45vw, 60rem);
+    max-width: calc(100vw - 2rem);
 
     height: auto;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+
     clip-path: inset(0 15% 0 15%);
+
 }
 
 #loader-img {

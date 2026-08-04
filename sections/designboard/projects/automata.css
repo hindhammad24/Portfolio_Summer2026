@@ -543,15 +543,15 @@
 }
 
 .design-board-preview-art .automata-artwork {
-  position: absolute;
-
+  
   inset: 0;
+position:absolute;
 
-  width: 60%;
-  height: 57%;
+    top:12%;
+    left:15%;
 
-  top: 4rem;
-  left: 6rem;
+    width:70%;
+    height:70%;
 }
 
 .design-board-preview-art

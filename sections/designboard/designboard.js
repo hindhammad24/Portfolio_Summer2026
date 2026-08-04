@@ -50,10 +50,19 @@ function openDesignBoard(exhibit) {
   updateDesignBoardPreview(exhibit);
   showSelectedProjectBoard(boardName);
 
-  designBoard.classList.add("open");
-  designBoard.setAttribute("aria-hidden", "false");
+designBoard.classList.add("open");
+designBoard.setAttribute("aria-hidden", "false");
 
-  document.body.classList.add("board-open");
+document.body.classList.add("board-open");
+
+
+requestAnimationFrame(() => {
+
+    if (designBoardContent) {
+        designBoardContent.scrollTop = 0;
+    }
+
+});
 }
 
 

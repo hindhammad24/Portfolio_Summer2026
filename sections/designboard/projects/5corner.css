@@ -358,6 +358,15 @@
 
 }
 
+.design-board-preview-art .fivecorner-exhibit {
+
+    width:min(75%,18rem);
+
+    aspect-ratio:1 / 1;
+
+    margin-inline:auto;
+
+}
 
 
 /* =====================================================

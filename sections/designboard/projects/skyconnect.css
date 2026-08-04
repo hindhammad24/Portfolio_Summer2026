@@ -540,12 +540,29 @@ Everything else stays clean.
 
 /* Left Preview Artwork ------------------------------------ */
 .design-board-preview-art .skyconnect-exhibit {
-  width: min(100%, 20rem);
-  height: clamp(17rem, 46vh, 28rem);
+  
+  width: min(86%, 23rem);
+
+  aspect-ratio: 1 / 1.15;
+
+  height: auto;
 
   margin-inline: auto;
 
   transform: none;
+}
+
+.design-board-preview-art
+.skyconnect-exhibit
+.project-media {
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
 }
 
 .design-board-preview-art .skyconnect-artwork {
@@ -646,8 +663,40 @@ Everything else stays clean.
 
 }
 
-/* Medium Screens ------------------------------------------ */
 
+/* Design Thinking ----------------------------------------- */
+
+.board-design-thinking {
+
+  grid-column: 1 / 13;
+
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+
+  align-self: start;
+
+}
+
+.board-design-thinking p {
+
+  max-width: 65ch;
+
+}
+
+
+.board-process-note img {
+
+    width:100%;
+
+    height:auto;
+
+    max-height:30rem;
+
+    object-fit:contain;
+
+}
+/* Medium Screens ------------------------------------------ */
 @media (max-width: 72rem) {
 
   .skyconnect-board {
@@ -678,181 +727,384 @@ Everything else stays clean.
     grid-column: 9 / 13;
   }
 }
-
-
 /* Tablet -------------------------------------------------- */
 
 @media (max-width: 60rem) {
 
-  .skyconnect-board {
-    display: flex;
-    flex-direction: column;
 
-    gap: clamp(2rem, 6vw, 3.5rem);
+  .skyconnect-heading {
 
-    width: 100%;
+    order:1 !important;
 
-    padding:
-      5rem 0 4rem;
+    position:relative;
+
+    margin-top:0;
+
+    padding-top:0;
+
   }
 
-  .skyconnect-board>*,
+
+  .skyconnect-award {
+
+    order:2 !important;
+
+  }
+
+  .skyconnect-board {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:clamp(2rem, 6vw, 3.5rem);
+
+    width:100%;
+padding:
+      1.5rem 1rem 4rem;
+
+
+  }
+
+
+  .skyconnect-board > *,
   .skyconnect-board .board-paper,
   .skyconnect-board .board-sticky,
   .skyconnect-board .board-media,
   .skyconnect-board .board-polaroid {
-    position: relative;
-    inset: auto;
 
-    width: 100%;
-    max-width: 100%;
+    position:relative;
 
-    margin: 0;
+    inset:auto;
 
-    transform: none;
+    width:100%;
+
+    max-width:100%;
+
+    margin:0;
+
+    transform:none;
+
+  }
+
+
+  /* HEADER FIRST -------------------------------- */
+
+
+  .skyconnect-heading {
+
+    order:1;
+
+    width:100%;
+
+    padding-top:0;
+
+  }
+
+
+  .skyconnect-heading h2 {
+
+    font-size:
+      clamp(3rem, 9vw, 4.8rem);
+
+    line-height:.9;
+
+  }
+
+
+  .skyconnect-heading .board-subtitle {
+
+    width:100%;
+
+    font-size:1rem;
+
   }
 
   .skyconnect-heading {
-    order: 1;
-    padding-top: 0;
-  }
 
-  .skyconnect-award {
-    order: 2;
+    order:1;
 
-    align-self: flex-end;
+    width:100%;
 
-    width: clamp(6rem, 18vw, 8rem);
-    margin:
-      -2.5rem 1rem 0 0;
+    display:flex;
 
-    transform: rotate(2deg);
-  }
+    flex-direction:column;
+
+}
+
+
+.skyconnect-award {
+
+    order:2;
+
+    position:relative;
+
+    align-self:flex-end;
+
+    width:
+      clamp(4.5rem, 15vw, 6rem);
+
+    margin-top:-1rem;
+
+    margin-right:1rem;
+
+}
+
+
+
+  /* BROCHURE / AWARD UNDER HEADER ---------------- */
+
+.skyconnect-questions {
+
+    order:15;
+
+}
+
+
+.board-design-thinking {
+
+    order:16;
+
+}
+
+
+
+  /* CONTENT ORDER ------------------------------- */
+
 
   .board-overview-note {
-    order: 3;
+
+    order:3;
+
   }
+
 
   .board-presentation {
-    order: 4;
+
+    order:4;
+
   }
 
-  .board-presenting {
-    order: 5;
 
-    transform: rotate(-1deg);
+  .skyconnect-moments {
+
+    order:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+    width:100%;
+
   }
 
-  .board-winning {
-    order: 6;
 
-    transform: rotate(.8deg);
+  .board-moment {
+
+    width:100%;
+
   }
 
-  .board-networking {
-    order: 7;
 
-    transform: rotate(-.6deg);
+  .board-moment img {
+
+    max-height:none;
+
   }
+
+
 
   .board-role-note {
-    order: 8;
+
+    order:6;
+
   }
+
 
   .board-prototype {
-    order: 9;
+
+    order:7;
+
   }
+
 
   .board-process-note {
-    order: 10;
+
+    order:8;
+
   }
+
 
   .board-challenges-note {
-    order: 11;
 
-    width: min(92%, 32rem);
-    align-self: center;
+    order:9;
 
-    transform: rotate(1deg);
+    width:min(92%,32rem);
+
+    align-self:center;
+
   }
+
 
   .board-reflection-note {
-    order: 12;
+
+    order:10;
+
   }
+
 
   .board-tools-note {
-    order: 13;
+
+    order:11;
+
   }
+
 
   .board-credits-note {
-    order: 14;
+
+    order:12;
+
   }
 
-  .board-presenting::after,
-  .board-winning::after {
-    display: none;
-  }
+
 
   .skyconnect-board .board-paper:hover,
   .skyconnect-board .board-media:hover,
   .skyconnect-board .board-polaroid:hover,
   .skyconnect-board .board-sticky:hover {
-    transform: translateY(-.15rem);
+
+    transform:
+      translateY(-.15rem);
+
   }
+
+  .skyconnect-questions {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+    width:100%;
+
 }
+
+
+.skyconnect-questions .board-paper {
+
+    width:100%;
+
+}
+
+
+.skyconnect-questions .board-media {
+
+    width:100%;
+
+}
+
+
+.skyconnect-questions .board-media img {
+
+    width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+.board-presentation video {
+
+    width:100%;
+
+    height:auto;
+
+    max-height:25rem;
+
+    object-fit:contain;
+
+}
+
+.board-presentation video {
+
+    width:100%;
+
+    height:auto;
+
+    max-height:25rem;
+
+    object-fit:contain;
+
+}
+
+}
+
 
 
 /* Small Mobile -------------------------------------------- */
 
-@media (max-width: 34rem) {
+@media (max-width:34rem) {
+
 
   .skyconnect-board {
-    gap: 1.75rem;
 
-    padding-top: 4.5rem;
+    gap:1.75rem;
+
+    padding:
+      3.5rem .75rem 3rem;
+
   }
+
+
 
   .skyconnect-heading h2 {
-    font-size: clamp(3.2rem, 18vw, 4.5rem);
+
+font-size:
+clamp(2.4rem,12vw,3.4rem);
+
+
   }
 
+
+
   .skyconnect-heading .board-subtitle {
-    font-size: 1rem;
+
+    font-size:.95rem;
+
   }
+
+
 
   .skyconnect-board .board-paper,
   .skyconnect-board .board-sticky {
-    padding: 1.2rem;
+
+    padding:1.2rem;
+
   }
 
-  .skyconnect-board .board-tool-list {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
 
-    gap: 1rem;
-  }
 
   .skyconnect-award {
-    margin-top: -1.5rem;
+
+    width:
+      5rem;
+
+    margin-top:-.5rem;
+
   }
-}
 
-/* Design Thinking ----------------------------------------- */
 
-.board-design-thinking {
 
-  grid-column: 1 / 13;
+  .skyconnect-board .board-tool-list {
 
-  width: min(100%, 62rem);
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
 
-  margin-inline: auto;
+    gap:1rem;
 
-  align-self: start;
-
-}
-
-.board-design-thinking p {
-
-  max-width: 65ch;
+  }
 
 }

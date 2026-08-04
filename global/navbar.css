@@ -296,12 +296,14 @@
 }
 
 .paint-swatch:hover .swatch-basic,
-.paint-swatch:focus-visible .swatch-basic {
+.paint-swatch:focus-visible .swatch-basic,
+.paint-swatch:active .swatch-basic {
   opacity: 0;
 }
 
 .paint-swatch:hover .swatch-colour,
-.paint-swatch:focus-visible .swatch-colour {
+.paint-swatch:focus-visible .swatch-colour,
+.paint-swatch:active .swatch-colour {
   opacity: 1;
 }
 
@@ -337,45 +339,82 @@
 
 @media (max-width: 700px) {
   .paint-nav {
-    --palette-size: 5.5rem;
+        --palette-size: 3.5rem;
     --swatch-width: 9rem;
     --swatch-height: 3.4rem;
-
-    top: 0.6rem;
-    right: 0.6rem;
+top: 0.8rem;
+    right: 0.8rem;
   }
+.paint-nav.is-open .paint-swatch-1 {
+  transform:
+    translate(50%, -50%)
+    translate(-5.8rem, 10.6rem)
+    rotate(4deg)
+    scale(1);
+}
 
-  .paint-nav.is-open .paint-swatch-1 {
+.paint-nav.is-open .paint-swatch-2 {
+  transform:
+    translate(50%, -50%)
+    translate(-6rem, 7.4rem)
+    rotate(1deg)
+    scale(1);
+}
+
+.paint-nav.is-open .paint-swatch-3 {
+  transform:
+    translate(50%, -50%)
+    translate(-5.8rem, 4.2rem)
+    rotate(-3deg)
+    scale(1);
+}
+
+.paint-nav.is-open .paint-swatch-4 {
+  transform:
+    translate(50%, -50%)
+    translate(-5rem, 1rem)
+    rotate(-6deg)
+    scale(1);
+}
+
+.paint-nav.is-open .paint-swatch-1:hover,
+.paint-nav.is-open .paint-swatch-1:focus-visible {
     transform:
       translate(50%, -50%)
-      translate(-5rem, 1rem)
-      rotate(-6deg)
-      scale(1);
-  }
-
-  .paint-nav.is-open .paint-swatch-2 {
-    transform:
-      translate(50%, -50%)
-      translate(-5.8rem, 4.2rem)
-      rotate(-3deg)
-      scale(1);
-  }
-
-  .paint-nav.is-open .paint-swatch-3 {
-    transform:
-      translate(50%, -50%)
-      translate(-6rem, 7.4rem)
-      rotate(1deg)
-      scale(1);
-  }
-
-  .paint-nav.is-open .paint-swatch-4 {
-    transform:
-      translate(50%, -50%)
-      translate(-5.8rem, 10.6rem)
+      translate(-5.8rem,10.6rem)
       rotate(4deg)
-      scale(1);
-  }
+      scale(1.04);
+}
+
+
+.paint-nav.is-open .paint-swatch-2:hover,
+.paint-nav.is-open .paint-swatch-2:focus-visible {
+    transform:
+      translate(50%, -50%)
+      translate(-6rem,7.4rem)
+      rotate(1deg)
+      scale(1.04);
+}
+
+.paint-nav.is-open .paint-swatch-3:hover,
+.paint-nav.is-open .paint-swatch-3:focus-visible {
+    transform:
+      translate(50%, -50%)
+      translate(-5.8rem,4.2rem)
+      rotate(-3deg)
+      scale(1.04);
+}
+
+
+.paint-nav.is-open .paint-swatch-4:hover,
+.paint-nav.is-open .paint-swatch-4:focus-visible {
+    transform:
+      translate(50%, -50%)
+      translate(-5rem,1rem)
+      rotate(-6deg)
+      scale(1.04);
+}
+
 
 }
 
