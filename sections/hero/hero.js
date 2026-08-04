@@ -83,7 +83,6 @@ function updateSequenceFrame(progress) {
   currentSequenceFrame = frame;
 
 sequenceImage.src = loadedFrames[frame].src;
-
 }
 
 /* Update hero visibility ----------------------------------- */
