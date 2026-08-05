@@ -9,6 +9,17 @@ The goal was to create a portfolio experience where users
 discover projects through interaction rather than simply
 opening separate project pages.
 */
+
+/*Logic explained:
+I designed the project section as an interactive exhibition rather than a traditional
+portfolio grid. The gallery uses a horizontal track inside a sticky viewport,
+while JavaScript converts vertical scrolling into horizontal project movement.
+Projects become active based on their position in the gallery, 
+which controls scaling, opacity, and artwork transitions. I created reusable 
+systems for project navigation, paint swatches, and design boards so adding future 
+projects requires less duplicated code. The design board opens as an overlay 
+and reuses existing project visuals, allowing users to explore my process 
+without leaving the exhibition experience */
 const projectRoom = document.querySelector(".project-room");
 const galleryWindow = document.querySelector(".gallery-window");
 const galleryTrack = document.querySelector("#galleryTrack");

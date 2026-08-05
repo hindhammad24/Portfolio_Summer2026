@@ -8,6 +8,14 @@ organized.
 */
 /* studio section*/
 
+/*Logic explained:
+JavaScript controls the interaction by detecting hover and click events, 
+changing object states, and dynamically updating one reusable information card. 
+For the transition into projects, I used scroll progress similar to the hero 
+section. JavaScript calculates the user's position and controls CSS variables 
+that move the desk left and bring the exhibition sign into view. This creates 
+a continuous movement from learning about me into exploring my work." */
+
 let activeStudioObject = null;
 
 /*

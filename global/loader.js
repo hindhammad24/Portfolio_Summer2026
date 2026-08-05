@@ -7,6 +7,16 @@ The goal was to create a memorable first interaction without
 making repeated visits slower.
 */
 
+/*Logic explained:
+The loader is a separate fixed layer above the homepage. 
+The video plays first as an introduction. JavaScript listens
+for the video's ended event instead of using a fixed timer.
+Once the video finishes, JavaScript adds a hide class to the
+loader and a show class to the homepage. CSS then handles the 
+fade transition using opacity and visibility. I also used 
+sessionStorage so returning users do not have to watch 
+the animation every time.
+*/
 const navbar = document.querySelector(".navbar");
 const loader = document.getElementById("loader");
 const loaderVideo = document.getElementById("loader-video");

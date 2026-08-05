@@ -6,6 +6,14 @@ user interactions.
 */
 
 /* ...Paint Palette Navigation.... */
+
+/* Logic explained:
+I created the paint swatch interactions using two image states 
+layered on top of each other. CSS controls the opacity transition 
+between the neutral and colored versions on hover, creating the effect 
+of the paint changing color. JavaScript was only used for controlling
+the navigation opening and closing behavior, not the hover color transition itself */
+
 const paintNav = document.querySelector(".paint-nav");
 const paletteButton = document.getElementById("paintPaletteButton");
 const paintSwatches = document.querySelectorAll(".paint-swatch");
@@ -65,7 +73,7 @@ if (paintNav && paletteButton) {
     });
   });
 
-  /*
+/*
 Allows users to dismiss the menu naturally by clicking anywhere
 outside the palette.
 This makes the interaction behave like familiar modern menus while

@@ -8,6 +8,18 @@ the browsing experience.
 */
 
 /*.....HOMEPAGE SEQUENCE.....*/
+
+/*Logic explained:
+I created the hero as a scroll-controlled painting sequence 
+rather than an automatic animation. The section height creates 
+a timeline, while sticky positioning keeps the artwork visible. 
+JavaScript calculates the user's scroll progress and converts it 
+into a frame number, replacing the displayed WebP image as the 
+user moves. I preload all frames because the interaction depends 
+on immediate frame changes. The same scroll progress also controls 
+other storytelling elements: the introduction fades away after 
+the user starts exploring, and the plaque appears near the 
+end once the artwork is completed.*/
 const sequenceImage = document.getElementById("sequenceImage");
 const sequenceSection = document.querySelector(".sequence-section");
 
