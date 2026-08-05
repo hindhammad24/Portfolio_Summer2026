@@ -1,5 +1,13 @@
-/* Designer Board Elements ---------------------------------- */
-
+/* Designer Board Elements */
+/*
+This file controls the interactive behaviour of the project
+design boards.
+It manages opening and closing project case studies, switching
+between different project boards, and dynamically updating the
+preview panel.
+The goal was to create a reusable system where every project can
+share the same interaction pattern while keeping its own content.
+*/
 const designBoard =
   document.querySelector("#designBoard");
 
@@ -21,9 +29,14 @@ const projectButtons =
 const projectBoards =
   document.querySelectorAll("[data-project-board]");
 
-
-/* Show Selected Project Board ------------------------------ */
-
+/*
+This function controls which project board is visible.
+Instead of creating separate pages for every project, I created
+one reusable overlay system where JavaScript displays the selected
+case study.
+This keeps the experience consistent and makes adding future
+projects easier.
+*/
 function showSelectedProjectBoard(boardName) {
   projectBoards.forEach((board) => {
     const isSelected =
@@ -37,9 +50,13 @@ function showSelectedProjectBoard(boardName) {
   }
 }
 
-
-/* Open Design Board ---------------------------------------- */
-
+/*
+This function opens the detailed project experience.
+It collects the selected project information, updates the preview,
+loads the correct board, and changes the page state.
+Separating this process into one function keeps every project
+interaction consistent.
+*/
 function openDesignBoard(exhibit) {
   if (!designBoard || !exhibit) return;
 
@@ -50,24 +67,28 @@ function openDesignBoard(exhibit) {
   updateDesignBoardPreview(exhibit);
   showSelectedProjectBoard(boardName);
 
-designBoard.classList.add("open");
-designBoard.setAttribute("aria-hidden", "false");
+  designBoard.classList.add("open");
+  designBoard.setAttribute("aria-hidden", "false");
 
-document.body.classList.add("board-open");
+  document.body.classList.add("board-open");
 
 
-requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
 
     if (designBoardContent) {
-        designBoardContent.scrollTop = 0;
+      designBoardContent.scrollTop = 0;
     }
 
-});
+  });
 }
 
-
-/* Close Design Board --------------------------------------- */
-
+/*
+This function returns the user from the case study back to the
+gallery.
+Keeping closing behaviour separate makes it easier to trigger
+from different interactions such as the close button, backdrop,
+or Escape key.
+*/
 function closeBoard() {
   if (!designBoard) return;
 
@@ -78,7 +99,7 @@ function closeBoard() {
 }
 
 
-/* View More Buttons ---------------------------------------- */
+/* View More Buttons */
 
 projectButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -89,9 +110,12 @@ projectButtons.forEach((button) => {
   });
 });
 
-
-/* Clickable Project Artwork -------------------------------- */
-
+/*
+Projects can be opened through both the button and the artwork
+itself.
+Adding keyboard support ensures the interaction remains accessible
+while keeping the gallery experience natural.
+*/
 document.querySelectorAll(
   ".gallery-exhibit[data-board] .exhibit-visual"
 ).forEach((visual) => {
@@ -123,16 +147,14 @@ document.querySelectorAll(
 });
 
 
-/* Close Button --------------------------------------------- */
-
+/* Close Button */
 closeDesignBoard?.addEventListener(
   "click",
   closeBoard
 );
 
 
-/* Close When Clicking Backdrop ----------------------------- */
-
+/* Close When Clicking Backdrop  */
 designBoard?.addEventListener("click", (event) => {
   if (
     event.target.classList.contains(
@@ -144,8 +166,7 @@ designBoard?.addEventListener("click", (event) => {
 });
 
 
-/* Close With Escape Key ------------------------------------ */
-
+/* Close With Escape Key  */
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
@@ -155,9 +176,12 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-
-/* Update Selected Exhibit Preview -------------------------- */
-
+/*
+This function duplicates the selected project's visual preview and
+information into the design board sidebar.
+I used cloning instead of rebuilding the artwork because the same
+gallery elements can be reused in the expanded case-study view.
+*/
 function updateDesignBoardPreview(exhibit) {
   if (
     !exhibit ||
@@ -177,6 +201,11 @@ function updateDesignBoardPreview(exhibit) {
   designBoardPreviewPlaque.innerHTML = "";
 
   if (visual) {
+    /*
+    The artwork is cloned from the existing gallery element so the
+    design board and gallery maintain the same visual language.
+    This avoids creating duplicate HTML structures for every preview.
+    */
     const visualClone =
       visual.cloneNode(true);
 
@@ -212,9 +241,11 @@ function updateDesignBoardPreview(exhibit) {
   }
 }
 
-
-/* Initial Board State -------------------------------------- */
-
+/*
+This function sets the initial state of the project boards.
+Only one board exists visually at a time, while the others remain
+hidden until selected by the user.
+*/
 function initialiseDesignBoards() {
   projectBoards.forEach((board, index) => {
     board.hidden = index !== 0;

@@ -1,11 +1,22 @@
-/* ==========================================================
-   TECH4EASE — CURATED DESIGNER WORKSPACE
-   Project-specific layout only
-========================================================== */
+/*
+Responsive Behaviour
 
+The desktop layout presents the project as an interactive board with
+multiple elements visible together.
 
-/* Main Board ---------------------------------------------- */
+On smaller screens, the content becomes a vertical storytelling
+experience so users can explore the project clearly without losing
+the intended sequence.
+*/
 
+/* Main Board  */
+/*
+The 12-column grid allows the project documentation to be arranged
+like a physical design workspace.
+Because Tech4Ease involves both digital design and physical making,
+the layout creates space for different artifacts such as models,
+components, sketches, and prototype documentation.
+*/
 .tech4ease-board {
   position: relative;
 
@@ -20,9 +31,7 @@
   margin-inline: auto;
 
   padding:
-    clamp(2rem, 5vw, 5rem)
-    clamp(1rem, 3vw, 3rem)
-    clamp(6rem, 10vw, 10rem);
+    clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem) clamp(6rem, 10vw, 10rem);
 
   background: transparent;
   border: 0;
@@ -32,9 +41,18 @@
 }
 
 
-/* Reset Old Absolute Layout ------------------------------- */
+/* Reset Old Absolute Layout  */
+/*
+Originally, the board relied on more fixed positioning.
 
-.tech4ease-board > * {
+I changed this structure into a responsive grid because a fixed
+layout made it difficult to maintain consistency across different
+screen sizes.
+
+The grid approach keeps the handmade board feeling while making
+the project easier to explore on different devices.
+*/
+.tech4ease-board>* {
   position: relative;
   inset: auto;
 
@@ -51,8 +69,14 @@
 }
 
 
-/* Typography ---------------------------------------------- */
+/* Typography  */
+/*
+The typography follows the overall portfolio identity while keeping
+the project approachable and human-centered.
 
+The handwritten visual style supports the project's focus on
+sketching, prototyping, and designing for people.
+*/
 .tech4ease-board h2,
 .tech4ease-board h3,
 .tech4ease-board p,
@@ -83,8 +107,14 @@
 }
 
 
-/* Header -------------------------------------------------- */
+/* Header  */
+/*
+The header introduces the problem and design direction before
+showing the prototype development.
 
+This creates context first, allowing users to understand why the
+solution was created before exploring how it was built.
+*/
 .tech4ease-heading {
   grid-column: 1 / 10;
 
@@ -132,8 +162,14 @@
 }
 
 
-/* Certificate --------------------------------------------- */
+/* Certificate  */
+/*
+The certificate is included as supporting evidence of the project
+outcome.
 
+It is positioned as a secondary visual element so recognition is
+shown without taking attention away from the design process itself.
+*/
 .tech4ease-certificate {
   grid-column: 10 / 13;
   grid-row: 1;
@@ -147,10 +183,7 @@
   max-width: 100%;
 
   margin:
-    clamp(1rem, 3vw, 2.5rem)
-    clamp(.5rem, 2vw, 1.5rem)
-    0
-    0;
+    clamp(1rem, 3vw, 2.5rem) clamp(.5rem, 2vw, 1.5rem) 0 0;
 
   transform: rotate(2deg);
 
@@ -171,14 +204,19 @@
 
 .tech4ease-certificate:hover {
   transform:
-    rotate(0)
-    translateY(-.2rem)
-    scale(1.025);
+    rotate(0) translateY(-.2rem) scale(1.025);
 }
 
 
-/* Shared Tech4Ease Surfaces ------------------------------- */
+/* Shared Tech4Ease Surfaces  */
+/*
+These reusable surfaces maintain consistency with the overall
+design board system.
 
+Paper cards, media frames, and polaroid elements help present the
+project documentation as physical design artifacts rather than
+a traditional webpage.
+*/
 .tech4ease-board .board-paper {
   padding: clamp(1.4rem, 2.2vw, 2rem);
 
@@ -231,15 +269,13 @@
   max-width: 60ch;
 
   margin:
-    clamp(.75rem, 1.3vw, 1rem)
-    auto
-    .15rem;
+    clamp(.75rem, 1.3vw, 1rem) auto .15rem;
 
   padding-inline: clamp(.2rem, 1vw, .7rem);
 }
 
 
-/* Restrained Hover Movement ------------------------------- */
+/* Restrained Hover Movement */
 
 .tech4ease-board .board-paper:hover,
 .tech4ease-board .board-media:hover,
@@ -251,8 +287,14 @@
 }
 
 
-/* Overview + 3D Model ------------------------------------- */
+/* Overview + 3D Model  */
+/*
+The overview is placed beside the 3D model because the concept and
+the physical frm need to be understood together.
 
+Showing the explanation beside the prototype allows users to connect
+the design idea with the object that was created.
+*/
 .tech4ease-overview-note {
   grid-column: 1 / 6;
   grid-row: 2;
@@ -293,8 +335,15 @@
 }
 
 
-/* Physical Prototype + Role ------------------------------- */
+/* Physical Prototype + Role  */
+/*
+This section connects the final prototype with my personal
+contribution.
 
+I included my role alongside the physical outcome to make my design
+decisions and responsibilities clear within the collaborative
+project.
+*/
 .tech4ease-physical-polaroid {
   grid-column: 1 / 5;
   grid-row: 3;
@@ -321,8 +370,14 @@
 }
 
 
-/* Components ---------------------------------------------- */
+/* Components */
+/*
+The component sections highlight the individual parts that make up
+the final prototype.
 
+Breaking the object into smaller elements helps communicate the
+design thinking behind how the solution was constructed.
+*/
 .tech4ease-components-one {
   grid-column: 1 / 7;
   grid-row: 4;
@@ -344,8 +399,14 @@
 }
 
 
-/* Inside View + Process ----------------------------------- */
+/* Inside View + Process  */
+/*
+The process section shows the transition from idea to construction.
 
+The inside view and process documentation were separated because
+understanding how the object was built is an important part of the
+design story.
+*/
 .tech4ease-inside-polaroid {
   grid-column: 1 / 5;
   grid-row: 5;
@@ -367,8 +428,15 @@
 }
 
 
-/* Fabrication + Worn Prototype ---------------------------- */
+/* Fabrication + Worn Prototype */
+/*
+This section demonstrates the relationship between making and
+testing.
 
+Showing fabrication details alongside the worn prototype helps
+communicate how the design moved from a concept into something
+usable.
+*/
 .tech4ease-fabrication-note {
   grid-column: 1 / 9;
   grid-row: 6;
@@ -390,8 +458,15 @@
 }
 
 
-/* Challenge + Reflection ---------------------------------- */
+/* Challenge + Reflection  */
+/*
+The challenge and reflection sections focus on learning from the
+design process.
 
+After presenting the prototype development, these sections explain
+the problems encountered and how the project influenced my approach
+as a designer.
+*/
 .tech4ease-challenges-note {
   grid-column: 1 / 5;
   grid-row: 7;
@@ -425,8 +500,14 @@
 }
 
 
-/* Team + Tools -------------------------------------------- */
+/* Team + Tools  */
+/*
+The team and tools sections provide context around collaboration
+and implementation.
 
+They show the combination of creative decisions, technical tools,
+and teamwork required to complete the project.
+*/
 .tech4ease-team-polaroid {
   grid-column: 1 / 5;
   grid-row: 8;
@@ -449,8 +530,7 @@
 }
 
 
-/* Credits ------------------------------------------------- */
-
+/* Credits  */
 .tech4ease-credits-note {
   grid-column: 3 / 11;
   grid-row: 9;
@@ -466,8 +546,14 @@
 }
 
 
-/* Tool Tags ----------------------------------------------- */
+/* Tool Tags  */
+/*
+Tool tags provide a quick visual summary of the technologies and
+methods involved in the project.
 
+I used tags instead of a long list to keep the information easy to
+scan while maintaining the visual style of the board.
+*/
 .tech4ease-tool-tags {
   display: flex;
   flex-wrap: wrap;
@@ -499,8 +585,7 @@
 }
 
 
-/* Tools Grid ---------------------------------------------- */
-
+/* Tools Grid  */
 .tech4ease-board .board-tool-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -542,7 +627,7 @@
 }
 
 
-/* Polaroid Images ----------------------------------------- */
+/* Polaroid Images */
 
 .tech4ease-board .board-polaroid img {
   display: block;
@@ -555,8 +640,7 @@
 }
 
 
-/* Restrained Decorations ---------------------------------- */
-
+/* Restrained Decorations  */
 .tech4ease-board .tech4ease-components-one .board-pin,
 .tech4ease-board .tech4ease-components-two .board-pin,
 .tech4ease-board .tech4ease-3d-model .board-pin {
@@ -572,8 +656,7 @@
   opacity: .72;
 
   transform:
-    translateX(-50%)
-    rotate(-1deg);
+    translateX(-50%) rotate(-1deg);
 }
 
 .tech4ease-board .tech4ease-role-note .board-paperclip {
@@ -585,8 +668,14 @@
 }
 
 
-/* Left Preview Artwork ------------------------------------ */
-
+/* Left Preview Artwork  */
+/*
+The preview artwork reuses the project representation from the
+gallery.
+Keeping the same visual language between the gallery and design
+board creates a smoother transition from exploration into the
+case study.
+*/
 .design-board-preview-art .tech4ease-exhibit {
   width: min(86%, 23rem);
   height: auto;
@@ -597,9 +686,7 @@
   transform: none !important;
 }
 
-.design-board-preview-art
-.tech4ease-exhibit
-.project-media {
+.design-board-preview-art .tech4ease-exhibit .project-media {
   display: block;
 
   width: 100%;
@@ -608,19 +695,21 @@
   object-fit: contain;
 }
 
-.design-board-preview-art
-.tech4ease-exhibit:hover
-.project-media,
-.design-board-preview-art
-.tech4ease-exhibit:focus-visible
-.project-media {
+.design-board-preview-art .tech4ease-exhibit:hover .project-media,
+.design-board-preview-art .tech4ease-exhibit:focus-visible .project-media {
   transform: none !important;
 }
 
+/*
+Responsive Behaviour
 
-/* Medium Screens ------------------------------------------ */
+The desktop layout presents the prototype documentation as a
+physical workspace with multiple elements visible together.
 
-@media (max-width: 72rem) {
+On smaller screens, the layout becomes a vertical story that
+prioritizes readability while keeping the design process intact.
+*/
+@media (max-width: 75rem) {
 
   .tech4ease-board {
     row-gap: clamp(3rem, 6vw, 4.5rem);
@@ -660,8 +749,7 @@
 }
 
 
-/* Tablet -------------------------------------------------- */
-
+/* Tablet  */
 @media (max-width: 60rem) {
 
   .tech4ease-board {
@@ -673,12 +761,10 @@
     width: 100%;
 
     padding:
-      5rem
-      0
-      4rem;
+      5rem 0 4rem;
   }
 
-  .tech4ease-board > *,
+  .tech4ease-board>*,
   .tech4ease-board .board-paper,
   .tech4ease-board .board-sticky,
   .tech4ease-board .board-media,
@@ -708,10 +794,7 @@
     width: clamp(6rem, 20vw, 8rem);
 
     margin:
-      -2.5rem
-      1rem
-      0
-      0;
+      -2.5rem 1rem 0 0;
 
     transform: rotate(2deg);
   }
@@ -798,9 +881,8 @@
 }
 
 
-/* Small Mobile -------------------------------------------- */
-
-@media (max-width: 34rem) {
+/*  Mobile  */
+@media (max-width: 48rem) {
 
   .tech4ease-board {
     gap: 1.75rem;

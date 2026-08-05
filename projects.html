@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+This page controls the project exhibition experience of my portfolio.
+Instead of presenting my work as a traditional project grid,
+I designed this page as an interactive gallery where users can
+explore each project like an exhibit.
+This file connects the project gallery interactive design boards
+and navigation system together to create a more immersive way of
+showing my design process, contributions, and creative work.
+-->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Projects</title>
-
     <link rel="stylesheet" href="global/base.css">
     <link rel="stylesheet" href="global/navbar.css">
+
+    <!--
+    The project page uses separate style files for the gallery,
+    general design board layout, and each individual project.
+    I separated these styles because each project has its own
+    visual language while still following the same exhibition system.
+    -->
     <link rel="stylesheet" href="sections/projects/projects.css">
     <link rel="stylesheet" href="sections/designboard/designboard.css">
     <link rel="stylesheet" href="sections/designboard/projects/skyconnect.css">
@@ -18,53 +33,66 @@
     <link rel="stylesheet" href="sections/designboard/projects/global-kitchen.css">
     <link rel="stylesheet" href="sections/designboard/projects/tech4ease.css">
 
+    <!--
+    This library was added to support displaying interactive 3D models.
+    Although it didnt end up working yet i left it as template for future.
+    I explored using web-based 3D viewers as part of the portfolio
+    because some projects, such as CAD and physical prototypes,
+    benefit from being experienced through interaction rather than
+    only screenshots.
+    Currently, the portfolio mainly uses images and videos, but this
+    library keeps the structure ready for future 3D project displays.
+    -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
 </head>
 
 <body>
-    <!-- Paint Palette Navigation -------------------------------->
+    <!-- Paint Palette Navigation -->
     <nav class="paint-nav" aria-label="Main navigation">
-
         <!-- Paint swatches -->
         <div class="paint-nav-swatches" id="paintNavSwatches">
 
             <a class="paint-swatch paint-swatch-1" href="index.html" aria-label="Home">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="a basic grey swatch of paint"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="a basic grey swatch of paint" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt=" a blue swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt=" a blue swatch of paint"
+                    aria-hidden="true">
 
                 <span>Home</span>
             </a>
 
             <a class="paint-swatch paint-swatch-2" href="#studio" aria-label="About me">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="a basic grey swatch of paint"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="a basic grey swatch of paint" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="a green swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="a green swatch of paint"
+                    aria-hidden="true">
 
                 <span>About Me</span>
             </a>
 
             <a class="paint-swatch paint-swatch-3" href="projects.html" aria-label="Projects">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="a basic grey swatch of paint"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="a basic grey swatch of paint" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="a yellow swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp"
+                    alt="a yellow swatch of paint" aria-hidden="true">
 
                 <span>Projects</span>
             </a>
 
             <a class="paint-swatch paint-swatch-4" href="contact.html" aria-label="Contact">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="a basic grey swatch of paint"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="a basic grey swatch of paint" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="a purple swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp"
+                    alt="a purple swatch of paint" aria-hidden="true">
 
                 <span>Contact</span>
             </a>
@@ -74,52 +102,77 @@
         <!-- Palette menu button -->
         <button class="paint-palette-button" id="paintPaletteButton" type="button" aria-label="Open navigation menu"
             aria-expanded="false" aria-controls="paintNavSwatches">
-            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp" alt="a paint pallete to represent menu"
-                aria-hidden="true">
+            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp"
+                alt="a paint pallete to represent menu" aria-hidden="true">
 
-            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp" alt="a paint pallere to represent menue but with hover "
-                aria-hidden="true">
+            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp"
+                alt="a paint pallere to represent menue but with hover " aria-hidden="true">
 
             <span class="visually-hidden">Menu</span>
         </button>
 
     </nav>
 
+    <!--
+        Project Gallery Exhibition
+        This section creates the main project exploration space.
+        Each project is structured as an exhibit containing:
+        - artwork preview
+        - project information
+        - interaction controls
+        The gallery structure allows users to explore projects visually
+        before opening the deeper design board case study.
+    -->
     <!-- Projects Section -->
     <section class="project-room" id="projects">
-
 
         <div class="room-sticky">
             <h1 class="room-title">Projects</h1>
             <div class="gallery-window">
                 <div class="gallery-wall-note" aria-hidden="true">
-
                     <p>Scroll, swipe, or select a paint swatch to explore.</p>
                 </div>
 
                 <div class="gallery-track" id="galleryTrack">
 
-                    <!-- Project 1 ----------------------------------------->
+                    <!--
+                    Each project is stored as an individual exhibit.
+                    I used data attributes instead of creating separate duplicated
+                    layouts because JavaScript can identify which project was selected
+                    and load the correct design board.
+                    This keeps the interaction system easier to maintain as more
+                    projects are added.
+                    -->
+                    <!-- Project 1:Skyconnect -->
                     <article id="skyconnect" class="gallery-exhibit active" data-project="1" data-board="skyconnect"
                         data-focus-type="gif" data-swatch="blue">
                         <div class="exhibit-space">
 
                             <div class="exhibit-visual exhibit-visual--frame skyconnect-exhibit">
 
+                                <!--
+                                Each project can contain different visual states:
+                                black and white preview, colour version, or animated focus.
+                                I created this system to make the gallery feel interactive,
+                                where projects reveal more detail through movement instead of
+                                only displaying a static image.
+                                -->
                                 <div class="skyconnect-artwork">
                                     <img class="project-media project-media--bw"
-                                        src="assets/projects/skyconnect/catalyst-bw.webp" alt="SkyConnect project black and white">
+                                        src="assets/projects/skyconnect/catalyst-bw.webp"
+                                        alt="SkyConnect project black and white">
 
                                     <img class="project-media project-media--colour"
-                                        src="assets/projects/skyconnect/catalyst-color.webp" alt="skyconnect colored " aria-hidden="true">
+                                        src="assets/projects/skyconnect/catalyst-color.webp" alt="skyconnect colored "
+                                        aria-hidden="true">
 
                                     <img class="project-media project-media--gif"
-                                        src="assets/projects/skyconnect/catalyst-focus.gif" alt="skyconnect motion" aria-hidden="true">
+                                        src="assets/projects/skyconnect/catalyst-focus.gif" alt="skyconnect motion"
+                                        aria-hidden="true">
                                 </div>
 
-                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp" alt="frame around it "
-                                    aria-hidden="true">
-
+                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp"
+                                    alt="frame around it " aria-hidden="true">
 
                             </div>
 
@@ -134,13 +187,10 @@
                                     View More
                                 </button>
                             </div>
-
-
-
                         </div>
                     </article>
 
-                    <!-- Project 2: Global Kitchen Rush -------------------------->
+                    <!-- Project 2: Global Kitchen Rush -->
                     <article class="gallery-exhibit" data-project="2" data-board="global-kitchen" data-focus-type="gif"
                         data-swatch="green">
 
@@ -154,12 +204,12 @@
                                         alt="Global Kitchen Rush cooking game">
 
                                     <img class="project-media project-media--gif"
-                                        src="assets/projects/global-kitchen/global-kitchen-focus.gif" alt="gif motion of global rush "
-                                        aria-hidden="true">
+                                        src="assets/projects/global-kitchen/global-kitchen-focus.gif"
+                                        alt="gif motion of global rush " aria-hidden="true">
                                 </div>
 
-                                <img class="global-kitchen-frame" src="assets/projects/global-kitchen/frame.webp" alt="frame like game"
-                                    aria-hidden="true">
+                                <img class="global-kitchen-frame" src="assets/projects/global-kitchen/frame.webp"
+                                    alt="frame like game" aria-hidden="true">
 
                             </div>
 
@@ -183,7 +233,7 @@
                         </div>
                     </article>
 
-                    <!-- Project 3: Tech4Ease ----------------------------------->
+                    <!-- Project 3: Tech4Ease -->
                     <article class="gallery-exhibit" data-project="3" data-board="tech4ease" data-focus-type="colour"
                         data-swatch="yellow">
 
@@ -221,7 +271,7 @@
                         </div>
                     </article>
 
-                    <!-- Project 4: ASA ------------------------------------------>
+                    <!-- Project 4: ASA      -->
                     <article class="gallery-exhibit" data-project="4" data-board="asa" data-focus-type="gif"
                         data-swatch="purple">
 
@@ -266,7 +316,7 @@
 
                     </article>
 
-                    <!-- Project 5: Automata Box Machine ------------------------>
+                    <!-- Project 5: Automata Box Machine -->
                     <article class="gallery-exhibit" data-project="5" data-board="automata" data-focus-type="gif"
                         data-swatch="purple">
 
@@ -318,8 +368,7 @@
 
                     </article>
 
-                    <!-- Project 6: 5 Corners Daycare -------------------------->
-
+                    <!-- Project 6: 5 Corners Daycare-->
                     <article class="gallery-exhibit" data-project="6" data-board="5corner" data-focus-type="colour"
                         data-swatch="blue">
 
@@ -379,35 +428,44 @@
 
             </div>
 
-
-            <!-- Project Paint Swatch Navigation ------------------------->
-           <div 
-class="project-step-navigation" 
-id="projectStepNavigation"
-role="navigation"
-aria-label="Project navigation">
-        </div>
+            <!-- Project Paint Swatch Navigation -->
+            <div class="project-step-navigation" id="projectStepNavigation" role="navigation"
+                aria-label="Project navigation">
+            </div>
     </section>
 
-    <!-- Designer Board ----------------------------------------->
+    <!--
+    Interactive Design Board
 
+    The design board expands a selected project into a full case study.
+    I separated this from the gallery because the first interaction
+    lets users discover projects quickly, while the design board allows
+    a deeper exploration of process, decisions, tools, and reflection.
+    -->
     <section class="design-board-overlay" id="designBoard" aria-hidden="true">
         <div class="design-board-backdrop"></div>
 
         <div class="design-board-layout">
 
-            <!-- Selected project remains visible ---------------->
+            <!-- Selected project remains visible -->
             <aside class="design-board-preview" id="designBoardPreview" aria-label="Selected project">
                 <div class="design-board-preview-art" id="designBoardPreviewArt">
                     <!-- JavaScript places the selected artwork here -->
                 </div>
 
+                <!--
+                The preview area keeps the selected project visible while users
+                explore the detailed case study.
+                JavaScript updates this content dynamically instead of creating
+                separate pages for every project, creating a smoother exhibition
+                experience.
+                -->
                 <div class="design-board-preview-plaque" id="designBoardPreviewPlaque">
                     <!-- JavaScript places the project plaque here -->
                 </div>
             </aside>
 
-            <!-- Project board ----------------------------------->
+            <!-- Project board -->
             <div class="design-board-panel">
                 <button class="design-board-close" id="closeDesignBoard" type="button"
                     aria-label="Back to project gallery">
@@ -418,11 +476,17 @@ aria-label="Project navigation">
                 <div class="design-board-content">
                     <div id="designBoardContainer">
 
-                        <!-- skyconnet Design Board ----------------------->
+                        <!--
+                        Each design board follows a similar storytelling structure:
+                        overview, contribution, process, reflection, tools, and credits.
+                        I structured projects this way because I wanted the portfolio
+                        to communicate not only the final outcome, but also my design
+                        thinking and personal contribution.
+                        -->
+                        <!-- skyconnet Design Board -->
                         <article class="skyconnect-board" data-project-board="skyconnect">
 
-                            <!-- HEADER -------------------------------------------->
-
+                            <!-- HEADER -->
                             <header class="skyconnect-heading">
 
                                 <p class="board-eyebrow">
@@ -443,8 +507,7 @@ aria-label="Project navigation">
                                 alt="First place award">
 
 
-                            <!-- OVERVIEW ------------------------------------------>
-
+                            <!-- OVERVIEW -->
                             <section class="board-paper board-overview-note">
 
                                 <span class="board-tape"></span>
@@ -465,10 +528,7 @@ aria-label="Project navigation">
 
                             </section>
 
-
-
-                            <!-- PRESENTATION VIDEO -------------------------------->
-
+                            <!-- PRESENTATION VIDEO -->
                             <figure class="board-media board-presentation">
 
                                 <video controls muted playsinline>
@@ -486,7 +546,7 @@ aria-label="Project navigation">
 
 
                             <section class="skyconnect-moments">
-                                <!-- PRESENTING PHOTO ---------------------------------->
+                                <!-- PRESENTING PHOTO -->
 
                                 <figure class="board-polaroid board-moment">
 
@@ -501,7 +561,7 @@ aria-label="Project navigation">
 
 
 
-                                <!-- WINNING ------------------------------------------->
+                                <!-- WINNING-->
 
                                 <figure class="board-polaroid board-winning">
 
@@ -516,7 +576,7 @@ aria-label="Project navigation">
 
                             </section>
 
-                            <!-- MY CONTRIBUTION ----------------------------------->
+                            <!-- MY CONTRIBUTION -->
 
                             <section class="board-paper board-role-note">
 
@@ -545,8 +605,7 @@ aria-label="Project navigation">
 
 
                             <section class="skyconnect-questions">
-                                <!-- QUESTION 1 ---------------------------------------->
-
+                                <!-- QUESTION 1 -->
                                 <section class="board-paper">
 
                                     <h4>How is it interactive for kids?</h4>
@@ -568,7 +627,7 @@ aria-label="Project navigation">
 
 
 
-                                <!-- QUESTION 2 ---------------------------------------->
+                                <!-- QUESTION 2 -->
 
                                 <section class="board-paper">
 
@@ -591,7 +650,7 @@ aria-label="Project navigation">
 
 
 
-                                <!-- QUESTION 3 ---------------------------------------->
+                                <!-- QUESTION 3 -->
 
                                 <section class="board-paper">
 
@@ -625,7 +684,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- ABSTRACT TO MODEL ---------------------------------->
+                            <!-- ABSTRACT TO MODEL  -->
 
                             <section class="board-paper board-process-note">
 
@@ -671,7 +730,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- DESIGN THINKING ----------------------------------->
+                            <!-- DESIGN THINKING -->
 
                             <section class="board-paper board-design-thinking">
 
@@ -711,7 +770,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- REFLECTION ---------------------------------------->
+                            <!-- REFLECTION -->
 
                             <section class="board-paper board-reflection-note">
 
@@ -739,7 +798,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- TOOLS --------------------------------------------->
+                            <!-- TOOLS -->
 
                             <section class="board-paper board-tools-note">
 
@@ -780,8 +839,15 @@ aria-label="Project navigation">
 
 
 
-                            <!-- CREDITS ------------------------------------------->
+                            <!-- CREDITS -->
 
+                            <!--
+                            Credits sections clarify collaboration while keeping my personal
+                            role visible.
+                            For team projects, I included my specific contribution so the
+                            portfolio represents my own design process rather than only the
+                            final team outcome.
+                            -->
                             <footer class="board-paper board-credits-note">
 
                                 <h3>Project Credits</h3>
@@ -808,7 +874,7 @@ aria-label="Project navigation">
 
                         </article>
 
-                        <!-- Global Kitchen Rush Design Board ----------------------->
+                        <!-- Global Kitchen Rush Design Board  -->
                         <article class="global-kitchen-board" data-project-board="global-kitchen" hidden>
 
                             <header class="global-kitchen-heading">
@@ -1171,7 +1237,7 @@ aria-label="Project navigation">
 
                         </article>
 
-                        <!-- Tech4Ease Design Board --------------------------------->
+                        <!-- Tech4Ease Design Board  -->
                         <article id="tech4ease" class="tech4ease-board" data-project-board="tech4ease" hidden>
 
 
@@ -1556,11 +1622,11 @@ aria-label="Project navigation">
 
                         </article>
 
-                        <!-- ASA Design Board --------------------------------------->
+                        <!-- ASA Design Board -->
                         <article class="asa-board" data-project-board="asa" hidden>
 
 
-                            <!-- Heading --------------------------------------------->
+                            <!-- Heading -->
 
                             <header class="asa-heading">
 
@@ -1580,7 +1646,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Logo Animation -------------------------------------->
+                            <!-- Logo Animation -->
 
                             <figure class="board-media asa-logo-sequence">
 
@@ -1598,7 +1664,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Overview -------------------------------------------->
+                            <!-- Overview -->
 
                             <section class="board-paper asa-overview">
 
@@ -1627,7 +1693,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Board Game ------------------------------------------>
+                            <!-- Board Game -->
 
                             <figure class="board-polaroid asa-boardgame">
 
@@ -1647,7 +1713,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Shawarma 1 ------------------------------------------>
+                            <!-- Shawarma 1 -->
 
                             <figure class="board-media asa-shawarma-one">
 
@@ -1665,7 +1731,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Shawarma 2 ------------------------------------------>
+                            <!-- Shawarma 2  -->
 
                             <figure class="board-media asa-shawarma-two">
 
@@ -1680,12 +1746,7 @@ aria-label="Project navigation">
 
                             </figure>
 
-
-
-
-
-
-                            <!-- Mixer GIF ------------------------------------------->
+                            <!-- Mixer GIF -->
 
                             <figure class="board-media asa-mixer">
 
@@ -1705,7 +1766,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Ramadan --------------------------------------------->
+                            <!-- Ramadan -->
 
                             <figure class="board-media asa-ramadan">
 
@@ -1725,7 +1786,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Reflection ------------------------------------------>
+                            <!-- Reflection -->
 
                             <section class="board-paper asa-reflection">
 
@@ -1758,7 +1819,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Tools ----------------------------------------------->
+                            <!-- Tools -->
 
                             <section class="board-paper asa-tools">
 
@@ -1828,7 +1889,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- Credits --------------------------------------------->
+                            <!-- Credits -->
 
                             <footer class="board-paper asa-credit">
 
@@ -1854,7 +1915,7 @@ aria-label="Project navigation">
 
                         </article>
 
-                        <!-- Automata Box Machine Design Board ---------------------->
+                        <!-- Automata Box Machine Design Board -->
                         <article class="automata-board" data-project-board="automata" hidden>
 
 
@@ -2198,11 +2259,11 @@ aria-label="Project navigation">
 
                         </article>
 
-                        <!-- 5 Corners Daycare Design Board ----------------------->
+                        <!-- 5 Corners Daycare Design Board -->
                         <article class="fivecorner-board" data-project-board="5corner">
 
 
-                            <!-- HEADER -------------------------------------------->
+                            <!-- HEADER -->
 
                             <header class="fivecorner-heading">
 
@@ -2222,7 +2283,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- OVERVIEW ------------------------------------------->
+                            <!-- OVERVIEW -->
 
                             <section class="board-paper board-overview-note">
 
@@ -2247,7 +2308,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- WEBSITE PREVIEW ----------------------------------->
+                            <!-- WEBSITE PREVIEW -->
 
                             <figure class="board-media">
 
@@ -2265,7 +2326,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- VISUAL IDENTITY ----------------------------------->
+                            <!-- VISUAL IDENTITY -->
 
                             <section class="board-paper">
 
@@ -2287,7 +2348,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- DESIGN PROCESS ------------------------------------>
+                            <!-- DESIGN PROCESS -->
 
                             <section class="board-paper">
 
@@ -2336,7 +2397,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- CUSTOM ILLUSTRATIONS ------------------------------>
+                            <!-- CUSTOM ILLUSTRATIONS -->
 
                             <section class="board-paper">
 
@@ -2369,7 +2430,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- DEVELOPMENT --------------------------------------->
+                            <!-- DEVELOPMENT -->
 
                             <section class="board-paper">
 
@@ -2402,7 +2463,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- INTERACTION --------------------------------------->
+                            <!-- INTERACTION -->
 
                             <section class="board-paper">
 
@@ -2438,7 +2499,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- REFLECTION ---------------------------------------->
+                            <!-- REFLECTION -->
 
                             <section class="board-paper board-reflection-note">
 
@@ -2468,7 +2529,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- TOOLS --------------------------------------------->
+                            <!-- TOOLS -->
 
                             <section class="board-paper board-tools-note">
 
@@ -2477,12 +2538,12 @@ aria-label="Project navigation">
 
                                 <div class="board-tool-list">
 
-                                    
+
                                     <figure>
                                         <img src="assets/projects/5corner/html.webp">
                                         <figcaption>HTML</figcaption>
                                     </figure>
-                                    
+
 
                                     <figure>
                                         <img src="assets/projects/5corner/css.webp">
@@ -2502,7 +2563,7 @@ aria-label="Project navigation">
 
 
 
-                            <!-- CREDITS ------------------------------------------->
+                            <!-- CREDITS -->
 
                             <footer class="board-paper board-credits-note">
 

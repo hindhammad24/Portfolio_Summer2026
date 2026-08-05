@@ -1,9 +1,22 @@
-/* ==========================================================
-   DESIGN BOARD — SHARED OVERLAY + COMPONENT SYSTEM
-   Project layouts belong in /projects/*.css
-========================================================== */
+/*
+This file controls the shared design board system used across
+all project case studies.
+The design board was created to transform projects from simple
+gallery previews into interactive presentations of my process,
+decisions, and contributions.
+This file controls the shared overlay structure, typography,
+paper/card components, and reusable elements that allow every
+project board to follow the same visual language while keeping
+individual project layouts separate.
+*/
 
-
+/*
+The design board opens as an overlay instead of navigating to a
+new page.
+I chose this approach because I wanted users to maintain the
+feeling of exploring an exhibition. They can move from discovering
+a project into learning about the process without losing context.
+*/
 .design-board-overlay {
   position: fixed;
   inset: 0;
@@ -14,14 +27,20 @@
   transition: opacity .35s ease, visibility .35s ease;
 }
 
+/*
+The open state controls the transition between the gallery and
+the detailed project board.
+The animation creates a smoother transition so the case study
+feels like an extension of the exhibition rather than a separate
+page.
+*/
 .design-board-overlay.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* Hide inactive project boards ----------------------------- */
-
+/* Hide inactive project boards  */
 [data-project-board][hidden] {
   display: none !important;
 }
@@ -32,6 +51,13 @@
   background: var(--bg);
 }
 
+/*
+The layout separates the selected project preview from the
+detailed case study.
+The left side keeps the original artwork visible while the right
+side focuses on storytelling, allowing users to connect the final
+result with the design process behind it.
+*/
 .design-board-layout {
   position: relative;
   z-index: 2;
@@ -43,6 +69,13 @@
   overflow: hidden;
 }
 
+/*
+The preview panel acts like an exhibition label beside the
+project.
+I kept the selected artwork visible because I wanted the user to
+always remember which project they are exploring while reading
+the deeper explanation.
+*/
 .design-board-preview {
   position: relative;
   display: flex;
@@ -53,18 +86,14 @@
   min-width: 0;
   height: 100%;
   padding:
-    clamp(5rem, 9vh, 7rem)
-    clamp(1.25rem, 3vw, 3rem)
-    clamp(3rem, 7vh, 5rem);
+    clamp(5rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3rem) clamp(3rem, 7vh, 5rem);
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #ffffff 0%,
       #ffffff 60%,
       #f7f7f7 75%,
       #eeeeee 76%,
-      #ffffff 100%
-    );
+      #ffffff 100%);
   border-right: .06rem solid var(--border-light);
   overflow-y: auto;
   overflow-x: hidden;
@@ -109,15 +138,11 @@
   opacity: 1;
 }
 
-.design-board-preview-art
-.gallery-exhibit[data-focus-type="colour"]
-.project-media--colour {
+.design-board-preview-art .gallery-exhibit[data-focus-type="colour"] .project-media--colour {
   opacity: 1;
 }
 
-.design-board-preview-art
-.gallery-exhibit[data-focus-type="colour"]
-.project-media--gif {
+.design-board-preview-art .gallery-exhibit[data-focus-type="colour"] .project-media--gif {
   opacity: 0;
 }
 
@@ -134,6 +159,13 @@
   transform: none;
 }
 
+
+/*
+The project information panel slides into view separately from
+the preview.
+This creates a feeling of opening a design board or presentation
+rather than simply scrolling to another section.
+*/
 .design-board-panel {
   position: relative;
   width: 100%;
@@ -153,9 +185,7 @@
   width: 100%;
   height: 100%;
   padding:
-    clamp(5rem, 9vh, 6.5rem)
-    clamp(1rem, 3vw, 3rem)
-    clamp(5rem, 8vh, 7rem);
+    clamp(5rem, 9vh, 6.5rem) clamp(1rem, 3vw, 3rem) clamp(5rem, 8vh, 7rem);
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -199,8 +229,18 @@
   outline-offset: .2rem;
 }
 
-/* Shared board typography --------------------------------- */
-
+/* Shared board typography */
+/*
+Shared Project Storytelling Style
+All project boards use the same typography system so the portfolio
+feels consistent even though each project has a different topic.
+The structure focuses on explaining:
+- project context
+- my contribution
+- design process
+- reflection
+- tools used
+*/
 [data-project-board] h2,
 [data-project-board] h3,
 [data-project-board] p,
@@ -247,8 +287,14 @@
   color: rgba(36, 36, 36, .72);
 }
 
-/* Shared board surfaces ----------------------------------- */
-
+/*
+Design Board Materials
+I created reusable surfaces such as paper, sticky notes, media
+frames, and polaroids to support the handmade exhibition style
+of the portfolio.
+These components allow different projects to feel like physical
+design documentation placed onto a board.
+*/
 .board-paper,
 .board-sticky,
 .board-media,
@@ -316,6 +362,11 @@
   filter: drop-shadow(0 .9rem 1.15rem rgba(0, 0, 0, .12));
 }
 
+/*
+Small movement effects were added to make the board feel tactile.
+The goal was to recreate the feeling of interacting with physical
+materials rather than presenting a completely flat digital page.
+*/
 .board-paper:hover,
 .board-sticky:hover,
 .board-media:hover,
@@ -324,8 +375,13 @@
   transform: translateY(-.2rem);
 }
 
-/* Attachments --------------------------------------------- */
-
+/*
+Physical board details
+Tape, pins, and paperclips reinforce the idea that each project
+is presented as a physical design board.
+These elements connect the digital portfolio with my interest in
+handmade and tangible design processes.
+*/
 .board-tape {
   position: absolute;
   top: -1rem;
@@ -372,8 +428,7 @@
   opacity: .65;
 }
 
-/* Shared tool grid ---------------------------------------- */
-
+/* Shared tool grid  */
 .board-tool-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -405,7 +460,13 @@
   line-height: 1.3;
 }
 
-@media (max-width: 60rem) {
+/*
+On smaller screens, the preview panel is removed to prioritize
+the project story.
+The desktop version emphasizes the exhibition layout, while
+mobile focuses on readability and easier navigation.
+*/
+@media (max-width: 70rem) {
   .design-board-layout {
     grid-template-columns: 1fr;
   }
@@ -416,13 +477,12 @@
 
   .design-board-content {
     padding:
-      clamp(4.5rem, 8vh, 6rem)
-      clamp(1rem, 4vw, 2rem)
-      4rem;
+      clamp(4.5rem, 8vh, 6rem) clamp(1rem, 4vw, 2rem) 4rem;
   }
 }
 
-@media (max-width: 34rem) {
+@media (max-width: 48rem) {
+
   .board-paper,
   .board-sticky {
     padding: 1.2rem;

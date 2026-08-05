@@ -1,11 +1,24 @@
-/* ==========================================================
-   SKYCONNECT — CURATED DESIGNER WORKSPACE
-   Project-specific layout only
-========================================================== */
+/*
+This file controls the custom layout of the SkyConnect design board.
 
+The shared design board system creates consistency across projects,
+while this file creates a layout that reflects the specific story
+of SkyConnect.
 
-/* Main Board ---------------------------------------------- */
+Because this project focuses on concept development, 3D modelling,
+animation, and visual communication, the layout emphasizes the
+transition from idea generation to final presentation.
+*/
 
+/*
+The 12-column grid creates a flexible exhibition space where
+different project artifacts can be arranged based on their
+importance.
+
+I used this structure to combine presentation material, 3D models,
+design questions, process documentation, and reflection into one
+continuous case study.
+*/
 .skyconnect-board {
   position: relative;
 
@@ -30,8 +43,17 @@
 }
 
 
-/* Reset Old Absolute Layout ------------------------------- */
+/* Reset Old Absolute Layout  */
+/*
+The original board structure relied on more fixed positioning.
 
+I changed the layout into a responsive grid because the project
+contains different types of content that need to adapt across
+screen sizes.
+
+This approach keeps the visual freedom of a design board while
+making the experience easier to maintain.
+*/
 .skyconnect-board>* {
   position: relative;
   inset: auto;
@@ -49,8 +71,15 @@
 }
 
 
-/* Typography ---------------------------------------------- */
+/* Typography  */
+/*
+The typography follows the portfolio's creative identity while
+supporting the storytelling aspect of SkyConnect.
 
+The combination of readable body text and expressive headings helps
+balance technical information with the imaginative concept behind
+the project.
+*/
 .skyconnect-board h2,
 .skyconnect-board h3,
 .skyconnect-board h4 {
@@ -91,8 +120,14 @@
   color: rgba(36, 36, 36, .78);
 }
 
-/* Header -------------------------------------------------- */
+/* Header  */
+/*
+The header introduces the concept before showing the detailed work.
 
+For SkyConnect, this was important because the project started as
+an idea and evolved into a designed experience. The introduction
+helps users understand the vision before seeing the process.
+*/
 .skyconnect-heading {
 
   grid-column: 1 / 10;
@@ -134,8 +169,14 @@
 
 }
 
-/* Award --------------------------------------------------- */
+/* Award  */
+/*
+The award is included as supporting context rather than the focus
+of the project.
 
+I wanted the board to emphasize the design process and my
+contribution instead of only highlighting the final achievement.
+*/
 .skyconnect-award {
   grid-column: 10 / 13;
   grid-row: 1;
@@ -167,8 +208,15 @@
 }
 
 
-/* Shared SkyConnect Surfaces ------------------------------ */
+/* Shared SkyConnect Surfaces  */
+/*
+These reusable surfaces maintain the physical design board language
+used throughout the portfolio.
 
+Paper cards, media frames, and polaroids help present SkyConnect
+documentation as collected design materials rather than a standard
+case study page.
+*/
 .skyconnect-board .board-paper {
   padding: clamp(1.4rem, 2.2vw, 2rem);
   background: rgba(255, 255, 255, .96);
@@ -230,8 +278,7 @@
 }
 
 
-/* Remove Excessive Hover Movement ------------------------- */
-
+/* Remove Excessive Hover Movement  */
 .skyconnect-board .board-paper:hover,
 .skyconnect-board .board-media:hover,
 .skyconnect-board .board-polaroid:hover,
@@ -242,8 +289,14 @@
 }
 
 
-/* Overview + Presentation --------------------------------- */
+/* Overview + Presentation  */
+/*
+The overview and presentation sections are placed together because
+SkyConnect focuses heavily on communication.
 
+The layout connects the original idea with the final pitch and
+shows how visual storytelling helped communicate the concept.
+*/
 .board-overview-note {
   grid-column: 1 / 6;
   grid-row: 2;
@@ -266,14 +319,15 @@
   transform: none;
 }
 
+/*
+Project Moments
 
-/* Photo Story --------------------------------------------- */
+These images capture important stages of the project experience.
 
-/* ==========================================================
-   PROJECT MOMENTS
-========================================================== */
-
-
+Instead of only showing the final outcome, I included moments that
+represent the process, collaboration, and development behind the
+project.
+*/
 .skyconnect-moments {
 
   grid-column: 2 / 12;
@@ -339,8 +393,14 @@
 }
 
 
-/* Role + Prototype ---------------------------------------- */
+/* Role + Prototype  */
+/*
+This section connects my personal contribution with the prototype
+development.
 
+The goal is to make my role visible by showing what I designed,
+modelled, and communicated within the larger team project.
+*/
 .board-role-note {
   grid-column: 2 / 12;
 
@@ -374,7 +434,14 @@
 
 }
 
-/* Process + Challenge ------------------------------------- */
+/* Process + Challenge  */
+/*
+The process and challenge sections explain the decisions behind the
+final design.
+
+Showing challenges alongside development helps communicate how
+ideas were tested, adjusted, and improved throughout the project.
+*/
 .board-process-note {
 
   grid-column: 1 / 13;
@@ -408,7 +475,14 @@
 }
 
 
-/* Reflection + Tools -------------------------------------- */
+/* Reflection + Tools  */
+/*
+Reflection and tools sections explain both the learning outcome and
+technical methods behind the project.
+
+This helps show SkyConnect as a combination of creative direction,
+3D modelling, storytelling, and digital production.
+*/
 .board-reflection-note {
 
   grid-column: 2 / 8;
@@ -436,8 +510,7 @@
 }
 
 
-/* Tools --------------------------------------------------- */
-
+/* Tools  */
 .skyconnect-board .board-tool-list {
   display: grid;
   grid-template-columns:
@@ -478,8 +551,14 @@
 }
 
 
-/* Credits ------------------------------------------------- */
+/* Credits  */
+/*
+The credits section provides project context while keeping the
+focus on individual contributions.
 
+For collaborative projects, this helps communicate my specific role
+within the overall outcome.
+*/
 .board-credits-note {
 
   grid-column: 3 / 11;
@@ -497,16 +576,14 @@
 }
 
 
-/* Restrained Decorations ---------------------------------- */
-
+/* Restrained Decorations  */
 /*
-Only the overview keeps tape.
-The role keeps a paperclip.
-The challenge remains a sticky note.
-The reflection keeps one pin.
-Everything else stays clean.
-*/
+Decorations are intentionally limited to important areas.
 
+I used tape, pins, and clips only where they support the storytelling
+because too many decorative elements would distract from the project
+content.
+*/
 .skyconnect-board .board-presentation .board-pin,
 .skyconnect-board .board-prototype .board-tape,
 .skyconnect-board .board-reflection-note .board-pin {
@@ -534,13 +611,17 @@ Everything else stays clean.
 }
 
 
-/* Slight Connection Between Photos ------------------------ */
+/* Left Preview Artwork  */
+/*
+The preview artwork reuses the same project representation from the
+gallery.
 
-
-
-/* Left Preview Artwork ------------------------------------ */
+Keeping the visual connection between the gallery and design board
+creates a smoother transition when users move from discovery into
+the detailed case study.
+*/
 .design-board-preview-art .skyconnect-exhibit {
-  
+
   width: min(86%, 23rem);
 
   aspect-ratio: 1 / 1.15;
@@ -552,16 +633,14 @@ Everything else stays clean.
   transform: none;
 }
 
-.design-board-preview-art
-.skyconnect-exhibit
-.project-media {
+.design-board-preview-art .skyconnect-exhibit .project-media {
 
-    display:block;
+  display: block;
 
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit:contain;
+  object-fit: contain;
 
 }
 
@@ -664,8 +743,16 @@ Everything else stays clean.
 }
 
 
-/* Design Thinking ----------------------------------------- */
+/* Design Thinking  */
+/*
+Design Thinking Questions
 
+These questions highlight the reasoning behind the design decisions.
+
+Instead of only presenting what was created, this section explains
+the problems considered during the design process and how the
+solution responded to user needs.
+*/
 .board-design-thinking {
 
   grid-column: 1 / 13;
@@ -687,17 +774,28 @@ Everything else stays clean.
 
 .board-process-note img {
 
-    width:100%;
+  width: 100%;
 
-    height:auto;
+  height: auto;
 
-    max-height:30rem;
+  max-height: 30rem;
 
-    object-fit:contain;
+  object-fit: contain;
 
 }
-/* Medium Screens ------------------------------------------ */
-@media (max-width: 72rem) {
+
+/*
+Responsive Behaviour
+
+The desktop layout presents SkyConnect as a visual workspace where
+different artifacts can be viewed together.
+
+On smaller screens, the layout becomes a structured vertical story
+that keeps the design process readable while maintaining the same
+sequence of ideas.
+*/
+/* Medium Screens  */
+@media (max-width: 75rem) {
 
   .skyconnect-board {
     row-gap: clamp(3rem, 6vw, 4.5rem);
@@ -727,63 +825,63 @@ Everything else stays clean.
     grid-column: 9 / 13;
   }
 }
-/* Tablet -------------------------------------------------- */
 
+/* Tablet  */
 @media (max-width: 60rem) {
 
 
   .skyconnect-heading {
 
-    order:1 !important;
+    order: 1 !important;
 
-    position:relative;
+    position: relative;
 
-    margin-top:0;
+    margin-top: 0;
 
-    padding-top:0;
+    padding-top: 0;
 
   }
 
 
   .skyconnect-award {
 
-    order:2 !important;
+    order: 2 !important;
 
   }
 
   .skyconnect-board {
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    gap:clamp(2rem, 6vw, 3.5rem);
+    gap: clamp(2rem, 6vw, 3.5rem);
 
-    width:100%;
-padding:
+    width: 100%;
+    padding:
       1.5rem 1rem 4rem;
 
 
   }
 
 
-  .skyconnect-board > *,
+  .skyconnect-board>*,
   .skyconnect-board .board-paper,
   .skyconnect-board .board-sticky,
   .skyconnect-board .board-media,
   .skyconnect-board .board-polaroid {
 
-    position:relative;
+    position: relative;
 
-    inset:auto;
+    inset: auto;
 
-    width:100%;
+    width: 100%;
 
-    max-width:100%;
+    max-width: 100%;
 
-    margin:0;
+    margin: 0;
 
-    transform:none;
+    transform: none;
 
   }
 
@@ -793,11 +891,11 @@ padding:
 
   .skyconnect-heading {
 
-    order:1;
+    order: 1;
 
-    width:100%;
+    width: 100%;
 
-    padding-top:0;
+    padding-top: 0;
 
   }
 
@@ -807,65 +905,65 @@ padding:
     font-size:
       clamp(3rem, 9vw, 4.8rem);
 
-    line-height:.9;
+    line-height: .9;
 
   }
 
 
   .skyconnect-heading .board-subtitle {
 
-    width:100%;
+    width: 100%;
 
-    font-size:1rem;
+    font-size: 1rem;
 
   }
 
   .skyconnect-heading {
 
-    order:1;
+    order: 1;
 
-    width:100%;
+    width: 100%;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-}
+  }
 
 
-.skyconnect-award {
+  .skyconnect-award {
 
-    order:2;
+    order: 2;
 
-    position:relative;
+    position: relative;
 
-    align-self:flex-end;
+    align-self: flex-end;
 
     width:
       clamp(4.5rem, 15vw, 6rem);
 
-    margin-top:-1rem;
+    margin-top: -1rem;
 
-    margin-right:1rem;
+    margin-right: 1rem;
 
-}
+  }
 
 
 
   /* BROCHURE / AWARD UNDER HEADER ---------------- */
 
-.skyconnect-questions {
+  .skyconnect-questions {
 
-    order:15;
+    order: 15;
 
-}
+  }
 
 
-.board-design-thinking {
+  .board-design-thinking {
 
-    order:16;
+    order: 16;
 
-}
+  }
 
 
 
@@ -874,43 +972,43 @@ padding:
 
   .board-overview-note {
 
-    order:3;
+    order: 3;
 
   }
 
 
   .board-presentation {
 
-    order:4;
+    order: 4;
 
   }
 
 
   .skyconnect-moments {
 
-    order:5;
+    order: 5;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    gap:2rem;
+    gap: 2rem;
 
-    width:100%;
+    width: 100%;
 
   }
 
 
   .board-moment {
 
-    width:100%;
+    width: 100%;
 
   }
 
 
   .board-moment img {
 
-    max-height:none;
+    max-height: none;
 
   }
 
@@ -918,53 +1016,53 @@ padding:
 
   .board-role-note {
 
-    order:6;
+    order: 6;
 
   }
 
 
   .board-prototype {
 
-    order:7;
+    order: 7;
 
   }
 
 
   .board-process-note {
 
-    order:8;
+    order: 8;
 
   }
 
 
   .board-challenges-note {
 
-    order:9;
+    order: 9;
 
-    width:min(92%,32rem);
+    width: min(92%, 32rem);
 
-    align-self:center;
+    align-self: center;
 
   }
 
 
   .board-reflection-note {
 
-    order:10;
+    order: 10;
 
   }
 
 
   .board-tools-note {
 
-    order:11;
+    order: 11;
 
   }
 
 
   .board-credits-note {
 
-    order:12;
+    order: 12;
 
   }
 
@@ -982,76 +1080,74 @@ padding:
 
   .skyconnect-questions {
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    gap:2rem;
+    gap: 2rem;
 
-    width:100%;
+    width: 100%;
+
+  }
+
+
+  .skyconnect-questions .board-paper {
+
+    width: 100%;
+
+  }
+
+
+  .skyconnect-questions .board-media {
+
+    width: 100%;
+
+  }
+
+
+  .skyconnect-questions .board-media img {
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+  }
+
+  .board-presentation video {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 25rem;
+
+    object-fit: contain;
+
+  }
+
+  .board-presentation video {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 25rem;
+
+    object-fit: contain;
+
+  }
 
 }
 
-
-.skyconnect-questions .board-paper {
-
-    width:100%;
-
-}
-
-
-.skyconnect-questions .board-media {
-
-    width:100%;
-
-}
-
-
-.skyconnect-questions .board-media img {
-
-    width:100%;
-
-    height:auto;
-
-    object-fit:contain;
-
-}
-.board-presentation video {
-
-    width:100%;
-
-    height:auto;
-
-    max-height:25rem;
-
-    object-fit:contain;
-
-}
-
-.board-presentation video {
-
-    width:100%;
-
-    height:auto;
-
-    max-height:25rem;
-
-    object-fit:contain;
-
-}
-
-}
-
-
-
-/* Small Mobile -------------------------------------------- */
-
-@media (max-width:34rem) {
+/* Small Mobile  */
+@media (max-width:48rem) {
 
 
   .skyconnect-board {
 
-    gap:1.75rem;
+    gap: 1.75rem;
 
     padding:
       3.5rem .75rem 3rem;
@@ -1062,8 +1158,8 @@ padding:
 
   .skyconnect-heading h2 {
 
-font-size:
-clamp(2.4rem,12vw,3.4rem);
+    font-size:
+      clamp(2.4rem, 12vw, 3.4rem);
 
 
   }
@@ -1072,7 +1168,7 @@ clamp(2.4rem,12vw,3.4rem);
 
   .skyconnect-heading .board-subtitle {
 
-    font-size:.95rem;
+    font-size: .95rem;
 
   }
 
@@ -1081,7 +1177,7 @@ clamp(2.4rem,12vw,3.4rem);
   .skyconnect-board .board-paper,
   .skyconnect-board .board-sticky {
 
-    padding:1.2rem;
+    padding: 1.2rem;
 
   }
 
@@ -1092,7 +1188,7 @@ clamp(2.4rem,12vw,3.4rem);
     width:
       5rem;
 
-    margin-top:-.5rem;
+    margin-top: -.5rem;
 
   }
 
@@ -1101,9 +1197,9 @@ clamp(2.4rem,12vw,3.4rem);
   .skyconnect-board .board-tool-list {
 
     grid-template-columns:
-      repeat(2,minmax(0,1fr));
+      repeat(2, minmax(0, 1fr));
 
-    gap:1rem;
+    gap: 1rem;
 
   }
 

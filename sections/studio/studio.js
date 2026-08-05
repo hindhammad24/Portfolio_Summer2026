@@ -1,44 +1,75 @@
+/*
+This file controls the interactions inside the creative studio section.
+Each object in the workspace reveals information about my background
+and skills through interaction.
+I separated these interactions from the HTML and CSS so the studio
+objects can be modified independently while keeping the experience
+organized.
+*/
+/* studio section*/
 
-/* studio section------------------------------------------*/
 let activeStudioObject = null;
 
+/*
+This function controls opening and closing information for studio
+objects.
+I created a reusable function instead of repeating the same logic
+for every object because each object follows the same interaction:
+change image, show information, and reset previous selections.
+*/
+function openStudioInfo(button, img, hover, normal, text) {
 
-function openStudioInfo(button,img,hover,normal,text){
+  if (activeStudioObject === button) {
 
-    if(activeStudioObject === button){
+    img.src = normal;
+    studioInfoCard.classList.remove("show");
+    activeStudioObject = null;
 
-        img.src = normal;
-        studioInfoCard.classList.remove("show");
-        activeStudioObject = null;
-
-        return;
-    }
+    return;
+  }
 
 
-    if(activeStudioObject){
+  if (activeStudioObject) {
 
-        activeStudioObject.click();
-    }
+    activeStudioObject.click();
+  }
 
 
-    img.src = hover;
+  img.src = hover;
 
-    studioInfoCard.innerHTML = text;
+  studioInfoCard.innerHTML = text;
 
-    studioInfoCard.classList.add("show");
+  studioInfoCard.classList.add("show");
 
-    activeStudioObject = button;
+  activeStudioObject = button;
 }
 
-
-/* Canvas Hover --------------------------------------------- */
+/* ..... ART OBJECT INTERACTION ..... */
+/*
+The canvas interaction introduces my artistic background.
+Hovering changes the artwork and reveals information creating a
+connection between the physical object and the digital interface.
+*/
 const studioCanvas = document.querySelector(".studio-canvas");
 const studioCanvasImg = studioCanvas.querySelector("img");
 const studioInfoCard = document.getElementById("studioInfoCard");
-
 const canvasNormal = studioCanvasImg.src;
 const canvasHover = studioCanvasImg.dataset.hover;
 
+/*
+How I created the information card?
+The information card uses a reusable HTML element that starts empty
+and is filled dynamically using JavaScript. Instead of creating 
+separate cards for every studio object, I created one <article> 
+element in the HTML and used JavaScript to change its content 
+depending on which object the user interacts with. When the user 
+hovers over or clicks an object, JavaScript changes the image, 
+inserts the related information using innerHTML, and adds a class 
+that makes the card visible. I chose this approach because creating 
+separate cards for every object would make the HTML more repetitive 
+and harder to maintain. Using one reusable card keeps the layout cleaner 
+while still allowing each object to reveal detailed information.
+*/
 const artText = `
   <h2>Art & Creative Practice</h2>
   <p>Art was my first creative language and continues to influence how I approach design and technology.</p>
@@ -47,19 +78,22 @@ const artText = `
   <p>Traditional art influences my design process.</p>
   <p>I enjoy combining physical and digital forms of making.</p>
 `;
-
 studioCanvas.addEventListener("mouseenter", () => {
   studioCanvasImg.src = canvasHover;
   studioInfoCard.innerHTML = artText;
   studioInfoCard.classList.add("show");
 });
-
 studioCanvas.addEventListener("mouseleave", () => {
   studioCanvasImg.src = canvasNormal;
   studioInfoCard.classList.remove("show");
 });
 
-/* Board Hover --------------------------------------------- */
+/* ..... DESIGN PROCESS INTERACTION ..... */
+/*
+The board reveals my design skills and methods.
+I chose to represent design through a workspace object because my
+process is based on planning, sketching, and iteration.
+*/
 const studioBoard = document.querySelector(".studio-board");
 const boardImg = document.getElementById("boardImg");
 
@@ -113,7 +147,13 @@ if (studioBoard) {
 
 }
 
-/*laptop hover ----------------------------------------------- */
+/* ..... CODING AND TECHNOLOGY INTERACTION ..... */
+/*
+The laptop represents how I combine technical development with
+creative design.
+The information focuses on using technology as a tool for creativity
+rather than separating coding from design.
+*/
 const studioLaptop = document.querySelector(".studio-laptop");
 const laptopImg = document.getElementById("laptopImg");
 
@@ -175,7 +215,7 @@ studioLaptop.addEventListener("mouseleave", () => {
 
 });
 
-/* educaytion hover ---------------------------------- */
+/* educaytion hover */
 const studioEducation =
   document.querySelector(".studio-education");
 
@@ -236,7 +276,7 @@ studioEducation.addEventListener("mouseleave", () => {
 
 });
 
-/*chair----------------------------------------------------------*/
+/*chair*/
 const studioChair = document.querySelector(".studio-chair");
 const chairImg = document.getElementById("chairImg");
 
@@ -289,77 +329,82 @@ studioChair.addEventListener("mouseleave", () => {
 
 });
 
-/* Mobile Click Interaction ------------------------------- */
-
+/* ..... MOBILE INTERACTION SUPPORT ..... */
+/*
+Originally, these interactions relied mainly on hover because they
+were designed for desktop.
+I added click interactions so mobile users can still explore the
+studio objects without needing a hover state.
+*/
 const studioObjects = [
-    {
-        button: studioCanvas,
-        img: studioCanvasImg,
-        normal: canvasNormal,
-        hover: canvasHover,
-        text: artText
-    },
+  {
+    button: studioCanvas,
+    img: studioCanvasImg,
+    normal: canvasNormal,
+    hover: canvasHover,
+    text: artText
+  },
 
-    {
-        button: studioBoard,
-        img: boardImg,
-        normal: boardNormal,
-        hover: boardHover,
-        text: designText
-    },
+  {
+    button: studioBoard,
+    img: boardImg,
+    normal: boardNormal,
+    hover: boardHover,
+    text: designText
+  },
 
-    {
-        button: studioLaptop,
-        img: laptopImg,
-        normal: laptopNormal,
-        hover: laptopHover,
-        text: laptopText
-    },
+  {
+    button: studioLaptop,
+    img: laptopImg,
+    normal: laptopNormal,
+    hover: laptopHover,
+    text: laptopText
+  },
 
-    {
-        button: studioEducation,
-        img: educationImg,
-        normal: educationNormal,
-        hover: educationHover,
-        text: educationText
-    },
+  {
+    button: studioEducation,
+    img: educationImg,
+    normal: educationNormal,
+    hover: educationHover,
+    text: educationText
+  },
 
-    {
-        button: studioChair,
-        img: chairImg,
-        normal: chairNormal,
-        hover: chairHover,
-        text: careerText
-    }
+  {
+    button: studioChair,
+    img: chairImg,
+    normal: chairNormal,
+    hover: chairHover,
+    text: careerText
+  }
 ];
 
 
 let activeObject = null;
 
 
-studioObjects.forEach((object)=>{
+studioObjects.forEach((object) => {
 
 
-object.button.addEventListener("click",(event)=>{
+  object.button.addEventListener("click", (event) => {
 
     event.stopPropagation();
 
 
-    if(activeObject === object){
+    if (activeObject === object) {
 
-        object.img.src = object.normal;
+      object.img.src = object.normal;
 
-        studioInfoCard.classList.remove("show");
+      studioInfoCard.classList.remove("show");
 
-        activeObject = null;
+      activeObject = null;
 
-        return;
+      return;
     }
 
 
-    if(activeObject){
+    if (activeObject) {
 
-        activeObject.img.src =
+      activeObject.img.src =
         activeObject.normal;
     }
 
@@ -367,7 +412,7 @@ object.button.addEventListener("click",(event)=>{
     object.img.src = object.hover;
 
     studioInfoCard.innerHTML =
-    object.text;
+      object.text;
 
 
     studioInfoCard.classList.add("show");
@@ -375,23 +420,23 @@ object.button.addEventListener("click",(event)=>{
 
     activeObject = object;
 
-});
+  });
 
 });
 
 
 
-document.addEventListener("click",(event)=>{
+document.addEventListener("click", (event) => {
 
 
-if(
-!event.target.closest(".desk-group") &&
-!event.target.closest(".studio-info-card")
-){
+  if (
+    !event.target.closest(".desk-group") &&
+    !event.target.closest(".studio-info-card")
+  ) {
 
-    if(activeObject){
+    if (activeObject) {
 
-        activeObject.img.src =
+      activeObject.img.src =
         activeObject.normal;
 
     }
@@ -401,13 +446,19 @@ if(
 
     activeObject = null;
 
-}
+  }
 
 });
 
-
-/* Studio horizontal transition ----------------------------- */
-
+/* ..... TRANSITION FROM STUDIO TO PROJECT EXHIBITION ..... */
+/*
+This controls the movement from my personal workspace into the
+project exhibition.
+I created this transition because I wanted the portfolio to feel
+like a continuous experience instead of separate webpage sections.
+The desk moves away while the project sign appears guiding users
+toward my work.
+*/
 const studioSection = document.querySelector(".studio-section");
 const studioDesk = document.querySelector(".desk-group");
 const studioDirection = document.querySelector(".studio-direction");
@@ -432,8 +483,10 @@ function updateStudioTransition() {
       : 0;
 
   /*
-    Studio remains still during the first part so visitors
-    can hover over the objects.
+  The transition starts later in the scroll because users need time
+  to explore the studio objects first.
+  I intentionally delayed movement so interaction and discovery happen
+  before navigation toward projects.
   */
   const transitionStart = .55;
 
@@ -447,9 +500,31 @@ function updateStudioTransition() {
   );
 
   /* Move the entire desk scene toward the left */
+  /*How I moved the desk to the left?
+  I moved the desk using a combination of CSS variables and JavaScript 
+  scroll calculations. In the CSS, I created a movable position using 
+  transform with a custom variable called --studio-desk-shift. Instead 
+  of setting a fixed position, I allowed JavaScript to control how far 
+  the desk moves. As the user scrolls through the studio section, JavaScript 
+  calculates the scroll progress and changes the value of this variable. The 
+  desk starts in its original position, then gradually shifts left as the user 
+  reaches the transition area. I chose this approach because I wanted the 
+  movement to feel connected to the user's scrolling rather than having a 
+  separate animation that plays automatically. */
   const deskShift = movementProgress * -60;
 
   /* Bring the direction stand in from the right */
+  /*How I brought the direction stand into the scene?
+  The direction stand uses the same idea as the desk movement.
+  In CSS, I prepared the stand to be positioned outside the screen 
+  using a transform controlled by the --studio-sign-shift variable. 
+  JavaScript then updates this value based on the user's scrolling progress.
+  At the beginning of the section, the sign is pushed to the right and 
+  hidden from the main composition. As the user continues scrolling, 
+  the value decreases and the sign smoothly moves into its final position. 
+  I designed it this way because I wanted the transition from the creative 
+  studio to the projects exhibition to feel like a physical space changing, 
+  similar to moving through an art gallery. */
   const signShift = (1 - movementProgress) * 20;
 
   studioDesk.style.setProperty(
@@ -464,19 +539,19 @@ function updateStudioTransition() {
 
   studioDirection.style.opacity =
     Math.min(movementProgress * 1.6, 1);
-    studioDirection.classList.toggle(
-  "show",
-  movementProgress > .05
-);
-
-if (studioFeatured) {
-
-  studioFeatured.classList.toggle(
+  studioDirection.classList.toggle(
     "show",
-    movementProgress > .45
+    movementProgress > .05
   );
 
-}
+  if (studioFeatured) {
+
+    studioFeatured.classList.toggle(
+      "show",
+      movementProgress > .45
+    );
+
+  }
 
   /*
     Hide any open information card once the horizontal

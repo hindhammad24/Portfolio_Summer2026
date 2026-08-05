@@ -1,5 +1,15 @@
-/* Normal Cursor -------------------------------------------- */
+/*
+This file controls the visual design of the project exhibition
+section.
+Instead of presenting projects as a traditional grid, I designed
+the projects page as an interactive gallery where users move
+through different exhibits.
+This file controls the gallery layout, project transitions,
+visual states, responsive behaviour, and the interactions that
+make each project feel like part of an exhibition space.
+*/
 
+/* Normal Cursor */
 html,
 body {
   cursor: default !important;
@@ -15,7 +25,14 @@ a,
   cursor: pointer;
 }
 
-/* Project Main --------------------------------------------- */
+/*
+Project Exhibition Structure
+The project section was designed as a full-screen exhibition
+space instead of a standard scrolling portfolio.
+The height and sticky positioning allow the user to scroll
+through the page while experiencing the projects horizontally,
+creating a more immersive gallery-like interaction.
+*/
 .project-room {
   position: relative;
 
@@ -25,8 +42,7 @@ a,
   background: var(--bg);
 }
 
-/* Projects title ------------------------------------------- */
-
+/* Projects title */
 .room-title {
   position: absolute;
   top: clamp(2rem, 6vh, 4rem);
@@ -45,7 +61,15 @@ a,
   pointer-events: none;
 }
 
-/* Sticky gallery viewport ---------------------------------- */
+/* Sticky gallery viewport */
+/*
+Project Exhibition Structure
+The project section was designed as a full-screen exhibition
+space instead of a standard scrolling portfolio.
+The height and sticky positioning allow the user to scroll
+through the page while experiencing the projects horizontally,
+creating a more immersive gallery-like interaction.
+*/
 .room-sticky {
   position: sticky;
   top: 0;
@@ -56,8 +80,7 @@ a,
   overflow: hidden;
 }
 
-/* Visible gallery window ----------------------------------- */
-
+/* Visible gallery window */
 .gallery-window {
   position: relative;
   cursor: grab;
@@ -95,8 +118,7 @@ a,
   user-select: none;
 }
 
-/* Gallery wall note ---------------------------------------- */
-
+/* Gallery wall note */
 .gallery-wall-note {
   position: fixed;
   top: clamp(6.5rem, 15vh, 9rem);
@@ -132,7 +154,14 @@ a,
 }
 
 
-/* Horizontal gallery track --------------------------------- */
+/* Horizontal gallery track */
+/*
+The gallery track creates the horizontal movement system.
+Instead of manually creating separate pages for each project,
+all exhibits exist inside one continuous space. This allows
+users to explore projects naturally while keeping the interaction
+consistent.
+*/
 .gallery-track {
   position: relative;
 
@@ -153,7 +182,12 @@ a,
   flex: 0 0 calc(50vw - min(17rem, 44vw));
 }
 
-/* Individual exhibit --------------------------------------- */
+/* Individual exhibit  */
+/*
+Each project changes appearance depending on whether it is active.
+Inactive projects become smaller and more transparent so the
+user's attention naturally moves toward the selected exhibit.
+*/
 .gallery-exhibit {
   position: relative;
 
@@ -178,7 +212,7 @@ a,
   transform: scale(1);
 }
 
-/* Exhibit area --------------------------------------------- */
+/* Exhibit area */
 .exhibit-space {
   position: relative;
 
@@ -194,8 +228,13 @@ a,
     clamp(6rem, 10vh, 7.5rem) clamp(1rem, 4vw, 3rem) clamp(5rem, 8vh, 6rem);
 }
 
-/* Curated exhibit positioning ------------------------------ */
-
+/* Curated exhibit positioning */
+/*
+I intentionally adjusted the vertical positioning of exhibits
+instead of aligning every project identically.
+Small differences in placement make the gallery feel more like
+a physical exhibition wall where each piece has its own position.
+*/
 .gallery-exhibit:nth-child(3n + 1) .exhibit-visual {
   transform: translateY(-.6rem);
 }
@@ -216,7 +255,7 @@ a,
   margin-top: clamp(1.4rem, 3vh, 2rem);
 }
 
-/* Exhibit visual ------------------------------------------- */
+/* Exhibit visual */
 .exhibit-visual {
   position: relative;
 
@@ -248,7 +287,7 @@ a,
 }
 
 
-/* Temporary visual differences ----------------------------- */
+/* Temporary visual differences */
 .exhibit-visual--frame {
   width: min(100%, 20rem);
 }
@@ -269,8 +308,7 @@ a,
   width: min(100%, 28rem);
 }
 
-/* SkyConnect framed artwork -------------------------------- */
-
+/* SkyConnect framed artwork */
 .skyconnect-exhibit {
   aspect-ratio: 1.28 / 1;
 }
@@ -285,16 +323,18 @@ a,
 
   overflow: hidden;
 }
+
 .skyconnect-artwork .project-media {
 
-    inset:0;
+  inset: 0;
 
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: contain;
+  object-fit: contain;
 
 }
+
 .skyconnect-frame {
   position: absolute;
   inset: 0;
@@ -309,8 +349,14 @@ a,
   pointer-events: none;
 }
 
-/* Project media -------------------------------------------- */
-
+/* Project media */
+/*
+Projects contain multiple visual states such as black and white,
+colour, and animated versions.
+The opacity transition allows the artwork to reveal more detail
+when a project becomes active, creating a more interactive
+experience without replacing the entire image.
+*/
 .project-media {
   position: absolute;
   inset: 0;
@@ -355,8 +401,13 @@ a,
   opacity: 1;
 }
 
-/* Plaque ---------------------------------------------------- */
-
+/* Plaque */
+/*
+The project plaque acts like an exhibition label.
+I designed it to appear only when a project becomes active so
+the gallery remains visually focused while still providing
+project information when needed.
+*/
 .plaque {
   position: relative;
 
@@ -413,8 +464,14 @@ a,
   color: var(--text-soft);
 }
 
-/* Project Main: View More Swatch Button -------------------- */
-
+/* Project Main: View More Swatch Button  */
+/*
+The view button follows the paint theme used throughout the
+portfolio.
+Instead of using a normal button style, I created a custom
+paint swatch interaction to keep the navigation consistent
+with the handmade visual identity.
+*/
 .view-project-btn {
   position: relative;
   isolation: isolate;
@@ -508,8 +565,7 @@ a,
   outline-offset: .18rem;
 }
 
-/* Continue exploring direction ----------------------------- */
-
+/* Continue exploring direction  */
 .gallery-direction {
   position: fixed;
   right: clamp(1.5rem, 4vw, 4rem);
@@ -554,7 +610,7 @@ a,
   }
 }
 
-/* Paint swatch navigation ---------------------------------- */
+/* Paint swatch navigation */
 .project-step-navigation {
 
   position: absolute;
@@ -574,8 +630,7 @@ a,
 
 }
 
-/* Individual project swatches ------------------------------ */
-
+/* Individual project swatches  */
 .project-step {
   position: relative;
 
@@ -634,15 +689,187 @@ a,
   opacity: 1;
 }
 
-/* Responsive ----------------------------------------------- */
 
+.gallery-exhibit[data-board] .exhibit-visual {
+  cursor: pointer;
+}
+
+/* Global Kitchen Rush Framed Artwork  */
+.global-kitchen-exhibit {
+  width: min(100%, 22rem);
+  aspect-ratio: 1.28 / 1;
+}
+
+.global-kitchen-artwork {
+  position: absolute;
+
+  top: 9%;
+  right: 8%;
+  bottom: 10%;
+  left: 8%;
+
+  overflow: hidden;
+}
+
+.global-kitchen-artwork .project-media {
+
+  width: 100%;
+  height: 80%;
+
+  top: 10%;
+
+  object-fit: contain;
+
+}
+
+.global-kitchen-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: block;
+
+  width: 150%;
+  height: 150%;
+  top: -5rem;
+  left: -6rem;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+/* Tech4Ease Gallery Sculpture */
+.tech4ease-exhibit {
+  width: min(100%, 25rem);
+  height: clamp(18rem, 48vh, 30rem);
+}
+
+.tech4ease-exhibit .project-media {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
+}
+
+/* ASA Gallery Frame */
+.asa-exhibit {
+
+  width: min(100%, 22rem);
+  aspect-ratio: 1 / 1;
+
+}
+
+
+.asa-artwork {
+
+  position: absolute;
+
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+
+  overflow: hidden;
+
+}
+
+
+.asa-artwork .project-media {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+}
+
+
+.asa-frame {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+}
+
+/* Automata Gallery Frame */
+
+.automata-exhibit {
+  width: min(100%, 23rem);
+  aspect-ratio: 1.28 / 1;
+}
+
+.automata-artwork {
+  position: absolute;
+
+  top: 2%;
+  right: 10%;
+  bottom: 5%;
+  left: 9%;
+
+  overflow: hidden;
+}
+
+.automata-artwork .project-media {
+  inset: 8%;
+
+  width: 90%;
+  height: 90%;
+
+  object-fit: contain;
+}
+
+.automata-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+.frame-artwork {
+
+  position: absolute;
+
+  overflow: hidden;
+
+}
+
+
+/*
+Responsive adjustments change the exhibition layout for smaller
+screens.
+
+The goal was not only to shrink the desktop version but to keep
+the gallery interaction usable through touch scrolling and smaller
+project displays.
+*/
 @media (max-width: 48rem) {
 
   .project-step {
 
-        width: 1.25rem;
+    width: 1.25rem;
 
-    }
+  }
 
   .room-title {
     top: 2rem;
@@ -693,185 +920,18 @@ a,
   }
 
 
-.skyconnect-exhibit,
-.asa-exhibit,
-.automata-exhibit{
+  .skyconnect-exhibit,
+  .asa-exhibit,
+  .automata-exhibit {
 
     width: min(80vw, 20rem);
 
-}
+  }
 
-.global-kitchen-exhibit {
+  .global-kitchen-exhibit {
 
-    width:min(75vw,17rem);
+    width: min(75vw, 17rem);
 
-}
-
-}
-
-.gallery-exhibit[data-board] .exhibit-visual {
-  cursor: pointer;
-}
-
-/* Global Kitchen Rush Framed Artwork ----------------------- */
-
-.global-kitchen-exhibit {
-  width: min(100%, 22rem);
-  aspect-ratio: 1.28 / 1;
-}
-
-.global-kitchen-artwork {
-  position: absolute;
-
-  top: 9%;
-  right: 8%;
-  bottom: 10%;
-  left: 8%;
-
-  overflow: hidden;
-}
-
-.global-kitchen-artwork .project-media {
-
-    
-    width:100%;
-    height:100%;
-
-    top:10%;
-
-    object-fit:contain;
-
-}
-.global-kitchen-frame {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-
-  display: block;
-
-  width: 150%;
-  height: 150%;
-  top: -5rem;
-  left: -6rem;
-
-  object-fit: contain;
-
-  pointer-events: none;
-}
-
-/* Tech4Ease Gallery Sculpture ------------------------------ */
-
-.tech4ease-exhibit {
-  width: min(100%, 25rem);
-  height: clamp(18rem, 48vh, 30rem);
-}
-
-.tech4ease-exhibit .project-media {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  filter: drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
-}
-
-/* ASA Gallery Frame ---------------------------------------- */
-
-.asa-exhibit {
-
-  width: min(100%, 22rem);
-  aspect-ratio: 1 / 1;
-
-}
-
-
-.asa-artwork {
-
-  position: absolute;
-
-  top: 10%;
-  right: 10%;
-  bottom: 10%;
-  left: 10%;
-
-  overflow: hidden;
-
-}
-
-
-.asa-artwork .project-media {
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-}
-
-
-.asa-frame {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 5;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  pointer-events: none;
-
-}
-
-/* Automata Gallery Frame ----------------------------------- */
-
-.automata-exhibit {
-  width: min(100%, 23rem);
-  aspect-ratio: 1.28 / 1;
-}
-
-.automata-artwork {
-  position: absolute;
-
-  top:2%;
-  right:10%;
-  bottom:5%;
-  left:9%;
-
-  overflow: hidden;
-}
-
-.automata-artwork .project-media {
-  inset: 0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-}
-
-.automata-frame {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  pointer-events: none;
-}
-
-.frame-artwork {
-
-    position:absolute;
-
-    overflow:hidden;
+  }
 
 }

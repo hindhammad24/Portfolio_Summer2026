@@ -1,4 +1,14 @@
-/* Projects Gallery ----------------------------------------- */
+/* Projects Gallery*/
+/*
+This file controls the interactive behaviour of the project
+exhibition.
+It manages project selection, horizontal gallery movement,
+paint swatch navigation, and the connection between vertical
+page scrolling and horizontal project exploration.
+The goal was to create a portfolio experience where users
+discover projects through interaction rather than simply
+opening separate project pages.
+*/
 const projectRoom = document.querySelector(".project-room");
 const galleryWindow = document.querySelector(".gallery-window");
 const galleryTrack = document.querySelector("#galleryTrack");
@@ -11,8 +21,14 @@ let activeProjectIndex = 0;
 let scrollUpdateFrame = null;
 let mediaActivationTimer = null;
 
-
-/* Set active project --------------------------------------- */
+/*
+This function controls which project is currently highlighted.
+I separated this logic into its own function because multiple
+interactions can change the active project, including scrolling,
+keyboard controls, and swatch navigation.
+Keeping one function responsible for the active state prevents
+different interactions from creating conflicting behaviours.
+*/
 function setActiveProject(index) {
   if (index < 0 || index >= galleryExhibits.length) return;
 
@@ -45,8 +61,14 @@ function setActiveProject(index) {
   updateProjectSwatches();
 }
 
-/* Find project closest to centre --------------------------- */
-
+/* Find project closest to centre   */
+/*
+This function detects which project is closest to the centre
+of the gallery.
+I used the centre position instead of only tracking scroll
+distance because the gallery behaves like an exhibition where
+the currently viewed artwork should become the focus.
+*/
 function updateActiveProjectFromScroll() {
   if (!galleryWindow) return;
 
@@ -71,8 +93,14 @@ function updateActiveProjectFromScroll() {
 }
 
 
-/* Scroll directly to project ------------------------------- */
+/* Scroll directly to project */
+/*
+This function moves the gallery directly to a selected project.
 
+It allows different navigation methods, such as paint swatches
+and URL links, to reuse the same movement behaviour instead of
+creating separate scrolling logic.
+*/
 function scrollToProject(index) {
   const selectedExhibit = galleryExhibits[index];
 
@@ -90,8 +118,14 @@ function scrollToProject(index) {
 }
 
 
-/* Create paint swatch navigation --------------------------- */
-
+/* Create paint swatch navigation   */
+/*
+This function creates the paint swatch navigation dynamically.
+Instead of manually creating a button for every project, the
+navigation is generated from the existing project data.
+This makes adding future projects easier because the navigation
+updates automatically.
+*/
 function createProjectSwatches() {
   if (!projectStepNavigation) return;
 
@@ -153,8 +187,7 @@ function createProjectSwatches() {
 }
 
 
-/* Update active paint swatch ------------------------------- */
-
+/* Update active paint swatch   */
 function updateProjectSwatches() {
   const projectSteps = document.querySelectorAll(".project-step");
 
@@ -167,8 +200,7 @@ function updateProjectSwatches() {
 }
 
 
-/* Gallery scroll listener ---------------------------------- */
-
+/* Gallery scroll listener   */
 galleryWindow?.addEventListener(
   "scroll",
   () => {
@@ -184,8 +216,7 @@ galleryWindow?.addEventListener(
 );
 
 
-/* Keyboard navigation -------------------------------------- */
-
+/* Keyboard navigation   */
 galleryWindow?.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") {
     event.preventDefault();
@@ -205,15 +236,20 @@ galleryWindow?.addEventListener("keydown", (event) => {
 });
 
 
-/* Vertical gallery scrolling ------------------------------- */
-
+/* Vertical gallery scrolling   */
 let isUpdatingFromPageScroll = false;
 let isDirectlyInteracting = false;
 let interactionEndTimer = null;
 
 
-/* Calculate gallery section height ------------------------- */
-
+/* Calculate gallery section height  */
+/*
+This function calculates the height needed for the horizontal
+gallery movement.
+Because the user scrolls vertically but the projects move
+horizontally, I needed to convert vertical scrolling distance
+into horizontal gallery progress.
+*/
 function updateProjectRoomHeight() {
   if (!projectRoom || !galleryWindow || !galleryTrack) return;
 
@@ -232,9 +268,15 @@ function updateProjectRoomHeight() {
   );
 }
 
+/* Convert vertical page position to horizontal movement  */
+/*
+This function connects normal page scrolling with horizontal
+gallery movement.
 
-/* Convert vertical page position to horizontal movement ---- */
-
+I created this interaction so users can experience the project
+gallery naturally through scrolling instead of needing a special
+horizontal scroll action.
+*/
 function updateGalleryFromPageScroll() {
   if (
     !projectRoom ||
@@ -272,9 +314,13 @@ function updateGalleryFromPageScroll() {
   });
 }
 
-
-/* Match page position after direct horizontal movement ------ */
-
+/* Match page position after direct horizontal movement */
+/*
+This function keeps the page position synchronized after direct
+horizontal interaction.
+Without this, dragging the gallery could create a mismatch
+between the visible project position and the actual page scroll.
+*/
 function syncPageToGalleryPosition() {
   if (
     !projectRoom ||
@@ -308,8 +354,7 @@ function syncPageToGalleryPosition() {
 }
 
 
-/* Direct interaction state --------------------------------- */
-
+/* Direct interaction state   */
 function beginDirectInteraction() {
   isDirectlyInteracting = true;
 
@@ -335,8 +380,7 @@ function finishDirectInteraction() {
 }
 
 
-/* Mouse and touch interaction ------------------------------ */
-
+/* Mouse and touch interaction  */
 galleryWindow?.addEventListener(
   "pointerdown",
   beginDirectInteraction
@@ -365,8 +409,12 @@ galleryWindow?.addEventListener(
 );
 
 
-/* Initial gallery setup ------------------------------------ */
-
+/* Initial gallery setup  */
+/*
+This function prepares the gallery when the page loads.
+It sets up navigation, calculates dimensions, and establishes
+the initial project state before user interaction begins.
+*/
 function initialiseProjectGallery() {
   if (
     !projectRoom ||
@@ -393,7 +441,7 @@ function initialiseProjectGallery() {
 }
 
 
-/* Page listeners ------------------------------------------- */
+/* Page listeners  ---------------- */
 
 window.addEventListener(
   "scroll",
@@ -417,27 +465,27 @@ const selectedBoard = urlParams.get("board");
 
 if (selectedBoard) {
 
-    setTimeout(() => {
+  setTimeout(() => {
 
-        const project = document.querySelector(
-            `[data-board="${selectedBoard}"]`
-        );
+    const project = document.querySelector(
+      `[data-board="${selectedBoard}"]`
+    );
 
-        if (project) {
+    if (project) {
 
-            const index = galleryExhibits.indexOf(project);
+      const index = galleryExhibits.indexOf(project);
 
-            // first move gallery to correct card
-            scrollToProject(index);
+      // first move gallery to correct card
+      scrollToProject(index);
 
-            // wait for movement, then open board
-            setTimeout(() => {
+      // wait for movement, then open board
+      setTimeout(() => {
 
-                project.querySelector(".view-project-btn")?.click();
+        project.querySelector(".view-project-btn")?.click();
 
-            }, 700);
-        }
+      }, 700);
+    }
 
-    }, 500);
+  }, 500);
 
 }

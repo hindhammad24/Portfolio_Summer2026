@@ -1,11 +1,24 @@
-/* ==========================================================
-   AUTOMATA BOX MACHINE — CURATED DESIGNER WORKSPACE
-   Project-specific layout only
-========================================================== */
+/*
+This file controls the custom layout of the Automata Box Machine
+design board.
 
+The shared design board system creates consistency across projects,
+while this file creates a layout that matches the mechanical and
+iterative nature of this project.
 
-/* Main Board ---------------------------------------------- */
+For Automata Box Machine, I focused on showing the transition from
+early sketches and experiments into the final mechanical design.
+The layout emphasizes exploration, modelling, and the development
+process behind the final artifact.
+*/
 
+/*
+The 12-column grid allows the project documentation to be arranged
+like a physical engineering workspace.
+
+I used this structure to create space for different stages of the
+process, including sketches, models, prototype views, and reflection.
+*/
 .automata-board {
 
   position: relative;
@@ -24,65 +37,65 @@
   width:
     min(100%, 76rem);
 
-  margin-inline:auto;
+  margin-inline: auto;
 
   padding:
-    clamp(2rem,5vw,5rem)
-    clamp(1rem,3vw,3rem)
-    clamp(6rem,10vw,10rem);
+    clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem) clamp(6rem, 10vw, 10rem);
 
 }
 
+/*
+The original layout relied on more fixed positioning.
+I changed the structure into a responsive grid because the project
+contains many visual elements that need to rearrange depending on
+screen size.
+This approach keeps the feeling of a design workspace while making
+the case study easier to navigate.
+*/
+.automata-board>* {
 
+  position: relative;
 
-/* Reset ---------------------------------------------- */
+  inset: auto;
 
-.automata-board > * {
-
-  position:relative;
-
-  inset:auto;
-
-  max-width:100%;
+  max-width: 100%;
 
 }
-
-
 
 .automata-board .board-paper,
 .automata-board .board-sticky,
 .automata-board .board-media,
 .automata-board .board-polaroid {
 
-  position:relative;
+  position: relative;
 
-  inset:auto;
+  inset: auto;
 
 }
 
+/*
+The typography follows the overall portfolio system while supporting
+the technical and experimental feeling of this project.
 
-
-/* Typography ------------------------------------------ */
-
-
+The handwritten style helps connect the mechanical design process
+with the sketches and creative exploration behind the final object.
+*/
 .automata-board h3 {
 
   margin-bottom:
-    clamp(.7rem,1.5vw,1rem);
+    clamp(.7rem, 1.5vw, 1rem);
 
   font-family:
     var(--font-elegant);
 
   font-size:
-    clamp(1.6rem,2.4vw,2.3rem);
+    clamp(1.6rem, 2.4vw, 2.3rem);
 
-  font-weight:500;
+  font-weight: 500;
 
-  line-height:1;
+  line-height: 1;
 
 }
-
-
 
 .automata-board p,
 .automata-board li,
@@ -92,57 +105,56 @@
     var(--font-main);
 
   font-size:
-    clamp(.78rem,1vw,.92rem);
+    clamp(.78rem, 1vw, .92rem);
 
-  line-height:1.7;
+  line-height: 1.7;
 
   color:
-    rgba(36,36,36,.76);
+    rgba(36, 36, 36, .76);
 
 }
 
+/* Header  */
+/*
+The header introduces the project before showing the technical
+details.
 
-
-/* Header ---------------------------------------------- */
-
-
+This creates context around the purpose of the machine before the
+viewer explores sketches, models, and development decisions.
+*/
 .automata-heading {
 
   grid-column:
     1 / 11;
 
   width:
-    min(100%,55rem);
+    min(100%, 55rem);
 
   padding-top:
-    clamp(1rem,3vw,2.5rem);
+    clamp(1rem, 3vw, 2.5rem);
 
 }
 
-
-
 .automata-heading h2 {
 
-  margin:0;
+  margin: 0;
 
   font-family:
     var(--font-elegant);
 
   font-size:
-    clamp(3.3rem,7vw,6.5rem);
+    clamp(3.3rem, 7vw, 6.5rem);
 
-  font-weight:500;
+  font-weight: 500;
 
-  line-height:.86;
+  line-height: .86;
 
 }
-
-
 
 .automata-heading .board-subtitle {
 
   width:
-    min(100%,40rem);
+    min(100%, 40rem);
 
   margin-top:
     1.5rem;
@@ -151,30 +163,34 @@
     var(--font-elegant);
 
   font-size:
-    clamp(1.05rem,1.8vw,1.4rem);
+    clamp(1.05rem, 1.8vw, 1.4rem);
 
 }
 
+/* Shared Surfaces  */
+/*
+The shared surfaces maintain the physical design board style used
+throughout the portfolio.
 
-
-/* Shared Surfaces ------------------------------------- */
-
-
+Paper cards, media frames, and polaroids allow technical
+documentation to feel like collected design artifacts rather than
+a traditional report.
+*/
 .automata-board .board-paper {
 
   padding:
-    clamp(1.4rem,2.2vw,2rem);
+    clamp(1.4rem, 2.2vw, 2rem);
 
   background:
-    rgba(255,255,255,.96);
+    rgba(255, 255, 255, .96);
 
   border:
     .06rem solid var(--border-light);
 
   box-shadow:
 
-    0 .2rem .5rem rgba(0,0,0,.025),
-    0 1rem 2.5rem rgba(0,0,0,.055);
+    0 .2rem .5rem rgba(0, 0, 0, .025),
+    0 1rem 2.5rem rgba(0, 0, 0, .055);
 
 }
 
@@ -183,7 +199,7 @@
 .automata-board .board-media {
 
   padding:
-    clamp(.65rem,1vw,.9rem);
+    clamp(.65rem, 1vw, .9rem);
 
   background:
     var(--white);
@@ -197,7 +213,7 @@
 
 .automata-board .board-polaroid {
 
-  margin:0;
+  margin: 0;
 
 }
 
@@ -205,7 +221,7 @@
 
 .automata-board img {
 
-  max-width:100%;
+  max-width: 100%;
 
 }
 
@@ -214,11 +230,11 @@
 .automata-board .board-media img,
 .automata-board .board-polaroid img {
 
-  display:block;
+  display: block;
 
-  width:100%;
+  width: 100%;
 
-  height:auto;
+  height: auto;
 
 }
 
@@ -226,9 +242,15 @@
 
 
 
-/* Overview -------------------------------------------- */
+/* Overview  */
+/*
+The shared surfaces maintain the physical design board style used
+throughout the portfolio.
 
-
+Paper cards, media frames, and polaroids allow technical
+documentation to feel like collected design artifacts rather than
+a traditional report.
+*/
 .automata-overview-note {
 
   grid-column:
@@ -241,9 +263,14 @@
 
 
 
-/* Front View ------------------------------------------ */
+/* Front View  */
+/*
+The front view is presented separately because it represents the
+final form of the object.
 
-
+Showing the final appearance alongside the overview creates a
+connection between the design idea and the physical outcome.
+*/
 .automata-front-polaroid {
 
   grid-column:
@@ -259,9 +286,15 @@
 
 
 
-/* Role ----------------------------------------------- */
+/* Role  */
+/*
+This section highlights my personal contribution within the team
+project.
 
-
+I included my role separately so the portfolio communicates my own
+design decisions and responsibilities rather than only showing the
+final group outcome.
+*/
 .automata-role-note {
 
   grid-column:
@@ -272,11 +305,14 @@
 
 }
 
+/* Sketches  */
+/*
+The sketches are positioned before the final models to emphasize
+the importance of exploration.
 
-
-/* Sketches -------------------------------------------- */
-
-
+I wanted the viewer to see that the final design came from
+iteration, testing, and visual problem solving.
+*/
 .automata-sketch-one {
 
   grid-column:
@@ -309,19 +345,24 @@
 
 .automata-framed-sketch img {
 
-  display:block;
+  display: block;
 
-  width:100%;
+  width: 100%;
 
-  object-fit:contain;
+  object-fit: contain;
 
 }
 
 
 
-/* Fish Model ------------------------------------------ */
+/* Fish Model  */
+/*
+The model views document the transition from concept sketches into
+a more refined digital representation.
 
-
+Showing different views allows the viewer to understand the object
+as a complete 3D design rather than a single image.
+*/
 .automata-fish-polaroid {
 
   grid-column:
@@ -334,9 +375,7 @@
 
 
 
-/* Full + Side ----------------------------------------- */
-
-
+/* Full + Side  */
 .automata-full-polaroid {
 
   grid-column:
@@ -358,9 +397,14 @@
     5;
 
 }
-/* Process --------------------------------------------- */
 
+/* Process  */
+/*
+The process section connects experimentation with the final result.
 
+It documents the decisions and adjustments made during development,
+showing how the design evolved over time.
+*/
 .automata-process-note {
 
   grid-column:
@@ -370,17 +414,20 @@
     6;
 
   width:
-    min(100%,62rem);
+    min(100%, 62rem);
 
-  margin-inline:auto;
+  margin-inline: auto;
 
 }
 
+/* Challenge */
+/*
+The challenge section uses a different surface style to separate
+reflection from documentation.
 
-
-/* Challenge -------------------------------------------- */
-
-
+The sticky-note style reinforces the idea of capturing thoughts,
+problems, and lessons learned during the design process.
+*/
 .automata-challenges-note {
 
   grid-column:
@@ -390,11 +437,11 @@
     7;
 
 
-  width:100%;
+  width: 100%;
 
 
   padding:
-    clamp(1.3rem,2vw,1.8rem);
+    clamp(1.3rem, 2vw, 1.8rem);
 
 
   background:
@@ -403,8 +450,8 @@
 
   box-shadow:
 
-    0 .1rem .2rem rgba(36,36,36,.05),
-    0 1rem 2rem rgba(0,0,0,.075);
+    0 .1rem .2rem rgba(36, 36, 36, .05),
+    0 1rem 2rem rgba(0, 0, 0, .075);
 
 
   transform:
@@ -412,13 +459,14 @@
 
 }
 
+/* Reflection  */
+/*
+The reflection section allows the project to move beyond the final
+artifact and explain what was learned from the design process.
 
-
-
-
-/* Reflection ------------------------------------------- */
-
-
+This supports the goal of showing my growth as a designer, not only
+the completed object.
+*/
 .automata-reflection-note {
 
   grid-column:
@@ -429,11 +477,14 @@
 
 }
 
+/* Tools  */
+/*
+The tools section documents the technical methods used to create the
+project.
 
-
-/* Tools ----------------------------------------------- */
-
-
+Including these tools highlights the combination of creative design,
+digital modelling, and technical implementation involved.
+*/
 .automata-tools-note {
 
   grid-column:
@@ -448,14 +499,14 @@
 
 .automata-board .board-tool-list {
 
-  display:grid;
+  display: grid;
 
   grid-template-columns:
-    repeat(1,minmax(0,1fr));
+    repeat(1, minmax(0, 1fr));
 
-  width:100%;
+  width: 100%;
 
-  margin-top:1rem;
+  margin-top: 1rem;
 
 }
 
@@ -463,9 +514,9 @@
 
 .automata-board .board-tool-list figure {
 
-  margin:0;
+  margin: 0;
 
-  text-align:center;
+  text-align: center;
 
 }
 
@@ -473,17 +524,17 @@
 
 .automata-board .board-tool-list img {
 
-  display:block;
+  display: block;
 
-  width:100%;
+  width: 100%;
 
-  max-width:5rem;
+  max-width: 5rem;
 
-  aspect-ratio:1;
+  aspect-ratio: 1;
 
-  margin-inline:auto;
+  margin-inline: auto;
 
-  object-fit:contain;
+  object-fit: contain;
 
 }
 
@@ -491,9 +542,13 @@
 
 
 
-/* Credits --------------------------------------------- */
+/* Credits  */
+/*
+The credits section provides project context and recognizes
+collaboration.
 
-
+It keeps the focus on the work while making individual roles clear.
+*/
 .automata-credits-note {
 
   grid-column:
@@ -509,15 +564,13 @@
 
 
 
-/* Hover ----------------------------------------------- */
-
-
+/* Hover  */
 .automata-board .board-paper:hover,
 .automata-board .board-media:hover,
 .automata-board .board-polaroid:hover,
 .automata-board .board-sticky:hover {
 
-  z-index:10;
+  z-index: 10;
 
   transform:
     translateY(-.2rem);
@@ -528,10 +581,14 @@
 
 
 
-/* Preview Artwork -------------------------------------- */
+/* Preview Artwork  */
+/*
+The preview artwork reuses the gallery representation inside the
+design board.
 
-
-
+Keeping the same visual language between exploration and case study
+creates a smoother transition for the user.
+*/
 .design-board-preview-art .automata-exhibit {
   width: min(92%, 28rem);
   height: auto;
@@ -543,23 +600,19 @@
 }
 
 .design-board-preview-art .automata-artwork {
-  
+
   inset: 0;
-position:absolute;
+  position: absolute;
 
-    top:12%;
-    left:15%;
+  top: 12%;
+  left: 15%;
 
-    width:70%;
-    height:70%;
+  width: 70%;
+  height: 70%;
 }
 
-.design-board-preview-art
-.automata-artwork
-.project-media,
-.design-board-preview-art
-.automata-exhibit
-.project-media {
+.design-board-preview-art .automata-artwork .project-media,
+.design-board-preview-art .automata-exhibit .project-media {
   display: block;
 
   width: 100%;
@@ -580,208 +633,203 @@ position:absolute;
   pointer-events: none;
 }
 
-.design-board-preview-art
-.automata-exhibit:hover
-.automata-artwork,
-.design-board-preview-art
-.automata-exhibit:focus-visible
-.automata-artwork {
+.design-board-preview-art .automata-exhibit:hover .automata-artwork,
+.design-board-preview-art .automata-exhibit:focus-visible .automata-artwork {
   transform: none !important;
 }
 
 
 
 
-/* Tablet ---------------------------------------------- */
+/* Tablet  */
+/*
+Responsive Behaviour
+
+The desktop layout presents the project like a physical workspace
+where multiple artifacts can be viewed together.
+
+On smaller screens, the layout becomes a vertical sequence that
+keeps the design process readable and maintains the intended story.
+*/
+@media(max-width:75rem) {
 
 
-@media(max-width:60rem){
+  .automata-board {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+      clamp(2rem, 6vw, 3.5rem);
+
+    width: 100%;
+
+    padding:
+      5rem 0 4rem;
+
+  }
 
 
-.automata-board {
 
-  display:flex;
+  .automata-board>*,
+  .automata-board .board-paper,
+  .automata-board .board-media,
+  .automata-board .board-polaroid,
+  .automata-board .board-sticky {
 
-  flex-direction:column;
+    width: 100%;
 
-  gap:
-    clamp(2rem,6vw,3.5rem);
+    max-width: 100%;
 
-  width:100%;
+    margin: 0;
 
-  padding:
-    5rem
-    0
-    4rem;
+  }
+
+
+
+  .automata-heading {
+
+    order: 1;
+
+  }
+
+
+
+  .automata-overview-note {
+
+    order: 2;
+
+  }
+
+
+
+  .automata-front-polaroid {
+
+    order: 3;
+
+  }
+
+
+
+  .automata-role-note {
+
+    order: 4;
+
+  }
+
+
+
+  .automata-sketch-one {
+
+    order: 5;
+
+  }
+
+
+
+  .automata-sketch-two {
+
+    order: 6;
+
+  }
+
+
+
+  .automata-fish-polaroid {
+
+    order: 7;
+
+  }
+
+
+
+  .automata-full-polaroid {
+
+    order: 8;
+
+  }
+
+
+
+  .automata-side-polaroid {
+
+    order: 9;
+
+  }
+
+
+
+  .automata-process-note {
+
+    order: 10;
+
+  }
+
+
+
+  .automata-challenges-note {
+
+    order: 11;
+
+  }
+
+
+
+  .automata-reflection-note {
+
+    order: 12;
+
+  }
+
+
+
+  .automata-tools-note {
+
+    order: 13;
+
+  }
+
+
+
+  .automata-credits-note {
+
+    order: 14;
+
+  }
+
+
 
 }
 
+/* Mobile  */
+@media(max-width: 48rem) {
 
 
-.automata-board > *,
-.automata-board .board-paper,
-.automata-board .board-media,
-.automata-board .board-polaroid,
-.automata-board .board-sticky {
+  .automata-board {
 
-  width:100%;
+    gap: 1.75rem;
 
-  max-width:100%;
+  }
 
-  margin:0;
 
-}
 
+  .automata-heading h2 {
 
+    font-size:
+      clamp(3rem, 16vw, 4.4rem);
 
-.automata-heading {
+  }
 
-  order:1;
 
-}
 
+  .automata-board .board-paper,
+  .automata-board .board-sticky {
 
+    padding:
+      1.2rem;
 
-.automata-overview-note {
-
-  order:2;
-
-}
-
-
-
-.automata-front-polaroid {
-
-  order:3;
-
-}
-
-
-
-.automata-role-note {
-
-  order:4;
-
-}
-
-
-
-.automata-sketch-one {
-
-  order:5;
-
-}
-
-
-
-.automata-sketch-two {
-
-  order:6;
-
-}
-
-
-
-.automata-fish-polaroid {
-
-  order:7;
-
-}
-
-
-
-.automata-full-polaroid {
-
-  order:8;
-
-}
-
-
-
-.automata-side-polaroid {
-
-  order:9;
-
-}
-
-
-
-.automata-process-note {
-
-  order:10;
-
-}
-
-
-
-.automata-challenges-note {
-
-  order:11;
-
-}
-
-
-
-.automata-reflection-note {
-
-  order:12;
-
-}
-
-
-
-.automata-tools-note {
-
-  order:13;
-
-}
-
-
-
-.automata-credits-note {
-
-  order:14;
-
-}
-
-
-
-}
-
-
-
-
-
-/* Mobile ---------------------------------------------- */
-
-
-@media(max-width:34rem){
-
-
-.automata-board {
-
-  gap:1.75rem;
-
-}
-
-
-
-.automata-heading h2 {
-
-  font-size:
-    clamp(3rem,16vw,4.4rem);
-
-}
-
-
-
-.automata-board .board-paper,
-.automata-board .board-sticky {
-
-  padding:
-    1.2rem;
-
-}
+  }
 
 
 

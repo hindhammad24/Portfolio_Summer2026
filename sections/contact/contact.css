@@ -1,6 +1,21 @@
-/* CONTACT SECTION -------------------------------------------- */
+/*
+This file controls the styling of the contact section of my portfolio.
+The contact page was designed to feel like a continuation of my
+creative identity instead of a traditional contact form.
+I created a simple layout that combines my contact information with
+a visual representation of my current design work.
+This file controls the layout, icon interactions, artwork movement,
+and responsive behaviour of the section.
+*/
 
-
+/* ..... CONTACT PAGE STRUCTURE ..... */
+/*
+I used a centered section layout because I wanted the contact page
+to feel balanced and minimal.
+Instead of filling the page with unnecessary elements, I focused on
+two main areas: connecting with me and showing what I am currently
+working on.
+*/
 .contact-section {
 
     width: 100%;
@@ -11,15 +26,16 @@
     justify-content: center;
 
     padding:
-        clamp(5rem, 8vw, 8rem)
-        clamp(1.25rem, 4vw, 4rem);
+        clamp(5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4rem);
 
 }
 
-
-
-
-
+/*
+The container uses a two-column layout to separate information from
+visual storytelling.
+The left side provides practical contact details, while the right
+side continues the portfolio experience by showing my current work.
+*/
 .contact-container {
 
     width: min(100%, 68rem);
@@ -27,8 +43,7 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, .9fr)
-        minmax(0, 1fr);
+        minmax(0, .9fr) minmax(0, 1fr);
 
     gap: clamp(2.5rem, 5vw, 5rem);
 
@@ -36,26 +51,18 @@
 
 }
 
-
-
-
-
-/* CONTACT INFORMATION --------------------------------------- */
-
-
+/* ..... CONTACT INFORMATION ..... */
+/*
+I kept the contact section simple because the main goal is easy
+access to my information.
+The links are styled as interactive elements to maintain the same
+playful visual language used throughout the portfolio.
+*/
 .contact-info {
-
     display: flex;
-
     flex-direction: column;
-
     gap: clamp(1.2rem, 2vw, 2rem);
-
 }
-
-
-
-
 
 .contact-info h1 {
 
@@ -73,10 +80,6 @@
 
 }
 
-
-
-
-
 .contact-links {
 
     display: flex;
@@ -86,10 +89,6 @@
     gap: .9rem;
 
 }
-
-
-
-
 
 .contact-link {
 
@@ -112,23 +111,20 @@
 
 }
 
-
-
-
-
 .contact-link:hover {
 
     transform: translateX(.35rem);
 
 }
 
-
-
-
-
-/* ICONS ---------------------------------------------------- */
-
-
+/* ..... INTERACTIVE ICON STATES ..... */
+/*
+Each contact icon has two versions: a normal state and a focused
+state.
+I used image swapping instead of creating only CSS effects because
+the custom illustrations better match the handmade style of the
+portfolio.
+*/
 .contact-icon {
 
     position: relative;
@@ -140,10 +136,6 @@
     flex-shrink: 0;
 
 }
-
-
-
-
 
 .contact-icon img {
 
@@ -163,29 +155,17 @@
 
 }
 
-
-
-
-
 .icon-focus {
 
     opacity: 0;
 
 }
 
-
-
-
-
 .contact-link:hover .icon-normal {
 
     opacity: 0;
 
 }
-
-
-
-
 
 .contact-link:hover .icon-focus {
 
@@ -195,23 +175,12 @@
 
 }
 
-
-
-
-
-
-/* RESUME --------------------------------------------------- */
-
-
+/* RESUME*/
 .contact-link:last-child {
 
     margin-top: .6rem;
 
 }
-
-
-
-
 
 .contact-link:last-child span {
 
@@ -221,15 +190,14 @@
 
 }
 
-
-
-
-
-
-
-/* CURRENTLY WORKING ON ------------------------------------ */
-
-
+/* ..... CURRENT PROJECT SHOWCASE ..... */
+/*
+I added this section to show that my portfolio is continuously
+developing.
+Instead of only listing contact details, I wanted visitors to see
+what I am currently exploring and connect the page back to my design
+process.
+*/
 .current-work {
 
     position: relative;
@@ -243,10 +211,6 @@
     gap: clamp(1rem, 2vw, 1.5rem);
 
 }
-
-
-
-
 
 .current-work-image {
 
@@ -263,7 +227,7 @@
 
     filter:
 
-        drop-shadow(0 .6rem 1rem rgba(36,36,36,.12));
+        drop-shadow(0 .6rem 1rem rgba(36, 36, 36, .12));
 
 
     transition:
@@ -272,52 +236,34 @@
 
 }
 
-
-
-
-
+/*
+The artwork movement was added as a small interaction to make the
+illustration feel more physical.
+The rotation change is subtle because I wanted to keep the focus on
+the content while still maintaining the playful handmade feeling.
+*/
 .current-work:hover .current-work-image {
 
     transform:
 
-        rotate(1deg)
-
-        translateY(-.35rem);
+        rotate(1deg) translateY(-.35rem);
 
 }
 
-
-
-
-
-
-
 .current-work-content {
-
-
     width: min(100%, 24rem);
-
-
     padding:
 
         clamp(1rem, 2vw, 1.5rem);
-
-
     background:
 
-        rgba(255,255,255,.7);
-
-
+        rgba(255, 255, 255, .7);
     border:
 
         1px solid var(--border-light);
-
-
     box-shadow:
 
-        0 .3rem 1rem rgba(36,36,36,.08);
-
-
+        0 .3rem 1rem rgba(36, 36, 36, .08);
 }
 
 
@@ -325,7 +271,6 @@
 
 
 .current-work-content h2 {
-
 
     margin: 0 0 .6rem;
 
@@ -340,10 +285,6 @@
 
 
 }
-
-
-
-
 
 .current-work-content h3 {
 
@@ -362,10 +303,6 @@
 
 }
 
-
-
-
-
 .current-work-content p {
 
 
@@ -383,18 +320,14 @@
 
 }
 
-
-
-
-
-
-
-/* RESPONSIVE ---------------------------------------------- */
-
-
-@media (max-width: 900px) {
-
-
+/* ..... RESPONSIVE LAYOUT ..... */
+/*
+The desktop layout separates information and visuals, but on smaller
+screens I changed it into a single column.
+This keeps the content readable and avoids shrinking both sections
+too much.
+*/
+@media (max-width: 75rem) {
     .contact-container {
 
         grid-template-columns: 1fr;
@@ -403,17 +336,12 @@
 
     }
 
-
-
     /* Contact stays first */
-
     .contact-info {
 
         order: 1;
 
     }
-
-
 
     .current-work {
 
@@ -421,32 +349,19 @@
 
     }
 
-
-
 }
 
-
-
-
-
-
-
-@media (max-width: 500px) {
-
-
+@media (max-width: 58rem) {
     .contact-section {
 
         padding-top: 6rem;
 
     }
 
-
-
     .contact-link {
 
         font-size: .95rem;
 
     }
-
 
 }

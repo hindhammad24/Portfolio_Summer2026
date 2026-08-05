@@ -1,7 +1,36 @@
-/* Design Rules---------------------------------------------- */
+/* ..... DESIGN SYSTEM VARIABLES ..... */
+/*
+Base styling file for the entire portfolio.
+
+This file defines the global design system including colours,
+fonts, shadows, and general page behaviour i assigned at the begining.
+
+Keeping these values in one place allows me to chnge them all at once, every section of the
+website to share the same visual language and makes future
+changes easier to apply consistently.
+*/
+
+/*
+The portfolio uses handwritten-style fonts to support the
+creative and personal identity of the website.
+
+I chose these fonts instead of traditional UI fonts because
+the goal was to make the interface feel closer to a sketchbook
+or personal studio space. 
+
+i origonally had a sans serif basic font like art galleries but it didnt fit the theme.
+*/
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Patrick+Hand&display=swap');
 
+/*
+Centralized variables are used so colours, typography, and
+visual effects remain consistent across all sections.
+Instead of defining these values separately in each CSS file,
+I created global variables that can be adjusted from one place.
+*/
 :root {
+
+  /* Main portfolio background */
   --bg: #F4F4F4;
   --white: #FFFFFF;
   --text: #242424;
@@ -13,17 +42,33 @@
   --font-main: 'Finger Paint', cursive;
   --font-elegant: "Patrick Hand", cursive;
 
+  /*The frame shadow creates depth while 
+  keeping the soft handmade style of the portfolio.
+  I avoided strong UI shadows because they made the 
+  design feel too digital and less connected to the physical studio theme.
+  */
   --shadow-frame:
     0 .06rem 0 rgba(36, 36, 36, .08),
     0 .75rem 1.75rem rgba(0, 0, 0, .05),
     0 2.5rem 4.4rem rgba(0, 0, 0, .08);
 }
 
-/* General --------------------------------------------------- */
+/* ..... GLOBAL PAGE SETTINGS ..... */
+/*
+Applies consistent sizing behaviour across the website.
+Using border-box prevents unexpected size changes when adding
+padding or borders to elements.
+*/
 * {
   box-sizing: border-box;
 }
 
+/*
+Controls the default appearance shared by all pages.
+The horizontal overflow is hidden because several interactive
+elements extend outside the viewport intentionally, especially
+the studio and hero illustrations.
+*/
 body {
   margin: 0;
   overflow-x: hidden;
@@ -32,6 +77,12 @@ body {
   color: var(--text);
 }
 
+/*
+Controls the default appearance shared by all pages.
+The horizontal overflow is hidden because several interactive
+elements extend outside the viewport intentionally, especially
+the studio and hero illustrations.
+*/
 body.board-open {
   overflow: hidden;
 }

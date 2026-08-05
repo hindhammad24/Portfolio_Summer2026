@@ -1,56 +1,75 @@
-/* =====================================================
-   5 CORNERS DAYCARE — DESIGN BOARD
-   ===================================================== */
+/*
+This file controls the custom layout of the 5 Corners Daycare
+design board.
+The shared design board system provides the overall case study
+structure, while this file creates a layout specific to this
+project.
+For this project, I focused on showing the connection between
+visual identity, website design, and front-end development.
+The layout organizes research, sketches, illustrations, and final
+implementation as part of the design process.
+*/
 
+/*
+The 12-column grid allows me to arrange project materials like a
+physical design board.
 
+Instead of presenting the website as only a final screenshot,
+I created space for different stages of the process including
+branding, sketches, development, and final outcomes.
+*/
 .fivecorner-board {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(12, minmax(0,1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
 
-    gap:clamp(2rem,4vw,4rem);
+    gap: clamp(2rem, 4vw, 4rem);
 
-    width:min(100%,76rem);
+    width: min(100%, 76rem);
 
-    margin-inline:auto;
+    margin-inline: auto;
 
     padding:
-    4rem 2rem
-    8rem;
+        4rem 2rem 8rem;
 
 }
 
 
 
-/* =====================================================
-   HEADER
-   ===================================================== */
+/* HEADER*/
+/*
+Project Introduction
 
+The header establishes the purpose of the project before showing
+individual artifacts.
 
+I used a large title and short description to quickly communicate
+the client's needs and the design direction.
+*/
 .fivecorner-heading {
 
-    grid-column:2 / 12;
+    grid-column: 2 / 12;
 
 }
 
 
 .fivecorner-heading .board-eyebrow {
 
-    font-size:.9rem;
+    font-size: .9rem;
 
-    letter-spacing:.15em;
+    letter-spacing: .15em;
 
 }
 
 
 .fivecorner-heading h2 {
 
-    font-size:clamp(3.5rem,6vw,5.5rem);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
 
-    line-height:.9;
+    line-height: .9;
 
-    margin:1rem 0;
+    margin: 1rem 0;
 
 }
 
@@ -58,43 +77,42 @@
 
 .fivecorner-heading .board-subtitle {
 
-    max-width:38rem;
+    max-width: 38rem;
 
-    font-size:1.1rem;
+    font-size: 1.1rem;
 
-    line-height:1.5;
+    line-height: 1.5;
 
 }
 
-
-
-/* =====================================================
-   PAPER CARDS
-   ===================================================== */
-
-
+/* PAPER CARDS*/
+/*
+Design Documentation Cards
+The paper card style continues the handmade design board theme.
+I used these surfaces to separate different parts of the case study
+while making the digital presentation feel closer to physical
+design documentation.
+*/
 .fivecorner-board .board-paper {
 
-    background:white;
+    background: white;
 
     padding:
-    clamp(1.2rem,2vw,2rem);
+        clamp(1.2rem, 2vw, 2rem);
 
 
     box-shadow:
-    0 .8rem 2rem rgba(0,0,0,.05);
+        0 .8rem 2rem rgba(0, 0, 0, .05);
 
 }
 
-
-
 .board-paper h3 {
 
-    font-size:clamp(1.8rem,3vw,2.7rem);
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
 
-    line-height:1;
+    line-height: 1;
 
-    margin:0 0 1rem;
+    margin: 0 0 1rem;
 
 }
 
@@ -102,25 +120,29 @@
 
 .board-paper p {
 
-    font-size:1rem;
+    font-size: 1rem;
 
-    line-height:1.65;
+    line-height: 1.65;
 
-    margin:0;
+    margin: 0;
 
 }
 
 
 
 
-/* =====================================================
-   MEDIA
-   ===================================================== */
+/* MEDIA*/
+/*
+Project Media Presentation
+Images and website previews are treated as design artifacts rather
+than simple screenshots.
 
-
+The media layout allows users to understand both the final result
+and the visual decisions behind the project.
+*/
 .board-media {
 
-    margin:0;
+    margin: 0;
 
 }
 
@@ -128,13 +150,13 @@
 
 .board-media img {
 
-    width:100%;
+    width: 100%;
 
-    height:auto;
+    height: auto;
 
-    display:block;
+    display: block;
 
-    object-fit:contain;
+    object-fit: contain;
 
 }
 
@@ -142,185 +164,194 @@
 
 .board-media figcaption {
 
-    margin-top:.7rem;
+    margin-top: .7rem;
 
-    font-size:.8rem;
+    font-size: .8rem;
 
-    line-height:1.5;
+    line-height: 1.5;
 
 }
 
 
 
 
-/* =====================================================
-   OVERVIEW
-   ===================================================== */
-
+/* OVERVIEW */
+/*
+The overview is placed beside the website preview to immediately
+connect the project description with the final digital experience.
+This allows users to understand the purpose of the website while
+seeing the result at the same time.
+*/
 
 .board-overview-note {
 
-    grid-column:2 / 7;
+    grid-column: 2 / 7;
 
 }
-
-
 
 /* website preview */
 
-.fivecorner-board > .board-media {
+.fivecorner-board>.board-media {
 
-    grid-column:7 / 12;
-
-}
-
-
-
-
-/* =====================================================
-   VISUAL IDENTITY
-   ===================================================== */
-
-
-.fivecorner-board > .board-paper:nth-of-type(2){
-
-    grid-column:2 / 12;
+    grid-column: 7 / 12;
 
 }
 
 
 
 
-/* =====================================================
-   DESIGN PROCESS
-   ===================================================== */
+/* VISUAL IDENTITY*/
+.fivecorner-board>.board-paper:nth-of-type(2) {
 
-
-.fivecorner-board > .board-paper:nth-of-type(3){
-
-    grid-column:2 / 8;
+    grid-column: 2 / 12;
 
 }
 
 
 
+
+/*
+Design Process Documentation
+
+The process section focuses on the steps before development.
+
+Including sketches and exploration shows how the final website
+developed from initial ideas rather than appearing as a finished
+product immediately.
+*/
+.fivecorner-board>.board-paper:nth-of-type(3) {
+
+    grid-column: 2 / 8;
+
+}
+
+
+/*
+The gallery layout allows multiple exploration images to be viewed
+together.
+
+I used a smaller grid instead of a single large image because the
+process is represented through multiple iterations and references.
+*/
 .board-gallery {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap:1.5rem;
+    gap: 1.5rem;
 
-    margin-top:2rem;
+    margin-top: 2rem;
 
 }
 
 
 
+/*
+Illustration Presentation
 
-/* =====================================================
-   ILLUSTRATIONS
-   ===================================================== */
+The illustrations are displayed separately from normal media because
+they represent the visual identity created for the client.
 
+Removing the usual card appearance lets the artwork feel closer to
+the original creative assets.
+*/
+.fivecorner-board>.board-paper:nth-of-type(4) {
 
-.fivecorner-board > .board-paper:nth-of-type(4){
-
-    grid-column:8 / 12;
+    grid-column: 8 / 12;
 
 }
 
 
 
 /* remove card feeling for transparent drawings */
+.fivecorner-board>.board-paper:nth-of-type(4) .board-media {
 
-.fivecorner-board > .board-paper:nth-of-type(4)
-.board-media {
+    box-shadow: none;
 
-    box-shadow:none;
+    background: none;
 
-    background:none;
-
-    padding:0;
+    padding: 0;
 
 }
 
 
 
-.fivecorner-board > .board-paper:nth-of-type(4)
-.board-media img {
+.fivecorner-board>.board-paper:nth-of-type(4) .board-media img {
 
-    width:70%;
+    width: 70%;
 
-    margin:auto;
-
-}
-
-
-
-
-
-/* =====================================================
-   DEVELOPMENT
-   ===================================================== */
-
-
-.fivecorner-board > .board-paper:nth-of-type(5){
-
-    grid-column:2 / 7;
+    margin: auto;
 
 }
 
 
 
+/*
+Development Stage
 
+This section connects the design decisions to the implementation.
 
-/* =====================================================
-   USERS
-   ===================================================== */
+The layout separates development from visual exploration to show how
+the project moved from concept into a working responsive website.
+*/
+.fivecorner-board>.board-paper:nth-of-type(5) {
 
-
-.fivecorner-board > .board-paper:nth-of-type(6){
-
-    grid-column:7 / 12;
+    grid-column: 2 / 7;
 
 }
 
+/*
+User Considerations
 
+This section highlights how the final design was influenced by the
+needs of the daycare audience.
 
+The project was not only about creating an attractive website, but
+also making the experience clear and welcoming for users.
+*/
+.fivecorner-board>.board-paper:nth-of-type(6) {
 
-/* =====================================================
-   REFLECTION
-   ===================================================== */
+    grid-column: 7 / 12;
 
+}
 
+/*
+Project Reflection
+
+The reflection section allows the project to move beyond the final
+product and explain what I learned from the design and development
+process.
+
+Including reflection helps communicate my growth as an interactive
+designer.
+*/
 .board-reflection-note {
 
-    grid-column:2 / 8;
+    grid-column: 2 / 8;
 
 }
 
+/*
+Tools and Technologies
 
+This section documents the tools used to create the project.
 
-
-/* =====================================================
-   TOOLS
-   ===================================================== */
-
-
+Showing the tools separately reinforces the combination of design
+and technical development involved in my work.
+*/
 .board-tools-note {
 
-    grid-column:8 / 12;
+    grid-column: 8 / 12;
 
 }
-
 
 
 .board-tool-list {
 
-    display:flex;
+    display: flex;
 
-    gap:1rem;
+    gap: 1rem;
 
 }
 
@@ -328,9 +359,9 @@
 
 .board-tool-list figure {
 
-    margin:0;
+    margin: 0;
 
-    text-align:center;
+    text-align: center;
 
 }
 
@@ -338,55 +369,61 @@
 
 .board-tool-list img {
 
-    width:3rem;
+    width: 3rem;
 
 }
 
+/*
+Credits and Collaboration
 
-
-
-/* =====================================================
-   CREDITS
-   ===================================================== */
-
-
+The credits section clarifies the project context and recognizes
+collaboration while keeping my own design and development role clear.
+*/
 .board-credits-note {
 
-    grid-column:3 / 11;
+    grid-column: 3 / 11;
 
-    text-align:center;
+    text-align: center;
 
 }
 
+/*
+The preview artwork reuses the gallery representation inside the
+design board.
+
+Keeping the same visual identity between the gallery and case study
+creates a smoother transition when users open a project.
+*/
 .design-board-preview-art .fivecorner-exhibit {
 
-    width:min(75%,18rem);
+    width: min(75%, 18rem);
 
-    aspect-ratio:1 / 1;
+    aspect-ratio: 1 / 1;
 
-    margin-inline:auto;
+    margin-inline: auto;
 
 }
 
+/*
+Responsive Behaviour
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
+On smaller screens, the board changes from a spatial layout into a
+vertical reading flow.
 
+The goal is to preserve the storytelling order while making the
+project easier to explore on mobile devices.
+*/
+@media(max-width: 75rem) {
 
-@media(max-width:900px){
+    .fivecorner-board>* {
 
-
-    .fivecorner-board > * {
-
-        grid-column:1 / -1 !important;
+        grid-column: 1 / -1 !important;
 
     }
 
-
     .board-gallery {
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
     }
 

@@ -1,4 +1,23 @@
-/* Studio -------------------------------------------------- */
+/*
+This file controls the styling of the interactive studio section
+of my portfolio.
+The studio represents my creative workspace and was designed as
+a physical metaphor for my design process.
+Instead of presenting my background as a traditional biography,
+I created interactive objects that represent different parts of
+my identity, including art, design, coding, education, and career
+interests.
+This file controls the layout, object positioning, interactions,
+and responsive behaviour of this experience.
+*/
+
+/* ..... CREATIVE STUDIO ENVIRONMENT ..... */
+/*
+I created this section as an interactive workspace because my
+creative process is connected to physical making and exploration.
+The sticky layout allows users to explore the workspace while
+scrolling creates a transition toward my projects exhibition.
+*/
 .studio-section {
   min-height: 180vh;
 
@@ -11,6 +30,12 @@
       #ffffff 100%);
 }
 
+/*
+The room uses a fixed viewport area because I wanted the objects
+to feel like they exist inside one physical space.
+The user explores the workspace first before moving toward the
+project section.
+*/
 .studio-room {
   position: sticky;
   top: 0;
@@ -56,8 +81,14 @@
   line-height: 1.25;
 }
 
-
-/* Desk*/
+/* ..... CREATIVE DESK COMPOSITION ..... */
+/*
+The desk acts as the centre of the studio experience.
+Originally I considered presenting my skills as separate text
+sections but I changed this into physical objects because it
+better represents how I work through making
+and building.
+*/
 .desk-group {
   position: absolute;
   width: 35%;
@@ -75,8 +106,13 @@
   z-index: 1;
 }
 
-
-/* Canvas*/
+/* ..... ART PRACTICE OBJECT ..... */
+/*
+The canvas represents my background in traditional art and how
+handmade processes influence my digital design work.
+The hover effect was added to make the object feel interactive
+rather than just decorative and show an art.
+*/
 .studio-canvas {
   position: absolute;
   width: 65%;
@@ -98,7 +134,13 @@
   filter: drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
 }
 
-/* board*/
+/* ..... DESIGN PROCESS OBJECT ..... */
+/*
+The board represents my design thinking process including
+planning, ideation, and visual organization.
+I used individual objects instead of a simple skills list because
+I wanted visitors to discover information naturally like i actullay usually make design boards.
+*/
 .studio-board {
   position: absolute;
   width: 55%;
@@ -126,7 +168,12 @@
     drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
 }
 
-/*laptop*/
+/* ..... DEVELOPMENT OBJECT ..... */
+/*
+The laptop represents the technical side of my work.
+It connects my coding skills with my design practice instead of
+presenting development as a separate discipline.
+*/
 .studio-laptop {
   position: absolute;
   width: 20%;
@@ -153,7 +200,13 @@
     drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
 }
 
-/*books*/
+/* ..... EDUCATION OBJECT ..... */
+/*
+The education object was included to show my academic background
+inside the creative environment.
+I wanted education to feel like part of my journey rather than
+a separate resume section.
+*/
 .studio-education {
   position: absolute;
   width: 25%;
@@ -181,7 +234,12 @@
     drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
 }
 
-/*chair*/
+/* ..... CAREER INTEREST OBJECT ..... */
+/*
+The chair represents future directions and career interests.
+Instead of defining one fixed role, it communicates the different
+areas where I want to combine design, technology, and interaction.
+*/
 .studio-chair {
   position: absolute;
   width: 30%;
@@ -210,7 +268,13 @@
     drop-shadow(0 1rem 1.2rem rgba(0, 0, 0, .12));
 }
 
-/* Art info card */
+/* ..... INFORMATION REVEAL SYSTEM ..... */
+/*
+The information card was created to avoid overwhelming users with
+text immediately.
+Content appears only when users interact with an object, allowing
+the workspace itself to remain the main visual focus.
+*/
 .studio-info-card {
   position: absolute;
   width: min(22rem, 30vw);
@@ -261,9 +325,14 @@
 }
 
 
-
-/* Studio object labels ------------------------------------- */
-
+/* ..... OBJECT DISCOVERY LABELS ..... */
+/*
+The labels provide clarity without removing the discovery aspect.
+I didnt have it origonally but added it to take away from feeling 
+off loss but keep the discovery.
+I wanted users to understand what each object represents while
+still encouraging interaction.
+*/
 .studio-label {
   position: absolute;
   z-index: 15;
@@ -288,7 +357,6 @@
 
 
 /* Laptop label */
-
 .studio-label-laptop {
   left: 60%;
   bottom: 68%;
@@ -297,7 +365,6 @@
 }
 
 /* Canvas label */
-
 .studio-label-canvas {
   right: 93%;
   bottom: 72%;
@@ -306,7 +373,6 @@
 }
 
 /* Board label */
-
 .studio-label-board {
   left: 60%;
   top: -7%;
@@ -315,7 +381,6 @@
 }
 
 /* Education label */
-
 .studio-label-education {
   left: 109%;
   bottom: 28%;
@@ -324,7 +389,6 @@
 }
 
 /* Chair label */
-
 .studio-label-chair {
   right: 18%;
   bottom: 11%;
@@ -333,7 +397,6 @@
 }
 
 /* Label hover emphasis */
-
 .desk-group:has(.studio-laptop:hover) .studio-label-laptop,
 .desk-group:has(.studio-canvas:hover) .studio-label-canvas,
 .desk-group:has(.studio-board:hover) .studio-label-board,
@@ -342,8 +405,12 @@
   opacity: 1;
 }
 
-/* Studio direction stand ----------------------------------- */
-
+/* ..... PROJECT EXHIBITION TRANSITION ..... */
+/*
+The direction stand acts like a physical sign inside an exhibition.
+Instead of using a normal navigation button, I created a transition
+object that guides users from learning about me into exploring my work.
+*/
 .studio-direction {
   position: absolute;
   right: clamp(4rem, 10vw, 10rem);
@@ -361,8 +428,7 @@
   pointer-events: none;
 
   transform:
-    translateX(var(--studio-sign-shift, 30vw))
-    scale(.96);
+    translateX(var(--studio-sign-shift, 30vw)) scale(.96);
 
   transition:
     transform .08s linear,
@@ -440,52 +506,59 @@
   pointer-events: none;
 }
 
-/* Featured Projects --------------------------------------- */
-
+/* ..... FEATURED PROJECT CONNECTION ..... */
+/*
+Featured projects were added after feedback that visitors should
+quickly understand my strongest work. I wish i made it into not buttons like but more artistic
+but with time constraint i had to do it this way.
+The cards provide direct access to important projects while keeping
+the exhibition experience as the main navigation.
+Also if someone is looking for a quick way to discover they dont care about the very detailed look.
+*/
 .studio-featured {
 
-    position: absolute;
+  position: absolute;
 
-    right: clamp(15rem, 25vw, 28rem);
-    bottom: 12%;
+  right: clamp(15rem, 25vw, 28rem);
+  bottom: 12%;
 
-    width: 15rem;
+  width: 15rem;
 
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
 
-    z-index: 13;
+  z-index: 13;
 
-    opacity: 0;
+  opacity: 0;
 
-    transform: translateY(1rem);
+  transform: translateY(1rem);
 
-    pointer-events: none;
+  pointer-events: none;
 
-    transition:
-        opacity .4s ease,
-        transform .4s ease;
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
 }
 
 
 .studio-featured.show {
 
-    opacity: 1;
+  opacity: 1;
 
-    transform: translateY(0);
+  transform: translateY(0);
 
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 
 .studio-featured h2 {
 
-    margin: 0;
+  margin: 0;
 
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 
-    line-height: 1;
+  line-height: 1;
 }
 
 
@@ -494,35 +567,35 @@
 
 .featured-project {
 
-    
- display: block;
 
-    padding: .7rem 1rem;
+  display: block;
 
-    background:
-        rgba(255,255,255,.8);
+  padding: .7rem 1rem;
 
-    border:
-        .06rem solid rgba(36,36,36,.1);
+  background:
+    rgba(255, 255, 255, .8);
 
-    box-shadow: var(--shadow-frame);
-    align-items: center;
+  border:
+    .06rem solid rgba(36, 36, 36, .1);
 
-    gap: .7rem;
+  box-shadow: var(--shadow-frame);
+  align-items: center;
 
-    text-decoration: none;
+  gap: .7rem;
 
-    color: var(--text);
+  text-decoration: none;
 
-    transition:
-        transform .25s ease;
+  color: var(--text);
+
+  transition:
+    transform .25s ease;
 }
 
 
 .featured-project:hover {
 
-    transform:
-        translateY(-.2rem);
+  transform:
+    translateY(-.2rem);
 }
 
 
@@ -530,9 +603,9 @@
 
 .featured-text h3 {
 
-    margin: 0;
+  margin: 0;
 
-    font-size: .95rem;
+  font-size: .95rem;
 
 }
 
@@ -540,13 +613,13 @@
 
 .featured-text p {
 
-    margin: .15rem 0 0;
+  margin: .15rem 0 0;
 
-    font-family: var(--font-elegant);
+  font-family: var(--font-elegant);
 
-    font-size: .75rem;
+  font-size: .75rem;
 
-    line-height: 1.1;
+  line-height: 1.1;
 
 }
 
@@ -555,15 +628,12 @@
   opacity: 1;
 
   transform:
-    translateY(0)
-    translateX(0);
+    translateY(0) translateX(0);
 
   pointer-events: auto;
 
 }
 
-
-/* Title */
 
 .studio-featured h2 {
 
@@ -577,10 +647,6 @@
 
 }
 
-
-
-/* Project card */
-
 .featured-project {
 
   display: flex;
@@ -591,11 +657,11 @@
 
   padding: .7rem;
 
-  background: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, .75);
 
   backdrop-filter: blur(.8rem);
 
-  border: .06rem solid rgba(36,36,36,.08);
+  border: .06rem solid rgba(36, 36, 36, .08);
 
   text-decoration: none;
 
@@ -608,28 +674,22 @@
     background .25s ease;
 }
 
-
-
 .featured-project:hover {
 
   transform: translateY(-.3rem);
 
-  background: rgba(255,255,255,.95);
+  background: rgba(255, 255, 255, .95);
 
 }
 
-
-
 .featured-project img {
 
-   width: 4rem;
+  width: 4rem;
   height: 4rem;
 
   object-fit: cover;
 
 }
-
-
 
 .featured-project h3 {
 
@@ -638,8 +698,6 @@
   font-size: 1rem;
 
 }
-
-
 
 .featured-project p {
 
@@ -653,17 +711,21 @@
 
 }
 
-
-
-/* Mobile */
-
-@media(max-width:48rem){
+/* ..... RESPONSIVE STUDIO ADAPTATION ..... */
+/*
+Because the studio is built from many positioned objects, responsive
+design required adjusting the composition rather than simply scaling
+everything down.
+The goal was to keep the workspace understandable and interactive
+on smaller screens.
+*/
+@media(max-width:48rem) {
 
   .studio-featured {
 
     right: 1rem;
 
-bottom:35%;
+    bottom: 35%;
 
     width: 70vw;
 
@@ -684,11 +746,11 @@ bottom:35%;
     width: 60%;
   }
 
-    .desk-group {
-        bottom: 3%;
-    }
+  .desk-group {
+    bottom: 3%;
+  }
 
-    .studio-label {
+  .studio-label {
     font-size: clamp(.52rem, 1.8vw, .65rem);
   }
 
@@ -702,7 +764,7 @@ bottom:35%;
   }
 
 
-.studio-info-card {
+  .studio-info-card {
 
     top: 10%;
     left: 50%;
@@ -711,18 +773,17 @@ bottom:35%;
     width: min(90vw, 22rem);
 
     transform:
-    translate(-50%, .7rem);
+      translate(-50%, .7rem);
 
-}
+  }
 
 
-.studio-info-card.show {
+  .studio-info-card.show {
 
     transform:
-    translate(-50%,0);
+      translate(-50%, 0);
 
-}
-
+  }
 }
 
 @media (max-width: 75rem) {
@@ -741,11 +802,7 @@ bottom:35%;
     width: 50%;
   }
 
-   .desk-group {
-        bottom: 0;
-    }
-
-
-
+  .desk-group {
+    bottom: 0;
+  }
 }
-

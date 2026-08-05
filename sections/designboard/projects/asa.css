@@ -1,11 +1,24 @@
-/* ==========================================================
-   ARAB STUDENT ASSOCIATION — CURATED DESIGNER WORKSPACE
-   Project-specific layout only
-========================================================== */
+/*
+This file controls the custom layout of the Arab Student Association
+design board.
+The shared design board system creates the overall portfolio
+structure, but each project has its own layout based on how the
+story needs to be presented.
+For ASA, I focused on presenting branding and social media work
+as a visual identity system, so the layout gives each design piece
+its own space while keeping the overall board organized.
+*/
 
 
-/* Main Board ---------------------------------------------- */
-
+/* Main Board */
+/*
+The board uses a 12-column grid to create a flexible exhibition
+layout.
+Instead of stacking project information like a normal case study,
+I arranged elements spatially to recreate the feeling of a design
+workspace where posters, branding assets, and documentation are
+placed together.
+*/
 .asa-board {
   position: relative;
 
@@ -20,9 +33,7 @@
   margin-inline: auto;
 
   padding:
-    clamp(2rem, 5vw, 5rem)
-    clamp(1rem, 3vw, 3rem)
-    clamp(6rem, 10vw, 10rem);
+    clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem) clamp(6rem, 10vw, 10rem);
 
   background: transparent;
   border: 0;
@@ -32,9 +43,15 @@
 }
 
 
-/* Reset Old Absolute Layout ------------------------------- */
-
-.asa-board > * {
+/* Reset Old Absolute Layout */
+/*
+Originally, the project board relied on more fixed positioning.
+I changed the structure into a responsive grid because the original
+layout was difficult to adapt across different screen sizes.
+The new approach keeps the freedom of a physical design board while
+allowing the content to rearrange naturally on smaller screens.
+*/
+.asa-board>* {
   position: relative;
   inset: auto;
 
@@ -51,8 +68,14 @@
 }
 
 
-/* Typography ---------------------------------------------- */
-
+/* Typography  */
+/*
+The typography follows the main portfolio design system while being
+adapted for this project board.
+I kept the handwritten style because it connects the digital
+portfolio with the feeling of sketches, posters, and creative
+documentation.
+*/
 .asa-board h2,
 .asa-board h3,
 .asa-board p,
@@ -83,8 +106,14 @@
 }
 
 
-/* Header -------------------------------------------------- */
-
+/* Header */
+/*
+The header introduces the project before showing individual design
+artifacts.
+I used a large title and short description to immediately explain
+the project's purpose and establish context before users explore
+the visual work.
+*/
 .asa-heading {
   grid-column: 1 / 11;
 
@@ -132,8 +161,13 @@
 }
 
 
-/* Shared ASA Surfaces ------------------------------------- */
-
+/* Shared ASA Surfaces */
+/*
+These reusable surfaces create the physical design board feeling.
+Paper cards, media frames, and polaroid styles allow digital
+content to feel like collected design materials placed in a
+creative workspace.
+*/
 .asa-board .board-paper {
   padding: clamp(1.4rem, 2.2vw, 2rem);
 
@@ -188,16 +222,18 @@
   max-width: 60ch;
 
   margin:
-    clamp(.75rem, 1.3vw, 1rem)
-    auto
-    .15rem;
+    clamp(.75rem, 1.3vw, 1rem) auto .15rem;
 
   padding-inline: clamp(.2rem, 1vw, .7rem);
 }
 
 
-/* Restrained Hover Movement ------------------------------- */
-
+/* Restrained Hover Movement  */
+/*
+Small hover movement was added to make the board feel interactive.
+The movement is intentionally subtle so the focus remains on the
+design work instead of distracting animations.
+*/
 .asa-board .board-paper:hover,
 .asa-board .board-media:hover,
 .asa-board .board-polaroid:hover,
@@ -208,8 +244,14 @@
 }
 
 
-/* Overview + Logo Sequence ------------------------------- */
-
+/* Overview + Logo Sequence  */
+/*
+The overview and logo sequence are placed together because they
+introduce the two main parts of the project: the organization's
+identity and the visual branding system created for it.
+This arrangement helps users understand the project context before
+exploring individual designs.
+*/
 .asa-overview {
   grid-column: 1 / 7;
   grid-row: 2;
@@ -231,8 +273,13 @@
 }
 
 
-/* Social Posts -------------------------------------------- */
-
+/* Social Posts */
+/*
+The social media designs are separated into individual sections
+because each post represents a different communication goal while
+still belonging to the same visual identity.
+The layout allows each design piece to be viewed as its own artifact.
+*/
 .asa-boardgame {
   grid-column: 1 / 5;
   grid-row: 3;
@@ -264,8 +311,7 @@
 }
 
 
-/* Mixer + Ramadan ----------------------------------------- */
-
+/* Mixer + Ramadan */
 .asa-mixer {
   grid-column: 1 / 7;
   grid-row: 4;
@@ -287,8 +333,13 @@
 }
 
 
-/* Event Photos -------------------------------------------- */
-
+/* Event Photos  */
+/*
+Event photos provide context around the branding work.
+Including these visuals connects the digital designs to the real
+events and shows how the identity system was applied beyond
+individual graphics.
+*/
 .asa-event-photo {
   grid-column: 1 / 5;
   grid-row: 5;
@@ -322,8 +373,14 @@
 }
 
 
-/* Reflection + Tools -------------------------------------- */
-
+/* Reflection + Tools  */
+/*
+Reflection and tools are placed after the visual documentation to
+move the viewer from seeing the final outcomes into understanding
+the process behind them.
+This structure follows the storytelling approach used throughout
+the portfolio: outcome first, then process and learning.
+*/
 .asa-reflection {
   grid-column: 1 / 8;
   grid-row: 6;
@@ -347,8 +404,13 @@
 }
 
 
-/* Credits ------------------------------------------------- */
-
+/* Credits  */
+/*
+The credits section acknowledges collaboration while keeping my
+specific contribution clear.
+For team projects, I wanted the portfolio to communicate my role
+and design decisions rather than only showing the final result.
+*/
 .asa-credit {
   grid-column: 3 / 11;
   grid-row: 7;
@@ -364,8 +426,7 @@
 }
 
 
-/* Tools --------------------------------------------------- */
-
+/* Tools  */
 .asa-board .board-tool-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -407,8 +468,7 @@
 }
 
 
-/* Polaroid Images ----------------------------------------- */
-
+/* Polaroid Images  */
 .asa-board .board-polaroid img {
   display: block;
 
@@ -420,8 +480,7 @@
 }
 
 
-/* Restrained Decorations ---------------------------------- */
-
+/* Restrained Decorations  */
 .asa-board .asa-logo-sequence .board-pin,
 .asa-board .asa-mixer .board-pin,
 .asa-board .asa-shawarma-one .board-pin,
@@ -438,8 +497,7 @@
   opacity: .72;
 
   transform:
-    translateX(-50%)
-    rotate(-1deg);
+    translateX(-50%) rotate(-1deg);
 }
 
 .asa-board .asa-reflection .board-pin {
@@ -447,8 +505,15 @@
 }
 
 
-/* Left Preview Artwork ------------------------------------ */
+/* Left Preview Artwork  */
+/*
+The preview artwork reuses the gallery visual inside the design
+board.
 
+I kept the same project image between the gallery and case study
+so the transition feels continuous instead of introducing a
+different representation of the project.
+*/
 .design-board-preview-art .asa-exhibit {
   width: min(88%, 24rem);
   height: auto;
@@ -468,12 +533,8 @@
   height: 100%;
 }
 
-.design-board-preview-art
-.asa-artwork
-.project-media,
-.design-board-preview-art
-.asa-exhibit
-.project-media {
+.design-board-preview-art .asa-artwork .project-media,
+.design-board-preview-art .asa-exhibit .project-media {
   display: block;
 
   width: 100%;
@@ -482,19 +543,22 @@
   object-fit: contain;
 }
 
-.design-board-preview-art
-.asa-exhibit:hover
-.asa-artwork,
-.design-board-preview-art
-.asa-exhibit:focus-visible
-.asa-artwork {
+.design-board-preview-art .asa-exhibit:hover .asa-artwork,
+.design-board-preview-art .asa-exhibit:focus-visible .asa-artwork {
   transform: none !important;
 }
 
 
-/* Medium Screens ------------------------------------------ */
+/* Medium Screens */
+/*
+Responsive behaviour changes the exhibition layout into a vertical
+storytelling format.
 
-@media (max-width: 72rem) {
+On desktop, the project feels like a physical board with multiple
+elements visible together. On smaller screens, the priority becomes
+clear reading and easy navigation.
+*/
+@media (max-width: 75rem) {
 
   .asa-board {
     row-gap: clamp(3rem, 6vw, 4.5rem);
@@ -529,9 +593,7 @@
   }
 }
 
-
-/* Tablet -------------------------------------------------- */
-
+/* Tablet */
 @media (max-width: 60rem) {
 
   .asa-board {
@@ -543,12 +605,10 @@
     width: 100%;
 
     padding:
-      5rem
-      0
-      4rem;
+      5rem 0 4rem;
   }
 
-  .asa-board > *,
+  .asa-board>*,
   .asa-board .board-paper,
   .asa-board .board-sticky,
   .asa-board .board-media,
@@ -644,10 +704,8 @@
   }
 }
 
-
-/* Small Mobile -------------------------------------------- */
-
-@media (max-width: 34rem) {
+/* Mobile */
+@media (max-width: 48rem) {
 
   .asa-board {
     gap: 1.75rem;

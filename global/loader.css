@@ -1,5 +1,17 @@
-/* Loading Screen ------------------------------------------- */
+/* ..... INTRODUCTION LOADING EXPERIENCE ..... */
+/*
+The loading screen creates an introduction before entering the
+portfolio almost like i am signing my canvas painting and this is my portfolio my work of art
+so my idea was to sign it like i did this.
+the idea is to show i make interactive experience as a interactive designer and this is how.
+*/
 
+/*
+The loader covers the entire viewport to prevent users from seeing
+unfinished content while assets are loading.
+The fade transition creates a smoother transition between the
+introduction animation and the homepage.
+*/
 #loader {
   position: fixed;
   inset: 0;
@@ -20,27 +32,46 @@
     visibility 0.8s ease;
 }
 
+/*
+The hide class is applied through JavaScript after the introduction
+finishes. Using opacity and visibility instead of removing the element
+immediately allows the transition to complete smoothly.
+*/
 #loader.hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
+/*
+The signature animation uses a video instead of individual images.
+Originally the animation was created using hundreds of PNG frames,
+but this caused a large increase in loading time.
+The frames were converted into an MP4 because it significantly
+reduced the file size while maintaining the same visual quality.
+I also compressed the mp4 further to make the time of loading shorter.
+*/
 #loader-video {
-    display: block;
+  display: block;
 
-    width: clamp(25rem, 45vw, 60rem);
-    max-width: calc(100vw - 2rem);
+  width: clamp(25rem, 45vw, 60rem);
+  max-width: calc(100vw - 2rem);
 
-    height: auto;
+  height: auto;
 
-    object-fit: contain;
-    object-position: center;
+  object-fit: contain;
+  object-position: center;
 
-    clip-path: inset(0 15% 0 15%);
+  /* Crops empty black space from the original animation */
+  clip-path: inset(0 15% 0 15%);
 
 }
 
+/*
+The image version was kept as a fallback option during development.
+The final implementation uses the MP4 version because it provides
+better loading performance. I just added this at the begining incase.
+*/
 #loader-img {
   display: block;
 
@@ -49,9 +80,6 @@
   height: auto;
 
   object-fit: contain;
-}
-
-#loader-img {
   display: none;
 }
 
@@ -63,16 +91,18 @@
   display: block;
 }
 
-/* Mobile --------------------------------------------------- */
-
+/* ..... MOBILE LOADER ADJUSTMENTS ..... */
 @media (max-width: 45rem) {
   #loader-img {
     width: min(94vw, 31rem);
   }
 }
 
-/* Reduced Motion ------------------------------------------- */
-
+/*
+Respects user accessibility settings by reducing transition effects
+for users who prefer less motion. I found this  was better for users like my 
+adhd  classmate who found it too confusing.
+*/
 @media (prefers-reduced-motion: reduce) {
   #loader {
     transition-duration: 0.01ms;

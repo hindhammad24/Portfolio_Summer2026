@@ -1,5 +1,16 @@
-/* Homepage -------------------------------------------------- */
-
+/*
+This file controls the styling of the interactive hero section
+of my portfolio.
+The hero is the first experience users see and was designed to
+introduce my identity as an interactive designer by combining
+my artwork, animation, and code.
+Instead of creating a traditional static landing page, I built
+a scroll-based painting experience where users discover the
+artwork through interaction.
+This file controls the layout, animations, responsive behaviour,
+and visual transitions that support that experience.
+*/
+/*..... HOMEPAGE..... */
 #homepage {
   opacity: 0;
 
@@ -10,8 +21,16 @@
   opacity: 1;
 }
 
-/* Sequence Animation --------------------------------------- */
-
+/* ..... SCROLL PAINTING EXPERIENCE ..... */
+/*
+Originally I considered using a normal hero image but I wanted
+the first interaction to represent my process of creating.
+I changed the hero into a scroll-controlled painting sequence so
+users can experience the artwork being revealed instead of only
+seeing the final result.
+The section height creates enough scrolling space for the animation
+while sticky positioning keeps the artwork fixed during the reveal.
+*/
 .sequence-section {
   position: relative;
 
@@ -20,6 +39,13 @@
   background: var(--bg);
 }
 
+/*
+I used a sticky container because I wanted the user to control the
+speed of the animation through their own scrolling.
+This approach creates a stronger connection between user interaction
+and visual storytelling compared to an automatic animation.
+So its not a video but in there own control.
+*/
 .sequence-sticky {
   position: sticky;
   top: 0;
@@ -45,8 +71,15 @@
   object-position: center;
 }
 
-/* Hero Identity -------------------------------------------- */
-
+/* ..... HERO IDENTITY PRESENTATION ..... */
+/*
+The hero text introduces who I am before showing my projects.
+I kept this separate from the artwork because I wanted the first
+impression to focus on my identity as a designer and developer,
+not only the visual effects.
+The hide transition was added because once the user starts exploring
+the painting sequence, the artwork becomes the main focus.
+*/
 .hero-text {
   position: absolute;
   top: 44%;
@@ -77,8 +110,14 @@
   transform: translate(-50%, calc(-50% - 1rem));
 }
 
-/* Signature Logo ------------------------------------------- */
-
+/* ..... HANDWRITTEN IDENTITY ..... */
+/*
+I used my handwritten signature instead of a normal text heading
+because the portfolio focuses on the connection between handmade
+art and digital technology.
+The responsive sizing allows the signature to maintain its impact
+without taking over the screen on smaller devices.
+*/
 .hero-signature {
   display: block;
 
@@ -91,8 +130,7 @@
   filter: drop-shadow(0 0.25rem 0.2rem rgb(0 0 0 / 5%));
 }
 
-/* Main Role ------------------------------------------------ */
-
+/* Main Role */
 .hero-role {
   margin:
     -1rem 0 0;
@@ -106,8 +144,7 @@
   color: var(--text);
 }
 
-/* Disciplines ---------------------------------------------- */
-
+/* Disciplines */
 .hero-disciplines {
   margin:
     clamp(0.45rem, 1vh, 0.8rem) 0 0;
@@ -128,8 +165,15 @@
   margin-inline: clamp(0.2rem, 0.55vw, 0.55rem);
 }
 
-/* Corner Illustrations ------------------------------------- */
-
+/* ..... DECORATIVE ART ELEMENTS ..... */
+/*
+The corner illustrations were added to make the hero feel like
+a physical artwork canvas rather than a normal website layout.
+Originally I adjusted their size and positioning several times
+because they competed with the main identity content.
+The final positioning keeps them visible while allowing the
+signature and sequence to remain the main focus.
+*/
 .hero-corner {
   position: absolute;
   bottom: 0;
@@ -171,8 +215,13 @@
   transform: translateY(1rem);
 }
 
-/* Hero Scroll Actions -------------------------------------- */
-
+/* ..... USER GUIDANCE INTERACTIONS ..... */
+/*
+Because the hero relies on scrolling as the main interaction,
+I added visual guidance to help users understand what to do.
+The scroll button provides direction while the Bio swatch gives
+users another way to continue exploring the section.
+*/
 .hero-scroll-actions {
   position: absolute;
   left: 50%;
@@ -200,8 +249,7 @@
   transform: translate(-50%, 1rem);
 }
 
-/* Scroll Button -------------------------------------------- */
-
+/* Scroll Button */
 .scroll-button {
   display: flex;
   flex-direction: column;
@@ -249,8 +297,13 @@
   line-height: 1;
 }
 
-/* Bio Paint Swatch ----------------------------------------- */
-
+/* ..... PAINT STYLE BUTTON INTERACTION ..... */
+/*
+Instead of using traditional buttons I continued the paint
+language used throughout the portfolio.
+The hover state changes the paint colour to make the interaction
+feel physical and connected to the overall visual system.
+*/
 .bio-swatch-btn {
   position: relative;
 
@@ -337,17 +390,26 @@
   opacity: 1;
 }
 
-/* Artist Plaque -------------------------------------------- */
-
+/* ..... INTRODUCTION PLAQUE ..... */
+/*
+I added this plaque as a secondary introduction after the user
+experiences the painting sequence.
+Originally the hero only introduced my name and role, but I wanted
+users to quickly understand my design approach before moving into
+the studio section.
+The delayed appearance keeps the first interaction clean and avoids
+showing too much information at once. 
+To avoid visual overstimulation as alot is happening.
+*/
 .hero-plaque {
   position: absolute;
   left: clamp(1rem, 2vw, 2rem);
   bottom: clamp(1rem, 3vh, 2rem);
   z-index: 20;
 
-   width: min(30rem, calc(100vw - 2rem));
+  width: min(30rem, calc(100vw - 2rem));
 
-   padding:
+  padding:
     1.2rem 1.4rem;
   display: flex;
   justify-content: space-between;
@@ -381,30 +443,29 @@
 .hero-plaque h2 {
   margin: 0 0 0.35rem;
 
-font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
   font-weight: 800;
 }
 
 .hero-plaque p {
-   max-width: 22rem;
+  max-width: 22rem;
 
   margin: 0;
 
   font-family: var(--font-elegant);
   font-size: clamp(1.05rem, 1.4vw, 1.35rem);
-line-height: 1.45;
+  line-height: 1.45;
 
   color: var(--text-soft);
 }
 
-/* About Paint Swatch --------------------------------------- */
-
+/* About Paint Swatch */
 .paint-about-btn {
   position: relative;
 
   display: inline-block;
   flex: 0 0 auto;
-width: clamp(5.5rem, 8vw, 7rem);
+  width: clamp(5.5rem, 8vw, 7rem);
   aspect-ratio: 1 / 1;
 
   text-decoration: none;
@@ -478,9 +539,18 @@ width: clamp(5.5rem, 8vw, 7rem);
   opacity: 1;
 }
 
-/* Medium Screens ------------------------------------------- */
+/* ..... RESPONSIVE ADAPTATIONS ..... */
+/*
+The hero contains several layered visual elements, so responsive
+design required more than simply scaling sizes.
+I adjusted positions, artwork sizes, and spacing depending on the
+screen size because the composition needed to remain balanced across
+different devices.
+*/
 
-@media (max-width: 64rem) {
+
+/* ..... TABLET LOADER ADJUSTMENTS ..... */
+@media (max-width: 75rem) {
   .hero-text {
     top: 43%;
   }
@@ -489,6 +559,7 @@ width: clamp(5.5rem, 8vw, 7rem);
     width: clamp(11rem, 27vw, 21rem);
     opacity: 0.88;
   }
+
   .hero-corner-left {
     left: -2rem;
   }
@@ -503,9 +574,9 @@ width: clamp(5.5rem, 8vw, 7rem);
 
 }
 
-/* Mobile --------------------------------------------------- */
 
-@media (max-width: 45rem) {
+/* ..... MOBILE LOADER ADJUSTMENTS ..... */
+@media (max-width: 48rem) {
   .sequence-section {
     height: 155svh;
   }
@@ -573,8 +644,7 @@ width: clamp(5.5rem, 8vw, 7rem);
   }
 }
 
-/* Very Small Screens --------------------------------------- */
-
+/* Very Small Screens */
 @media (max-width: 30rem) {
   .hero-text {
     top: 37%;
@@ -589,8 +659,7 @@ width: clamp(5.5rem, 8vw, 7rem);
   }
 }
 
-/* Short Screens -------------------------------------------- */
-
+/* Short Screens */
 @media (max-height: 42rem) and (min-width: 45.01rem) {
   .hero-text {
     top: 42%;
@@ -617,8 +686,13 @@ width: clamp(5.5rem, 8vw, 7rem);
   }
 }
 
-/* Reduced Motion ------------------------------------------- */
-
+/* ..... ACCESSIBILITY CONSIDERATIONS ..... */
+/*
+I added reduced motion support because the hero relies heavily on
+animation and transitions.
+This keeps the experience accessible while still preserving the
+main visual structure for users who prefer less movement.
+*/
 @media (prefers-reduced-motion: reduce) {
 
   #homepage,
@@ -638,8 +712,16 @@ width: clamp(5.5rem, 8vw, 7rem);
   }
 }
 
-/* Animations ----------------------------------------------- */
-
+/* ..... SMALL INTERACTION ANIMATIONS .....*/
+/*
+These animations were added to make important interactive elements
+feel alive instead of static. 
+I didnt use java for these just becouse i understood css better so why bother with js.
+The scroll animation moves downward to visually guide users toward
+continuing through the hero experience.
+The About button uses a floating movement because I wanted it to feel
+more like a physical painted object rather than a normal website button.
+*/
 @keyframes scrollFloat {
 
   0%,

@@ -1,3 +1,12 @@
+<!--
+Main homepage structure.
+This html icludes the overall organization of the homepage,
+including the custom navigation, loading animation, hero sequence,
+studio witch is the about section, and links to project content.
+The page is divided into sections:
+introduction > bio with art > about me > project exploration.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,40 +15,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
+    <!--
+    Global styles are separated from section specific styles to keep
+    the code organized and make individual sections easier to modify.
+    -->
     <link rel="stylesheet" href="global/base.css">
     <link rel="stylesheet" href="global/cursor.css">
     <link rel="stylesheet" href="global/loader.css">
     <link rel="stylesheet" href="global/navbar.css">
+
+    <!--
+    Section specific css styles.
+    -->
     <link rel="stylesheet" href="sections/hero/hero.css">
     <link rel="stylesheet" href="sections/studio/studio.css">
-
 </head>
 
 <body>
-    <!-- Paint Brush Cursor ------------------------------------->
+    <!-- ..... CUSTOM PAINT CURSOR ..... -->
+    <!-- 
+    I created a custom paint cursor to match the handmade artistic
+    direction of the portfolio and make the interaction feel connected
+    to the overall visual identity. 
+    The brush paint is handmade webp with js code for the paint stroke.
+    -->
     <canvas id="paint-canvas"></canvas>
     <div class="paint-cursor"></div>
 
-    <!--Loading Screen------------------------------------------>
-    <section id="loader">
-    <video id="loader-video" autoplay muted playsinline>
-        <source src="assets/signiture/signature.mp4" type="video/mp4">
-    </video>
-</section>
+    <!-- ..... LOADING SCREEN ..... -->
+    <!--
+    The loading screen uses a short signature animation mp4 i made to introduce
+    the portfolio before entering the homepage. In 4 seconds.
 
-    <!-- Paint Palette Navigation -------------------------------->
+    Originally this animation used individual image frames,
+    but the sequence was converted into an MP4 to reduce loading time
+    while keeping the same visual effect. The reason lazy loading dint work here 
+    becouse it was moving on to the next img before loading so best was mp4.
+    -->
+    <section id="loader">
+        <video id="loader-video" autoplay muted playsinline>
+            <source src="assets/signiture/signature.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- ..... PAINT PALETTE NAVIGATION ..... -->
+    <!--
+    The navigation was designed as a paint palette instead of a
+    traditional 3 bar menu to connect the interface with the portfolio's
+    creative theme and the 3 bars where added as paint.
+
+    Each swatch links to a different area of the website while
+    keeping the navigation visually integrated into the experience. 
+    So instead of buttons with hover effect i made basic grey paint swatches that 
+    at hover change to colored ones.
+    -->
     <nav class="paint-nav" aria-label="Main navigation">
 
-        <!-- Paint swatches -->
+        <!-- Navigation colour swatches -->
         <div class="paint-nav-swatches" id="paintNavSwatches">
 
+            <!-- links to home page top -->
             <a class="paint-swatch paint-swatch-1" href="index.html" aria-label="Home">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="basic color swatch"
+                <!-- starts at  grey basic swatch-->
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="basic color swatch" aria-hidden="true">
+
+                <!-- hover changes to colored swatch-->
+                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt="blue swatch"
                     aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt="blue swatch" aria-hidden="true">
-
+                <!-- with overlining text -->
                 <span>Home</span>
             </a>
 
@@ -48,27 +94,30 @@
                 <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="basic swatch"
                     aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="green swatch" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="green swatch"
+                    aria-hidden="true">
 
                 <span>About Me</span>
             </a>
 
             <a class="paint-swatch paint-swatch-3" href="projects.html" aria-label="Projects">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="basic color swatch"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="basic color swatch" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="yellow color swatch" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="yellow color swatch"
+                    aria-hidden="true">
 
                 <span>Projects</span>
             </a>
 
             <a class="paint-swatch paint-swatch-4" href="contact.html" aria-label="Contact">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="basic color swatch"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
+                    alt="basic color swatch" aria-hidden="true">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="purple color swatch" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="purple color swatch"
+                    aria-hidden="true">
 
                 <span>Contact</span>
             </a>
@@ -78,31 +127,50 @@
         <!-- Palette menu button -->
         <button class="paint-palette-button" id="paintPaletteButton" type="button" aria-label="Open navigation menu"
             aria-expanded="false" aria-controls="paintNavSwatches">
-            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp" alt="  pallete paint menu"
-                aria-hidden="true">
+            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp"
+                alt="  pallete paint menu" aria-hidden="true">
 
-            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp" alt="pallete paint menu hoevver "
-                aria-hidden="true">
+            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp"
+                alt="pallete paint menu hoevver " aria-hidden="true">
 
             <span class="visually-hidden">Menu</span>
         </button>
 
     </nav>
 
-    <!--Homepage------------------------------------------------->
+    <!-- ..... HOMEPAGE EXPERIENCE ..... -->
     <main id="homepage">
-        <!--sequence------------------------------------------------->
+
+        <!-- ..... SCROLL-BASED PAINTING SEQUENCE ..... -->
+        <!--
+        The hero section uses a frame-by-frame image sequence to create
+        an interactive introduction instead of a static landing page.
+
+        For this section i tried lazy loading but it ended up passing images 
+        before it was loaded. And mp4 doesnt work as the idea is to allow interactivity.
+
+        The sequence lets the user discover the artwork i painted while
+        scrolling and introduces the idea of combining design, code, and art 
+        and shows how i aproch my deasign and painting style.
+        -->
         <section class="sequence-section">
             <div class="sequence-sticky">
 
-                <!-- Main painting animation -->
+                <!-- Main painting animation starts here-->
                 <img id="sequenceImage" src="assets/sequence/0.webp" alt="painting sequence">
 
-                <!-- Center hero identity -->
+                <!--landing homepage info-->
+                <!-- while it is on the main sequence pages the center hero identity displays -->
+                <!-- this area introduces my role as an interactive designer and
+                developer while keeping the focus on my personal identity rather
+                than only showing projects.
+                -->
                 <div class="hero-text">
 
+                    <!-- my signiture with name as title-->
                     <img class="hero-signature" src="assets/signiture/510.webp" alt="Hind Hammad signiture">
 
+                    <!-- my main label-->
                     <p class="hero-role">
                         Interactive Designer &amp; Developer
                     </p>
@@ -117,25 +185,30 @@
 
                 </div>
 
-                <!-- Decorative illustrations -->
-                <img class="hero-corner hero-corner-left" src="assets/hero/left-corner.webp" alt="left corner art canvas" aria-hidden="true">
-
-                <img class="hero-corner hero-corner-right" src="assets/hero/right-corner.webp" alt="rigth corner paint canvas" aria-hidden="true">
+                <!-- Decorative illustrations with canvases-->
+                <img class="hero-corner hero-corner-left" src="assets/hero/left-corner.webp"
+                    alt="left corner art canvas" aria-hidden="true">
+                <img class="hero-corner hero-corner-right" src="assets/hero/right-corner.webp"
+                    alt="rigth corner paint canvas" aria-hidden="true">
 
                 <!-- Scroll Controls -->
+                <!-- i added this as a form of like encouraging them to scrool but incase they
+                dont get it they can simply click
+                -->
                 <div class="hero-scroll-actions">
 
                     <button class="scroll-button" type="button">
                         <span>Scroll Down</span>
                     </button>
 
+                    <!--same idea as the paint swatch chnaging color-->
                     <button class="bio-swatch-btn" type="button">
 
-                        <img class="bio-swatch bio-swatch-purple" src="assets/navigation/purple.webp" alt="purple pain t swatch"
-                            aria-hidden="true">
+                        <img class="bio-swatch bio-swatch-purple" src="assets/navigation/purple.webp"
+                            alt="purple pain t swatch" aria-hidden="true">
 
-                        <img class="bio-swatch bio-swatch-yellow" src="assets/navigation/yellow.webp" alt="yellow paint swatch"
-                            aria-hidden="true">
+                        <img class="bio-swatch bio-swatch-yellow" src="assets/navigation/yellow.webp"
+                            alt="yellow paint swatch" aria-hidden="true">
 
                         <span>Bio</span>
 
@@ -144,17 +217,21 @@
                 </div>
 
 
-                <!--Bottom full-width plaque-->
+                <!--Bottom plaque-->
+                <!-- this acts as a quick bio after we show my art-->
                 <div class="hero-plaque">
                     <div>
                         <h1>Hind Hammad</h1>
-                        <p>I love turning random ideas, sketches, and “what if?” moments into something people can see, touch, and interact with. I explore the space between art and technology, mixing design, code, and creativity to build experiences that bring ideas to life.</p>
+                        <p>I love turning random ideas, sketches, and “what if?” moments into something people can see,
+                            touch, and interact with. I explore the space between art and technology, mixing design,
+                            code, and creativity to build experiences that bring ideas to life.</p>
                     </div>
 
+                    <!-- again button in the idea of paint stroke-->
                     <a href="#studio" class="paint-about-btn">
 
-                        <img class="about-swatch about-basic" src="assets/navigation/about_grey.webp" alt="basic swatches"
-                            aria-hidden="true">
+                        <img class="about-swatch about-basic" src="assets/navigation/about_grey.webp"
+                            alt="basic swatches" aria-hidden="true">
 
                         <img class="about-swatch about-colour" src="assets/navigation/about_pink.webp" alt="pink swatch"
                             aria-hidden="true">
@@ -166,99 +243,125 @@
             </div>
         </section>
 
-        <!-- Studio Section ----------------------------------------->
+        <!-- ..... CREATIVE STUDIO / ABOUT ME SECTION ..... -->
+        <!--
+        The studio section represents my creative process through a
+        physical workspace metaphor.
+        Instead of presenting information as a traditional biography my idea was to
+        created interactive objects from my actual desk that reveal different parts of
+        my background.
+        for these parts i used lazy loading to save time. 
+        -->
         <section class="studio-section" id="studio">
             <div class="studio-room">
+                <!-- this only promotes like the interaction to hover or scroll-->
                 <div class="studio-intro">
                     <p>About Me</p>
                     <h2>Inside My Creative Workspace</h2>
                     <span>Hover over elements then scroll for more</span>
                 </div>
 
+                <!-- each element represents one part of who i am all hoverable-->
                 <div class="desk-group">
+
+                    <!-- the desk is  not hoverable but its ok not major-->
                     <img class="desk-image" src="assets/desk/desk.webp" loading="lazy" alt="desk">
-                   
+
+                    <!--all the info is in the js file that show up on the side for now only the images are loaded -->
                     <span class="studio-label studio-label-laptop">Development</span>
                     <button class="studio-laptop">
                         <img id="laptopImg" src="assets/desk/laptop.webp" data-hover="assets/desk/laptophover.webp"
-                           loading="lazy"  alt="laptop">
+                            loading="lazy" alt="laptop">
                     </button>
 
                     <span class="studio-label studio-label-canvas">Art Practice</span>
                     <button class="studio-canvas" data-card="art">
-                        <img src="assets/desk/canvas.webp" data-hover="assets/desk/canvashover.webp" loading="lazy"  alt="canvas">
+                        <img src="assets/desk/canvas.webp" data-hover="assets/desk/canvashover.webp" loading="lazy"
+                            alt="canvas">
                     </button>
 
                     <span class="studio-label studio-label-board">Design Background</span>
                     <button class="studio-board">
                         <img id="boardImg" src="assets/desk/board.webp" data-hover="assets/desk/boardhover.webp"
-                            loading="lazy"  alt="board">
+                            loading="lazy" alt="board">
                     </button>
 
                     <span class="studio-label studio-label-education">Education</span>
                     <button class="studio-education">
                         <img id="educationImg" src="assets/desk/education.webp"
-                            data-hover="assets/desk/educationhover.webp" loading="lazy"  alt="education">
+                            data-hover="assets/desk/educationhover.webp" loading="lazy" alt="education">
                     </button>
 
 
                     <span class="studio-label studio-label-chair">Career Interests</span>
                     <button class="studio-chair">
                         <img id="chairImg" src="assets/desk/chair.webp" data-hover="assets/desk/chairhover.webp"
-                           loading="lazy"  alt="chair">
+                            loading="lazy" alt="chair">
                     </button>
 
 
                 </div>
-                <a class="studio-direction" href="projects.html" aria-label="Continue to the work exhibition">
-                    <img class="direction-image direction-normal" src="assets/desk/direction-stand.webp"
-                       loading="lazy"  alt="Direction stand pointing toward the work exhibition">
 
-                    <img class="direction-image direction-hover" src="assets/desk/direction-stand-focus.webp" loading="lazy"  alt="direction stand hoever "
-                        aria-hidden="true">
+                <!-- this is a direction sign like the one in art exibitions and the idea is 
+                 that  it takes you directly to the projects-->
+                <a class="studio-direction" href="projects.html" aria-label="Continue to the work exhibition">
+                    <img class="direction-image direction-normal" src="assets/desk/direction-stand.webp" loading="lazy"
+                        alt="Direction stand pointing toward the work exhibition">
+
+                    <img class="direction-image direction-hover" src="assets/desk/direction-stand-focus.webp"
+                        loading="lazy" alt="direction stand hoever " aria-hidden="true">
 
                     <span>Projects Exhibition</span>
                 </a>
 
-                <!-- Featured Projects ------------------------------------>
-                 <section class="studio-featured">
+                <!-- ..... FEATURED PROJECT CONNECTION ..... -->
+                <!--
+                Featured projects were added to provide direct access to my most
+                important work without requiring users to search through the full
+                projects exhibition. This is only to make it faster way for 
+                recruiters to check out my work.
+                These cards link directly to their individual project boards.
+                -->
+                <section class="studio-featured">
 
-    <h2>Featured Projects</h2>
+                    <h2>Featured Projects</h2>
 
-    <a class="featured-project" href="projects.html?board=skyconnect">
+                    <a class="featured-project" href="projects.html?board=skyconnect">
+                        <div class="featured-text">
+                            <h3>SkyConnect</h3>
+                            <p>UX · 3D · Animation</p>
+                        </div>
+                    </a>
 
-        <div class="featured-text">
-    <h3>SkyConnect</h3>
-    <p>UX · 3D · Animation</p>
-</div>
+                    <a class="featured-project" href="projects.html?board=tech4ease">
+                        <div class="featured-text">
+                            <h3>Tech4Ease</h3>
+                            <p>Product Design · Assistive Technology</p>
+                        </div>
+                    </a>
 
-    </a>
-
-
-    <a class="featured-project" href="projects.html?board=tech4ease">
-
-
-        <div class="featured-text">
-            <h3>Tech4Ease</h3>
-            <p>Product Design · Assistive Technology</p>
-        </div>
-
-    </a>
-
-</section>
+                </section>
                 <article class="studio-info-card" id="studioInfoCard"></article>
             </div>
         </section>
 
-
     </main>
 
+    <!--
+    JavaScript files are separated by feature to keep each interaction
+    independent.
+    As this was my second time only using java script it was easier for me to understand 
+    and it was easier for me to use AI and other form of help in these sections.
+    
+    Each section controls its own behaviour:
+    cursor effects, loading animation, hero interaction,
+    studio interactions, and navigation.
+    -->
     <script src="global/cursor.js"></script>
     <script src="global/loader.js"></script>
     <script src="sections/hero/hero.js"></script>
     <script src="sections/studio/studio.js"></script>
     <script src="global/navbar.js"></script>
-
 
 </body>
 

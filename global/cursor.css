@@ -1,10 +1,27 @@
+/* ..... CUSTOM PAINT CURSOR ..... */
+/*
+The cursor was customized by me to match the handmade visual identity
+of the portfolio. I digitally drew the paint brush. 
+I made a paint trail effect to make the interaction feel
+closer to a physical creative workspace.
 
-/* Paint Brush Cursor -------------------------------------- */
+I adopted this from https://github.com/DigitalCodeHub/satisfying-curvy-cursor/tree/main by DigitalCodeHub
+*/
+
+/* Hides the default cursor so the custom brush cursor can replace it
+not for projects though sicne it becoumes too much 
+also i removed it from  mobile version */
 html,
 body {
   cursor: none;
 }
 
+/*
+The canvas is placed above the page content to draw the paint trail
+it shows the content through. 
+While pointer-events are disabled so it does not interfere with
+clicking or interacting with the website.
+*/
 #paint-canvas {
   position: fixed;
   inset: 0;
@@ -12,6 +29,10 @@ body {
   pointer-events: none;
 }
 
+/*
+The brush image follows the user's pointer position and acts as
+the visual replacement for the default cursor.
+*/
 .paint-cursor {
   position: fixed;
   width: 6rem;
@@ -28,6 +49,7 @@ body {
 }
 
 
+/* ..... TABLET CURSOR SIZE ..... */
 @media (max-width: 75rem) {
   .paint-cursor {
     width: 4rem;
@@ -35,16 +57,23 @@ body {
   }
 }
 
-@media (max-width:48rem){
+/* ..... MOBILE CURSOR ..... */
+/*
+The custom cursor is disabled on smaller screens because mobile
+devices do not have a traditional cursor interaction. and it follws the mouse akwardly
+based on user feedback ( my brothers, parents, cousins, classmates)
+they all agreeded it was nice but too distracting.
+*/
+@media (max-width:48rem) {
 
-    html,
-    body {
-        cursor: auto;
-    }
+  html,
+  body {
+    cursor: auto;
+  }
 
-    #paint-canvas,
-    .paint-cursor {
-        display:none;
-    }
+  #paint-canvas,
+  .paint-cursor {
+    display: none;
+  }
 
 }
