@@ -67,44 +67,9 @@ I also compressed the mp4 further to make the time of loading shorter.
 
 }
 
-/*
-The image version was kept as a fallback option during development.
-The final implementation uses the MP4 version because it provides
-better loading performance. I just added this at the begining incase.
-*/
-#loader-img {
-  display: block;
-
-  width: clamp(19rem, 47vw, 47rem);
-  max-width: calc(100vw - 2rem);
-  height: auto;
-
-  object-fit: contain;
-  display: none;
-}
-
-#loader-video.hide {
-  display: none;
-}
-
-#loader-img.show {
-  display: block;
-}
-
 /* ..... MOBILE LOADER ADJUSTMENTS ..... */
 @media (max-width: 45rem) {
   #loader-img {
     width: min(94vw, 31rem);
-  }
-}
-
-/*
-Respects user accessibility settings by reducing transition effects
-for users who prefer less motion. I found this  was better for users like my 
-adhd  classmate who found it too confusing.
-*/
-@media (prefers-reduced-motion: reduce) {
-  #loader {
-    transition-duration: 0.01ms;
   }
 }

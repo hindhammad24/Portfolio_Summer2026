@@ -474,7 +474,6 @@ with the handmade visual identity.
 */
 .view-project-btn {
   position: relative;
-  isolation: isolate;
 
   display: grid;
   place-items: center;

@@ -42,15 +42,6 @@ I created global variables that can be adjusted from one place.
   --font-main: 'Finger Paint', cursive;
   --font-elegant: "Patrick Hand", cursive;
 
-  /*The frame shadow creates depth while 
-  keeping the soft handmade style of the portfolio.
-  I avoided strong UI shadows because they made the 
-  design feel too digital and less connected to the physical studio theme.
-  */
-  --shadow-frame:
-    0 .06rem 0 rgba(36, 36, 36, .08),
-    0 .75rem 1.75rem rgba(0, 0, 0, .05),
-    0 2.5rem 4.4rem rgba(0, 0, 0, .08);
 }
 
 /* ..... GLOBAL PAGE SETTINGS ..... */

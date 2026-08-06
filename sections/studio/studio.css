@@ -542,15 +542,6 @@ Also if someone is looking for a quick way to discover they dont care about the 
 }
 
 
-.studio-featured.show {
-
-  opacity: 1;
-
-  transform: translateY(0);
-
-  pointer-events: auto;
-}
-
 
 .studio-featured h2 {
 
@@ -647,32 +638,6 @@ Also if someone is looking for a quick way to discover they dont care about the 
 
 }
 
-.featured-project {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: .8rem;
-
-  padding: .7rem;
-
-  background: rgba(255, 255, 255, .75);
-
-  backdrop-filter: blur(.8rem);
-
-  border: .06rem solid rgba(36, 36, 36, .08);
-
-  text-decoration: none;
-
-  color: #242424;
-
-  box-shadow: var(--shadow-frame);
-
-  transition:
-    transform .25s ease,
-    background .25s ease;
-}
 
 .featured-project:hover {
 

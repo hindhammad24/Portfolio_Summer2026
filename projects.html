@@ -14,7 +14,7 @@ showing my design process, contributions, and creative work.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projects</title>
+    <title>Hind Hammad | Projects</title>
     <link rel="stylesheet" href="global/base.css">
     <link rel="stylesheet" href="global/navbar.css">
 
@@ -43,72 +43,61 @@ showing my design process, contributions, and creative work.
     Currently, the portfolio mainly uses images and videos, but this
     library keeps the structure ready for future 3D project displays.
     -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-    </script>
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script> -->
 </head>
 
 <body>
     <!-- Paint Palette Navigation -->
     <nav class="paint-nav" aria-label="Main navigation">
-        <!-- Paint swatches -->
+
+        <!-- Navigation colour swatches -->
         <div class="paint-nav-swatches" id="paintNavSwatches">
 
-            <a class="paint-swatch paint-swatch-1" href="index.html" aria-label="Home">
+            <!-- links to home page top -->
+            <a class="paint-swatch paint-swatch-1" href="index.html">
+                <!-- starts at  grey basic swatch-->
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
-                    alt="a basic grey swatch of paint" aria-hidden="true">
+                <!-- hover changes to colored swatch-->
+                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt="">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt=" a blue swatch of paint"
-                    aria-hidden="true">
-
+                <!-- with overlining text -->
                 <span>Home</span>
             </a>
 
-            <a class="paint-swatch paint-swatch-2" href="#studio" aria-label="About me">
+            <a class="paint-swatch paint-swatch-2" href="#studio">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
-                    alt="a basic grey swatch of paint" aria-hidden="true">
-
-                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="a green swatch of paint"
-                    aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="">
 
                 <span>About Me</span>
             </a>
 
-            <a class="paint-swatch paint-swatch-3" href="projects.html" aria-label="Projects">
+            <a class="paint-swatch paint-swatch-3" href="projects.html">
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
-                    alt="a basic grey swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp"
-                    alt="a yellow swatch of paint" aria-hidden="true">
+                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="">
 
                 <span>Projects</span>
             </a>
 
-            <a class="paint-swatch paint-swatch-4" href="contact.html" aria-label="Contact">
-
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp"
-                    alt="a basic grey swatch of paint" aria-hidden="true">
-
-                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp"
-                    alt="a purple swatch of paint" aria-hidden="true">
-
+            <a class="paint-swatch paint-swatch-4" href="contact.html">
+                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
+                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="">
                 <span>Contact</span>
             </a>
-
         </div>
 
         <!-- Palette menu button -->
-        <button class="paint-palette-button" id="paintPaletteButton" type="button" aria-label="Open navigation menu"
-            aria-expanded="false" aria-controls="paintNavSwatches">
+        <button class="paint-palette-button" id="paintPaletteButton" aria-label="navigation menu" aria-expanded="false"
+            aria-controls="paintNavSwatches">
             <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp"
-                alt="a paint pallete to represent menu" aria-hidden="true">
+                alt="pallete paint menu closed">
 
             <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp"
-                alt="a paint pallere to represent menue but with hover " aria-hidden="true">
-
-            <span class="visually-hidden">Menu</span>
+                alt="pallete paint menu open">
         </button>
 
     </nav>
@@ -128,8 +117,9 @@ showing my design process, contributions, and creative work.
 
         <div class="room-sticky">
             <h1 class="room-title">Projects</h1>
+
             <div class="gallery-window">
-                <div class="gallery-wall-note" aria-hidden="true">
+                <div class="gallery-wall-note">
                     <p>Scroll, swipe, or select a paint swatch to explore.</p>
                 </div>
 
@@ -159,20 +149,16 @@ showing my design process, contributions, and creative work.
                                 -->
                                 <div class="skyconnect-artwork">
                                     <img class="project-media project-media--bw"
-                                        src="assets/projects/skyconnect/catalyst-bw.webp"
-                                        alt="SkyConnect project black and white">
+                                        src="assets/projects/skyconnect/catalyst-bw.webp" alt="">
 
                                     <img class="project-media project-media--colour"
-                                        src="assets/projects/skyconnect/catalyst-color.webp" alt="skyconnect colored "
-                                        aria-hidden="true">
+                                        src="assets/projects/skyconnect/catalyst-color.webp" alt="">
 
                                     <img class="project-media project-media--gif"
-                                        src="assets/projects/skyconnect/catalyst-focus.gif" alt="skyconnect motion"
-                                        aria-hidden="true">
+                                        src="assets/projects/skyconnect/catalyst-focus.gif" alt="skyconnect motion">
                                 </div>
 
-                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp"
-                                    alt="frame around it " aria-hidden="true">
+                                <img class="skyconnect-frame" src="assets/projects/skyconnect/frame.webp" alt="">
 
                             </div>
 
@@ -183,9 +169,7 @@ showing my design process, contributions, and creative work.
                                     An award-winning SkyTrain concept brought to life through animation,
                                     storytelling and 3D design.
                                 </p>
-                                <button class="view-project-btn" type="button">
-                                    View More
-                                </button>
+                                <button class="view-project-btn">View More</button>
                             </div>
                         </div>
                     </article>
@@ -200,16 +184,15 @@ showing my design process, contributions, and creative work.
 
                                 <div class="global-kitchen-artwork">
                                     <img class="project-media project-media--bw"
-                                        src="assets/projects/global-kitchen/global-kitchen-bw.webp"
-                                        alt="Global Kitchen Rush cooking game">
+                                        src="assets/projects/global-kitchen/global-kitchen-bw.webp" alt="">
 
                                     <img class="project-media project-media--gif"
                                         src="assets/projects/global-kitchen/global-kitchen-focus.gif"
-                                        alt="gif motion of global rush " aria-hidden="true">
+                                        alt="gif motion of global rush ">
                                 </div>
 
                                 <img class="global-kitchen-frame" src="assets/projects/global-kitchen/frame.webp"
-                                    alt="frame like game" aria-hidden="true">
+                                    alt="">
 
                             </div>
 
@@ -223,12 +206,10 @@ showing my design process, contributions, and creative work.
                                 <p class="project-description">
                                     A hand drawn cooking game I designed and programmed entirely from scratch.
                                 </p>
-                                <button class="view-project-btn" type="button">
+                                <button class="view-project-btn">
                                     View More
                                 </button>
                             </div>
-
-
 
                         </div>
                     </article>
@@ -242,8 +223,7 @@ showing my design process, contributions, and creative work.
                             <div class="exhibit-visual exhibit-visual--sculpture tech4ease-exhibit">
 
                                 <img class="project-media project-media--bw"
-                                    src="assets/projects/tech4ease/tech4ease-bw.webp"
-                                    alt="Black and white Tech4Ease assistive bag prototype">
+                                    src="assets/projects/tech4ease/tech4ease-bw.webp" alt="">
 
                                 <img class="project-media project-media--colour"
                                     src="assets/projects/tech4ease/tech4ease-colour.webp"
@@ -261,7 +241,7 @@ showing my design process, contributions, and creative work.
                                 <p class="project-description">
                                     A wearable assistive bag I designed, sewed and refined through user testing.
                                 </p>
-                                <button class="view-project-btn" type="button">
+                                <button class="view-project-btn">
                                     View More
                                 </button>
                             </div>
@@ -287,8 +267,7 @@ showing my design process, contributions, and creative work.
 
                                 </div>
 
-                                <img class="asa-frame" src="assets/projects/asa/asa-frame.webp" alt="frame arounbd"
-                                    aria-hidden="true">
+                                <img class="asa-frame" src="assets/projects/asa/asa-frame.webp" alt="">
 
                             </div>
 
@@ -305,7 +284,7 @@ showing my design process, contributions, and creative work.
                                     illustration and social media design.
                                 </p>
 
-                                <button class="view-project-btn" type="button">
+                                <button class="view-project-btn">
                                     View More
                                 </button>
 
@@ -327,8 +306,7 @@ showing my design process, contributions, and creative work.
                                 <div class="automata-artwork">
 
                                     <img class="project-media project-media--bw"
-                                        src="assets/projects/automata/automata-bw.webp"
-                                        alt="Black and white Automata Box Machine">
+                                        src="assets/projects/automata/automata-bw.webp" alt="">
 
                                     <img class="project-media project-media--gif"
                                         src="assets/projects/automata/automata-focus.gif"
@@ -336,8 +314,7 @@ showing my design process, contributions, and creative work.
 
                                 </div>
 
-                                <img class="automata-frame" src="assets/projects/automata/frame.webp" alt="frmae around"
-                                    aria-hidden="true">
+                                <img class="automata-frame" src="assets/projects/automata/frame.webp" alt="">
 
                             </div>
 
@@ -356,7 +333,7 @@ showing my design process, contributions, and creative work.
                                     was driven by linkages and cams.
                                 </p>
 
-                                <button class="view-project-btn" type="button">
+                                <button class="view-project-btn">
                                     View More
                                 </button>
 
@@ -379,16 +356,15 @@ showing my design process, contributions, and creative work.
                                 <div class="fivecorner-artwork">
 
                                     <img class="project-media project-media--bw" src="assets/projects/5corner/bw.webp"
-                                        alt="5 Corners Daycare website">
+                                        alt="">
 
                                     <img class="project-media project-media--colour"
                                         src="assets/projects/5corner/color.webp"
-                                        alt="5 Corners Daycare website homepage" aria-hidden="true">
+                                        alt="5 Corners Daycare website homepage">
 
                                 </div>
 
-                                <img class="fivecorner-frame" src="assets/projects/5corner/frame.webp" alt="frame"
-                                    aria-hidden="true">
+                                <img class="fivecorner-frame" src="assets/projects/5corner/frame.webp" alt="">
 
                             </div>
 
@@ -408,30 +384,24 @@ showing my design process, contributions, and creative work.
                                     development with a custom visual identity inspired by the space itself.
                                 </p>
 
-                                <button class="view-project-btn" type="button">
+                                <button class="view-project-btn">
                                     View More
                                 </button>
-
                             </div>
-
-
                         </div>
-
                     </article>
-
                 </div>
 
                 <div class="gallery-direction" aria-hidden="true">
-                    <span>Continue Exploring</span>
+                    <p>Continue Exploring</p>
                     <span class="gallery-direction-arrow">→</span>
                 </div>
 
             </div>
 
             <!-- Project Paint Swatch Navigation -->
-            <div class="project-step-navigation" id="projectStepNavigation" role="navigation"
-                aria-label="Project navigation">
-            </div>
+            <nav class="project-step-navigation" id="projectStepNavigation" aria-label="Project navigation">
+            </nav>
     </section>
 
     <!--
@@ -442,13 +412,13 @@ showing my design process, contributions, and creative work.
     lets users discover projects quickly, while the design board allows
     a deeper exploration of process, decisions, tools, and reflection.
     -->
-    <section class="design-board-overlay" id="designBoard" aria-hidden="true">
+    <section class="design-board-overlay" id="designBoard">
         <div class="design-board-backdrop"></div>
 
         <div class="design-board-layout">
 
             <!-- Selected project remains visible -->
-            <aside class="design-board-preview" id="designBoardPreview" aria-label="Selected project">
+            <aside class="design-board-preview" id="designBoardPreview">
                 <div class="design-board-preview-art" id="designBoardPreviewArt">
                     <!-- JavaScript places the selected artwork here -->
                 </div>
@@ -467,7 +437,7 @@ showing my design process, contributions, and creative work.
 
             <!-- Project board -->
             <div class="design-board-panel">
-                <button class="design-board-close" id="closeDesignBoard" type="button"
+                <button class="design-board-close" id="closeDesignBoard"
                     aria-label="Back to project gallery">
                     <span aria-hidden="true">←</span>
                     <span>Back to Gallery</span>
@@ -504,7 +474,7 @@ showing my design process, contributions, and creative work.
 
 
                             <img class="skyconnect-award" src="assets/projects/skyconnect/first-place.webp"
-                                alt="First place award">
+                                alt="">
 
 
                             <!-- OVERVIEW -->
@@ -532,7 +502,7 @@ showing my design process, contributions, and creative work.
                             <figure class="board-media board-presentation">
 
                                 <video controls muted playsinline>
-                                    <source src="assets/projects/skyconnect/presentation-demo.mp4" type="video/mp4">
+                                    <source src="assets/projects/skyconnect/presentation-demo.mp4" type="video/mp4"  alt="">
                                 </video>
 
 
@@ -577,7 +547,6 @@ showing my design process, contributions, and creative work.
                             </section>
 
                             <!-- MY CONTRIBUTION -->
-
                             <section class="board-paper board-role-note">
 
                                 <span class="board-paperclip"></span>
@@ -625,10 +594,7 @@ showing my design process, contributions, and creative work.
 
                                 </section>
 
-
-
                                 <!-- QUESTION 2 -->
-
                                 <section class="board-paper">
 
                                     <h4>How would stroller spaces work?</h4>
@@ -648,10 +614,7 @@ showing my design process, contributions, and creative work.
 
                                 </section>
 
-
-
                                 <!-- QUESTION 3 -->
-
                                 <section class="board-paper">
 
                                     <h4>How would safety features feel within the environment?</h4>
@@ -673,7 +636,6 @@ showing my design process, contributions, and creative work.
 
                                     </figure>
 
-
                                     <p>
                                         By showing these details instead of only explaining them, I helped transform
                                         an abstract idea into something people could understand.
@@ -682,20 +644,14 @@ showing my design process, contributions, and creative work.
                                 </section>
                             </section>
 
-
-
                             <!-- ABSTRACT TO MODEL  -->
-
                             <section class="board-paper board-process-note">
-
                                 <h3>From Abstract Ideas to 3D Design</h3>
-
                                 <p>
                                     The project began with many ideas about safety, families, and the transit
                                     experience. The challenge was transforming those abstract ideas into visuals
                                     that people could immediately understand.
                                 </p>
-
 
                                 <figure class="board-media board-mindmap">
 
@@ -809,25 +765,25 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/skyconnect/onshape.webp">
+                                        <img src="assets/projects/skyconnect/onshape.webp" alt="">
                                         <figcaption>Onshape</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/skyconnect/powerpoint.webp">
+                                        <img src="assets/projects/skyconnect/powerpoint.webp"  alt="">
                                         <figcaption>PowerPoint</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/skyconnect/figma.webp">
+                                        <img src="assets/projects/skyconnect/figma.webp"  alt="">
                                         <figcaption>Figma</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/skyconnect/canva.webp">
+                                        <img src="assets/projects/skyconnect/canva.webp" alt="">
                                         <figcaption>Canva</figcaption>
                                     </figure>
 
@@ -893,20 +849,20 @@ showing my design process, contributions, and creative work.
 
                             <!-- Country flags -->
                             <img class="kitchen-flag kitchen-flag--qatar"
-                                src="assets/projects/global-kitchen/qatar-flag.webp" alt="Hand-drawn Qatar flag">
+                                src="assets/projects/global-kitchen/qatar-flag.webp" alt="">
 
                             <img class="kitchen-flag kitchen-flag--uae"
                                 src="assets/projects/global-kitchen/uae-flag.webp"
-                                alt="Hand-drawn United Arab Emirates flag">
+                                alt="">
 
                             <img class="kitchen-flag kitchen-flag--tunisia"
-                                src="assets/projects/global-kitchen/tunisia-flag.webp" alt="Hand-drawn Tunisia flag">
+                                src="assets/projects/global-kitchen/tunisia-flag.webp" alt="">
 
 
                             <!-- Overview -->
                             <section class="board-paper kitchen-overview-note">
 
-                                <span class="board-tape" aria-hidden="true"></span>
+                                <span class="board-tape"></span>
 
                                 <h3>Overview</h3>
 
@@ -924,7 +880,7 @@ showing my design process, contributions, and creative work.
                             <!-- Main gameplay -->
                             <figure class="board-media kitchen-gameplay-gif">
 
-                                <span class="board-pin" aria-hidden="true"></span>
+                                <span class="board-pin"></span>
 
                                 <img src="assets/projects/global-kitchen/global-kitchen-focus.gif"
                                     alt="Global Kitchen Rush start screen and gameplay interaction">
@@ -955,7 +911,7 @@ showing my design process, contributions, and creative work.
                             <!-- My contribution -->
                             <section class="board-paper kitchen-role-note">
 
-                                <span class="board-paperclip" aria-hidden="true"></span>
+                                <span class="board-paperclip"></span>
 
                                 <h3>My Contribution</h3>
 
@@ -974,7 +930,7 @@ showing my design process, contributions, and creative work.
                             <!-- Game logic -->
                             <section class="board-paper kitchen-recipe-system">
 
-                                <span class="board-tape board-tape--angled" aria-hidden="true"></span>
+                                <span class="board-tape board-tape--angled"></span>
 
                                 <h3>Recipe System</h3>
 
@@ -1088,7 +1044,7 @@ showing my design process, contributions, and creative work.
                             <!-- Recipe brochure -->
                             <figure class="board-media kitchen-recipe-brochure">
 
-                                <span class="board-tape board-tape--angled" aria-hidden="true"></span>
+                                <span class="board-tape board-tape--angled"></span>
 
                                 <img src="assets/projects/global-kitchen/recipe-brochure.png"
                                     alt="Recipe information screen after discovering a meal">
@@ -1106,7 +1062,7 @@ showing my design process, contributions, and creative work.
                             <!-- Video -->
                             <figure class="board-media kitchen-explanation-video">
 
-                                <span class="board-pin" aria-hidden="true"></span>
+                                <span class="board-pin"></span>
 
                                 <video controls muted playsinline>
 
@@ -1142,7 +1098,7 @@ showing my design process, contributions, and creative work.
                             <!-- Reflection -->
                             <section class="board-paper kitchen-reflection-note">
 
-                                <span class="board-pin board-pin--side" aria-hidden="true"></span>
+                                <span class="board-pin board-pin--side"></span>
 
 
                                 <h3>Reflection</h3>
@@ -1175,7 +1131,7 @@ showing my design process, contributions, and creative work.
                                 <div class="board-tool-list">
 
                                     <figure>
-                                        <img src="assets/projects/global-kitchen/java.webp" alt="Java">
+                                        <img src="assets/projects/global-kitchen/java.webp" alt="">
 
                                         <figcaption>
                                             Java
@@ -1184,7 +1140,7 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/global-kitchen/vscode.webp" alt="Visual Studio Code">
+                                        <img src="assets/projects/global-kitchen/vscode.webp" alt="">
 
                                         <figcaption>
                                             VS Code
@@ -1193,7 +1149,7 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/global-kitchen/github.webp" alt="GitHub">
+                                        <img src="assets/projects/global-kitchen/github.webp" alt="">
 
                                         <figcaption>
                                             GitHub
@@ -1202,7 +1158,7 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/global-kitchen/adobe.webp" alt="Adobe">
+                                        <img src="assets/projects/global-kitchen/adobe.webp" alt="">
 
                                         <figcaption>
                                             Adobe
@@ -1262,7 +1218,7 @@ showing my design process, contributions, and creative work.
                             <figure class="tech4ease-certificate">
 
                                 <img src="assets/projects/tech4ease/certificate.webp"
-                                    alt="Tech4Ease Opportunity Fest certificate">
+                                    alt="">
 
                             </figure>
 
@@ -1271,7 +1227,7 @@ showing my design process, contributions, and creative work.
                             <!-- Overview -->
                             <section class="board-paper tech4ease-overview-note">
 
-                                <span class="board-tape" aria-hidden="true"></span>
+                                <span class="board-tape"></span>
 
                                 <h3>Overview</h3>
 
@@ -1324,7 +1280,7 @@ showing my design process, contributions, and creative work.
                             <!-- My Part -->
                             <section class="board-paper tech4ease-role-note">
 
-                                <span class="board-paperclip" aria-hidden="true"></span>
+                                <span class="board-paperclip"></span>
 
 
                                 <h3>My Contribution</h3>
@@ -1348,7 +1304,7 @@ showing my design process, contributions, and creative work.
                             <!-- Components -->
                             <figure class="board-media tech4ease-components-one">
 
-                                <span class="board-pin" aria-hidden="true"></span>
+                                <span class="board-pin"></span>
 
 
                                 <img src="assets/projects/tech4ease/components-1.webp"
@@ -1368,7 +1324,7 @@ showing my design process, contributions, and creative work.
 
                             <figure class="board-media tech4ease-components-two">
 
-                                <span class="board-tape board-tape--angled" aria-hidden="true"></span>
+                                <span class="board-tape board-tape--angled"></span>
 
 
                                 <img src="assets/projects/tech4ease/components-2.webp"
@@ -1453,7 +1409,7 @@ showing my design process, contributions, and creative work.
                             <!-- Fabrication -->
                             <section class="board-paper tech4ease-fabrication-note">
 
-                                <span class="board-pin board-pin--side" aria-hidden="true"></span>
+                                <span class="board-pin board-pin--side"></span>
 
 
                                 <h3>Fabrication</h3>
@@ -1499,7 +1455,7 @@ showing my design process, contributions, and creative work.
                             <section class="board-paper tech4ease-reflection-note">
 
 
-                                <span class="board-tape" aria-hidden="true"></span>
+                                <span class="board-tape"></span>
 
 
                                 <h3>Reflection</h3>
@@ -1557,31 +1513,31 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/tech4ease/onshape.webp" alt="Onshape">
+                                        <img src="assets/projects/tech4ease/onshape.webp" alt="">
                                         <figcaption>Onshape</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/tech4ease/vscode.webp" alt="Visual Studio Code">
+                                        <img src="assets/projects/tech4ease/vscode.webp" alt="">
                                         <figcaption>VS Code</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/tech4ease/photoshop.webp" alt="Photoshop">
+                                        <img src="assets/projects/tech4ease/photoshop.webp" alt="">
                                         <figcaption>Photoshop</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/tech4ease/indesign.webp" alt="InDesign">
+                                        <img src="assets/projects/tech4ease/indesign.webp" alt="">
                                         <figcaption>InDesign</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/tech4ease/canva.webp" alt="Canva">
+                                        <img src="assets/projects/tech4ease/canva.webp" alt="">
                                         <figcaption>Canva</figcaption>
                                     </figure>
 
@@ -1650,9 +1606,9 @@ showing my design process, contributions, and creative work.
 
                             <figure class="board-media asa-logo-sequence">
 
-                                <span class="board-pin" aria-hidden="true"></span>
+                                <span class="board-pin"></span>
 
-                                <img src="assets/projects/asa/asa-sequence.gif" alt="ASA logo drawing animation">
+                                <img src="assets/projects/asa/asa-sequence.gif" alt="">
 
                                 <figcaption>
                                     I created and animated the ASA logo sequence to give the organization's
@@ -1668,7 +1624,7 @@ showing my design process, contributions, and creative work.
 
                             <section class="board-paper asa-overview">
 
-                                <span class="board-tape" aria-hidden="true"></span>
+                                <span class="board-tape"></span>
 
                                 <h3>
                                     Overview
@@ -1750,7 +1706,7 @@ showing my design process, contributions, and creative work.
 
                             <figure class="board-media asa-mixer">
 
-                                <span class="board-tape" aria-hidden="true"></span>
+                                <span class="board-tape" ></span>
 
                                 <img src="assets/projects/asa/club-mixer.webp" alt="Animated ASA club mixer promotion">
 
@@ -1833,7 +1789,7 @@ showing my design process, contributions, and creative work.
 
                                     <figure>
 
-                                        <img src="assets/projects/asa/adobe.webp" alt="Adobe Creative Cloud">
+                                        <img src="assets/projects/asa/adobe.webp" alt="">
 
                                         <figcaption>
                                             Adobe
@@ -1845,7 +1801,7 @@ showing my design process, contributions, and creative work.
 
                                     <figure>
 
-                                        <img src="assets/projects/asa/photoshop.webp" alt="Adobe Photoshop">
+                                        <img src="assets/projects/asa/photoshop.webp" alt="">
 
                                         <figcaption>
                                             Photoshop
@@ -1857,7 +1813,7 @@ showing my design process, contributions, and creative work.
 
                                     <figure>
 
-                                        <img src="assets/projects/asa/canva.webp" alt="Canva">
+                                        <img src="assets/projects/asa/canva.webp" alt="">
 
                                         <figcaption>
                                             Canva
@@ -1869,7 +1825,7 @@ showing my design process, contributions, and creative work.
 
                                     <figure>
 
-                                        <img src="assets/projects/asa/figma.webp" alt="Figma">
+                                        <img src="assets/projects/asa/figma.webp" alt="">
 
                                         <figcaption>
                                             Figma
@@ -1943,7 +1899,7 @@ showing my design process, contributions, and creative work.
 
                             <section class="board-paper automata-overview-note">
 
-                                <span class="board-paperclip" aria-hidden="true"></span>
+                                <span class="board-paperclip" ></span>
 
                                 <h3>
                                     Overview
@@ -1973,7 +1929,7 @@ showing my design process, contributions, and creative work.
 
                             <section class="board-paper automata-role-note">
 
-                                <span class="board-pin" aria-hidden="true"></span>
+                                <span class="board-pin" ></span>
 
                                 <h3>
                                     My Role
@@ -2165,7 +2121,7 @@ showing my design process, contributions, and creative work.
 
                             <section class="board-paper automata-reflection-note">
 
-                                <span class="board-pin board-pin--side" aria-hidden="true"></span>
+                                <span class="board-pin board-pin--side"></span>
 
                                 <h3>
                                     Reflection
@@ -2208,7 +2164,7 @@ showing my design process, contributions, and creative work.
 
                                     <figure>
 
-                                        <img src="assets/projects/automata/onshape.webp" alt="Onshape">
+                                        <img src="assets/projects/automata/onshape.webp" alt="">
 
                                         <figcaption>
                                             Onshape
@@ -2540,18 +2496,18 @@ showing my design process, contributions, and creative work.
 
 
                                     <figure>
-                                        <img src="assets/projects/5corner/html.webp">
+                                        <img src="assets/projects/5corner/html.webp" alt="">
                                         <figcaption>HTML</figcaption>
                                     </figure>
 
 
                                     <figure>
-                                        <img src="assets/projects/5corner/css.webp">
+                                        <img src="assets/projects/5corner/css.webp" alt="">
                                         <figcaption>CSS</figcaption>
                                     </figure>
 
                                     <figure>
-                                        <img src="assets/projects/5corner/github.webp">
+                                        <img src="assets/projects/5corner/github.webp" alt="">
                                         <figcaption>GitHub</figcaption>
                                     </figure>
                                 </div>
