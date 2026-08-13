@@ -676,6 +676,13 @@ Also if someone is looking for a quick way to discover they dont care about the 
 
 }
 
+.studio-direction:focus-visible {
+
+outline: .15rem solid #242424;
+outline-offset: .5rem;
+
+}
+
 /* ..... RESPONSIVE STUDIO ADAPTATION ..... */
 /*
 Because the studio is built from many positioned objects, responsive
@@ -688,13 +695,17 @@ on smaller screens.
 
   .studio-featured {
 
-    right: 1rem;
+    left: 1rem;
 
-    bottom: 35%;
+    bottom: 7%;
 
-    width: 70vw;
+    width: min(50vw, 18rem);
 
-  }
+}
+.featured-project {
+  background:
+    rgba(255, 255, 255, 0.95);
+}
 
   .studio-section {
     background:
@@ -706,6 +717,11 @@ on smaller screens.
         #ffffff 100%);
   }
 
+  .studio-intro h2 {
+
+font-size:1.5rem;
+
+}
 
   .desk-group {
     width: 60%;

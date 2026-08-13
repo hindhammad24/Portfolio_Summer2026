@@ -309,12 +309,12 @@ shows how visual storytelling helped communicate the concept.
 }
 
 .board-presentation {
-  grid-column: 6 / 13;
+  grid-column: 7/ 13;
   grid-row: 2;
 
   align-self: start;
 
-  width: 100%;
+  width: 90%;
 
   transform: none;
 }
@@ -1202,5 +1202,41 @@ sequence of ideas.
     gap: 1rem;
 
   }
+.skyconnect-moments .board-polaroid {
 
+  width:92%;
+
+  margin-inline:auto;
+
+}
+
+
+.skyconnect-moments .board-moment img {
+
+  max-height:22rem;
+
+  object-fit:contain;
+
+}
+
+
+.skyconnect-moments .board-winning img {
+
+  max-height:19rem;
+
+  object-fit:contain;
+
+}
+
+.skyconnect-moments .board-polaroid figcaption {
+
+    width: min(85%, 24ch);
+
+    margin: 1rem auto 0;
+
+    text-align: center;
+
+    line-height: 1.45;
+
+}
 }

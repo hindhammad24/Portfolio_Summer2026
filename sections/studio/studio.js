@@ -91,6 +91,11 @@ studioCanvas.addEventListener("mouseenter", () => {
   studioInfoCard.innerHTML = artText;
   studioInfoCard.classList.add("show");
 });
+studioCanvas.addEventListener("focus", () => {
+  studioCanvasImg.src = canvasHover;
+  studioInfoCard.innerHTML = artText;
+  studioInfoCard.classList.add("show");
+});
 studioCanvas.addEventListener("mouseleave", () => {
   studioCanvasImg.src = canvasNormal;
   studioInfoCard.classList.remove("show");
@@ -136,6 +141,16 @@ const designText = `
 if (studioBoard) {
 
   studioBoard.addEventListener("mouseenter", () => {
+
+    boardImg.src = boardHover;
+
+    studioInfoCard.innerHTML = designText;
+
+    studioInfoCard.classList.add("show");
+
+  });
+  
+  studioBoard.addEventListener("focus", () => {
 
     boardImg.src = boardHover;
 
@@ -215,6 +230,15 @@ studioLaptop.addEventListener("mouseenter", () => {
 
 });
 
+studioLaptop.addEventListener("focus", () => {
+
+  laptopImg.src = laptopHover;
+
+  studioInfoCard.innerHTML = laptopText;
+
+  studioInfoCard.classList.add("show");
+
+});
 studioLaptop.addEventListener("mouseleave", () => {
 
   laptopImg.src = laptopNormal;
@@ -276,6 +300,17 @@ studioEducation.addEventListener("mouseenter", () => {
 
 });
 
+studioEducation.addEventListener("focus", () => {
+
+  educationImg.src = educationHover;
+
+  studioInfoCard.innerHTML = educationText;
+
+
+  studioInfoCard.classList.add("show");
+
+});
+
 studioEducation.addEventListener("mouseleave", () => {
 
   educationImg.src = educationNormal;
@@ -319,6 +354,17 @@ const careerText = `
 `;
 
 studioChair.addEventListener("mouseenter", () => {
+
+  chairImg.src = chairHover;
+
+  studioInfoCard.innerHTML = careerText;
+
+
+  studioInfoCard.classList.add("show");
+
+});
+
+studioChair.addEventListener("focus", () => {
 
   chairImg.src = chairHover;
 
