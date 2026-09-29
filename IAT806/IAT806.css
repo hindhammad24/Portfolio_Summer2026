@@ -1,0 +1,176 @@
+/* ..... IAT806 HUB PAGE ..... */
+
+.iat-page {
+  min-height: 100svh;
+
+  padding: clamp(6rem, 10vw, 9rem) clamp(1.5rem, 6vw, 7rem);
+}
+
+/* ..... HEADER ..... */
+
+.iat-header {
+  max-width: 55rem;
+
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+
+  text-align: center;
+}
+
+.iat-header h1 {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.iat-header p {
+  margin-top: 1.5rem;
+
+  font-family: var(--font-main);
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+
+  line-height: 1.6;
+
+  color: rgba(36, 36, 36, 0.75);
+}
+
+/* ..... LAB GRID ..... */
+
+.lab-grid {
+  width: min(100%, 75rem);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* ..... PROJECT CARDS ..... */
+
+.lab-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  padding: clamp(1.2rem, 2vw, 2rem);
+
+  background: rgba(255, 255, 255, 0.7);
+
+  border: 1px solid var(--border-light);
+
+  box-shadow: 0 0.5rem 2rem rgba(36, 36, 36, 0.08);
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* handmade rotation */
+
+.lab-card:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.lab-card:nth-child(2) {
+  transform: rotate(1.5deg);
+}
+
+.lab-card:nth-child(3) {
+  transform: rotate(-0.8deg);
+}
+
+.lab-card:nth-child(4) {
+  transform: rotate(1deg);
+}
+
+.lab-card:hover {
+  transform: translateY(-0.6rem) rotate(0deg);
+
+  background: var(--white);
+
+  box-shadow: 0 1rem 3rem rgba(36, 36, 36, 0.15);
+}
+
+/* ..... TEXT ..... */
+
+.lab-card h2 {
+  margin: 0;
+
+  font-family: var(--font-elegant);
+
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+  font-weight: 500;
+}
+
+.lab-card h3 {
+  margin: 0;
+
+  font-family: var(--font-main);
+
+  font-size: 1rem;
+}
+
+.lab-card p {
+  margin: 0;
+
+  line-height: 1.6;
+
+  font-family: var(--font-main);
+
+  color: rgba(36, 36, 36, 0.75);
+}
+
+/* ..... IMAGE PREVIEW ..... */
+
+.lab-card img {
+  width: 100%;
+
+  margin-top: 1rem;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+
+  border: 1px solid var(--border-light);
+
+  transition: transform 0.3s ease;
+}
+
+.lab-card:hover img {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+/* ..... MOBILE ..... */
+
+@media (max-width: 48rem) {
+  .iat-page {
+    padding-top: 6rem;
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-card:nth-child(n) {
+    transform: rotate(0deg);
+  }
+}

@@ -56,7 +56,7 @@ i made sure it works for both mobileclick and hover.
   pointer-events: auto;
 
   transition:
-    transform 0.35s cubic-bezier(.2, .8, .2, 1),
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
     filter 0.35s ease;
 }
 
@@ -86,7 +86,7 @@ i made sure it works for both mobileclick and hover.
 
   transition:
     opacity 0.3s ease,
-    transform 0.4s cubic-bezier(.2, .8, .2, 1);
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* allows the badic to disapear*/
@@ -97,7 +97,6 @@ i made sure it works for both mobileclick and hover.
 .palette-colour {
   opacity: 0;
 }
-
 
 /* ..... PALETTE COLOUR TRANSITION ..... */
 /*
@@ -163,15 +162,14 @@ transforms create smoother animations and better performance.
   opacity: 0;
   visibility: hidden;
 
-  transform:
-    translate(50%, -50%) translate(0, 0) rotate(0deg) scale(0.3);
+  transform: translate(50%, -50%) translate(0, 0) rotate(0deg) scale(0.3);
 
   transform-origin: right center;
 
   pointer-events: none;
 
   transition:
-    transform 0.55s cubic-bezier(.18, .89, .32, 1.28),
+    transform 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.28),
     opacity 0.25s ease,
     visibility 0s linear 0.55s,
     filter 0.25s ease;
@@ -241,7 +239,7 @@ transforms create smoother animations and better performance.
   pointer-events: auto;
 
   transition:
-    transform 0.55s cubic-bezier(.18, .89, .32, 1.28),
+    transform 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.28),
     opacity 0.25s ease,
     visibility 0s linear 0s,
     filter 0.25s ease;
@@ -254,29 +252,29 @@ the palette idea instead of behaving like a standard dropdown menu.
 It is meant to be diffrent and not organized.
 */
 .paint-nav.is-open .paint-swatch-1 {
-  transform:
-    translate(50%, -50%) translate(-6rem, 0.5rem) rotate(-4deg) scale(1);
+  transform: translate(50%, -50%) translate(-6rem, 0.5rem) rotate(-4deg)
+    scale(1);
 
   transition-delay: 0.04s;
 }
 
 .paint-nav.is-open .paint-swatch-2 {
-  transform:
-    translate(50%, -50%) translate(-13rem, 0.2rem) rotate(3deg) scale(1);
+  transform: translate(50%, -50%) translate(-13rem, 0.2rem) rotate(3deg)
+    scale(1);
 
   transition-delay: 0.08s;
 }
 
 .paint-nav.is-open .paint-swatch-3 {
-  transform:
-    translate(50%, -50%) translate(-20rem, 0.6rem) rotate(-2deg) scale(1);
+  transform: translate(50%, -50%) translate(-20rem, 0.6rem) rotate(-2deg)
+    scale(1);
 
   transition-delay: 0.12s;
 }
 
 .paint-nav.is-open .paint-swatch-4 {
-  transform:
-    translate(50%, -50%) translate(-27rem, 0.1rem) rotate(4deg) scale(1);
+  transform: translate(50%, -50%) translate(-27rem, 0.1rem) rotate(4deg)
+    scale(1);
 
   transition-delay: 0.16s;
 }
@@ -284,26 +282,26 @@ It is meant to be diffrent and not organized.
 /* Swatch hover and keyboard focus position rotation */
 .paint-nav.is-open .paint-swatch-1:hover,
 .paint-nav.is-open .paint-swatch-1:focus-visible {
-  transform:
-    translate(50%, -50%) translate(-6rem, 0.5rem) rotate(-2deg) scale(1.14);
+  transform: translate(50%, -50%) translate(-6rem, 0.5rem) rotate(-2deg)
+    scale(1.14);
 }
 
 .paint-nav.is-open .paint-swatch-2:hover,
 .paint-nav.is-open .paint-swatch-2:focus-visible {
-  transform:
-    translate(50%, -50%) translate(-13rem, 0.2rem) rotate(5deg) scale(1.14);
+  transform: translate(50%, -50%) translate(-13rem, 0.2rem) rotate(5deg)
+    scale(1.14);
 }
 
 .paint-nav.is-open .paint-swatch-3:hover,
 .paint-nav.is-open .paint-swatch-3:focus-visible {
-  transform:
-    translate(50%, -50%) translate(-20rem, 0.6rem) rotate(0deg) scale(1.14);
+  transform: translate(50%, -50%) translate(-20rem, 0.6rem) rotate(0deg)
+    scale(1.14);
 }
 
 .paint-nav.is-open .paint-swatch-4:hover,
 .paint-nav.is-open .paint-swatch-4:focus-visible {
-  transform:
-    translate(50%, -50%) translate(-27rem, 0.1rem) rotate(6deg) scale(1.14);
+  transform: translate(50%, -50%) translate(-27rem, 0.1rem) rotate(6deg)
+    scale(1.14);
 }
 
 .paint-swatch:hover .swatch-basic,
@@ -345,6 +343,17 @@ It is meant to be diffrent and not organized.
   border: 0;
 }
 
+.paint-nav.is-open .paint-swatch-5 {
+  transform: translate(50%, -50%) translate(-34rem, 0.5rem) rotate(-3deg)
+    scale(1);
+
+  transition-delay: 0.2s;
+}
+.paint-nav.is-open .paint-swatch-5:hover,
+.paint-nav.is-open .paint-swatch-5:focus-visible {
+  transform: translate(50%, -50%) translate(-34rem, 0.5rem) rotate(-1deg)
+    scale(1.14);
+}
 /* ..... MOBILE NAVIGATION ADJUSTMENTS ..... */
 /*
 The desktop layout opens horizontally, but on smaller screens
@@ -362,57 +371,52 @@ remains usable without covering the entire screen.
   }
 
   .paint-nav.is-open .paint-swatch-1 {
-    transform:
-      translate(50%, -50%) translate(-5.8rem, 10.6rem) rotate(4deg) scale(1);
+    transform: translate(50%, -50%) translate(-5.8rem, 10.6rem) rotate(4deg)
+      scale(1);
   }
 
   .paint-nav.is-open .paint-swatch-2 {
-    transform:
-      translate(50%, -50%) translate(-6rem, 7.4rem) rotate(1deg) scale(1);
+    transform: translate(50%, -50%) translate(-6rem, 7.4rem) rotate(1deg)
+      scale(1);
   }
 
   .paint-nav.is-open .paint-swatch-3 {
-    transform:
-      translate(50%, -50%) translate(-5.8rem, 4.2rem) rotate(-3deg) scale(1);
+    transform: translate(50%, -50%) translate(-5.8rem, 4.2rem) rotate(-3deg)
+      scale(1);
   }
 
   .paint-nav.is-open .paint-swatch-4 {
-    transform:
-      translate(50%, -50%) translate(-5rem, 1rem) rotate(-6deg) scale(1);
+    transform: translate(50%, -50%) translate(-5rem, 1rem) rotate(-6deg)
+      scale(1);
   }
 
   .paint-nav.is-open .paint-swatch-1:hover,
   .paint-nav.is-open .paint-swatch-1:focus-visible {
-    transform:
-      translate(50%, -50%) translate(-5.8rem, 10.6rem) rotate(4deg) scale(1.04);
+    transform: translate(50%, -50%) translate(-5.8rem, 10.6rem) rotate(4deg)
+      scale(1.04);
   }
-
 
   .paint-nav.is-open .paint-swatch-2:hover,
   .paint-nav.is-open .paint-swatch-2:focus-visible {
-    transform:
-      translate(50%, -50%) translate(-6rem, 7.4rem) rotate(1deg) scale(1.04);
+    transform: translate(50%, -50%) translate(-6rem, 7.4rem) rotate(1deg)
+      scale(1.04);
   }
 
   .paint-nav.is-open .paint-swatch-3:hover,
   .paint-nav.is-open .paint-swatch-3:focus-visible {
-    transform:
-      translate(50%, -50%) translate(-5.8rem, 4.2rem) rotate(-3deg) scale(1.04);
+    transform: translate(50%, -50%) translate(-5.8rem, 4.2rem) rotate(-3deg)
+      scale(1.04);
   }
-
 
   .paint-nav.is-open .paint-swatch-4:hover,
   .paint-nav.is-open .paint-swatch-4:focus-visible {
-    transform:
-      translate(50%, -50%) translate(-5rem, 1rem) rotate(-6deg) scale(1.04);
+    transform: translate(50%, -50%) translate(-5rem, 1rem) rotate(-6deg)
+      scale(1.04);
   }
-
-
 }
 
 /* Reduced-motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-
   .paint-palette-button,
   .palette-image,
   .paint-swatch,

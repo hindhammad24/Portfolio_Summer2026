@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!--
+  <!--
 This file controls the structure of the contact page of my portfolio.
 The contact page was designed as the final connection point between
 my work and the visitor. Instead of creating a traditional contact
@@ -11,78 +11,130 @@ The page continues the handmade visual language used throughout the
 portfolio through custom icons, artwork, and the paint navigation system.
 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Hind Hammad | Contact</title>
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="global/base.css">
-    <link rel="stylesheet" href="global/cursor.css">
-    <link rel="stylesheet" href="global/navbar.css">
+    <link rel="stylesheet" href="global/base.css" />
+    <link rel="stylesheet" href="global/cursor.css" />
+    <link rel="stylesheet" href="global/navbar.css" />
 
     <!-- Contact Section -->
-    <link rel="stylesheet" href="sections/contact/contact.css">
-</head>
+    <link rel="stylesheet" href="sections/contact/contact.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Paint Brush Cursor-->
     <canvas id="paint-canvas" aria-hidden="true"></canvas>
     <div class="paint-cursor" aria-hidden="true"></div>
 
     <nav class="paint-nav" aria-label="Main navigation">
+      <!-- Navigation colour swatches -->
+      <div class="paint-nav-swatches" id="paintNavSwatches">
+        <!-- links to home page top -->
+        <a class="paint-swatch paint-swatch-1" href="index.html">
+          <!-- starts at  grey basic swatch-->
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
 
-        <!-- Navigation colour swatches -->
-        <div class="paint-nav-swatches" id="paintNavSwatches">
+          <!-- hover changes to colored swatch-->
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/blue.webp"
+            alt=""
+          />
 
-            <!-- links to home page top -->
-            <a class="paint-swatch paint-swatch-1" href="index.html">
-                <!-- starts at  grey basic swatch-->
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
+          <!-- with overlining text -->
+          <span>Home</span>
+        </a>
 
-                <!-- hover changes to colored swatch-->
-                <img class="swatch-image swatch-colour" src="assets/navigation/blue.webp" alt="">
+        <a class="paint-swatch paint-swatch-2" href="#studio">
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
 
-                <!-- with overlining text -->
-                <span>Home</span>
-            </a>
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/green.webp"
+            alt=""
+          />
 
-            <a class="paint-swatch paint-swatch-2" href="#studio">
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
+          <span>About Me</span>
+        </a>
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/green.webp" alt="">
+        <a class="paint-swatch paint-swatch-3" href="projects.html">
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
 
-                <span>About Me</span>
-            </a>
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/yellow.webp"
+            alt=""
+          />
 
-            <a class="paint-swatch paint-swatch-3" href="projects.html">
+          <span>Projects</span>
+        </a>
 
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
+        <a class="paint-swatch paint-swatch-4" href="contact.html">
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/purple.webp"
+            alt=""
+          />
+          <span>Contact</span>
+        </a>
 
-                <img class="swatch-image swatch-colour" src="assets/navigation/yellow.webp" alt="">
+        <a class="paint-swatch paint-swatch-5" href="IAT806\IAT806.html">
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/blue.webp"
+            alt=""
+          />
+          <span>IAT806</span>
+        </a>
+      </div>
 
-                <span>Projects</span>
-            </a>
+      <!-- Palette menu button -->
+      <button
+        class="paint-palette-button"
+        id="paintPaletteButton"
+        aria-label="navigation menu"
+        aria-expanded="false"
+        aria-controls="paintNavSwatches"
+      >
+        <img
+          class="palette-image palette-basic"
+          src="assets/navigation/palette-basic.webp"
+          alt="pallete paint menu closed"
+        />
 
-            <a class="paint-swatch paint-swatch-4" href="contact.html">
-                <img class="swatch-image swatch-basic" src="assets/navigation/swatch-basic.webp" alt="">
-                <img class="swatch-image swatch-colour" src="assets/navigation/purple.webp" alt="">
-                <span>Contact</span>
-            </a>
-        </div>
-
-        <!-- Palette menu button -->
-        <button class="paint-palette-button" id="paintPaletteButton" aria-label="navigation menu" aria-expanded="false"
-            aria-controls="paintNavSwatches">
-            <img class="palette-image palette-basic" src="assets/navigation/palette-basic.webp"
-                alt="pallete paint menu closed">
-
-            <img class="palette-image palette-colour" src="assets/navigation/palette-colour.webp"
-                alt="pallete paint menu open">
-        </button>
-
+        <img
+          class="palette-image palette-colour"
+          src="assets/navigation/palette-colour.webp"
+          alt="pallete paint menu open"
+        />
+      </button>
     </nav>
 
     <!-- ..... PERSONAL CONNECTIONS ..... -->
@@ -93,120 +145,155 @@ portfolio through custom icons, artwork, and the paint navigation system.
     consistent with the handmade style used throughout the portfolio.
     -->
     <main>
-        <section class="contact-section" id="contact">
-            <div class="contact-container">
+      <section class="contact-section" id="contact">
+        <div class="contact-container">
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h1>Let's Connect</h1>
 
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h1> Let's Connect</h1>
-
-                    <div class="contact-links">
-                        <a href="mailto:hind.hammad24@gmail.com" class="contact-link">
-
-                            <!--
+            <div class="contact-links">
+              <a href="mailto:hind.hammad24@gmail.com" class="contact-link">
+                <!--
                             Each icon contains two states:
                             a normal version and a focused version that appears during interaction.
                             This allows the contact section to feel more like an interactive
                             interface rather than a static list.
                             -->
-                            <div class="contact-icon">
-                                <img class="icon-normal" src="assets/contact/email.webp" alt="">
+                <div class="contact-icon">
+                  <img
+                    class="icon-normal"
+                    src="assets/contact/email.webp"
+                    alt=""
+                  />
 
-                                <img class="icon-focus" src="assets/contact/email-focus.webp"
-                                    alt="">
-                            </div>
-                            <span>
-                                hind.hammad24@gmail.com
-                            </span>
-                        </a>
+                  <img
+                    class="icon-focus"
+                    src="assets/contact/email-focus.webp"
+                    alt=""
+                  />
+                </div>
+                <span> hind.hammad24@gmail.com </span>
+              </a>
 
-                        <a href="mailto:hhh11@sfu.ca" class="contact-link">
-                            <div class="contact-icon">
-                                <img class="icon-normal" src="assets/contact/sfu.webp" alt="">
-                                <img class="icon-focus" src="assets/contact/sfu-focus.webp" alt="">
-                            </div>
-                            <span>
-                                hhh11@sfu.ca
-                            </span>
-                        </a>
+              <a href="mailto:hhh11@sfu.ca" class="contact-link">
+                <div class="contact-icon">
+                  <img
+                    class="icon-normal"
+                    src="assets/contact/sfu.webp"
+                    alt=""
+                  />
+                  <img
+                    class="icon-focus"
+                    src="assets/contact/sfu-focus.webp"
+                    alt=""
+                  />
+                </div>
+                <span> hhh11@sfu.ca </span>
+              </a>
 
-                        <a href="https://github.com/hindhammad24" target="_blank" class="contact-link">
-                            <div class="contact-icon">
-                                <img class="icon-normal" src="assets/contact/github.webp" alt="">
-                                <img class="icon-focus" src="assets/contact/github-focus.webp" alt="">
-                            </div>
-                            <span>
-                                github.com/hindhammad24
-                            </span>
-                        </a>
+              <a
+                href="https://github.com/hindhammad24"
+                target="_blank"
+                class="contact-link"
+              >
+                <div class="contact-icon">
+                  <img
+                    class="icon-normal"
+                    src="assets/contact/github.webp"
+                    alt=""
+                  />
+                  <img
+                    class="icon-focus"
+                    src="assets/contact/github-focus.webp"
+                    alt=""
+                  />
+                </div>
+                <span> github.com/hindhammad24 </span>
+              </a>
 
-                        <a href="https://www.linkedin.com/in/hind-hammad/" target="_blank" class="contact-link">
-                            <div class="contact-icon">
-                                <img class="icon-normal" src="assets/contact/linkedin.webp" alt="">
-                                <img class="icon-focus" src="assets/contact/linkedin-focus.webp" alt= "">
-                            </div>
-                            <span>
-                                linkedin.com/in/hind-hammad
-                            </span>
-                        </a>
+              <a
+                href="https://www.linkedin.com/in/hind-hammad/"
+                target="_blank"
+                class="contact-link"
+              >
+                <div class="contact-icon">
+                  <img
+                    class="icon-normal"
+                    src="assets/contact/linkedin.webp"
+                    alt=""
+                  />
+                  <img
+                    class="icon-focus"
+                    src="assets/contact/linkedin-focus.webp"
+                    alt=""
+                  />
+                </div>
+                <span> linkedin.com/in/hind-hammad </span>
+              </a>
 
-                        <!--
+              <!--
                         The resume download is included as another contact action so visitors
                         can quickly access a formal version of my background and experience.
                         i still dont have it though 
                         -->
-                        <a href="assets/Hind_Hammad_Resume.pdf" download class="contact-link">
-                            <div class="contact-icon">
-                                <img class="icon-normal" src="assets/contact/resume.webp" alt="">
-                                <img class="icon-focus" src="assets/contact/resume-focus.webp" alt="">
-                            </div>
-                            <span>Download Resume</span>
-                        </a>
-                    </div>
+              <a
+                href="assets/Hind_Hammad_Resume.pdf"
+                download
+                class="contact-link"
+              >
+                <div class="contact-icon">
+                  <img
+                    class="icon-normal"
+                    src="assets/contact/resume.webp"
+                    alt=""
+                  />
+                  <img
+                    class="icon-focus"
+                    src="assets/contact/resume-focus.webp"
+                    alt=""
+                  />
                 </div>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
 
-                <!-- ..... CURRENT CREATIVE WORK ..... -->
-                <!--
+          <!-- ..... CURRENT CREATIVE WORK ..... -->
+          <!--
                 I added this section to show ongoing exploration instead of making
                 the portfolio feel like a finished archive.
                 It allows visitors to see what I am currently designing and connects
                 the contact page back to my creative process.
                 -->
-                <article class="current-work">
+          <article class="current-work">
+            <img
+              class="current-work-image"
+              src="assets/contact/currently-working.webp"
+              alt="Currently working on illustration"
+            />
 
-                    <img class="current-work-image" src="assets/contact/currently-working.webp"
-                        alt="Currently working on illustration">
-
-                    <div class="current-work-content">
-                        <h2>
-                            Currently Working On
-                        </h2>
-                        <!--
+            <div class="current-work-content">
+              <h2>Currently Working On</h2>
+              <!--
                         This highlights a current project to give visitors context about
                         what I am actively learning and creating.
                         The goal is to show continued growth rather than only previous work.
                         -->
-                        <h3>
-                            PUB 231 — Vancouver Graphic Design
-                        </h3>
-                        <p>
-                            Exploring shade from an artistic perspective
-                            through colorful canopy designs and stained
-                            glass inspired visuals, transforming public
-                            spaces into creative experiences.
-                        </p>
-                    </div>
-
-                </article>
+              <h3>PUB 231 — Vancouver Graphic Design</h3>
+              <p>
+                Exploring shade from an artistic perspective through colorful
+                canopy designs and stained glass inspired visuals, transforming
+                public spaces into creative experiences.
+              </p>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
     </main>
 
     <!-- Scripts -->
     <script src="global/cursor.js"></script>
     <script src="global/navbar.js"></script>
     <script src="sections/contact/contact.js"></script>
-
-</body>
-
+  </body>
 </html>
