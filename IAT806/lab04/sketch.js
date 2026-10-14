@@ -1,4 +1,11 @@
+//bonus things
+//disco background effect
+// mouse interaction that changes the number of grid columns
+// the closer dancer to the mouse is bigger the father away a little smaller
+// under the mouse the nearby dancers are brighter and parther away are dimmer usin alpha
+
 let frames = [];
+let frames2 = [];
 let myAge = 10;
 let myName = "Hind";
 let myStudentsAges = [];
@@ -32,6 +39,13 @@ async function setup() {
     let fileName = "dance_frames/dance" + i + ".png";
 
     frames.push(await loadImage(fileName));
+  }
+
+  //  the second jump frames
+  for (let i = 0; i < 4; i++) {
+    let fileName = "jump_frames/jump" + i + ".png";
+
+    frames2.push(await loadImage(fileName));
   }
 }
 
@@ -67,7 +81,52 @@ function draw() {
       // can be doen by using each one too
       fill(colors[i][j]);
       rect(colWidth * i, rowHeight * j, colWidth, rowHeight);
-      animate(frames, 10, colWidth * i, rowHeight * j, colWidth);
+
+      // ok so dancers reacting to the mouse
+      //this is my logic
+      // so the dancers need to know how close they are to the mouse
+      // then i calculate the center of each dancer from the  column and row
+      // then I use dist() i know this from before honestly
+      // i find the distance between the dancer and the mouse and then
+      //  change  that distance into a  speed using map() like in class.
+
+      // the center of the boxes in the grid
+      //  ok so x is the dancer horizontal center
+      // so the column index i so is it the first the second or the third
+      // and so on multipleed with column width so witch one on the columsn
+      // then adding half of the column width to reach the middle of the box.
+      // so like on paper it find witch column and takes half of it
+      let x = i * colWidth + colWidth / 2;
+      //same as the previous for the height
+      let y = j * rowHeight + rowHeight / 2;
+
+      //this will find the distance
+      let d = dist(x, y, mouseX, mouseY);
+      // this will find the max distance from the corner
+      let maxDist = dist(0, 0, width, height);
+      // now we map the dist to the speed father slower closer faster
+      let speed = map(d, 0, maxDist, 2, 20);
+      // dancer size changes from  how close it is to the mouse
+      let dancerSize = map(d, 0, maxDist, colWidth * 1.5, colWidth);
+
+      // spotlight effect where dancers on the mouse
+      let brightness = map(d, 0, maxDist, 255, 80);
+      tint(255, brightness);
+      // found this with chatgpt help not to lie
+
+      //  variable dance frames
+      let danceFrames;
+
+      // this checks if the grid position is even or odd i learned this in other classes so hopefully this is wht u mean
+      if ((i + j) % 2 === 0) {
+        // even numbers use the normal dance
+        danceFrames = frames;
+      } else {
+        // odd numbers jump animation
+        danceFrames = frames2;
+      }
+
+      animate(danceFrames, speed, colWidth * i, rowHeight * j, dancerSize);
     }
   }
 
@@ -84,7 +143,8 @@ function draw() {
 function animate(frames, speed, xPos, yPos, xSize, ySize) {
   //   let slowFrame = floor(frameCount / speed);
   //   let index = slowFrame % frames.length;
-  let index = getFrameIndex(speed);
+  //added the frmaes so it is diffrenct from jump to regurar
+  let index = getFrameIndex(frames, speed);
   let currentFrame = frames[index];
 
   // just to figure out the ration its a square 1254, 1254
@@ -102,7 +162,7 @@ function animate(frames, speed, xPos, yPos, xSize, ySize) {
 }
 
 // function with return means it can give u vback somehting.
-function getFrameIndex(speed) {
+function getFrameIndex(frames, speed) {
   let slowFrame = floor(frameCount / speed);
   let index = slowFrame % frames.length;
   return index;
