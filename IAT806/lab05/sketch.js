@@ -18,17 +18,25 @@ function draw() {
 }
 
 class Ball {
-  constructor() {
+  //   constructor() {
+  //     //atributes
+  //     this.x = 400;
+  //     this.y = 500;
+  //     this.r = 20;
+  //   }
+
+  constructor(x, y, c, r) {
     //atributes
-    this.x = 400;
-    this.y = 500;
-    this.r = 20;
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.c = color(120, 130, 140);
   }
 
   //method
   // functions that are defined for a class
   show() {
-    fill(120, 130, 150);
+    fill(this.c);
     // herew we use the atributes
     circle(this.x, this.y, this.r);
   }
