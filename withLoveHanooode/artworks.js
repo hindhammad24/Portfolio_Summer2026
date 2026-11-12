@@ -210,7 +210,7 @@ window.ARTWORKS = [
     title: "From the Land",
     category: "Canvas",
     status: "sold",
-    price: 40,
+    price: 100,
     size: "20 × 16 inches",
     series: "",
     quantity: 1,
