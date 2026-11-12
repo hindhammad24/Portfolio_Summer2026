@@ -1,72 +1,105 @@
 <!doctype html>
 <html lang="en">
-  <!--
-This file controls the structure of the contact page of my portfolio.
-The contact page was designed as the final connection point between
-my work and the visitor. Instead of creating a traditional contact
-form, I created a simple interactive layout that combines my contact
-information with a visual representation of my current creative work.
-
-The page continues the handmade visual language used throughout the
-portfolio through custom icons, artwork, and the paint navigation system.
--->
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Hind Hammad | Contact</title>
 
-    <!-- Global Styles -->
+    <!-- Global styles -->
     <link rel="stylesheet" href="global/base.css" />
     <link rel="stylesheet" href="global/cursor.css" />
     <link rel="stylesheet" href="global/navbar.css" />
 
-    <!-- Contact Section -->
+    <!-- Contact styles -->
     <link rel="stylesheet" href="sections/contact/contact.css" />
+
+    <!-- Styles for the new contact icons -->
+    <style>
+      .contact-icon.contact-symbol {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        color: #8b2e52;
+      }
+
+      .contact-symbol svg {
+        display: block;
+        width: 70%;
+        height: 70%;
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.2s ease;
+      }
+
+      .contact-link:hover .contact-symbol svg,
+      .contact-link:focus-visible .contact-symbol svg {
+        transform: rotate(-5deg) scale(1.06);
+      }
+
+      .contact-link > span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .contact-link[aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: default;
+      }
+
+      .current-work-content .fundraiser-link {
+        display: inline-block;
+        margin-top: 0.75rem;
+        color: #8b2e52;
+        text-underline-offset: 0.2rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .contact-symbol svg {
+          transition: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Paint Brush Cursor-->
+    <!-- Paint brush cursor -->
     <canvas id="paint-canvas" aria-hidden="true"></canvas>
     <div class="paint-cursor" aria-hidden="true"></div>
 
+    <!-- Palette navigation -->
     <nav class="paint-nav" aria-label="Main navigation">
-      <!-- Navigation colour swatches -->
       <div class="paint-nav-swatches" id="paintNavSwatches">
-        <!-- links to home page top -->
         <a class="paint-swatch paint-swatch-1" href="index.html">
-          <!-- starts at  grey basic swatch-->
           <img
             class="swatch-image swatch-basic"
             src="assets/navigation/swatch-basic.webp"
             alt=""
           />
-
-          <!-- hover changes to colored swatch-->
           <img
             class="swatch-image swatch-colour"
             src="assets/navigation/blue.webp"
             alt=""
           />
-
-          <!-- with overlining text -->
           <span>Home</span>
         </a>
 
-        <a class="paint-swatch paint-swatch-2" href="#studio">
+        <a class="paint-swatch paint-swatch-2" href="index.html#studio">
           <img
             class="swatch-image swatch-basic"
             src="assets/navigation/swatch-basic.webp"
             alt=""
           />
-
           <img
             class="swatch-image swatch-colour"
             src="assets/navigation/green.webp"
             alt=""
           />
-
           <span>About Me</span>
         </a>
 
@@ -76,17 +109,19 @@ portfolio through custom icons, artwork, and the paint navigation system.
             src="assets/navigation/swatch-basic.webp"
             alt=""
           />
-
           <img
             class="swatch-image swatch-colour"
             src="assets/navigation/yellow.webp"
             alt=""
           />
-
           <span>Projects</span>
         </a>
 
-        <a class="paint-swatch paint-swatch-4" href="contact.html">
+        <a
+          class="paint-swatch paint-swatch-4"
+          href="contact.html"
+          aria-current="page"
+        >
           <img
             class="swatch-image swatch-basic"
             src="assets/navigation/swatch-basic.webp"
@@ -100,7 +135,7 @@ portfolio through custom icons, artwork, and the paint navigation system.
           <span>Contact</span>
         </a>
 
-        <a class="paint-swatch paint-swatch-5" href="IAT806\IAT806.html">
+        <a class="paint-swatch paint-swatch-5" href="IAT806/IAT806.html">
           <img
             class="swatch-image swatch-basic"
             src="assets/navigation/swatch-basic.webp"
@@ -113,68 +148,72 @@ portfolio through custom icons, artwork, and the paint navigation system.
           />
           <span>IAT806</span>
         </a>
+
+        <a
+          class="paint-swatch paint-swatch-6"
+          href="withLoveHanooode/shop.html"
+        >
+          <img
+            class="swatch-image swatch-basic"
+            src="assets/navigation/swatch-basic.webp"
+            alt=""
+          />
+          <img
+            class="swatch-image swatch-colour"
+            src="assets/navigation/green.webp"
+            alt=""
+          />
+          <span>Shop</span>
+        </a>
       </div>
 
-      <!-- Palette menu button -->
       <button
         class="paint-palette-button"
         id="paintPaletteButton"
-        aria-label="navigation menu"
+        type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="paintNavSwatches"
       >
         <img
           class="palette-image palette-basic"
           src="assets/navigation/palette-basic.webp"
-          alt="pallete paint menu closed"
+          alt=""
         />
-
         <img
           class="palette-image palette-colour"
           src="assets/navigation/palette-colour.webp"
-          alt="pallete paint menu open"
+          alt=""
         />
       </button>
     </nav>
 
-    <!-- ..... PERSONAL CONNECTIONS ..... -->
-    <!--
-    The contact links are presented as interactive objects instead of
-    simple text links.
-    Each icon has a custom illustrated hover state to keep the interaction
-    consistent with the handmade style used throughout the portfolio.
-    -->
     <main>
       <section class="contact-section" id="contact">
         <div class="contact-container">
-          <!-- Contact Information -->
+          <!-- Contact information -->
           <div class="contact-info">
             <h1>Let's Connect</h1>
 
             <div class="contact-links">
+              <!-- Personal email -->
               <a href="mailto:hind.hammad24@gmail.com" class="contact-link">
-                <!--
-                            Each icon contains two states:
-                            a normal version and a focused version that appears during interaction.
-                            This allows the contact section to feel more like an interactive
-                            interface rather than a static list.
-                            -->
                 <div class="contact-icon">
                   <img
                     class="icon-normal"
                     src="assets/contact/email.webp"
                     alt=""
                   />
-
                   <img
                     class="icon-focus"
                     src="assets/contact/email-focus.webp"
                     alt=""
                   />
                 </div>
-                <span> hind.hammad24@gmail.com </span>
+                <span>hind.hammad24@gmail.com</span>
               </a>
 
+              <!-- SFU email -->
               <a href="mailto:hhh11@sfu.ca" class="contact-link">
                 <div class="contact-icon">
                   <img
@@ -188,12 +227,90 @@ portfolio through custom icons, artwork, and the paint navigation system.
                     alt=""
                   />
                 </div>
-                <span> hhh11@sfu.ca </span>
+                <span>hhh11@sfu.ca</span>
               </a>
 
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/withlovehanooode/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <div class="contact-icon contact-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="0.8"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+                <span>Instagram · @withlovehanooode</span>
+              </a>
+
+              <!-- Art shop -->
+              <a href="withLoveHanooode/shop.html" class="contact-link">
+                <div class="contact-icon contact-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l1 14H4L5 7Z" />
+                    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                    <path
+                      d="M12 17s-4-2.2-4-4.2a2 2 0 0 1 4-0.4 2 2 0 0 1 4 0.4C16 14.8 12 17 12 17Z"
+                    />
+                  </svg>
+                </div>
+                <span>Shop my handmade art</span>
+              </a>
+
+              <!-- Commission form -->
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdC90p51s_wB7L_GDpfaD7X5JTdQnqLgV07rfdNUVV0d3R5LQ/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <div class="contact-icon contact-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M14 3H5v18h14v-9" />
+                    <path d="m10 14 1-4L18 3l3 3-7 7-4 1Z" />
+                    <path d="m16 5 3 3" />
+                    <path d="M8 17h7" />
+                  </svg>
+                </div>
+                <span>Commission a painting</span>
+              </a>
+
+              <!-- Donation campaign -->
+              <a
+                class="contact-link"
+                id="donation-link"
+                href="https://www.launchgood.com/v4/campaign/for_lebanon_with_love_1?src=6986997"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="contact-icon contact-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 13S4 8.6 4 5.5a4 4 0 0 1 8-0.5 4 4 0 0 1 8 0.5C20 8.6 12 13 12 13Z"
+                    />
+                    <path d="M3 17h5l3 3h7l3-5" />
+                    <path d="M8 17h6a2 2 0 0 1 0 4" />
+                  </svg>
+                </div>
+
+                <span>Donate · For Lebanon, With Love</span>
+              </a>
+
+              <!-- GitHub -->
               <a
                 href="https://github.com/hindhammad24"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="contact-link"
               >
                 <div class="contact-icon">
@@ -208,12 +325,14 @@ portfolio through custom icons, artwork, and the paint navigation system.
                     alt=""
                   />
                 </div>
-                <span> github.com/hindhammad24 </span>
+                <span>github.com/hindhammad24</span>
               </a>
 
+              <!-- LinkedIn -->
               <a
                 href="https://www.linkedin.com/in/hind-hammad/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="contact-link"
               >
                 <div class="contact-icon">
@@ -228,14 +347,10 @@ portfolio through custom icons, artwork, and the paint navigation system.
                     alt=""
                   />
                 </div>
-                <span> linkedin.com/in/hind-hammad </span>
+                <span>linkedin.com/in/hind-hammad</span>
               </a>
 
-              <!--
-                        The resume download is included as another contact action so visitors
-                        can quickly access a formal version of my background and experience.
-                        i still dont have it though 
-                        -->
+              <!-- Resume -->
               <a
                 href="assets/Hind_Hammad_Resume.pdf"
                 download
@@ -258,33 +373,34 @@ portfolio through custom icons, artwork, and the paint navigation system.
             </div>
           </div>
 
-          <!-- ..... CURRENT CREATIVE WORK ..... -->
-          <!--
-                I added this section to show ongoing exploration instead of making
-                the portfolio feel like a finished archive.
-                It allows visitors to see what I am currently designing and connects
-                the contact page back to my creative process.
-                -->
+          <!-- Current fundraiser -->
           <article class="current-work">
             <img
               class="current-work-image"
               src="assets/contact/currently-working.webp"
-              alt="Currently working on illustration"
+              alt="Creative work illustration"
             />
 
             <div class="current-work-content">
               <h2>Currently Working On</h2>
-              <!--
-                        This highlights a current project to give visitors context about
-                        what I am actively learning and creating.
-                        The goal is to show continued growth rather than only previous work.
-                        -->
-              <h3>PUB 231 — Vancouver Graphic Design</h3>
+
+              <h3>For Lebanon, With Love</h3>
+
               <p>
-                Exploring shade from an artistic perspective through colorful
-                canopy designs and stained glass inspired visuals, transforming
-                public spaces into creative experiences.
+                Working towards my fundraising goal for Human Appeal’s REACH
+                program through handmade art. I’m creating paintings, ornaments,
+                greeting cards, and painted pots, with 100% of art profits
+                donated to the campaign.
               </p>
+
+              <p>
+                Support the campaign by finding a piece you love, commissioning
+                a personal painting, or making a donation.
+              </p>
+
+              <a class="fundraiser-link" href="withLoveHanooode/shop.html">
+                Explore the art shop ↗
+              </a>
             </div>
           </article>
         </div>

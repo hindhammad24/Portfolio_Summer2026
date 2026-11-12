@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artwork catalogue editor | withLoveHanooode</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #faf5f7;
+        color: #171717;
+        font:
+          15px/1.5 Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 1050px;
+        margin: 40px auto;
+        padding: 0 22px;
+      }
+      h1,
+      h2 {
+        font-family: Georgia, serif;
+        font-weight: 400;
+      }
+      h1 {
+        font-size: 40px;
+        margin: 0;
+      }
+      h2 {
+        font-size: 26px;
+      }
+      p {
+        max-width: 800px;
+      }
+      section {
+        background: white;
+        border: 1px solid #e8dfe3;
+        padding: 25px;
+        margin: 22px 0;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+      input,
+      textarea,
+      select {
+        display: block;
+        padding: 10px;
+        border: 1px solid #bfb3b8;
+        width: 100%;
+        font: inherit;
+        margin-top: 4px;
+      }
+      button,
+      .button {
+        padding: 11px 17px;
+        background: #8b2e52;
+        color: white;
+        border: 1px solid #8b2e52;
+        cursor: pointer;
+        font: inherit;
+        display: inline-block;
+        text-decoration: none;
+      }
+      button.secondary {
+        background: white;
+        color: #8b2e52;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+      }
+      .full {
+        grid-column: 1/-1;
+      }
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .check input {
+        width: auto;
+        margin: 0;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .row {
+        padding: 15px 0;
+        border-top: 1px solid #e8dfe3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      .row small {
+        display: block;
+        color: #655c61;
+      }
+      .row button {
+        padding: 7px 12px;
+      }
+      .notice {
+        border-left: 3px solid #8b2e52;
+        padding: 12px 18px;
+        background: white;
+      }
+      .status {
+        color: #8b2e52;
+        font-weight: bold;
+      }
+      a {
+        color: #8b2e52;
+      }
+      :focus-visible {
+        outline: 2px solid #8b2e52;
+        outline-offset: 3px;
+      }
+      @media (max-width: 650px) {
+        .fields {
+          grid-template-columns: 1fr;
+        }
+        .row {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+    </style>
+    <script src="artworks.js" defer></script>
+    <script src="manage.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <p>WITHLOVEHANOOODE · LOCAL EDITOR</p>
+      <h1>Your little gallery, organised.</h1>
+      <p class="notice">
+        <strong>This editor does not update your live website.</strong> Keep it
+        on your computer. Make changes, download <strong>artworks.js</strong>,
+        replace the old file beside shop.html, then upload that file to your
+        website. Changes in this editor are lost when you close or reload it
+        unless you download them.
+      </p>
+      <p><a href="shop.html" target="_blank">Open shop preview ↗</a> ·</p>
+      <section>
+        <h2>1. Your shop details</h2>
+        <div class="fields">
+          <label
+            >Order enquiry email<input
+              id="config-email"
+              type="email"
+              required
+              placeholder="Your real enquiry email" /></label
+          ><label
+            >E-transfer email<input
+              id="config-payment"
+              type="email"
+              required /></label
+          ><label
+            >Commissions form link<input
+              id="config-commissions"
+              type="https://docs.google.com/forms/d/e/1FAIpQLSdC90p51s_wB7L_GDpfaD7X5JTdQnqLgV07rfdNUVV0d3R5LQ/viewform"
+              placeholder="https://docs.google.com/forms/d/e/1FAIpQLSdC90p51s_wB7L_GDpfaD7X5JTdQnqLgV07rfdNUVV0d3R5LQ/viewform" /></label
+          ><label
+            >Donation campaign link<input
+              id="config-donation"
+              type="url"
+              placeholder="https://..." /></label
+          ><label class="check full"
+            ><input id="config-photos" type="checkbox" /> Use real artwork
+            photos (keep off to show placeholders)</label
+          >
+        </div>
+        <p>
+          The enquiry email receives order requests. Add your real commissions
+          form link to enable the form button. These are public links; do not
+          enter banking passwords or private information.
+        </p>
+      </section>
+      <section>
+        <h2>2. Your artwork</h2>
+        <div id="catalogue-list"></div>
+        <p><button id="new-artwork" type="button">+ Add a piece</button></p>
+      </section>
+      <section>
+        <h2 id="editor-title">Add a piece</h2>
+        <form id="artwork-editor">
+          <div class="fields">
+            <label
+              >Artwork ID (unique)<input
+                name="id"
+                required
+                maxlength="60"
+                placeholder="ART-001" /></label
+            ><label>Title<input name="title" required maxlength="150" /></label
+            ><label
+              >Category<input
+                name="category"
+                required
+                placeholder="Paintings, Ornaments, Cards…" /></label
+            ><label
+              >Status<select name="status">
+                <option value="available">
+                  Available — customers can enquire
+                </option>
+                <option value="reserved">Reserved — ordering disabled</option>
+                <option value="sold">Sold — ordering disabled</option>
+                <option value="hidden">Hidden — removed from shop</option>
+              </select></label
+            ><label
+              >Price in CAD<input
+                name="price"
+                type="number"
+                min="0"
+                step="0.01"
+                required /></label
+            ><label>Size<input name="size" placeholder="8 × 10 in" /></label
+            ><label
+              >Series (optional)<input
+                name="series"
+                placeholder="Winter, Florals…" /></label
+            ><label
+              >Stock quantity (blank if unconfirmed)<input
+                name="quantity"
+                type="number"
+                min="0"
+                step="1" /></label
+            ><label
+              >Photo path<input
+                name="image"
+                required
+                placeholder="assets/my-painting.jpg" /></label
+            ><label class="full"
+              >Photo description (accessibility)<input
+                name="alt"
+                required
+                placeholder="Describe what is in the artwork" /></label
+            ><label class="full"
+              >Artwork description<textarea
+                name="description"
+                rows="3"
+              ></textarea>
+            </label>
+          </div>
+          <p>
+            Copy your photo into the assets folder yourself, then enter its
+            exact filename above. The editor does not upload or copy photos.
+          </p>
+          <button type="submit">Save piece to this editing session</button>
+        </form>
+        <p id="editor-feedback" role="status" class="status"></p>
+      </section>
+      <section>
+        <h2>3. Download your changes</h2>
+        <p>
+          Save any artwork edits first. This download includes your shop details
+          and saved artwork entries. Replace the existing artworks.js with the
+          downloaded file. Your browser may name it artworks (1).js—rename it to
+          <strong>artworks.js</strong>.
+        </p>
+        <button id="download-catalogue" type="button">
+          Download artworks.js ↓
+        </button>
+        <p id="download-feedback" role="status"></p>
+      </section>
+    </main>
+  </body>
+</html>

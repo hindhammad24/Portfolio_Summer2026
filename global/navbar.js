@@ -1,100 +1,89 @@
 /*
-Controls the interactive behaviour of the paint palette navigation.
-This script handles opening and closing the menu, updating
-accessibility states, and closing the menu through different
-user interactions.
+  PAINT PALETTE NAVIGATION
+
+  Opens and closes the palette menu.
+  CSS controls the horizontal desktop layout
+  and vertical mobile layout.
 */
 
-/* ...Paint Palette Navigation.... */
+(() => {
+  function initialisePaintNavigation() {
+    const navigationMenus = document.querySelectorAll(".paint-nav");
 
-/* Logic explained:
-I created the paint swatch interactions using two image states 
-layered on top of each other. CSS controls the opacity transition 
-between the neutral and colored versions on hover, creating the effect 
-of the paint changing color. JavaScript was only used for controlling
-the navigation opening and closing behavior, not the hover color transition itself */
+    navigationMenus.forEach((paintNav) => {
+      const paletteButton = paintNav.querySelector(".paint-palette-button");
 
-const paintNav = document.querySelector(".paint-nav");
-const paletteButton = document.getElementById("paintPaletteButton");
-const paintSwatches = document.querySelectorAll(".paint-swatch");
+      const paintSwatches = paintNav.querySelectorAll(".paint-swatch");
 
-if (paintNav && paletteButton) {
+      if (!paletteButton) return;
 
+      // Avoid duplicate listeners if loaded more than once.
+      if (paintNav.dataset.navigationReady === "true") return;
+      paintNav.dataset.navigationReady = "true";
 
-  /*
-  Opens the navigation menu by adding the active state.
-  The CSS handles the animation, while JavaScript only controls
-  the interaction state.
-  */
-  function openPaintMenu() {
-    paintNav.classList.add("is-open");
+      function openPaintMenu() {
+        paintNav.classList.add("is-open");
 
-    paletteButton.setAttribute("aria-expanded", "true");
-    paletteButton.setAttribute("aria-label", "Close navigation menu");
-  }
+        paletteButton.setAttribute("aria-expanded", "true");
+        paletteButton.setAttribute("aria-label", "Close navigation menu");
+      }
 
-  /*
-  Centralizes the closing behaviour so every interaction method
-  (mouse click, outside click, keyboard input) uses the same logic.
-  */
-  function closePaintMenu() {
-    paintNav.classList.remove("is-open");
+      function closePaintMenu() {
+        paintNav.classList.remove("is-open");
 
-    paletteButton.setAttribute("aria-expanded", "false");
-    paletteButton.setAttribute("aria-label", "Open navigation menu");
-  }
+        paletteButton.setAttribute("aria-expanded", "false");
+        paletteButton.setAttribute("aria-label", "Open navigation menu");
+      }
 
-  /*
-  Checks the current menu state and switches between open and
-  closed states when the palette button is pressed.
-  */
-  function togglePaintMenu() {
-    const menuIsOpen = paintNav.classList.contains("is-open");
+      function togglePaintMenu() {
+        if (paintNav.classList.contains("is-open")) {
+          closePaintMenu();
+        } else {
+          openPaintMenu();
+        }
+      }
 
-    if (menuIsOpen) {
-      closePaintMenu();
-    } else {
-      openPaintMenu();
-    }
-  }
+      // Toggle when the palette is clicked.
+      paletteButton.addEventListener("click", togglePaintMenu);
 
-  /* Open and close when the palette is clicked */
-  paletteButton.addEventListener("click", togglePaintMenu);
+      // Close after selecting a link.
+      paintSwatches.forEach((swatch) => {
+        swatch.addEventListener("click", closePaintMenu);
+      });
 
-  /* ..... CLOSE AFTER NAVIGATION ..... */
-  /*
-  The menu closes after selecting a page because keeping the
-  expanded palette open after navigation creates unnecessary
-  visual clutter.
-  */
-  paintSwatches.forEach((swatch) => {
-    swatch.addEventListener("click", () => {
+      // Close when clicking outside the navigation.
+      document.addEventListener("pointerdown", (event) => {
+        if (!paintNav.contains(event.target)) {
+          closePaintMenu();
+        }
+      });
+
+      // Escape closes the menu and returns focus.
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && paintNav.classList.contains("is-open")) {
+          closePaintMenu();
+          paletteButton.focus();
+        }
+      });
+
+      // Close when keyboard focus leaves the menu.
+      paintNav.addEventListener("focusout", (event) => {
+        if (!paintNav.contains(event.relatedTarget)) {
+          closePaintMenu();
+        }
+      });
+
+      // Begin with the menu closed.
       closePaintMenu();
     });
-  });
+  }
 
-/*
-Allows users to dismiss the menu naturally by clicking anywhere
-outside the palette.
-This makes the interaction behave like familiar modern menus while
-keeping the custom visual design.
-*/
-  document.addEventListener("pointerdown", (event) => {
-    const clickedInsideMenu = paintNav.contains(event.target);
-
-    if (!clickedInsideMenu) {
-      closePaintMenu();
-    }
-  });
-
-  /*
-  Adds keyboard accessibility by allowing users to close the menu
-  without using a mouse.
-  */
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closePaintMenu();
-      paletteButton.focus();
-    }
-  });
-}
+  // Works whether the script loads before or after the HTML.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialisePaintNavigation, {
+      once: true,
+    });
+  } else {
+    initialisePaintNavigation();
+  }
+})();
