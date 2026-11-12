@@ -78,3 +78,17 @@ class FlickerBall extends Ball {
     this.changeSize(3);
   }
 }
+
+class BubblyBall extends Ball {
+  respond(active) {
+    super.respond(active);
+    this.changeSize(7);
+  }
+}
+
+class DisgustsBall extends BubblyBall {
+  constructor(x, y, fillColor, r, emojitext) {
+    super(x, y, fillColor, r);
+    this.emojitext = " 😍";
+  }
+}
