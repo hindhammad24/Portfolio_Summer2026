@@ -554,7 +554,7 @@ window.ARTWORKS = [
     id: "HHH30",
     title: "Telefreek",
     category: "Greeting Cards",
-    status: "sold",
+    status: "available",
     price: 10,
     size: "3 × 3.5 inches",
     series: "",
