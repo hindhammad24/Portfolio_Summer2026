@@ -44,34 +44,12 @@ function draw() {
   }
 }
 
-function checkMouseOver() {
-  balls.forEach((ball, i) => {});
-}
-
-function mousePressed() {
-  let i = balls.findLastIndex((ball) => ball.contains(mouseX, mouseY));
-
-  if (i !== -1) {
-    balls.splice(i, 1);
-  } else {
-    let ballC = color(20, 130, 140 + random(-100, 100), 180);
-    balls.push(new Ball(mouseX, mouseY, ballC, 10));
-  }
-}
-
 function createRandomBall() {
   let ballX = random(0, width);
   let ballY = random(0, height);
   let ballC = color(140, 0, 140 + random(-100, 100), 50);
   let ballR = 5;
-  let ball;
-  if (Math.random() < 0.9) {
-    ball = new Ball(ballX, ballY, ballC, ballR);
-  } else {
-    ball = new FlickerBall(ballX, ballY, ballC, ballR);
-  }
-
-  return ball;
+  return new Ball(ballX, ballY, ballC, ballR);
 }
 
 function gotResults(result) {

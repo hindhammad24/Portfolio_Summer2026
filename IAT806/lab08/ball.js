@@ -14,14 +14,11 @@ class Ball {
     this.x = x;
     this.y = y;
 
-    this.startFrame = frameCount;
     this.baseR = r;
     this.r = r;
     this.origColor = fillColor;
     this.fillColor = fillColor;
-    this.defaultStrokeColor = "black";
     this.highlightColor = color(100, 100, 100, 50);
-    this.showStroke = false;
   }
 
   update(byHowMuch) {
@@ -66,29 +63,7 @@ class Ball {
 
   show() {
     fill(this.fillColor);
-    stroke(this.strokeColor);
+    noStroke();
     circle(this.x, this.y, this.r * 2);
-  }
-}
-
-class FlickerBall extends Ball {
-  respond(active) {
-    super.respond(active);
-    // this.fillColor = color(0, 0, 0, 100);
-    this.changeSize(3);
-  }
-}
-
-class BubblyBall extends Ball {
-  respond(active) {
-    super.respond(active);
-    this.changeSize(7);
-  }
-}
-
-class DisgustsBall extends BubblyBall {
-  constructor(x, y, fillColor, r, emojitext) {
-    super(x, y, fillColor, r);
-    this.emojitext = " 😍";
   }
 }
