@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../global/navbar.css" />
     <link rel="stylesheet" href="shop.css" />
     <script src="../global/navbar.js" defer></script>
-    <script src="./artworks.js" defer></script>
     <script src="./shop.js" defer></script>
   </head>
   <body class="shop-page">
@@ -182,8 +181,8 @@
         <div id="cart-items"></div>
         <p id="cart-total"></p>
         <p class="checkout-note">
-          Shipping is quoted separately. Availability and card colour options
-          will be confirmed before payment.
+          Choose your province to see shipping. Availability and card colour
+          options will be confirmed before payment.
         </p>
         <form id="checkout-form">
           <fieldset id="checkout-fields">
@@ -212,8 +211,8 @@
             <label
               >Delivery
               <select name="delivery" id="delivery">
+                <option value="pickup">Arrange pickup (free)</option>
                 <option value="shipping">Ship within Canada</option>
-                <option value="pickup">Arrange pickup</option>
               </select></label
             >
             <div id="shipping-fields">

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
     <title>Artwork catalogue editor | withLoveHanooode</title>
     <style>
       * {
@@ -32,6 +33,7 @@
       }
       h2 {
         font-size: 26px;
+        margin-top: 0;
       }
       p {
         max-width: 800px;
@@ -56,6 +58,7 @@
         width: 100%;
         font: inherit;
         margin-top: 4px;
+        background: white;
       }
       button,
       .button {
@@ -71,6 +74,10 @@
       button.secondary {
         background: white;
         color: #8b2e52;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
       }
       .fields {
         display: grid;
@@ -94,13 +101,37 @@
         gap: 10px;
         flex-wrap: wrap;
       }
+      .toolbar {
+        display: flex;
+        gap: 15px;
+        align-items: end;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .toolbar label {
+        margin: 0;
+      }
+      .toolbar .search {
+        flex: 1;
+        min-width: 200px;
+      }
       .row {
-        padding: 15px 0;
+        padding: 12px 0;
         border-top: 1px solid #e8dfe3;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         gap: 15px;
+      }
+      .row img {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        background: #faf7f8;
+        flex: none;
+      }
+      .row .text {
+        flex: 1;
+        min-width: 0;
       }
       .row small {
         display: block;
@@ -108,6 +139,24 @@
       }
       .row button {
         padding: 7px 12px;
+      }
+      .row.is-sold .text {
+        color: #655c61;
+      }
+      .pill {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 1px 7px;
+        border: 1px solid #8b2e52;
+        color: #8b2e52;
+        margin-left: 6px;
+        vertical-align: 2px;
+      }
+      .pill.sold {
+        background: #8b2e52;
+        color: white;
       }
       .notice {
         border-left: 3px solid #8b2e52;
@@ -117,6 +166,65 @@
       .status {
         color: #8b2e52;
         font-weight: bold;
+        min-height: 1.5em;
+      }
+      .saving-bar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #8b2e52;
+        color: white;
+        padding: 10px 22px;
+        margin: 0;
+        max-width: none;
+        text-align: center;
+      }
+      .saving-bar.error {
+        background: #171717;
+      }
+      .photo-pick {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      .photo-pick img {
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        background: #faf7f8;
+        border: 1px solid #e8dfe3;
+        flex: none;
+      }
+      .photo-pick label {
+        flex: 1;
+        margin: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 6px 8px 6px 0;
+        font-size: 13px;
+        vertical-align: bottom;
+      }
+      th {
+        font-weight: normal;
+        color: #655c61;
+      }
+      td input {
+        margin: 0;
+        min-width: 70px;
+      }
+      ol li {
+        margin-bottom: 6px;
+      }
+      details summary {
+        cursor: pointer;
+        color: #8b2e52;
       }
       a {
         color: #8b2e52;
@@ -126,94 +234,155 @@
         outline-offset: 3px;
       }
       @media (max-width: 650px) {
+        main {
+          margin: 24px auto;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        section {
+          padding: 18px;
+        }
         .fields {
           grid-template-columns: 1fr;
         }
         .row {
-          align-items: start;
-          flex-direction: column;
+          flex-wrap: wrap;
+        }
+        .row .actions {
+          width: 100%;
+        }
+        .table-wrap {
+          overflow-x: auto;
         }
       }
     </style>
-    <script src="artworks.js" defer></script>
     <script src="manage.js" defer></script>
   </head>
   <body>
+    <p id="saving-bar" class="saving-bar" role="status" hidden></p>
     <main>
-      <p>WITHLOVEHANOOODE · LOCAL EDITOR</p>
+      <p>WITHLOVEHANOOODE · EDITOR</p>
       <h1>Your little gallery, organised.</h1>
-      <p class="notice">
-        <strong>This editor does not update your live website.</strong> Keep it
-        on your computer. Make changes, download <strong>artworks.js</strong>,
-        replace the old file beside shop.html, then upload that file to your
-        website. Changes in this editor are lost when you close or reload it
-        unless you download them.
+      <p class="notice" id="mode-notice">
+        Loading your catalogue…
       </p>
-      <p><a href="shop.html" target="_blank">Open shop preview ↗</a> ·</p>
-      <section>
-        <h2>1. Your shop details</h2>
-        <div class="fields">
-          <label
-            >Order enquiry email<input
-              id="config-email"
-              type="email"
-              required
-              placeholder="Your real enquiry email" /></label
-          ><label
-            >E-transfer email<input
-              id="config-payment"
-              type="email"
-              required /></label
-          ><label
-            >Commissions form link<input
-              id="config-commissions"
-              type="https://docs.google.com/forms/d/e/1FAIpQLSdC90p51s_wB7L_GDpfaD7X5JTdQnqLgV07rfdNUVV0d3R5LQ/viewform"
-              placeholder="https://docs.google.com/forms/d/e/1FAIpQLSdC90p51s_wB7L_GDpfaD7X5JTdQnqLgV07rfdNUVV0d3R5LQ/viewform" /></label
-          ><label
-            >Donation campaign link<input
-              id="config-donation"
-              type="url"
-              placeholder="https://..." /></label
-          ><label class="check full"
-            ><input id="config-photos" type="checkbox" /> Use real artwork
-            photos (keep off to show placeholders)</label
-          >
-        </div>
+      <p><a href="shop.html" target="_blank">Open shop ↗</a></p>
+
+      <section id="connect-section" hidden>
+        <h2>Connect your website</h2>
         <p>
-          The enquiry email receives order requests. Add your real commissions
-          form link to enable the form button. These are public links; do not
-          enter banking passwords or private information.
+          Connect once on each device you edit from (your laptop, your phone).
+          After that, every save goes straight to your live shop.
         </p>
+        <ol>
+          <li>
+            Open
+            <a
+              href="https://github.com/settings/personal-access-tokens/new"
+              target="_blank"
+              rel="noopener"
+              >GitHub → New fine-grained token ↗</a
+            >
+            while signed in to your GitHub account.
+          </li>
+          <li>
+            Name it <strong>Shop editor</strong> and set the expiration to one
+            year.
+          </li>
+          <li>
+            Under <strong>Repository access</strong>, choose
+            <strong>Only select repositories</strong> and pick
+            <strong id="repo-name-hint">Portfolio_Summer2026</strong>.
+          </li>
+          <li>
+            Under <strong>Permissions → Repository permissions</strong>, set
+            <strong>Contents</strong> to <strong>Read and write</strong>.
+            Leave everything else as it is.
+          </li>
+          <li>Generate the token, copy it and paste it below.</li>
+        </ol>
+        <form id="connect-form">
+          <label
+            >Your token
+            <input
+              id="token"
+              type="password"
+              autocomplete="off"
+              required
+              placeholder="github_pat_…"
+          /></label>
+          <details>
+            <summary>Where your shop lives (only change if you move it)</summary>
+            <div class="fields">
+              <label>GitHub username<input id="repo-owner" required /></label
+              ><label>Repository<input id="repo-name" required /></label
+              ><label>Branch<input id="repo-branch" required /></label
+              ><label>Shop folder<input id="repo-folder" required /></label>
+            </div>
+          </details>
+          <p>
+            The token is saved only in this browser. It can only change this
+            one repository, and you can delete it on GitHub any time.
+          </p>
+          <button type="submit">Connect</button>
+        </form>
+        <p id="connect-feedback" role="status" class="status"></p>
       </section>
-      <section>
-        <h2>2. Your artwork</h2>
+
+      <section id="artwork-section">
+        <h2>1. Your artwork</h2>
+        <div class="toolbar">
+          <label class="search"
+            >Find a piece<input
+              id="search"
+              type="search"
+              placeholder="Title or ID"
+          /></label>
+          <label class="check"
+            ><input id="show-sold" type="checkbox" /> Show sold and hidden</label
+          >
+          <button id="new-artwork" type="button">+ Add a piece</button>
+        </div>
+        <p id="list-feedback" role="status" class="status"></p>
+        <p id="list-count"></p>
         <div id="catalogue-list"></div>
-        <p><button id="new-artwork" type="button">+ Add a piece</button></p>
       </section>
-      <section>
+
+      <section id="editor-section" hidden>
         <h2 id="editor-title">Add a piece</h2>
         <form id="artwork-editor">
-          <div class="fields">
+          <div class="photo-pick">
+            <img id="photo-preview" alt="" />
             <label
-              >Artwork ID (unique)<input
-                name="id"
-                required
-                maxlength="60"
-                placeholder="ART-001" /></label
-            ><label>Title<input name="title" required maxlength="150" /></label
+              >Photo
+              <input id="photo" name="photo" type="file" accept="image/*" />
+              <small
+                >Take a photo or choose one. It is resized for the web when
+                you save.</small
+              ></label
+            >
+          </div>
+          <div class="fields" style="margin-top: 20px">
+            <label class="full"
+              >Title<input name="title" required maxlength="150" /></label
             ><label
-              >Category<input
-                name="category"
-                required
-                placeholder="Paintings, Ornaments, Cards…" /></label
+              >Category<select name="category" required>
+                <option value="Canvas">Canvas</option>
+                <option value="Frame">Frame</option>
+                <option value="Pot">Pot</option>
+                <option value="Ornament">Ornament</option>
+                <option value="Greeting Cards">Greeting card</option>
+                <option value="Tech Art">Tech art</option>
+              </select></label
             ><label
               >Status<select name="status">
                 <option value="available">
-                  Available — customers can enquire
+                  Available: customers can order
                 </option>
-                <option value="reserved">Reserved — ordering disabled</option>
-                <option value="sold">Sold — ordering disabled</option>
-                <option value="hidden">Hidden — removed from shop</option>
+                <option value="reserved">Reserved: ordering paused</option>
+                <option value="sold">Sold</option>
+                <option value="hidden">Hidden: not shown in the shop</option>
               </select></label
             ><label
               >Price in CAD<input
@@ -221,55 +390,115 @@
                 type="number"
                 min="0"
                 step="0.01"
+                inputmode="decimal"
                 required /></label
-            ><label>Size<input name="size" placeholder="8 × 10 in" /></label
+            ><label
+              >Size<input name="size" placeholder="8 × 10 inches" /></label
+            ><label
+              >Shipping type<select name="shipping" id="shipping-type"></select
+            ></label>
+            <label
+              >How many you have (blank if you don’t count them)<input
+                name="quantity"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric" /></label
             ><label
               >Series (optional)<input
                 name="series"
                 placeholder="Winter, Florals…" /></label
             ><label
-              >Stock quantity (blank if unconfirmed)<input
-                name="quantity"
-                type="number"
-                min="0"
-                step="1" /></label
-            ><label
-              >Photo path<input
-                name="image"
+              >Artwork ID<input
+                name="id"
                 required
-                placeholder="assets/my-painting.jpg" /></label
+                maxlength="60"
+                placeholder="HHH55" /></label
             ><label class="full"
-              >Photo description (accessibility)<input
+              >Photo description (for screen readers)<input
                 name="alt"
-                required
                 placeholder="Describe what is in the artwork" /></label
             ><label class="full"
               >Artwork description<textarea
                 name="description"
                 rows="3"
+                placeholder="acrylic on canvas"
               ></textarea>
             </label>
           </div>
-          <p>
-            Copy your photo into the assets folder yourself, then enter its
-            exact filename above. The editor does not upload or copy photos.
-          </p>
-          <button type="submit">Save piece to this editing session</button>
+          <div class="actions">
+            <button type="submit" id="save-piece">Save to my shop</button>
+            <button type="button" class="secondary" id="cancel-edit">
+              Cancel
+            </button>
+            <button type="button" class="secondary" id="remove-piece" hidden>
+              Remove from catalogue
+            </button>
+          </div>
         </form>
         <p id="editor-feedback" role="status" class="status"></p>
       </section>
-      <section>
-        <h2>3. Download your changes</h2>
+
+      <section id="shipping-section">
+        <h2>2. Shipping prices</h2>
         <p>
-          Save any artwork edits first. This download includes your shop details
-          and saved artwork entries. Replace the existing artworks.js with the
-          downloaded file. Your browser may name it artworks (1).js—rename it to
-          <strong>artworks.js</strong>.
+          Enter what each type costs to ship, packed, to each area. The shop
+          uses the highest rate in the bag, then adds the extra-piece amount
+          for each additional piece. Leave a box empty and buyers see
+          “shipping confirmed by email” instead.
         </p>
-        <button id="download-catalogue" type="button">
-          Download artworks.js ↓
-        </button>
-        <p id="download-feedback" role="status"></p>
+        <form id="shipping-form">
+          <div class="table-wrap"><table id="shipping-table"></table></div>
+          <label style="max-width: 320px"
+            >Each extra piece in the same parcel adds (CAD)<input
+              id="extra-item"
+              type="number"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+          /></label>
+          <button type="submit">Save shipping prices</button>
+        </form>
+        <p id="shipping-feedback" role="status" class="status"></p>
+      </section>
+
+      <section id="details-section">
+        <h2>3. Your shop details</h2>
+        <form id="details-form">
+          <div class="fields">
+            <label
+              >Order enquiry email<input
+                id="config-email"
+                type="email"
+                required /></label
+            ><label
+              >E-transfer email<input
+                id="config-payment"
+                type="email"
+                required /></label
+            ><label
+              >Commissions form link<input
+                id="config-commissions"
+                type="url"
+                placeholder="https://…" /></label
+            ><label
+              >Donation campaign link<input
+                id="config-donation"
+                type="url"
+                placeholder="https://…" /></label
+            ><label class="check full"
+              ><input id="config-photos" type="checkbox" /> Show real artwork
+              photos (off shows placeholders)</label
+            >
+          </div>
+          <button type="submit">Save shop details</button>
+        </form>
+        <p id="details-feedback" role="status" class="status"></p>
+        <p>
+          <button type="button" class="secondary" id="disconnect" hidden>
+            Disconnect this device
+          </button>
+        </p>
       </section>
     </main>
   </body>

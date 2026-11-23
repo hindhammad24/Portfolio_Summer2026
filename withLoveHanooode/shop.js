@@ -40,8 +40,8 @@
     /* Check that the catalogue loaded first. */
     if (!window.SHOP_CONFIG || !Array.isArray(window.ARTWORKS)) {
       showError(
-        "artworks.js has not loaded. Keep it beside shop.html " +
-          "and load artworks.js before shop.js, using defer on both scripts.",
+        "catalogue.json has not loaded. Keep it beside shop.html " +
+          "and check that it is valid JSON.",
       );
       return;
     }
@@ -86,6 +86,7 @@
 
     const config = window.SHOP_CONFIG;
     const products = window.ARTWORKS;
+    const shippingTable = window.SHOP_SHIPPING || null;
 
     /* Validate without changing your catalogue. */
     const ids = new Set();
@@ -105,7 +106,7 @@
 
       if (invalid) {
         showError(
-          "Check artworks.js: each artwork needs a unique ID, " +
+          "Check catalogue.json: each artwork needs a unique ID, " +
             "a valid price and quantity, and a status of available, " +
             "reserved, sold, or hidden.",
         );
@@ -442,6 +443,83 @@
     }
 
     /* =====================================
+       SHIPPING QUOTE
+       The most expensive piece to ship sets the
+       rate, then each extra piece adds a little.
+       Returns null when a rate is still missing.
+    ===================================== */
+
+    const isRate = (value) =>
+      typeof value === "number" && Number.isFinite(value) && value >= 0;
+
+    function shippingQuote(province) {
+      if (!shippingTable || !province) return null;
+
+      const zone = shippingTable.zones.find((entry) =>
+        entry.provinces.includes(province),
+      );
+
+      if (!zone) return null;
+
+      let highest = 0;
+      let pieces = 0;
+
+      for (const product of products) {
+        const quantity = cart[product.id];
+        if (!quantity) continue;
+
+        const type = shippingTable.classes.find(
+          (entry) => entry.key === product.shipping,
+        );
+
+        const rate = type ? type.rates[zone.key] : null;
+        if (!isRate(rate)) return null;
+
+        highest = Math.max(highest, rate);
+        pieces += quantity;
+      }
+
+      if (!pieces) return null;
+
+      const extra = pieces > 1 ? shippingTable.extraItem : 0;
+      if (pieces > 1 && !isRate(extra)) return null;
+
+      return { zone: zone.label, amount: highest + extra * (pieces - 1) };
+    }
+
+    function shippingChoice() {
+      const form = $("checkout-form");
+      const shipping = $("delivery").value === "shipping";
+      const province = form.elements.namedItem("province")?.value || "";
+
+      return { shipping, province, quote: shipping ? shippingQuote(province) : null };
+    }
+
+    function renderTotal() {
+      let subtotal = 0;
+
+      for (const product of products) {
+        subtotal += product.price * (cart[product.id] || 0);
+      }
+
+      const { shipping, province, quote } = shippingChoice();
+
+      let text = `Artwork subtotal: ${money(subtotal)} CAD`;
+
+      if (!shipping) {
+        text += " · Pickup: free";
+      } else if (quote) {
+        text +=
+          ` · Shipping to ${quote.zone}: ${money(quote.amount)}` +
+          ` · Total: ${money(subtotal + quote.amount)} CAD`;
+      } else if (province) {
+        text += " · Shipping: confirmed by email";
+      }
+
+      $("cart-total").textContent = text;
+    }
+
+    /* =====================================
        CART DISPLAY
     ===================================== */
 
@@ -524,7 +602,7 @@
         );
       }
 
-      $("cart-total").textContent = `Artwork subtotal: ${money(total)} CAD`;
+      renderTotal();
 
       $("checkout-fields").disabled = count === 0;
       $("checkout-feedback").textContent = "";
@@ -571,7 +649,14 @@
       }
     }
 
-    $("delivery").addEventListener("change", toggleShipping);
+    $("delivery").addEventListener("change", () => {
+      toggleShipping();
+      renderTotal();
+    });
+
+    $("checkout-form")
+      .elements.namedItem("province")
+      ?.addEventListener("change", renderTotal);
 
     /* =====================================
        PREPARE THE COMPLETE ORDER
@@ -649,6 +734,16 @@
         : "Delivery: Pickup by arrangement";
 
       const paymentEmail = config.paymentEmail || config.email;
+      const { quote } = shippingChoice();
+
+      const shippingLines = !shipping
+        ? ["Pickup: to be arranged (free)"]
+        : quote
+          ? [
+              `Shipping to ${quote.zone}: ${money(quote.amount)}`,
+              `Total: ${money(total + quote.amount)} CAD`,
+            ]
+          : ["Shipping: awaiting quote (not included above)"];
 
       return [
         "Hello Hind,",
@@ -658,9 +753,7 @@
         ...lines,
         "",
         `Artwork subtotal: ${money(total)} CAD`,
-        shipping
-          ? "Shipping: awaiting quote (not included above)"
-          : "Pickup: to be arranged",
+        ...shippingLines,
         "",
         `Name: ${data.get("customer")}`,
         `Email: ${data.get("email")}`,
@@ -691,7 +784,7 @@
 
       if (!config.email) {
         $("checkout-feedback").textContent =
-          "The shop email is missing from SHOP_CONFIG in artworks.js.";
+          "The shop email is missing from the shop settings in the editor.";
         return;
       }
 
@@ -750,8 +843,21 @@
     document.documentElement.dataset.shopInitialised = "true";
   }
 
-  function boot() {
+  /* Load the catalogue saved by the editor, then start. */
+  async function boot() {
     try {
+      const response = await fetch("catalogue.json", { cache: "no-cache" });
+
+      if (!response.ok) {
+        throw new Error(`catalogue.json returned ${response.status}`);
+      }
+
+      const catalogue = await response.json();
+
+      window.SHOP_CONFIG = catalogue.config;
+      window.ARTWORKS = catalogue.artworks;
+      window.SHOP_SHIPPING = catalogue.shipping;
+
       initialiseShop();
     } catch (error) {
       showError("The shop could not load: " + error.message);
