@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "",
+      "id": "HHH57",
+      "title": "Ski Season Version 2",
+      "category": "Ornament",
+      "status": "available",
+      "price": 15,
+      "size": "",
+      "shipping": "ornament",
+      "quantity": 1,
+      "alt": "Ski Season Version 2",
+      "description": "",
+      "image": "../assets/artworks/ornaments/ski_season_version_2.jpg"
+    },
+    {
+      "series": "",
       "id": "HHH56",
       "title": "mountain view",
       "category": "Ornament",
