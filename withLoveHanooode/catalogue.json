@@ -88,6 +88,20 @@
   },
   "artworks": [
     {
+      "series": "",
+      "id": "HHH55",
+      "title": "Plam trees",
+      "category": "Pot",
+      "status": "available",
+      "price": 25,
+      "size": "9cm diameter",
+      "shipping": "pot",
+      "quantity": 1,
+      "alt": "A hand-painted plant pot",
+      "description": "",
+      "image": "../assets/artworks/pots/plam_trees.jpg"
+    },
+    {
       "id": "HHH2",
       "title": "For Keeps",
       "category": "Frame",
