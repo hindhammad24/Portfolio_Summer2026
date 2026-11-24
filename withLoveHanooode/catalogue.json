@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "",
+      "id": "HHH56",
+      "title": "mountain view",
+      "category": "Ornament",
+      "status": "available",
+      "price": 10,
+      "size": "",
+      "shipping": "ornament",
+      "quantity": 1,
+      "alt": "mountain view",
+      "description": "",
+      "image": "../assets/artworks/ornaments/mountain_view.jpg"
+    },
+    {
+      "series": "",
       "id": "HHH55",
       "title": "Plam trees",
       "category": "Pot",
