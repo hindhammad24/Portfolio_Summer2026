@@ -332,6 +332,12 @@
         );
       });
 
+      const isSold = (product) =>
+        product.status !== "reserved" &&
+        (product.status === "sold" || product.quantity === 0);
+
+      items.sort((first, second) => Number(isSold(first)) - Number(isSold(second)));
+
       $("product-grid").replaceChildren();
       $("empty-state").hidden = items.length > 0;
 
@@ -350,7 +356,7 @@
         const status =
           product.status === "reserved"
             ? "Reserved"
-            : product.status === "sold" || product.quantity === 0
+            : isSold(product)
               ? "Sold"
               : "";
 
