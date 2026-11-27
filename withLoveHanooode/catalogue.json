@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "",
+      "id": "HHH69",
+      "title": "Skier",
+      "category": "Canvas",
+      "status": "available",
+      "price": 5,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/skier.jpg"
+    },
+    {
+      "series": "",
       "id": "HHH68",
       "title": "Sardeen 3",
       "category": "Canvas",
