@@ -88,6 +88,20 @@
   },
   "artworks": [
     {
+      "series": "",
+      "id": "HHH66",
+      "title": "Sardeen",
+      "category": "Canvas",
+      "status": "available",
+      "price": 5,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/sardeen.jpg"
+    },
+    {
       "series": "Winter",
       "id": "HHH65",
       "title": "penguin",
