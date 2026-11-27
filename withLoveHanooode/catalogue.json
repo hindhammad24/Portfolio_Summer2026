@@ -88,6 +88,20 @@
   },
   "artworks": [
     {
+      "series": "",
+      "id": "HHH71",
+      "title": "Claimed by Winter",
+      "category": "Canvas",
+      "status": "available",
+      "price": 85,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Claimed by Winter",
+      "description": "A pair of skis stands planted in textured snow, with the moon hanging above the mountains in the distance. Claimed by the Winter captures a quiet moment on the slopes, when you set your skis down and take in the view.",
+      "image": "../assets/artworks/canvas/claimed_by_winter.jpg"
+    },
+    {
       "series": "Winter",
       "id": "HHH56",
       "title": "The Sun and I",
