@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "",
+      "id": "HHH68",
+      "title": "Sardeen 3",
+      "category": "Canvas",
+      "status": "available",
+      "price": 4.75,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/sardeen_3.jpg"
+    },
+    {
+      "series": "",
       "id": "HHH67",
       "title": "Sardeen 2",
       "category": "Canvas",
