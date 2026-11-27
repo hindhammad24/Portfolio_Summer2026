@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "Winter",
+      "id": "HHH56",
+      "title": "The Sun and I",
+      "category": "Canvas",
+      "status": "available",
+      "price": 45,
+      "size": "5 × 7 inches",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on canvas",
+      "description": "Two skiers glide down a bright white slope beneath the sun and soft clouds. The open snow gives The Sun and I a light, airy feel, capturing the simple joy of skiing on a sunny winter day.",
+      "image": "../assets/artworks/canvas/the_sun_and_i.jpg"
+    },
+    {
+      "series": "Winter",
       "id": "HHH59",
       "title": "Claimed by  Winter",
       "category": "Canvas",
