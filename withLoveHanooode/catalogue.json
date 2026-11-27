@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "",
+      "id": "HHH70",
+      "title": "Snowflakes",
+      "category": "Canvas",
+      "status": "available",
+      "price": 5,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/snowflakes.jpg"
+    },
+    {
+      "series": "",
       "id": "HHH69",
       "title": "Skier",
       "category": "Canvas",
