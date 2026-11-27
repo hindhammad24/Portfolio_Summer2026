@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "Winter",
+      "id": "HHH62",
+      "title": "candy land",
+      "category": "Canvas",
+      "status": "available",
+      "price": 5,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/candy_land.jpg"
+    },
+    {
+      "series": "Winter",
       "id": "HHH55",
       "title": "The Moon and I",
       "category": "Canvas",
