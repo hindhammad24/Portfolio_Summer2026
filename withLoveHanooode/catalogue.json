@@ -89,6 +89,20 @@
   "artworks": [
     {
       "series": "Winter",
+      "id": "HHH64",
+      "title": "ocean",
+      "category": "Canvas",
+      "status": "available",
+      "price": 5,
+      "size": "",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic on wood",
+      "description": "",
+      "image": "../assets/artworks/canvas/ocean.jpg"
+    },
+    {
+      "series": "Winter",
       "id": "HHH63",
       "title": "heart",
       "category": "Canvas",
