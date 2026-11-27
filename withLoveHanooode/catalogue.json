@@ -88,6 +88,20 @@
   },
   "artworks": [
     {
+      "series": "Winter",
+      "id": "HHH55",
+      "title": "The moon and I",
+      "category": "Canvas",
+      "status": "available",
+      "price": 45,
+      "size": "5 × 7 inches",
+      "shipping": "small",
+      "quantity": 1,
+      "alt": "Acrylic and modeling paste on Canvas",
+      "description": "A lone skier descends a snowy slope under the moon. Soft pink highlights catch the snow against the dark sky, giving The Moon and I the quiet feeling of having the mountain all to yourself.",
+      "image": "../assets/artworks/canvas/the_moon_and_i_3.jpg"
+    },
+    {
       "series": "",
       "id": "HHH70",
       "title": "Snowflakes",
